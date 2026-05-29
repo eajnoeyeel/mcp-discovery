@@ -1,0 +1,101 @@
+{
+  "experiment": "format-only (same info)",
+  "results": {
+    "V_prose (plain, control)": {
+      "GPT": {
+        "hits": 5,
+        "rate": 1.0,
+        "picks": [
+          "tavily_search",
+          "tavily_search",
+          "tavily_search",
+          "tavily_search",
+          "tavily_search"
+        ]
+      },
+      "Gemini": {
+        "hits": 0,
+        "rate": 0.0,
+        "picks": [
+          "ERR",
+          "ERR",
+          "ERR",
+          "ERR",
+          "ERR"
+        ]
+      }
+    },
+    "V_md (GPT-markdown)": {
+      "GPT": {
+        "hits": 5,
+        "rate": 1.0,
+        "picks": [
+          "tavily_search",
+          "tavily_search",
+          "tavily_search",
+          "tavily_search",
+          "tavily_search"
+        ]
+      },
+      "Gemini": {
+        "hits": 0,
+        "rate": 0.0,
+        "picks": [
+          "ERR",
+          "ERR",
+          "ERR",
+          "ERR",
+          "ERR"
+        ]
+      }
+    },
+    "V_xml (Claude-XML)": {
+      "GPT": {
+        "hits": 5,
+        "rate": 1.0,
+        "picks": [
+          "tavily_search",
+          "tavily_search",
+          "tavily_search",
+          "tavily_search",
+          "tavily_search"
+        ]
+      },
+      "Gemini": {
+        "hits": 0,
+        "rate": 0.0,
+        "picks": [
+          "ERR",
+          "ERR",
+          "ERR",
+          "ERR",
+          "ERR"
+        ]
+      }
+    },
+    "V_spec (Gemini-specsheet)": {
+      "GPT": {
+        "hits": 5,
+        "rate": 1.0,
+        "picks": [
+          "tavily_search",
+          "tavily_search",
+          "tavily_search",
+          "tavily_search",
+          "tavily_search"
+        ]
+      },
+      "Gemini": {
+        "hits": 0,
+        "rate": 0.0,
+        "picks": [
+          "ERR",
+          "ERR",
+          "ERR",
+          "ERR",
+          "ERR"
+        ]
+      }
+    }
+  }
+}

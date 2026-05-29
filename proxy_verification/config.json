@@ -1,0 +1,19 @@
+{
+  "backends": [
+    {
+      "server_id": "echo",
+      "command": "uv",
+      "args": ["run", "python", "-m", "src.echo_server"]
+    },
+    {
+      "server_id": "filesystem",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/tmp/mcp-test"]
+    },
+    {
+      "server_id": "memory",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    }
+  ]
+}

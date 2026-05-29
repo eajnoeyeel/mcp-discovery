@@ -1,0 +1,74 @@
+{
+  "experiment_date": "2026-04-24",
+  "branch": "codex/hybrid-embedding-benchmark-v2-20260423",
+  "goal": "Compare dense embedding models inside the same hybrid retrieval stack while keeping SPLADE and Keyword+LLM sparse text fixed.",
+  "gt": {
+    "path": "data/ground_truth/mcp_atlas.jsonl",
+    "covered_queries": 2273,
+    "pool_path": "data/tool-pools/base_pool.json",
+    "pool_servers": 322
+  },
+  "fixed_components": {
+    "retrieval": "Qdrant hybrid dense+sparse RRF",
+    "sparse_encoder": "splade:prithivida/Splade_PP_en_v1",
+    "sparse_text_policy": "keyword_llm"
+  },
+  "source_artifacts": [
+    "data/results/hybrid_embedding_benchmark/20260424T_full_stage1_final_tpm/hybrid_embedding_benchmark.json",
+    "data/results/hybrid_embedding_benchmark/20260424T_bge_retry_batch10_env/hybrid_embedding_benchmark.json"
+  ],
+  "results": [
+    {
+      "arm_id": "control_openai_large_splade_keyword_llm",
+      "dense_model": "openai:text-embedding-3-large",
+      "status": "measured",
+      "recall_at_3": 0.4703035635723713,
+      "precision_at_1": 0.3110426748790145,
+      "mrr": 0.38202082416776656,
+      "recall_at_5": 0.5186977562692477,
+      "recall_at_10": 0.5692916849978003,
+      "latency_p50_ms": 213.41999998549,
+      "latency_p95_ms": 300.0784163887147,
+      "n_queries": 2273,
+      "n_failed": 0
+    },
+    {
+      "arm_id": "voyage_4_large_splade_keyword_llm",
+      "dense_model": "voyage:voyage-4-large",
+      "status": "measured",
+      "recall_at_3": 0.43862736471623404,
+      "precision_at_1": 0.278926528816542,
+      "mrr": 0.34682504766094735,
+      "recall_at_5": 0.49802023757149144,
+      "recall_at_10": 0.5653321601407831,
+      "latency_p50_ms": 207.20529201207682,
+      "latency_p95_ms": 320.75029980624095,
+      "n_queries": 2273,
+      "n_failed": 0
+    },
+    {
+      "arm_id": "bge_m3_dense_splade_keyword_llm",
+      "dense_model": "bge_m3:BAAI/bge-m3",
+      "status": "measured",
+      "recall_at_3": 0.4188297404311483,
+      "precision_at_1": 0.27144742630884294,
+      "mrr": 0.3328200615926089,
+      "recall_at_5": 0.4808622965244171,
+      "recall_at_10": 0.539375274967004,
+      "latency_p50_ms": 205.33554200665094,
+      "latency_p95_ms": 298.58875041245483,
+      "n_queries": 2273,
+      "n_failed": 0
+    }
+  ],
+  "decision": {
+    "best_tested_hybrid": "control_openai_large_splade_keyword_llm",
+    "recommendation": "Keep OpenAI text-embedding-3-large in the current hybrid retrieval stack.",
+    "rationale": "OpenAI won the top-rank quality metrics most relevant to tool selection: Recall@3, P@1, and MRR."
+  },
+  "caveats": [
+    "BGE-M3 was measured in a BGE-only recovery run after Qdrant write timeout in the combined run; only indexing batch size changed.",
+    "Voyage 4-lite was intentionally excluded from full GT to control cost and runtime under strict Voyage rate limits.",
+    "This is retrieval-quality evidence only; full RAG-MCP client/tool-selection logging is deferred."
+  ]
+}

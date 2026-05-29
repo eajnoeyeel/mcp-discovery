@@ -1,0 +1,399 @@
+{
+  "generated_date": "2026-04-14",
+  "clusters_count": 17,
+  "queries_per_cluster": 3,
+  "total_queries": 51,
+  "clusters": {
+    "get_001": {
+      "target_tool_id": "contentful-mcp::get_entry",
+      "queries": [
+        {
+          "id": "get_001_Q1",
+          "query": "Fetch a specific content entry from the headless CMS by its identifier",
+          "language": "en",
+          "targeting": "structured CMS entries vs generic tasks/docs/investigations"
+        },
+        {
+          "id": "get_001_Q2",
+          "query": "헤드리스 CMS에서 특정 콘텐츠 항목을 ID로 조회하고 싶어",
+          "language": "ko",
+          "targeting": "content entry retrieval in CMS context"
+        },
+        {
+          "id": "get_001_Q3",
+          "query": "Retrieve a published content entry with its localized fields from the content management system",
+          "language": "en",
+          "targeting": "localized content entries — unique to CMS, not tasks or timesheets"
+        }
+      ]
+    },
+    "get_002": {
+      "target_tool_id": "productboard::get_notes",
+      "queries": [
+        {
+          "id": "get_002_Q1",
+          "query": "Pull all the customer feedback notes attached to our product roadmap board",
+          "language": "en",
+          "targeting": "notes as user feedback — not features, components, or products"
+        },
+        {
+          "id": "get_002_Q2",
+          "query": "제품 관리 도구에서 사용자 피드백 메모를 가져와줘",
+          "language": "ko",
+          "targeting": "feedback memos vs product catalog entities"
+        },
+        {
+          "id": "get_002_Q3",
+          "query": "Get the qualitative insights and annotations that stakeholders left on feature requests",
+          "language": "en",
+          "targeting": "qualitative notes/annotations vs structured feature or company data"
+        }
+      ]
+    },
+    "get_003": {
+      "target_tool_id": "hologres::get_query_plan",
+      "queries": [
+        {
+          "id": "get_003_Q1",
+          "query": "Show me the estimated logical query plan for this SQL statement before it actually runs",
+          "language": "en",
+          "targeting": "estimated/logical plan vs actual execution plan with runtime stats"
+        },
+        {
+          "id": "get_003_Q2",
+          "query": "이 SQL 쿼리의 논리적 실행 계획을 실행 전에 미리 확인하고 싶어",
+          "language": "ko",
+          "targeting": "pre-execution logical plan vs post-execution runtime statistics"
+        },
+        {
+          "id": "get_003_Q3",
+          "query": "Explain the query optimizer's chosen plan for my analytical SQL without executing it",
+          "language": "en",
+          "targeting": "optimizer plan preview — distinct from runtime execution stats or command history"
+        }
+      ]
+    },
+    "get_004": {
+      "target_tool_id": "wikipedia::get_summary",
+      "queries": [
+        {
+          "id": "get_004_Q1",
+          "query": "Give me a brief overview of the encyclopedia article on quantum computing, just the summary not the full text",
+          "language": "en",
+          "targeting": "summary/condensed overview vs full article content"
+        },
+        {
+          "id": "get_004_Q2",
+          "query": "백과사전에서 인공지능 항목의 요약만 간단히 가져와, 전체 본문은 필요 없어",
+          "language": "ko",
+          "targeting": "summary only — explicitly excludes full article, sections, or links"
+        },
+        {
+          "id": "get_004_Q3",
+          "query": "Fetch a concise abstract of the encyclopedia entry about climate change, not the sections or links",
+          "language": "en",
+          "targeting": "abstract/concise version — not sections, links, or related topics"
+        }
+      ]
+    },
+    "list_005": {
+      "target_tool_id": "clickup::list_documents",
+      "queries": [
+        {
+          "id": "list_005_Q1",
+          "query": "Show me all the documents stored in our project management workspace",
+          "language": "en",
+          "targeting": "documents in project management context — not pages within a doc"
+        },
+        {
+          "id": "list_005_Q2",
+          "query": "프로젝트 관리 도구에 저장된 문서 목록을 전부 보여줘",
+          "language": "ko",
+          "targeting": "documents in workspace — distinct from pages, tasks, or other list operations"
+        },
+        {
+          "id": "list_005_Q3",
+          "query": "Enumerate all wiki-style documents available in the team collaboration workspace",
+          "language": "en",
+          "targeting": "wiki/doc listing in collaboration workspace — not templates, voices, or workflows"
+        }
+      ]
+    },
+    "create_006": {
+      "target_tool_id": "clickup::create_space_tag",
+      "queries": [
+        {
+          "id": "create_006_Q1",
+          "query": "Create a new label tag in our project workspace so we can categorize tasks by priority",
+          "language": "en",
+          "targeting": "workspace-level tag for categorization — not a task, document, or folder"
+        },
+        {
+          "id": "create_006_Q2",
+          "query": "프로젝트 워크스페이스에 작업 분류용 태그를 새로 만들어줘",
+          "language": "ko",
+          "targeting": "workspace tag creation for task classification"
+        },
+        {
+          "id": "create_006_Q3",
+          "query": "Add a new color-coded tag to the workspace that team members can apply to any item for filtering",
+          "language": "en",
+          "targeting": "reusable workspace-level tag for cross-item filtering — not a list, folder, or entity"
+        }
+      ]
+    },
+    "search_007": {
+      "target_tool_id": "gitee::search_users",
+      "queries": [
+        {
+          "id": "search_007_Q1",
+          "query": "Find developer profiles on the code hosting platform by their username or display name",
+          "language": "en",
+          "targeting": "user/developer profile search — not repository or code search"
+        },
+        {
+          "id": "search_007_Q2",
+          "query": "코드 호스팅 플랫폼에서 특정 개발자를 이름으로 검색하고 싶어",
+          "language": "ko",
+          "targeting": "people search on code platform — not repo search or dashboard search"
+        },
+        {
+          "id": "search_007_Q3",
+          "query": "Look up contributors on the source code platform matching a partial name",
+          "language": "en",
+          "targeting": "contributor/user lookup by partial name — distinct from repository or code search"
+        }
+      ]
+    },
+    "search_008": {
+      "target_tool_id": "opendota::search_player",
+      "queries": [
+        {
+          "id": "search_008_Q1",
+          "query": "Search for a competitive online game player by their in-game name",
+          "language": "en",
+          "targeting": "esports/game player search — not web search, logs, or content entries"
+        },
+        {
+          "id": "search_008_Q2",
+          "query": "온라인 게임에서 특정 플레이어를 닉네임으로 검색해줘",
+          "language": "ko",
+          "targeting": "game player search by nickname — unique domain among generic search tools"
+        },
+        {
+          "id": "search_008_Q3",
+          "query": "Find a MOBA game player's profile using their player name to check their match statistics",
+          "language": "en",
+          "targeting": "MOBA player profile lookup for match stats — no other tool covers gaming domain"
+        }
+      ]
+    },
+    "update_009": {
+      "target_tool_id": "clickup::update_space_tag",
+      "queries": [
+        {
+          "id": "update_009_Q1",
+          "query": "Change the name and color of an existing label tag in our project workspace",
+          "language": "en",
+          "targeting": "modifying workspace tag properties — not updating a task, document, or issue"
+        },
+        {
+          "id": "update_009_Q2",
+          "query": "프로젝트 워크스페이스에 있는 기존 태그의 이름과 색상을 변경해줘",
+          "language": "ko",
+          "targeting": "tag property modification — distinct from updating tasks, folders, or contacts"
+        },
+        {
+          "id": "update_009_Q3",
+          "query": "Rename a categorization tag used across our team workspace to better reflect its purpose",
+          "language": "en",
+          "targeting": "workspace-level tag rename — not folder, list, or document page update"
+        }
+      ]
+    },
+    "delete_010": {
+      "target_tool_id": "clickup::delete_space_tag",
+      "queries": [
+        {
+          "id": "delete_010_Q1",
+          "query": "Remove an unused label tag from the project workspace so it no longer appears in the tag picker",
+          "language": "en",
+          "targeting": "workspace tag removal — not deleting a folder, list, task, or note"
+        },
+        {
+          "id": "delete_010_Q2",
+          "query": "프로젝트 워크스페이스에서 더 이상 사용하지 않는 분류 태그를 삭제해줘",
+          "language": "ko",
+          "targeting": "classification tag deletion — distinct from template, message, or project deletion"
+        },
+        {
+          "id": "delete_010_Q3",
+          "query": "Delete a workspace-level categorization tag that was created by mistake",
+          "language": "en",
+          "targeting": "workspace tag deletion — not node, contact, or completed task removal"
+        }
+      ]
+    },
+    "delete_011": {
+      "target_tool_id": "elevenlabs::delete_job",
+      "queries": [
+        {
+          "id": "delete_011_Q1",
+          "query": "Cancel and remove a voice synthesis processing job that is no longer needed",
+          "language": "en",
+          "targeting": "audio/voice processing job deletion — not workflow, connector, or script"
+        },
+        {
+          "id": "delete_011_Q2",
+          "query": "음성 합성 작업 중 불필요한 처리 작업을 삭제해줘",
+          "language": "ko",
+          "targeting": "voice synthesis job cleanup — unique audio domain vs data pipeline or ITSM"
+        },
+        {
+          "id": "delete_011_Q3",
+          "query": "Delete a completed text-to-speech generation job by its identifier to free up resources",
+          "language": "en",
+          "targeting": "TTS job deletion by ID — distinct from data connectors, workflows, or scripts"
+        }
+      ]
+    },
+    "monday_014": {
+      "target_tool_id": "monday.com::monday-delete-item",
+      "queries": [
+        {
+          "id": "monday_014_Q1",
+          "query": "Permanently delete a work item from the project board, not just archive it",
+          "language": "en",
+          "targeting": "permanent deletion vs archiving — explicit contrast with archive-item"
+        },
+        {
+          "id": "monday_014_Q2",
+          "query": "프로젝트 보드에서 항목을 보관이 아니라 완전히 삭제해줘",
+          "language": "ko",
+          "targeting": "permanent delete vs archive — key differentiator within same server"
+        },
+        {
+          "id": "monday_014_Q3",
+          "query": "Remove a board item entirely so it cannot be recovered from the archive",
+          "language": "en",
+          "targeting": "irrecoverable removal — not archiving, moving, or updating the item"
+        }
+      ]
+    },
+    "load_016": {
+      "target_tool_id": "ramp::load_bills",
+      "queries": [
+        {
+          "id": "load_016_Q1",
+          "query": "Load all outstanding bills and payables from the corporate expense management system",
+          "language": "en",
+          "targeting": "bills/payables — not transactions, reimbursements, or vendor data"
+        },
+        {
+          "id": "load_016_Q2",
+          "query": "회사 비용 관리 시스템에서 미지급 청구서 데이터를 불러와줘",
+          "language": "ko",
+          "targeting": "unpaid bills data — distinct from transactions, departments, or bank accounts"
+        },
+        {
+          "id": "load_016_Q3",
+          "query": "Fetch the accounts payable and invoice bill records from the corporate finance platform",
+          "language": "en",
+          "targeting": "AP/invoice bills — not spend limits, programs, users, or reimbursements"
+        }
+      ]
+    },
+    "atlas_020": {
+      "target_tool_id": "mongodb::atlas-list-projects",
+      "queries": [
+        {
+          "id": "atlas_020_Q1",
+          "query": "List all the projects in our cloud database platform that contain cluster deployments",
+          "language": "en",
+          "targeting": "project-level listing — not orgs, clusters, users, or access lists"
+        },
+        {
+          "id": "atlas_020_Q2",
+          "query": "클라우드 데이터베이스 플랫폼에서 프로젝트 목록을 조회해줘",
+          "language": "ko",
+          "targeting": "project enumeration — hierarchically between org and cluster"
+        },
+        {
+          "id": "atlas_020_Q3",
+          "query": "Show me all database projects under my organization so I can find which one holds the production clusters",
+          "language": "en",
+          "targeting": "projects as organizational containers for clusters — not the clusters or users themselves"
+        }
+      ]
+    },
+    "weather_021": {
+      "target_tool_id": "weather-data::weather_alerts",
+      "queries": [
+        {
+          "id": "weather_021_Q1",
+          "query": "Check if there are any severe weather warnings or storm alerts for my area right now",
+          "language": "en",
+          "targeting": "severe weather warnings/alerts — not forecast, current conditions, or air quality"
+        },
+        {
+          "id": "weather_021_Q2",
+          "query": "우리 지역에 태풍이나 폭설 같은 기상 경보가 발령된 게 있는지 확인해줘",
+          "language": "ko",
+          "targeting": "weather warnings (typhoon, heavy snow) — not temperature or astronomy data"
+        },
+        {
+          "id": "weather_021_Q3",
+          "query": "Are there any active hazardous weather advisories, watches, or warnings issued for this location?",
+          "language": "en",
+          "targeting": "advisories/watches/warnings — official alert system, not general forecast or history"
+        }
+      ]
+    },
+    "whois_023": {
+      "target_tool_id": "whois::whois_ip",
+      "queries": [
+        {
+          "id": "whois_023_Q1",
+          "query": "Look up the ownership and registration details for this IP address: who operates it and which network block it belongs to",
+          "language": "en",
+          "targeting": "IP address ownership lookup — not domain, TLD, or ASN"
+        },
+        {
+          "id": "whois_023_Q2",
+          "query": "이 IP 주소의 소유자와 네트워크 할당 정보를 조회해줘",
+          "language": "ko",
+          "targeting": "IP owner and network allocation — distinct from domain or ASN lookup"
+        },
+        {
+          "id": "whois_023_Q3",
+          "query": "Find out which ISP or organization is assigned this IP address and what netblock range it falls under",
+          "language": "en",
+          "targeting": "ISP/org assignment for IP — not domain registrar or top-level domain info"
+        }
+      ]
+    },
+    "drop_025": {
+      "target_tool_id": "mongodb::drop-database",
+      "queries": [
+        {
+          "id": "drop_025_Q1",
+          "query": "Completely remove an entire database and all its collections from the document store",
+          "language": "en",
+          "targeting": "entire database removal — not a single collection, index, or user"
+        },
+        {
+          "id": "drop_025_Q2",
+          "query": "문서 데이터베이스에서 데이터베이스 전체를 삭제해줘, 컬렉션 하나가 아니라 DB 자체를",
+          "language": "ko",
+          "targeting": "full database drop — explicitly distinguishes from collection-level drop"
+        },
+        {
+          "id": "drop_025_Q3",
+          "query": "Drop the entire test database including every collection and index it contains",
+          "language": "en",
+          "targeting": "database-level destruction — encompasses all collections/indexes, not individual drops"
+        }
+      ]
+    }
+  }
+}

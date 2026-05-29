@@ -1,0 +1,582 @@
+[
+  {
+    "query": "Search for records in the Sales Expenses table for April 2016.",
+    "query_id": "gt-atlas-453-s08",
+    "target_tool_id": "airtable::search_records",
+    "cluster": "airtable",
+    "candidates": [
+      {
+        "tool_id": "airtable::search_records",
+        "description": "Search for records containing specific text"
+      },
+      {
+        "tool_id": "airtable::list_records",
+        "description": "Lists records from a specified Airtable table"
+      },
+      {
+        "tool_id": "airtable::list_bases",
+        "description": "Lists all accessible Airtable bases"
+      },
+      {
+        "tool_id": "airtable::list_tables",
+        "description": "Lists all tables in a specific base"
+      }
+    ]
+  },
+  {
+    "query": "Search for sales expenses records where the best selling category is electric.",
+    "query_id": "gt-atlas-294-s03",
+    "target_tool_id": "airtable::search_records",
+    "cluster": "airtable",
+    "candidates": [
+      {
+        "tool_id": "airtable::search_records",
+        "description": "Search for records containing specific text"
+      },
+      {
+        "tool_id": "airtable::list_records",
+        "description": "Lists records from a specified Airtable table"
+      },
+      {
+        "tool_id": "airtable::list_bases",
+        "description": "Lists all accessible Airtable bases"
+      },
+      {
+        "tool_id": "airtable::list_tables",
+        "description": "Lists all tables in a specific base"
+      }
+    ]
+  },
+  {
+    "query": "Search for records in the Turnover Retention table for new employees who joined in the first quarter of 2023.",
+    "query_id": "gt-atlas-314-s03",
+    "target_tool_id": "airtable::search_records",
+    "cluster": "airtable",
+    "candidates": [
+      {
+        "tool_id": "airtable::search_records",
+        "description": "Search for records containing specific text"
+      },
+      {
+        "tool_id": "airtable::list_records",
+        "description": "Lists records from a specified Airtable table"
+      },
+      {
+        "tool_id": "airtable::list_bases",
+        "description": "Lists all accessible Airtable bases"
+      },
+      {
+        "tool_id": "airtable::list_tables",
+        "description": "Lists all tables in a specific base"
+      }
+    ]
+  },
+  {
+    "query": "Search for new hires in the Turnover Retention table for the first quarter of 2023.",
+    "query_id": "gt-atlas-046-s03",
+    "target_tool_id": "airtable::search_records",
+    "cluster": "airtable",
+    "candidates": [
+      {
+        "tool_id": "airtable::search_records",
+        "description": "Search for records containing specific text"
+      },
+      {
+        "tool_id": "airtable::list_records",
+        "description": "Lists records from a specified Airtable table"
+      },
+      {
+        "tool_id": "airtable::list_bases",
+        "description": "Lists all accessible Airtable bases"
+      },
+      {
+        "tool_id": "airtable::list_tables",
+        "description": "Lists all tables in a specific base"
+      }
+    ]
+  },
+  {
+    "query": "Search for sales records in June 2022.",
+    "query_id": "gt-atlas-097-s09",
+    "target_tool_id": "airtable::search_records",
+    "cluster": "airtable",
+    "candidates": [
+      {
+        "tool_id": "airtable::search_records",
+        "description": "Search for records containing specific text"
+      },
+      {
+        "tool_id": "airtable::list_records",
+        "description": "Lists records from a specified Airtable table"
+      },
+      {
+        "tool_id": "airtable::list_bases",
+        "description": "Lists all accessible Airtable bases"
+      },
+      {
+        "tool_id": "airtable::list_tables",
+        "description": "Lists all tables in a specific base"
+      }
+    ]
+  },
+  {
+    "query": "List the top 5 employee performance records from our car dealership database.",
+    "query_id": "gt-atlas-059-s03",
+    "target_tool_id": "airtable::list_records",
+    "cluster": "airtable",
+    "candidates": [
+      {
+        "tool_id": "airtable::search_records",
+        "description": "Search for records containing specific text"
+      },
+      {
+        "tool_id": "airtable::list_records",
+        "description": "Lists records from a specified Airtable table"
+      },
+      {
+        "tool_id": "airtable::list_bases",
+        "description": "Lists all accessible Airtable bases"
+      },
+      {
+        "tool_id": "airtable::list_tables",
+        "description": "Lists all tables in a specific base"
+      }
+    ]
+  },
+  {
+    "query": "List the hiring records from the table for the last quarter of 2023.",
+    "query_id": "gt-atlas-039-s02",
+    "target_tool_id": "airtable::list_records",
+    "cluster": "airtable",
+    "candidates": [
+      {
+        "tool_id": "airtable::search_records",
+        "description": "Search for records containing specific text"
+      },
+      {
+        "tool_id": "airtable::list_records",
+        "description": "Lists records from a specified Airtable table"
+      },
+      {
+        "tool_id": "airtable::list_bases",
+        "description": "Lists all accessible Airtable bases"
+      },
+      {
+        "tool_id": "airtable::list_tables",
+        "description": "Lists all tables in a specific base"
+      }
+    ]
+  },
+  {
+    "query": "List the top 5 supplier performance records from the Supplier Performance table in our car dealership database.",
+    "query_id": "gt-atlas-066-s03",
+    "target_tool_id": "airtable::list_records",
+    "cluster": "airtable",
+    "candidates": [
+      {
+        "tool_id": "airtable::search_records",
+        "description": "Search for records containing specific text"
+      },
+      {
+        "tool_id": "airtable::list_records",
+        "description": "Lists records from a specified Airtable table"
+      },
+      {
+        "tool_id": "airtable::list_bases",
+        "description": "Lists all accessible Airtable bases"
+      },
+      {
+        "tool_id": "airtable::list_tables",
+        "description": "Lists all tables in a specific base"
+      }
+    ]
+  },
+  {
+    "query": "List the sales expenses records for the month and year when Mario Cuomo passed away.",
+    "query_id": "gt-atlas-381-s03",
+    "target_tool_id": "airtable::list_records",
+    "cluster": "airtable",
+    "candidates": [
+      {
+        "tool_id": "airtable::search_records",
+        "description": "Search for records containing specific text"
+      },
+      {
+        "tool_id": "airtable::list_records",
+        "description": "Lists records from a specified Airtable table"
+      },
+      {
+        "tool_id": "airtable::list_bases",
+        "description": "Lists all accessible Airtable bases"
+      },
+      {
+        "tool_id": "airtable::list_tables",
+        "description": "Lists all tables in a specific base"
+      }
+    ]
+  },
+  {
+    "query": "List the records from the sales expenses table in my Airtable database.",
+    "query_id": "gt-atlas-451-s03",
+    "target_tool_id": "airtable::list_records",
+    "cluster": "airtable",
+    "candidates": [
+      {
+        "tool_id": "airtable::search_records",
+        "description": "Search for records containing specific text"
+      },
+      {
+        "tool_id": "airtable::list_records",
+        "description": "Lists records from a specified Airtable table"
+      },
+      {
+        "tool_id": "airtable::list_bases",
+        "description": "Lists all accessible Airtable bases"
+      },
+      {
+        "tool_id": "airtable::list_tables",
+        "description": "Lists all tables in a specific base"
+      }
+    ]
+  },
+  {
+    "query": "List all bases in Airtable.",
+    "query_id": "gt-atlas-450-s02",
+    "target_tool_id": "airtable::list_bases",
+    "cluster": "airtable",
+    "candidates": [
+      {
+        "tool_id": "airtable::search_records",
+        "description": "Search for records containing specific text"
+      },
+      {
+        "tool_id": "airtable::list_records",
+        "description": "Lists records from a specified Airtable table"
+      },
+      {
+        "tool_id": "airtable::list_bases",
+        "description": "Lists all accessible Airtable bases"
+      },
+      {
+        "tool_id": "airtable::list_tables",
+        "description": "Lists all tables in a specific base"
+      }
+    ]
+  },
+  {
+    "query": "List all bases in my Airtable account.",
+    "query_id": "gt-atlas-179-s03",
+    "target_tool_id": "airtable::list_bases",
+    "cluster": "airtable",
+    "candidates": [
+      {
+        "tool_id": "airtable::search_records",
+        "description": "Search for records containing specific text"
+      },
+      {
+        "tool_id": "airtable::list_records",
+        "description": "Lists records from a specified Airtable table"
+      },
+      {
+        "tool_id": "airtable::list_bases",
+        "description": "Lists all accessible Airtable bases"
+      },
+      {
+        "tool_id": "airtable::list_tables",
+        "description": "Lists all tables in a specific base"
+      }
+    ]
+  },
+  {
+    "query": "List all bases in Airtable.",
+    "query_id": "gt-atlas-125-s01",
+    "target_tool_id": "airtable::list_bases",
+    "cluster": "airtable",
+    "candidates": [
+      {
+        "tool_id": "airtable::search_records",
+        "description": "Search for records containing specific text"
+      },
+      {
+        "tool_id": "airtable::list_records",
+        "description": "Lists records from a specified Airtable table"
+      },
+      {
+        "tool_id": "airtable::list_bases",
+        "description": "Lists all accessible Airtable bases"
+      },
+      {
+        "tool_id": "airtable::list_tables",
+        "description": "Lists all tables in a specific base"
+      }
+    ]
+  },
+  {
+    "query": "List all bases in my Airtable account.",
+    "query_id": "gt-atlas-103-s01",
+    "target_tool_id": "airtable::list_bases",
+    "cluster": "airtable",
+    "candidates": [
+      {
+        "tool_id": "airtable::search_records",
+        "description": "Search for records containing specific text"
+      },
+      {
+        "tool_id": "airtable::list_records",
+        "description": "Lists records from a specified Airtable table"
+      },
+      {
+        "tool_id": "airtable::list_bases",
+        "description": "Lists all accessible Airtable bases"
+      },
+      {
+        "tool_id": "airtable::list_tables",
+        "description": "Lists all tables in a specific base"
+      }
+    ]
+  },
+  {
+    "query": "List all bases in Airtable.",
+    "query_id": "gt-atlas-116-s05",
+    "target_tool_id": "airtable::list_bases",
+    "cluster": "airtable",
+    "candidates": [
+      {
+        "tool_id": "airtable::search_records",
+        "description": "Search for records containing specific text"
+      },
+      {
+        "tool_id": "airtable::list_records",
+        "description": "Lists records from a specified Airtable table"
+      },
+      {
+        "tool_id": "airtable::list_bases",
+        "description": "Lists all accessible Airtable bases"
+      },
+      {
+        "tool_id": "airtable::list_tables",
+        "description": "Lists all tables in a specific base"
+      }
+    ]
+  },
+  {
+    "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+    "query_id": "gt-atlas-450-s03",
+    "target_tool_id": "airtable::list_tables",
+    "cluster": "airtable",
+    "candidates": [
+      {
+        "tool_id": "airtable::search_records",
+        "description": "Search for records containing specific text"
+      },
+      {
+        "tool_id": "airtable::list_records",
+        "description": "Lists records from a specified Airtable table"
+      },
+      {
+        "tool_id": "airtable::list_bases",
+        "description": "Lists all accessible Airtable bases"
+      },
+      {
+        "tool_id": "airtable::list_tables",
+        "description": "Lists all tables in a specific base"
+      }
+    ]
+  },
+  {
+    "query": "List the tables in my Airtable base with ID appIF9byLfQwdHqE2.",
+    "query_id": "gt-atlas-179-s04",
+    "target_tool_id": "airtable::list_tables",
+    "cluster": "airtable",
+    "candidates": [
+      {
+        "tool_id": "airtable::search_records",
+        "description": "Search for records containing specific text"
+      },
+      {
+        "tool_id": "airtable::list_records",
+        "description": "Lists records from a specified Airtable table"
+      },
+      {
+        "tool_id": "airtable::list_bases",
+        "description": "Lists all accessible Airtable bases"
+      },
+      {
+        "tool_id": "airtable::list_tables",
+        "description": "Lists all tables in a specific base"
+      }
+    ]
+  },
+  {
+    "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+    "query_id": "gt-atlas-125-s02",
+    "target_tool_id": "airtable::list_tables",
+    "cluster": "airtable",
+    "candidates": [
+      {
+        "tool_id": "airtable::search_records",
+        "description": "Search for records containing specific text"
+      },
+      {
+        "tool_id": "airtable::list_records",
+        "description": "Lists records from a specified Airtable table"
+      },
+      {
+        "tool_id": "airtable::list_bases",
+        "description": "Lists all accessible Airtable bases"
+      },
+      {
+        "tool_id": "airtable::list_tables",
+        "description": "Lists all tables in a specific base"
+      }
+    ]
+  },
+  {
+    "query": "List all tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+    "query_id": "gt-atlas-103-s02",
+    "target_tool_id": "airtable::list_tables",
+    "cluster": "airtable",
+    "candidates": [
+      {
+        "tool_id": "airtable::search_records",
+        "description": "Search for records containing specific text"
+      },
+      {
+        "tool_id": "airtable::list_records",
+        "description": "Lists records from a specified Airtable table"
+      },
+      {
+        "tool_id": "airtable::list_bases",
+        "description": "Lists all accessible Airtable bases"
+      },
+      {
+        "tool_id": "airtable::list_tables",
+        "description": "Lists all tables in a specific base"
+      }
+    ]
+  },
+  {
+    "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+    "query_id": "gt-atlas-116-s06",
+    "target_tool_id": "airtable::list_tables",
+    "cluster": "airtable",
+    "candidates": [
+      {
+        "tool_id": "airtable::search_records",
+        "description": "Search for records containing specific text"
+      },
+      {
+        "tool_id": "airtable::list_records",
+        "description": "Lists records from a specified Airtable table"
+      },
+      {
+        "tool_id": "airtable::list_bases",
+        "description": "Lists all accessible Airtable bases"
+      },
+      {
+        "tool_id": "airtable::list_tables",
+        "description": "Lists all tables in a specific base"
+      }
+    ]
+  },
+  {
+    "query": "Find wiki pages for the sports genre in video games.",
+    "query_id": "gt-atlas-363-s05",
+    "target_tool_id": "exa::web_search_exa",
+    "cluster": "web_search",
+    "candidates": [
+      {
+        "tool_id": "exa::web_search_exa",
+        "description": "Performs real-time web searches with optimized results and content extraction."
+      },
+      {
+        "tool_id": "ddg-search::search",
+        "description": "\nSearch DuckDuckGo and return formatted results.\n\nArgs:\n    query: The search query string\n    max_results: Maximum number of results to return (default: 10)\n    ctx: MCP context for logging\n"
+      },
+      {
+        "tool_id": "brave-search::brave_web_search",
+        "description": "\n    Performs web searches using the Brave Search API and returns comprehensive search results with rich metadata.\n\n    When to use:\n        - General web searches for information, facts, or current topics\n        - Location-based queries (restaurants, businesses, points of interest)\n        - News searches for recent events or breaking stories\n        - Finding videos, discussions, or FAQ content\n        - Research requiring diverse result types (web pages, images, reviews, etc.)\n\n    Returns a JSON list of web results with title, description, and URL.\n    \n    When the \"results_filter\" parameter is empty, JSON results may also contain FAQ, Discussions, News, and Video results.\n"
+      }
+    ]
+  },
+  {
+    "query": "What was the world's top courier by revenue in 2020?",
+    "query_id": "gt-atlas-070-s00",
+    "target_tool_id": "exa::web_search_exa",
+    "cluster": "web_search",
+    "candidates": [
+      {
+        "tool_id": "exa::web_search_exa",
+        "description": "Performs real-time web searches with optimized results and content extraction."
+      },
+      {
+        "tool_id": "ddg-search::search",
+        "description": "\nSearch DuckDuckGo and return formatted results.\n\nArgs:\n    query: The search query string\n    max_results: Maximum number of results to return (default: 10)\n    ctx: MCP context for logging\n"
+      },
+      {
+        "tool_id": "brave-search::brave_web_search",
+        "description": "\n    Performs web searches using the Brave Search API and returns comprehensive search results with rich metadata.\n\n    When to use:\n        - General web searches for information, facts, or current topics\n        - Location-based queries (restaurants, businesses, points of interest)\n        - News searches for recent events or breaking stories\n        - Finding videos, discussions, or FAQ content\n        - Research requiring diverse result types (web pages, images, reviews, etc.)\n\n    Returns a JSON list of web results with title, description, and URL.\n    \n    When the \"results_filter\" parameter is empty, JSON results may also contain FAQ, Discussions, News, and Video results.\n"
+      }
+    ]
+  },
+  {
+    "query": "What is the premiere date of the film Miley Cyrus Something Beautiful?",
+    "query_id": "gt-atlas-324-s00",
+    "target_tool_id": "exa::web_search_exa",
+    "cluster": "web_search",
+    "candidates": [
+      {
+        "tool_id": "exa::web_search_exa",
+        "description": "Performs real-time web searches with optimized results and content extraction."
+      },
+      {
+        "tool_id": "ddg-search::search",
+        "description": "\nSearch DuckDuckGo and return formatted results.\n\nArgs:\n    query: The search query string\n    max_results: Maximum number of results to return (default: 10)\n    ctx: MCP context for logging\n"
+      },
+      {
+        "tool_id": "brave-search::brave_web_search",
+        "description": "\n    Performs web searches using the Brave Search API and returns comprehensive search results with rich metadata.\n\n    When to use:\n        - General web searches for information, facts, or current topics\n        - Location-based queries (restaurants, businesses, points of interest)\n        - News searches for recent events or breaking stories\n        - Finding videos, discussions, or FAQ content\n        - Research requiring diverse result types (web pages, images, reviews, etc.)\n\n    Returns a JSON list of web results with title, description, and URL.\n    \n    When the \"results_filter\" parameter is empty, JSON results may also contain FAQ, Discussions, News, and Video results.\n"
+      }
+    ]
+  },
+  {
+    "query": "What is the release date of the movie Avengers: Age of Ultron?",
+    "query_id": "gt-atlas-342-s01",
+    "target_tool_id": "exa::web_search_exa",
+    "cluster": "web_search",
+    "candidates": [
+      {
+        "tool_id": "exa::web_search_exa",
+        "description": "Performs real-time web searches with optimized results and content extraction."
+      },
+      {
+        "tool_id": "ddg-search::search",
+        "description": "\nSearch DuckDuckGo and return formatted results.\n\nArgs:\n    query: The search query string\n    max_results: Maximum number of results to return (default: 10)\n    ctx: MCP context for logging\n"
+      },
+      {
+        "tool_id": "brave-search::brave_web_search",
+        "description": "\n    Performs web searches using the Brave Search API and returns comprehensive search results with rich metadata.\n\n    When to use:\n        - General web searches for information, facts, or current topics\n        - Location-based queries (restaurants, businesses, points of interest)\n        - News searches for recent events or breaking stories\n        - Finding videos, discussions, or FAQ content\n        - Research requiring diverse result types (web pages, images, reviews, etc.)\n\n    Returns a JSON list of web results with title, description, and URL.\n    \n    When the \"results_filter\" parameter is empty, JSON results may also contain FAQ, Discussions, News, and Video results.\n"
+      }
+    ]
+  },
+  {
+    "query": "How many Oscars did The Matrix win?",
+    "query_id": "gt-atlas-207-s03",
+    "target_tool_id": "exa::web_search_exa",
+    "cluster": "web_search",
+    "candidates": [
+      {
+        "tool_id": "exa::web_search_exa",
+        "description": "Performs real-time web searches with optimized results and content extraction."
+      },
+      {
+        "tool_id": "ddg-search::search",
+        "description": "\nSearch DuckDuckGo and return formatted results.\n\nArgs:\n    query: The search query string\n    max_results: Maximum number of results to return (default: 10)\n    ctx: MCP context for logging\n"
+      },
+      {
+        "tool_id": "brave-search::brave_web_search",
+        "description": "\n    Performs web searches using the Brave Search API and returns comprehensive search results with rich metadata.\n\n    When to use:\n        - General web searches for information, facts, or current topics\n        - Location-based queries (restaurants, businesses, points of interest)\n        - News searches for recent events or breaking stories\n        - Finding videos, discussions, or FAQ content\n        - Research requiring diverse result types (web pages, images, reviews, etc.)\n\n    Returns a JSON list of web results with title, description, and URL.\n    \n    When the \"results_filter\" parameter is empty, JSON results may also contain FAQ, Discussions, News, and Video results.\n"
+      }
+    ]
+  }
+]

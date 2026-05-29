@@ -1,0 +1,157 @@
+{
+  "experiment": "E4v2-pilot",
+  "timestamp": "2026-04-07T01:55:59.490710+00:00",
+  "all_deterministic": true,
+  "clusters": [
+    {
+      "cluster": "file_operations",
+      "n_queries": 5,
+      "n_repeats": 3,
+      "determinism_rate": 1.0,
+      "deterministic_count": 5,
+      "total_queries": 5,
+      "per_query": [
+        {
+          "query_id": "gt-atlas-005-s03",
+          "deterministic": true,
+          "n_repeats": 3,
+          "top1_variants": [
+            "filesystem::list_directory"
+          ]
+        },
+        {
+          "query_id": "gt-atlas-005-s04",
+          "deterministic": true,
+          "n_repeats": 3,
+          "top1_variants": [
+            "filesystem::read_file"
+          ]
+        },
+        {
+          "query_id": "gt-atlas-019-s00",
+          "deterministic": true,
+          "n_repeats": 3,
+          "top1_variants": [
+            "filesystem::list_directory"
+          ]
+        },
+        {
+          "query_id": "gt-atlas-019-s01",
+          "deterministic": true,
+          "n_repeats": 3,
+          "top1_variants": [
+            "filesystem::list_directory"
+          ]
+        },
+        {
+          "query_id": "gt-atlas-023-s00",
+          "deterministic": true,
+          "n_repeats": 3,
+          "top1_variants": [
+            "filesystem::list_directory"
+          ]
+        }
+      ]
+    },
+    {
+      "cluster": "git_vcs",
+      "n_queries": 5,
+      "n_repeats": 3,
+      "determinism_rate": 1.0,
+      "deterministic_count": 5,
+      "total_queries": 5,
+      "per_query": [
+        {
+          "query_id": "gt-atlas-001-s00",
+          "deterministic": true,
+          "n_repeats": 3,
+          "top1_variants": [
+            "github::search_repositories"
+          ]
+        },
+        {
+          "query_id": "gt-atlas-019-s02",
+          "deterministic": true,
+          "n_repeats": 3,
+          "top1_variants": [
+            "git::git_log"
+          ]
+        },
+        {
+          "query_id": "gt-atlas-019-s03",
+          "deterministic": true,
+          "n_repeats": 3,
+          "top1_variants": [
+            "git::git_show"
+          ]
+        },
+        {
+          "query_id": "gt-atlas-023-s03",
+          "deterministic": true,
+          "n_repeats": 3,
+          "top1_variants": [
+            "git::git_log"
+          ]
+        },
+        {
+          "query_id": "gt-atlas-023-s04",
+          "deterministic": true,
+          "n_repeats": 3,
+          "top1_variants": [
+            "git::git_log"
+          ]
+        }
+      ]
+    },
+    {
+      "cluster": "database_records",
+      "n_queries": 5,
+      "n_repeats": 3,
+      "determinism_rate": 1.0,
+      "deterministic_count": 5,
+      "total_queries": 5,
+      "per_query": [
+        {
+          "query_id": "gt-atlas-003-s02",
+          "deterministic": true,
+          "n_repeats": 3,
+          "top1_variants": [
+            "airtable::list_tables"
+          ]
+        },
+        {
+          "query_id": "gt-atlas-003-s03",
+          "deterministic": true,
+          "n_repeats": 3,
+          "top1_variants": [
+            "airtable::search_records"
+          ]
+        },
+        {
+          "query_id": "gt-atlas-004-s02",
+          "deterministic": true,
+          "n_repeats": 3,
+          "top1_variants": [
+            "airtable::list_tables"
+          ]
+        },
+        {
+          "query_id": "gt-atlas-004-s03",
+          "deterministic": true,
+          "n_repeats": 3,
+          "top1_variants": [
+            "airtable::list_records"
+          ]
+        },
+        {
+          "query_id": "gt-atlas-004-s04",
+          "deterministic": true,
+          "n_repeats": 3,
+          "top1_variants": [
+            "airtable::search_records"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+annotated-types==0.7.0
+    # via pydantic
+anyio==4.12.1
+    # via httpx
+boto3==1.42.83
+botocore==1.42.83
+    # via
+    #   boto3
+    #   s3transfer
+certifi==2026.2.25
+    # via
+    #   httpcore
+    #   httpx
+colorama==0.4.6 ; sys_platform == 'win32'
+    # via loguru
+h11==0.16.0
+    # via httpcore
+httpcore==1.0.9
+    # via httpx
+httpx==0.28.1
+idna==3.11
+    # via
+    #   anyio
+    #   httpx
+jmespath==1.1.0
+    # via
+    #   boto3
+    #   botocore
+loguru==0.7.3
+pydantic==2.12.5
+pydantic-core==2.41.5
+    # via pydantic
+python-dateutil==2.9.0.post0
+    # via botocore
+s3transfer==0.16.0
+    # via boto3
+six==1.17.0
+    # via python-dateutil
+typing-extensions==4.15.0
+    # via
+    #   anyio
+    #   pydantic
+    #   pydantic-core
+    #   typing-inspection
+typing-inspection==0.4.2
+    # via pydantic
+urllib3==2.6.3
+    # via botocore
+win32-setctime==1.2.0 ; sys_platform == 'win32'
+    # via loguru

@@ -1,0 +1,5 @@
+{
+  "source": "mcp-discovery",
+  "detail-type": "server.registered",
+  "detail": {"server_id": "test-server"}
+}

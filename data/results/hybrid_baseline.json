@@ -1,0 +1,75 @@
+{
+  "experiment": "hybrid-baseline",
+  "timestamp": "2026-04-18T15:08:27.399591+00:00",
+  "config": {
+    "dense_model": "text-embedding-3-large",
+    "sparse_model": "prithivida/Splade_PP_en_v1",
+    "fusion": "RRF",
+    "pool_size": 320,
+    "reranker": "none",
+    "k_values": [
+      3,
+      5,
+      10
+    ],
+    "collection": "mcp_tools_hybrid"
+  },
+  "hybrid_results_by_k": {
+    "3": {
+      "precision_at_1": 0.3097228332600088,
+      "recall_at_k": 0.46766388033435985,
+      "server_recall_at_k": 0.5292564892212934,
+      "mrr": 0.38018771080803637,
+      "ndcg_at_5": 0.4026906863694959,
+      "confusion_rate": 0.22880815806246016,
+      "latency_p50": 390.3764999995474,
+      "latency_p95": 578.6569920019248,
+      "latency_mean": 415.98010069666293,
+      "n_queries": 2273,
+      "n_failed": 1
+    },
+    "5": {
+      "precision_at_1": 0.3018037835459745,
+      "recall_at_k": 0.5178178618565772,
+      "server_recall_at_k": 0.5723713154421469,
+      "mrr": 0.38726352837659483,
+      "ndcg_at_5": 0.42006714324736,
+      "confusion_rate": 0.3093887838689351,
+      "latency_p50": 429.5049580105115,
+      "latency_p95": 892.2949077998057,
+      "latency_mean": 543.4817814488044,
+      "n_queries": 2273,
+      "n_failed": 8
+    },
+    "10": {
+      "precision_at_1": 0.3031236251649802,
+      "recall_at_k": 0.5662120545534536,
+      "server_recall_at_k": 0.6106467223933129,
+      "mrr": 0.39313560150559707,
+      "ndcg_at_5": 0.41794633280121146,
+      "confusion_rate": 0.37752525252525254,
+      "latency_p50": 388.54554199497215,
+      "latency_p95": 875.3121332090815,
+      "latency_mean": 746.9384312405037,
+      "n_queries": 2273,
+      "n_failed": 27
+    }
+  },
+  "dense_baseline": {
+    "3": {
+      "recall_at_k": 0.2151,
+      "precision_at_1": 0.1337,
+      "mrr": 0.1682
+    },
+    "5": {
+      "recall_at_k": 0.2556,
+      "precision_at_1": 0.1337,
+      "mrr": 0.1774
+    },
+    "10": {
+      "recall_at_k": 0.2824,
+      "precision_at_1": 0.1337,
+      "mrr": 0.1822
+    }
+  }
+}

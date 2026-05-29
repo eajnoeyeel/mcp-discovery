@@ -1,0 +1,899 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  MCP Discovery MLP Service — Semantic search engine for MCP tools.
+  Each Lambda builds via Makefile: handler + selective src/ modules + per-function deps.
+
+# =============================================================================
+# Parameters — all secrets use NoEcho to prevent console/CLI exposure
+# =============================================================================
+Parameters:
+  QdrantCollectionName:
+    Type: String
+    Default: mcp_tools
+    Description: Qdrant collection name (switch to mcp_tools_hybrid for hybrid retrieval)
+
+  QdrantUrl:
+    Type: String
+    Default: "http://localhost:6333"
+    Description: Qdrant Cloud cluster URL
+
+  QdrantApiKey:
+    Type: String
+    NoEcho: true
+    Description: Qdrant Cloud API key
+
+  OpenAIApiKey:
+    Type: String
+    NoEcho: true
+    Description: OpenAI API key for text-embedding-3-small
+
+  SupabaseUrl:
+    Type: String
+    Description: Supabase project URL (e.g., https://xxx.supabase.co)
+
+  SupabaseServiceKey:
+    Type: String
+    NoEcho: true
+    Description: Supabase service role key (server-side only)
+
+  MlpApiKey:
+    Type: String
+    NoEcho: true
+    MinLength: 16
+    Description: >
+      Static API key for Denial-of-Wallet protection.
+      All HTTP requests must include x-api-key header with this value.
+
+  MlpPublicApiBaseUrl:
+    Type: String
+    Description: >
+      Public HTTPS base URL for provider OAuth callbacks
+      (for example, https://abc.execute-api.ap-northeast-2.amazonaws.com/prod).
+
+  AllowedOrigin:
+    Type: String
+    Default: "*"
+    Description: >
+      CORS allowed origin. Set to your frontend domain in prod.
+      Default '*' for dev.
+
+  StageName:
+    Type: String
+    Default: prod
+    AllowedValues: [dev, staging, prod]
+    Description: API Gateway deployment stage
+
+# =============================================================================
+# Globals — shared defaults for all Lambda functions
+# =============================================================================
+Globals:
+  Function:
+    MemorySize: 512
+    Timeout: 15
+    Tracing: Active  # X-Ray distributed tracing
+    Environment:
+      Variables:
+        # Makefile copies src/ modules to /var/task/ root — direct imports work.
+        # No PYTHONPATH manipulation needed.
+        QDRANT_URL: !Ref QdrantUrl
+        QDRANT_API_KEY: !Ref QdrantApiKey
+        OPENAI_API_KEY: !Ref OpenAIApiKey
+        SUPABASE_URL: !Ref SupabaseUrl
+        SUPABASE_SERVICE_KEY: !Ref SupabaseServiceKey
+
+# =============================================================================
+# Resources
+# =============================================================================
+Resources:
+
+  # ---------------------------------------------------------------------------
+  # API Gateway — HTTP API (lighter, cheaper than REST API)
+  # ---------------------------------------------------------------------------
+  HttpApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      StageName: !Ref StageName
+      Description: MCP Discovery MLP HTTP API
+      CorsConfiguration:
+        AllowOrigins:
+          - !Ref AllowedOrigin
+        AllowMethods:
+          - GET
+          - POST
+          - PUT
+          - OPTIONS
+        AllowHeaders:
+          - Content-Type
+          - Authorization
+          - x-api-key
+      # -----------------------------------------------------------------------
+      # Auth — Lambda authorizer for API key validation (I2: Denial-of-Wallet)
+      # HttpApi does NOT support native Usage Plans / API Keys.
+      # A lightweight Lambda authorizer checks the x-api-key header instead.
+      # CORS preflight (OPTIONS) is handled by API Gateway before the
+      # authorizer runs, so no Auth:NONE override is needed for OPTIONS.
+      # -----------------------------------------------------------------------
+      Auth:
+        DefaultAuthorizer: ApiKeyAuthorizer
+        Authorizers:
+          ApiKeyAuthorizer:
+            AuthorizerPayloadFormatVersion: "2.0"
+            EnableSimpleResponses: true
+            FunctionArn: !GetAtt ApiKeyAuthorizerFunction.Arn
+            EnableFunctionDefaultPermissions: true
+            Identity:
+              Headers:
+                - x-api-key
+              ReauthorizeEvery: 300  # Cache authorizer result for 5 minutes
+      # Throttling protects downstream services (Qdrant, OpenAI) from burst
+      DefaultRouteSettings:
+        ThrottlingBurstLimit: 50
+        ThrottlingRateLimit: 100
+
+  # ---------------------------------------------------------------------------
+  # ApiKeyAuthorizerFunction — validates x-api-key header (I2: Denial-of-Wallet)
+  # Tiny footprint: 128 MB, 3s timeout, no external deps. Result cached 300s.
+  # ---------------------------------------------------------------------------
+  ApiKeyAuthorizerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: python3.12
+      Architectures:
+        - arm64
+      FunctionName: !Sub "mcp-discovery-authorizer-${StageName}"
+      Handler: handler.lambda_handler
+      CodeUri: dist/ApiKeyAuthorizerFunction
+      MemorySize: 128  # Minimal — just string comparison
+      Timeout: 3
+      Environment:
+        Variables:
+          MLP_API_KEY: !Ref MlpApiKey
+
+  # ---------------------------------------------------------------------------
+  # SearchFunctionImage — POST /api/search
+  # Embedding search -> operability merge -> confidence branching
+  # ---------------------------------------------------------------------------
+  SearchFunctionImage:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "mcp-discovery-search-hybrid-${StageName}"
+      PackageType: Image
+      MemorySize: 2048
+      Architectures:
+        - x86_64  # onnxruntime fails on Lambda arm64 sandbox (cpuinfo abort) — ADR-0017 Step 0-B
+      Description: Semantic tool search (embedding + operability + confidence branching)
+      Environment:
+        Variables:
+          QDRANT_COLLECTION_NAME: !Ref QdrantCollectionName
+          HF_HOME: /var/task/.cache/fastembed
+          CONFIDENCE_GAP_THRESHOLD_HYBRID: "0.005"
+      Events:
+        SearchApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/search
+            Method: POST
+    Metadata:
+      DockerTag: search-latest
+      DockerContext: ..
+      Dockerfile: service/lambdas/search/Dockerfile
+
+  CatalogFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: python3.12
+      Architectures:
+        - arm64
+      FunctionName: !Sub "mcp-discovery-catalog-${StageName}"
+      Handler: handler.lambda_handler
+      CodeUri: dist/CatalogFunction
+      Description: Public catalog read APIs for landing, registry, and tool detail pages
+      Events:
+        PlatformStatsApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/platform/stats
+            Method: GET
+        ServersListApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/servers
+            Method: GET
+        ServerDetailApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/servers/{server_id}
+            Method: GET
+        ServerToolsApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/servers/{server_id}/tools
+            Method: GET
+        ServerQualityApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/servers/{server_id}/quality
+            Method: GET
+        ToolDetailApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/tools/{tool_id}
+            Method: GET
+        ToolStatsApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/tools/{tool_id}/stats
+            Method: GET
+
+  DashboardFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: python3.12
+      Architectures:
+        - arm64
+      FunctionName: !Sub "mcp-discovery-dashboard-${StageName}"
+      Handler: handler.lambda_handler
+      CodeUri: dist/DashboardFunction
+      Description: Provider-scoped dashboard read APIs
+      Events:
+        ProviderDashboardApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/providers/dashboard
+            Method: GET
+        ProviderToolDetailApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/providers/tools/{tool_id}
+            Method: GET
+        ProviderToolUpdateApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/providers/tools/{tool_id}
+            Method: PUT
+        ProviderToolAnalyticsApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/providers/tools/{tool_id}/analytics
+            Method: GET
+        ProviderToolInsightsApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/providers/tools/{tool_id}/insights
+            Method: GET
+        ProviderToolRefreshPreviewApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/providers/tools/{tool_id}/metadata-refresh-preview
+            Method: POST
+        ProviderToolRefreshApplyApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/providers/tools/{tool_id}/metadata-refresh-apply
+            Method: POST
+        ProviderProfileGetApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/providers/profile
+            Method: GET
+        ProviderProfilePutApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/providers/profile
+            Method: PUT
+
+  # ---------------------------------------------------------------------------
+  # RegisterFunction — POST /api/servers
+  # Accepts server registration, writes to Supabase, emits EventBridge event
+  # ---------------------------------------------------------------------------
+  RegisterFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: python3.12
+      Architectures:
+        - arm64
+      FunctionName: !Sub "mcp-discovery-register-${StageName}"
+      Handler: handler.lambda_handler
+      CodeUri: dist/RegisterFunction
+      Description: Register a new MCP server and its tools
+      Policies:
+        # Allow emitting events to trigger async indexing
+        - EventBridgePutEventsPolicy:
+            EventBusName: default
+        - Statement:
+            - Effect: Allow
+              Action:
+                - secretsmanager:CreateSecret
+                - secretsmanager:PutSecretValue
+                - secretsmanager:GetSecretValue
+              Resource: !Sub "arn:${AWS::Partition}:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:mlp/*"
+      Environment:
+        Variables:
+          MLP_PUBLIC_API_BASE_URL: !Ref MlpPublicApiBaseUrl
+      Events:
+        RegisterApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/servers
+            Method: POST
+        RegisterDiscoveryApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/providers/servers/discovery
+            Method: POST
+        OauthProviderBootstrapDiscoverApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/oauth/providers/bootstrap/discover
+            Method: POST
+        OauthProviderBootstrapDcrApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/oauth/providers/bootstrap/dcr
+            Method: POST
+        OauthProviderBootstrapManualApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/oauth/providers/bootstrap/manual
+            Method: POST
+        OauthProviderBootstrapEnableApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/oauth/providers/{provider_key}/enable
+            Method: POST
+
+  # ---------------------------------------------------------------------------
+  # IndexFunctionImage — triggered by EventBridge (server.registered)
+  # Embeds tool descriptions and upserts to Qdrant. Longer timeout for batch work.
+  # ---------------------------------------------------------------------------
+  IndexFunctionImage:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "mcp-discovery-index-hybrid-${StageName}"
+      PackageType: Image
+      MemorySize: 3008
+      Timeout: 120
+      Architectures:
+        - x86_64  # onnxruntime fails on Lambda arm64 sandbox (cpuinfo abort) — ADR-0017 Step 0-B
+      Description: Async indexing — embed tool descriptions and upsert to Qdrant
+      Environment:
+        Variables:
+          QDRANT_COLLECTION_NAME: !Ref QdrantCollectionName
+          HF_HOME: /var/task/.cache/fastembed
+          ENRICHMENT_MODEL: gpt-4o-mini
+          ENRICHMENT_TIMEOUT_S: "10"
+          ENRICHMENT_DISABLED: "false"
+      DeadLetterQueue:
+        Type: SQS
+        TargetArn: !GetAtt IndexDLQ.Arn
+      Events:
+        ServerRegistered:
+          Type: EventBridgeRule
+          Properties:
+            Pattern:
+              source:
+                - "mcp-discovery"
+              detail-type:
+                - "server.registered"
+    Metadata:
+      DockerTag: index-latest
+      DockerContext: ..
+      Dockerfile: service/lambdas/index/Dockerfile
+
+  # ---------------------------------------------------------------------------
+  # ExecuteFunction — POST /api/execute
+  # Thin proxy: forwards tool execution to the provider's MCP server.
+  # Longer timeout (30s) because downstream MCP execution is unpredictable.
+  # ---------------------------------------------------------------------------
+  ExecuteFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: python3.12
+      Architectures:
+        - arm64
+      FunctionName: !Sub "mcp-discovery-execute-${StageName}"
+      Handler: handler.lambda_handler
+      CodeUri: dist/ExecuteFunction
+      Timeout: 30  # Downstream MCP execution latency is variable
+      Description: Proxy tool execution to provider MCP servers
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - secretsmanager:GetSecretValue
+              Resource: !Sub "arn:${AWS::Partition}:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:mlp/*"
+      Events:
+        ExecuteApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/execute
+            Method: POST
+
+  # ---------------------------------------------------------------------------
+  # BridgeFunction — POST /mcp, GET /mcp
+  # MCP protocol endpoint: LLM clients connect here as a standard MCP server.
+  # Exposes find_best_tool and execute_tool via MCP protocol.
+  # ---------------------------------------------------------------------------
+  BridgeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "mcp-discovery-bridge-${StageName}"
+      PackageType: Image
+      Architectures:
+        - x86_64  # keep query-plane retrieval capability aligned with SearchFunctionImage
+      MemorySize: 2048
+      Timeout: 30  # Must accommodate execute_tool proxy (MCPHTTPClient 25s)
+      Description: Bridge MCP Server — LLM clients connect via MCP protocol
+      Environment:
+        Variables:
+          QDRANT_COLLECTION_NAME: !Ref QdrantCollectionName
+          HF_HOME: /var/task/.cache/fastembed
+          CONFIDENCE_GAP_THRESHOLD_HYBRID: "0.005"
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - secretsmanager:GetSecretValue
+              Resource: !Sub "arn:${AWS::Partition}:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:mlp/*"
+      Events:
+        BridgePost:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /mcp
+            Method: POST
+            Auth:
+              Authorizer: NONE
+        BridgeGet:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /mcp
+            Method: GET
+            Auth:
+              Authorizer: NONE
+    Metadata:
+      DockerTag: bridge-latest
+      DockerContext: ..
+      Dockerfile: service/lambdas/bridge/Dockerfile
+
+  # ---------------------------------------------------------------------------
+  # OAuthStartFunction / OAuthCallbackFunction — delegated provider OAuth
+  # ---------------------------------------------------------------------------
+  OAuthStartFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: python3.12
+      Architectures:
+        - arm64
+      FunctionName: !Sub "mcp-discovery-oauth-start-${StageName}"
+      Handler: handler.lambda_handler
+      CodeUri: dist/OAuthStartFunction
+      Description: Start delegated provider OAuth authorization
+      Events:
+        OAuthStartApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/oauth/providers/{provider}/start
+            Method: POST
+
+  OAuthCallbackFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: python3.12
+      Architectures:
+        - arm64
+      FunctionName: !Sub "mcp-discovery-oauth-callback-${StageName}"
+      Handler: handler.lambda_handler
+      CodeUri: dist/OAuthCallbackFunction
+      Description: Complete delegated provider OAuth authorization
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - secretsmanager:GetSecretValue
+              Resource: !Sub "arn:${AWS::Partition}:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:mlp/*"
+      Events:
+        OAuthCallbackApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/oauth/providers/{provider}/callback
+            Method: GET
+            Auth:
+              Authorizer: NONE
+
+  # ---------------------------------------------------------------------------
+  # IndexDLQ — Dead Letter Queue for failed indexing events
+  # 14-day retention (max) so we can inspect and retry failures
+  # ---------------------------------------------------------------------------
+  IndexDLQ:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub "mcp-discovery-index-dlq-${StageName}"
+      MessageRetentionPeriod: 1209600  # 14 days (maximum)
+      VisibilityTimeout: 90  # Must be >= Lambda timeout (60s)
+
+  # ---------------------------------------------------------------------------
+  # IndexDLQConsumerFunction — retries failed indexing events from DLQ
+  # Reads SQS messages containing original EventBridge payloads, fetches tools
+  # in 'failed' status, and retries embedding + Qdrant upsert.
+  # Circuit breaker: skips messages after 3 receive attempts.
+  # ---------------------------------------------------------------------------
+  IndexDLQConsumerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: python3.12
+      Architectures:
+        - arm64
+      FunctionName: !Sub "mcp-discovery-index-dlq-consumer-${StageName}"
+      Handler: handler.lambda_handler
+      CodeUri: dist/IndexDLQConsumerFunction
+      Timeout: 60  # Same as IndexFunctionImage — embedding + Qdrant upsert
+      MemorySize: 256
+      Description: DLQ consumer — retry failed tool indexing
+      Events:
+        IndexDLQEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt IndexDLQ.Arn
+            BatchSize: 1
+            FunctionResponseTypes:
+              - ReportBatchItemFailures
+
+  # ---------------------------------------------------------------------------
+  # OpsAlertsTopic — SNS topic for CloudWatch alarm notifications
+  # Subscribe email/Slack endpoints after deployment
+  # ---------------------------------------------------------------------------
+  OpsAlertsTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: !Sub "${AWS::StackName}-ops-alerts"
+
+  # ---------------------------------------------------------------------------
+  # WarmingRule — keeps SearchFunctionImage warm to avoid cold starts
+  # Fires every 5 minutes. Handler must detect and short-circuit warming events.
+  # ---------------------------------------------------------------------------
+  WarmingRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Description: Keep SearchFunctionImage warm (5-min interval)
+      ScheduleExpression: "rate(5 minutes)"
+      State: ENABLED
+      Targets:
+        - Arn: !GetAtt SearchFunctionImage.Arn
+          Id: SearchFunctionImageWarming
+          Input: '{"source": "warming"}'
+
+  # Permission for EventBridge to invoke SearchFunctionImage (warming)
+  WarmingPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref SearchFunctionImage
+      Action: lambda:InvokeFunction
+      Principal: events.amazonaws.com
+      SourceArn: !GetAtt WarmingRule.Arn
+
+  # ---------------------------------------------------------------------------
+  # BridgeWarmingRule — keeps BridgeFunction warm to avoid cold starts
+  # Same pattern as SearchFunctionImage warming. Bridge initializes the full RAG
+  # pipeline at module level (~2-3s cold start) which is unacceptable for MCP clients.
+  # ---------------------------------------------------------------------------
+  BridgeWarmingRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Description: Keep BridgeFunction warm (5-min interval)
+      ScheduleExpression: "rate(5 minutes)"
+      State: ENABLED
+      Targets:
+        - Arn: !GetAtt BridgeFunction.Arn
+          Id: BridgeFunctionWarming
+          Input: '{"source": "warming"}'
+
+  BridgeWarmingPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref BridgeFunction
+      Action: lambda:InvokeFunction
+      Principal: events.amazonaws.com
+      SourceArn: !GetAtt BridgeWarmingRule.Arn
+
+  # ---------------------------------------------------------------------------
+  # CloudWatch Alarms — operational observability
+  # ---------------------------------------------------------------------------
+
+  # SearchLatencyAlarm: fires when p95 latency exceeds 2 seconds
+  SearchLatencyAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub "mcp-discovery-search-p95-latency-${StageName}"
+      AlarmDescription: >
+        Search function p95 latency exceeds 2000ms.
+        Check Qdrant/OpenAI connectivity and cold start frequency.
+      Namespace: AWS/Lambda
+      MetricName: Duration
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref SearchFunctionImage
+      ExtendedStatistic: p95
+      Period: 300  # 5 minutes
+      EvaluationPeriods: 2
+      Threshold: 2000  # 2 seconds in ms
+      ComparisonOperator: GreaterThanThreshold
+      TreatMissingData: notBreaching
+      AlarmActions:
+        - !Ref OpsAlertsTopic
+
+  # SearchErrorAlarm: fires when error count exceeds 5 in a 5-minute window
+  SearchErrorAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub "mcp-discovery-search-errors-${StageName}"
+      AlarmDescription: >
+        Search function errors exceeded threshold.
+        Check logs for Qdrant/OpenAI API failures.
+      Namespace: AWS/Lambda
+      MetricName: Errors
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref SearchFunctionImage
+      Statistic: Sum
+      Period: 300  # 5 minutes
+      EvaluationPeriods: 1
+      Threshold: 5
+      ComparisonOperator: GreaterThanThreshold
+      TreatMissingData: notBreaching
+      AlarmActions:
+        - !Ref OpsAlertsTopic
+
+  # ---------------------------------------------------------------------------
+  # Index Function Alarms
+  # ---------------------------------------------------------------------------
+  IndexErrorAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub "mcp-discovery-index-errors-${StageName}"
+      AlarmDescription: >
+        Index function errors exceeded threshold.
+        Check logs for OpenAI/Qdrant failures.
+      Namespace: AWS/Lambda
+      MetricName: Errors
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref IndexFunctionImage
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 3
+      ComparisonOperator: GreaterThanThreshold
+      TreatMissingData: notBreaching
+      AlarmActions:
+        - !Ref OpsAlertsTopic
+
+  IndexThrottleAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub "mcp-discovery-index-throttles-${StageName}"
+      AlarmDescription: >
+        Index function throttled. Check concurrent execution limits.
+      Namespace: AWS/Lambda
+      MetricName: Throttles
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref IndexFunctionImage
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 1
+      ComparisonOperator: GreaterThanThreshold
+      TreatMissingData: notBreaching
+      AlarmActions:
+        - !Ref OpsAlertsTopic
+
+  # ---------------------------------------------------------------------------
+  # Execute Function Alarms
+  # ---------------------------------------------------------------------------
+  ExecuteErrorAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub "mcp-discovery-execute-errors-${StageName}"
+      AlarmDescription: >
+        Execute function errors exceeded threshold.
+        Check upstream MCP server connectivity.
+      Namespace: AWS/Lambda
+      MetricName: Errors
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref ExecuteFunction
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 5
+      ComparisonOperator: GreaterThanThreshold
+      TreatMissingData: notBreaching
+      AlarmActions:
+        - !Ref OpsAlertsTopic
+
+  ExecuteLatencyAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub "mcp-discovery-execute-p95-latency-${StageName}"
+      AlarmDescription: >
+        Execute function p95 latency exceeds 10 seconds.
+        Check upstream MCP server response times.
+      Namespace: AWS/Lambda
+      MetricName: Duration
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref ExecuteFunction
+      ExtendedStatistic: p95
+      Period: 300
+      EvaluationPeriods: 2
+      Threshold: 10000
+      ComparisonOperator: GreaterThanThreshold
+      TreatMissingData: notBreaching
+      AlarmActions:
+        - !Ref OpsAlertsTopic
+
+  # ---------------------------------------------------------------------------
+  # Bridge Function Alarms
+  # ---------------------------------------------------------------------------
+  BridgeErrorAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub "mcp-discovery-bridge-errors-${StageName}"
+      AlarmDescription: >
+        Bridge MCP function errors exceeded threshold.
+        Check RAG pipeline and downstream services.
+      Namespace: AWS/Lambda
+      MetricName: Errors
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref BridgeFunction
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 5
+      ComparisonOperator: GreaterThanThreshold
+      TreatMissingData: notBreaching
+      AlarmActions:
+        - !Ref OpsAlertsTopic
+
+  BridgeLatencyAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub "mcp-discovery-bridge-p95-latency-${StageName}"
+      AlarmDescription: >
+        Bridge MCP function p95 latency exceeds 3 seconds.
+        Check Qdrant/OpenAI connectivity and cold starts.
+      Namespace: AWS/Lambda
+      MetricName: Duration
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref BridgeFunction
+      ExtendedStatistic: p95
+      Period: 300
+      EvaluationPeriods: 2
+      Threshold: 3000
+      ComparisonOperator: GreaterThanThreshold
+      TreatMissingData: notBreaching
+      AlarmActions:
+        - !Ref OpsAlertsTopic
+
+  # ---------------------------------------------------------------------------
+  # Register Function Alarm
+  # ---------------------------------------------------------------------------
+  RegisterErrorAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub "mcp-discovery-register-errors-${StageName}"
+      AlarmDescription: >
+        Register function errors exceeded threshold.
+        Check Supabase connectivity and EventBridge publishing.
+      Namespace: AWS/Lambda
+      MetricName: Errors
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref RegisterFunction
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 5
+      ComparisonOperator: GreaterThanThreshold
+      TreatMissingData: notBreaching
+      AlarmActions:
+        - !Ref OpsAlertsTopic
+
+  # ---------------------------------------------------------------------------
+  # DLQ Depth Alarms — alert when messages accumulate
+  # ---------------------------------------------------------------------------
+  IndexDLQDepthAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub "mcp-discovery-index-dlq-depth-${StageName}"
+      AlarmDescription: >
+        IndexDLQ has accumulated messages. Failed indexing events need investigation.
+      Namespace: AWS/SQS
+      MetricName: ApproximateNumberOfMessagesVisible
+      Dimensions:
+        - Name: QueueName
+          Value: !GetAtt IndexDLQ.QueueName
+      Statistic: Maximum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 5
+      ComparisonOperator: GreaterThanThreshold
+      TreatMissingData: notBreaching
+      AlarmActions:
+        - !Ref OpsAlertsTopic
+
+  # ---------------------------------------------------------------------------
+  # IndexReplayFunction — rescues stuck event_failed/pending tools
+  # Scans for tools stuck in event_failed (EventBridge publish failed) or
+  # pending (indexing never triggered) state for >30 min. Resets them and
+  # re-publishes server.registered events. Runs every 30 minutes.
+  # ---------------------------------------------------------------------------
+  IndexReplayFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: python3.12
+      Architectures:
+        - arm64
+      FunctionName: !Sub "mcp-discovery-index-replay-${StageName}"
+      Handler: handler.lambda_handler
+      CodeUri: dist/IndexReplayFunction
+      Timeout: 60
+      MemorySize: 256
+      Description: Replay stuck tools — re-emit EventBridge events for failed indexing
+      Policies:
+        - EventBridgePutEventsPolicy:
+            EventBusName: default
+      Events:
+        ReplaySchedule:
+          Type: Schedule
+          Properties:
+            Schedule: rate(30 minutes)
+            Description: Scan and replay stuck tools every 30 minutes
+            Enabled: true
+
+# =============================================================================
+# Outputs — values needed by CI/CD, frontend config, and MCP client setup
+# =============================================================================
+Outputs:
+  ApiUrl:
+    Description: Base URL for all API endpoints
+    Value: !Sub "https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com/${StageName}"
+
+  SearchFunctionImageArn:
+    Description: ARN of the Search Lambda (for monitoring and IAM references)
+    Value: !GetAtt SearchFunctionImage.Arn
+
+  BridgeMcpEndpoint:
+    Description: MCP protocol endpoint — point LLM clients here
+    Value: !Sub "https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com/${StageName}/mcp"

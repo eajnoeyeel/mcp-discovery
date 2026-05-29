@@ -1,0 +1,17 @@
+# Server_ids in scope for the targeted reconcile (ADR-0018 Phase 5).
+# Derived from `uv run python scripts/validate_pool_gt_alignment.py 2>&1` on branch
+# feat/hybrid-search-rollout at baseline commit bacfbf8 (321 errors total).
+#
+# Breakdown:
+#   postgres       — 58 errors (server missing from pool)
+#   yahoo-finance  — 56 errors (server missing from pool)
+#   brave-search   — 54 errors (tool drift in pool server)
+#   arxiv          — 37 errors (tool drift in pool server)
+#   github         —  2 errors  (get_commit → list_commits, seeded in manual_remaps.yaml)
+#
+# One server_id per line. Lines starting with `#` are comments; blank lines ignored.
+postgres
+yahoo-finance
+brave-search
+arxiv
+github

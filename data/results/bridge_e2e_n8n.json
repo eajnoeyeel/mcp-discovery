@@ -1,0 +1,35 @@
+{
+  "test": "Full Bridge E2E — n8n-documentation-mcp",
+  "date": "2026-04-14",
+  "status": "PASSED",
+  "steps": {
+    "register": {
+      "tools_indexed": 7,
+      "server_id": "n8n-documentation-mcp",
+      "latency_ms": 477
+    },
+    "search": {
+      "query": "Search for automation workflow nodes",
+      "top_result": "n8n-documentation-mcp::search_nodes",
+      "rank": 1,
+      "score": 0.4265,
+      "latency_ms": 350,
+      "queries_tested": 4,
+      "queries_hit": 3
+    },
+    "execute": {
+      "tool_id": "n8n-documentation-mcp::search_nodes",
+      "params": {"query": "Slack"},
+      "success": true,
+      "latency_ms": 1854,
+      "path": "BridgeService → ExecuteService → MCPHTTPClient → HTTP bridge (localhost:9800) → n8n-mcp stdio",
+      "result_preview": "Slack node + Slack Trigger (2 results)"
+    }
+  },
+  "infra": {
+    "qdrant": "localhost:6333",
+    "supabase": "ojuclgsxseygcnjgdpau.supabase.co",
+    "http_bridge": "localhost:9800 → /opt/homebrew/bin/n8n-mcp",
+    "embedding": "text-embedding-3-large"
+  }
+}

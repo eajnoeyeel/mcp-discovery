@@ -1,0 +1,90 @@
+{
+  "experiment": "cross-vendor per-client description",
+  "cluster": "web_search",
+  "target": "tavily_search",
+  "query": "Search the web for recent news about AI regulation in Europe",
+  "reps": 5,
+  "models": [
+    "gpt-4o-mini",
+    "gemini-2.0-flash"
+  ],
+  "descriptions": {
+    "V_orig": "Performs real-time web searches with sophisticated filtering options and content extraction.",
+    "V_gpt": "Search the web for real-time results with AI-powered content extraction.\n\n## Key Features\n- **Date filtering**: restrict results to recent content (last 24h, week, month)\n- **Domain control**: include",
+    "V_gem": "Tool: tavily_search\nCategory: Web Search / News & Research\nFunction: Executes real-time web search with AI-powered result ranking and full content extraction.\nSupported Modes: [general | news | resear"
+  },
+  "results": {
+    "V_orig (original)": {
+      "GPT": {
+        "hits": 0,
+        "rate": 0.0,
+        "picks": [
+          "kagi_search",
+          "google_custom_search",
+          "kagi_search",
+          "kagi_search",
+          "kagi_search"
+        ]
+      },
+      "Gemini": {
+        "hits": 0,
+        "rate": 0.0,
+        "picks": [
+          "ERROR:Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=REDACTED_GOOGLE_API_KEY'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+          "ERROR:Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=REDACTED_GOOGLE_API_KEY'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+          "ERROR:Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=REDACTED_GOOGLE_API_KEY'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+          "ERROR:Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=REDACTED_GOOGLE_API_KEY'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+          "ERROR:Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=REDACTED_GOOGLE_API_KEY'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+        ]
+      }
+    },
+    "V_gpt (GPT-optimized)": {
+      "GPT": {
+        "hits": 5,
+        "rate": 1.0,
+        "picks": [
+          "tavily_search",
+          "tavily_search",
+          "tavily_search",
+          "tavily_search",
+          "tavily_search"
+        ]
+      },
+      "Gemini": {
+        "hits": 0,
+        "rate": 0.0,
+        "picks": [
+          "ERROR:Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=REDACTED_GOOGLE_API_KEY'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+          "ERROR:Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=REDACTED_GOOGLE_API_KEY'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+          "ERROR:Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=REDACTED_GOOGLE_API_KEY'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+          "ERROR:Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=REDACTED_GOOGLE_API_KEY'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+          "ERROR:Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=REDACTED_GOOGLE_API_KEY'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+        ]
+      }
+    },
+    "V_gem (Gemini-optimized)": {
+      "GPT": {
+        "hits": 5,
+        "rate": 1.0,
+        "picks": [
+          "tavily_search",
+          "tavily_search",
+          "tavily_search",
+          "tavily_search",
+          "tavily_search"
+        ]
+      },
+      "Gemini": {
+        "hits": 0,
+        "rate": 0.0,
+        "picks": [
+          "ERROR:Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=REDACTED_GOOGLE_API_KEY'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+          "ERROR:Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=REDACTED_GOOGLE_API_KEY'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+          "ERROR:Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=REDACTED_GOOGLE_API_KEY'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+          "ERROR:Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=REDACTED_GOOGLE_API_KEY'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429",
+          "ERROR:Client error '429 Too Many Requests' for url 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=REDACTED_GOOGLE_API_KEY'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429"
+        ]
+      }
+    }
+  }
+}

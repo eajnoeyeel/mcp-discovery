@@ -1,0 +1,751 @@
+{
+  "analysis_date": "2026-04-14",
+  "overall_results": {
+    "V_orig": {
+      "gpt_hits": 425,
+      "gpt_trials": 510,
+      "gpt_rate": 0.8333,
+      "claude_sim_hits": 131,
+      "claude_sim_trials": 153,
+      "claude_sim_rate": 0.8562
+    },
+    "V_prose": {
+      "gpt_hits": 483,
+      "gpt_trials": 510,
+      "gpt_rate": 0.9471,
+      "claude_sim_hits": 147,
+      "claude_sim_trials": 153,
+      "claude_sim_rate": 0.9608
+    },
+    "V_md": {
+      "gpt_hits": 490,
+      "gpt_trials": 510,
+      "gpt_rate": 0.9608,
+      "claude_sim_hits": 147,
+      "claude_sim_trials": 153,
+      "claude_sim_rate": 0.9608
+    },
+    "V_xml": {
+      "gpt_hits": 494,
+      "gpt_trials": 510,
+      "gpt_rate": 0.9686,
+      "claude_sim_hits": 147,
+      "claude_sim_trials": 153,
+      "claude_sim_rate": 0.9608
+    },
+    "V_spec": {
+      "gpt_hits": 489,
+      "gpt_trials": 510,
+      "gpt_rate": 0.9588,
+      "claude_sim_hits": 147,
+      "claude_sim_trials": 153,
+      "claude_sim_rate": 0.9608
+    }
+  },
+  "H1": {
+    "description": "Information Effect: V_orig vs V_prose",
+    "gpt": {
+      "model": "gpt",
+      "V_orig_hits": 425,
+      "V_orig_trials": 510,
+      "V_orig_rate": 0.8333,
+      "V_prose_hits": 483,
+      "V_prose_trials": 510,
+      "V_prose_rate": 0.9471,
+      "diff": 0.1138,
+      "z": 5.8087,
+      "p_value": 0.0,
+      "cohens_h": 0.377,
+      "ci_95": [
+        0.0761,
+        0.1515
+      ],
+      "significant_at_005": true
+    },
+    "claude_sim": {
+      "model": "claude_sim",
+      "V_orig_hits": 131,
+      "V_orig_trials": 153,
+      "V_orig_rate": 0.8562,
+      "V_prose_hits": 147,
+      "V_prose_trials": 153,
+      "V_prose_rate": 0.9608,
+      "diff": 0.1046,
+      "z": 3.1723,
+      "p_value": 0.001512,
+      "cohens_h": 0.3793,
+      "ci_95": [
+        0.0411,
+        0.1681
+      ],
+      "significant_at_005": true
+    }
+  },
+  "H2": {
+    "description": "Format Specificity: V_prose vs V_md/V_xml/V_spec (Bonferroni-corrected)",
+    "gpt_V_md_vs_prose": {
+      "V_md_rate": 0.9608,
+      "V_prose_rate": 0.9471,
+      "diff": 0.0137,
+      "z": 1.0454,
+      "p_value_raw": 0.295827,
+      "p_value_bonferroni": 0.887481,
+      "cohens_h": 0.0655,
+      "ci_95": [
+        -0.012,
+        0.0394
+      ],
+      "significant_bonferroni": false,
+      "alpha_bonferroni": 0.0167
+    },
+    "gpt_V_xml_vs_prose": {
+      "V_xml_rate": 0.9686,
+      "V_prose_rate": 0.9471,
+      "diff": 0.0215,
+      "z": 1.714,
+      "p_value_raw": 0.086528,
+      "p_value_bonferroni": 0.259584,
+      "cohens_h": 0.1079,
+      "ci_95": [
+        -0.0031,
+        0.0461
+      ],
+      "significant_bonferroni": false,
+      "alpha_bonferroni": 0.0167
+    },
+    "gpt_V_spec_vs_prose": {
+      "V_spec_rate": 0.9588,
+      "V_prose_rate": 0.9471,
+      "diff": 0.0117,
+      "z": 0.8872,
+      "p_value_raw": 0.374998,
+      "p_value_bonferroni": 1.0,
+      "cohens_h": 0.0554,
+      "ci_95": [
+        -0.0143,
+        0.0377
+      ],
+      "significant_bonferroni": false,
+      "alpha_bonferroni": 0.0167
+    },
+    "claude_sim_V_md_vs_prose": {
+      "V_md_rate": 0.9608,
+      "V_prose_rate": 0.9608,
+      "diff": 0.0,
+      "z": 0.0,
+      "p_value_raw": 1.0,
+      "p_value_bonferroni": 1.0,
+      "cohens_h": 0.0,
+      "ci_95": [
+        -0.0435,
+        0.0435
+      ],
+      "significant_bonferroni": false,
+      "alpha_bonferroni": 0.0167
+    },
+    "claude_sim_V_xml_vs_prose": {
+      "V_xml_rate": 0.9608,
+      "V_prose_rate": 0.9608,
+      "diff": 0.0,
+      "z": 0.0,
+      "p_value_raw": 1.0,
+      "p_value_bonferroni": 1.0,
+      "cohens_h": 0.0,
+      "ci_95": [
+        -0.0435,
+        0.0435
+      ],
+      "significant_bonferroni": false,
+      "alpha_bonferroni": 0.0167
+    },
+    "claude_sim_V_spec_vs_prose": {
+      "V_spec_rate": 0.9608,
+      "V_prose_rate": 0.9608,
+      "diff": 0.0,
+      "z": 0.0,
+      "p_value_raw": 1.0,
+      "p_value_bonferroni": 1.0,
+      "cohens_h": 0.0,
+      "ci_95": [
+        -0.0435,
+        0.0435
+      ],
+      "significant_bonferroni": false,
+      "alpha_bonferroni": 0.0167
+    }
+  },
+  "H3": {
+    "description": "Cross-Vendor Interference: any enriched format < V_prose? (one-sided)",
+    "gpt_V_md_below_prose": {
+      "V_md_rate": 0.9608,
+      "V_prose_rate": 0.9471,
+      "diff": 0.0137,
+      "z": 1.0454,
+      "p_value_one_sided": 0.852087,
+      "interference_detected": false
+    },
+    "gpt_V_xml_below_prose": {
+      "V_xml_rate": 0.9686,
+      "V_prose_rate": 0.9471,
+      "diff": 0.0215,
+      "z": 1.714,
+      "p_value_one_sided": 0.956736,
+      "interference_detected": false
+    },
+    "gpt_V_spec_below_prose": {
+      "V_spec_rate": 0.9588,
+      "V_prose_rate": 0.9471,
+      "diff": 0.0117,
+      "z": 0.8872,
+      "p_value_one_sided": 0.812501,
+      "interference_detected": false
+    },
+    "gpt_any_interference": false,
+    "claude_sim_V_md_below_prose": {
+      "V_md_rate": 0.9608,
+      "V_prose_rate": 0.9608,
+      "diff": 0.0,
+      "z": 0.0,
+      "p_value_one_sided": 0.5,
+      "interference_detected": false
+    },
+    "claude_sim_V_xml_below_prose": {
+      "V_xml_rate": 0.9608,
+      "V_prose_rate": 0.9608,
+      "diff": 0.0,
+      "z": 0.0,
+      "p_value_one_sided": 0.5,
+      "interference_detected": false
+    },
+    "claude_sim_V_spec_below_prose": {
+      "V_spec_rate": 0.9608,
+      "V_prose_rate": 0.9608,
+      "diff": 0.0,
+      "z": 0.0,
+      "p_value_one_sided": 0.5,
+      "interference_detected": false
+    },
+    "claude_sim_any_interference": false
+  },
+  "unexpected_finding": {
+    "description": "V_xml outperforms V_md on GPT (counter-intuitive)",
+    "V_xml_rate_gpt": 0.9686,
+    "V_md_rate_gpt": 0.9608,
+    "diff": 0.0078,
+    "z": 0.6788,
+    "p_value": 0.497295,
+    "cohens_h": 0.0426,
+    "ci_95": [
+      -0.0148,
+      0.0305
+    ],
+    "clusters_where_xml_beats_md": [
+      {
+        "cluster_id": "get_003",
+        "V_xml_rate": 1.0,
+        "V_md_rate": 0.9667,
+        "diff": 0.0333
+      },
+      {
+        "cluster_id": "search_007",
+        "V_xml_rate": 0.5667,
+        "V_md_rate": 0.3667,
+        "diff": 0.2
+      }
+    ]
+  },
+  "cluster_breakdown": [
+    {
+      "cluster_id": "atlas_020",
+      "gpt_rates": {
+        "V_orig": 1.0,
+        "V_prose": 0.7667,
+        "V_md": 1.0,
+        "V_xml": 0.9667,
+        "V_spec": 1.0
+      },
+      "gpt_info_effect": -0.2333,
+      "gpt_best_format": "V_md",
+      "gpt_worst_format": "V_xml",
+      "gpt_interference_variants": [],
+      "claude_sim_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "claude_sim_info_effect": 0.0,
+      "claude_sim_best_format": "V_md",
+      "claude_sim_worst_format": "V_md",
+      "claude_sim_interference_variants": []
+    },
+    {
+      "cluster_id": "create_006",
+      "gpt_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "gpt_info_effect": 0.0,
+      "gpt_best_format": "V_md",
+      "gpt_worst_format": "V_md",
+      "gpt_interference_variants": [],
+      "claude_sim_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "claude_sim_info_effect": 0.0,
+      "claude_sim_best_format": "V_md",
+      "claude_sim_worst_format": "V_md",
+      "claude_sim_interference_variants": []
+    },
+    {
+      "cluster_id": "delete_010",
+      "gpt_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "gpt_info_effect": 0.0,
+      "gpt_best_format": "V_md",
+      "gpt_worst_format": "V_md",
+      "gpt_interference_variants": [],
+      "claude_sim_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "claude_sim_info_effect": 0.0,
+      "claude_sim_best_format": "V_md",
+      "claude_sim_worst_format": "V_md",
+      "claude_sim_interference_variants": []
+    },
+    {
+      "cluster_id": "delete_011",
+      "gpt_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "gpt_info_effect": 0.0,
+      "gpt_best_format": "V_md",
+      "gpt_worst_format": "V_md",
+      "gpt_interference_variants": [],
+      "claude_sim_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "claude_sim_info_effect": 0.0,
+      "claude_sim_best_format": "V_md",
+      "claude_sim_worst_format": "V_md",
+      "claude_sim_interference_variants": []
+    },
+    {
+      "cluster_id": "drop_025",
+      "gpt_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "gpt_info_effect": 0.0,
+      "gpt_best_format": "V_md",
+      "gpt_worst_format": "V_md",
+      "gpt_interference_variants": [],
+      "claude_sim_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "claude_sim_info_effect": 0.0,
+      "claude_sim_best_format": "V_md",
+      "claude_sim_worst_format": "V_md",
+      "claude_sim_interference_variants": []
+    },
+    {
+      "cluster_id": "get_001",
+      "gpt_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "gpt_info_effect": 0.0,
+      "gpt_best_format": "V_md",
+      "gpt_worst_format": "V_md",
+      "gpt_interference_variants": [],
+      "claude_sim_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "claude_sim_info_effect": 0.0,
+      "claude_sim_best_format": "V_md",
+      "claude_sim_worst_format": "V_md",
+      "claude_sim_interference_variants": []
+    },
+    {
+      "cluster_id": "get_002",
+      "gpt_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "gpt_info_effect": 0.0,
+      "gpt_best_format": "V_md",
+      "gpt_worst_format": "V_md",
+      "gpt_interference_variants": [],
+      "claude_sim_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "claude_sim_info_effect": 0.0,
+      "claude_sim_best_format": "V_md",
+      "claude_sim_worst_format": "V_md",
+      "claude_sim_interference_variants": []
+    },
+    {
+      "cluster_id": "get_003",
+      "gpt_rates": {
+        "V_orig": 0.0,
+        "V_prose": 1.0,
+        "V_md": 0.9667,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "gpt_info_effect": 1.0,
+      "gpt_best_format": "V_xml",
+      "gpt_worst_format": "V_md",
+      "gpt_interference_variants": [
+        "V_md"
+      ],
+      "claude_sim_rates": {
+        "V_orig": 0.1111,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "claude_sim_info_effect": 0.8889,
+      "claude_sim_best_format": "V_md",
+      "claude_sim_worst_format": "V_md",
+      "claude_sim_interference_variants": []
+    },
+    {
+      "cluster_id": "get_004",
+      "gpt_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "gpt_info_effect": 0.0,
+      "gpt_best_format": "V_md",
+      "gpt_worst_format": "V_md",
+      "gpt_interference_variants": [],
+      "claude_sim_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "claude_sim_info_effect": 0.0,
+      "claude_sim_best_format": "V_md",
+      "claude_sim_worst_format": "V_md",
+      "claude_sim_interference_variants": []
+    },
+    {
+      "cluster_id": "list_005",
+      "gpt_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "gpt_info_effect": 0.0,
+      "gpt_best_format": "V_md",
+      "gpt_worst_format": "V_md",
+      "gpt_interference_variants": [],
+      "claude_sim_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "claude_sim_info_effect": 0.0,
+      "claude_sim_best_format": "V_md",
+      "claude_sim_worst_format": "V_md",
+      "claude_sim_interference_variants": []
+    },
+    {
+      "cluster_id": "load_016",
+      "gpt_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "gpt_info_effect": 0.0,
+      "gpt_best_format": "V_md",
+      "gpt_worst_format": "V_md",
+      "gpt_interference_variants": [],
+      "claude_sim_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "claude_sim_info_effect": 0.0,
+      "claude_sim_best_format": "V_md",
+      "claude_sim_worst_format": "V_md",
+      "claude_sim_interference_variants": []
+    },
+    {
+      "cluster_id": "monday_014",
+      "gpt_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "gpt_info_effect": 0.0,
+      "gpt_best_format": "V_md",
+      "gpt_worst_format": "V_md",
+      "gpt_interference_variants": [],
+      "claude_sim_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "claude_sim_info_effect": 0.0,
+      "claude_sim_best_format": "V_md",
+      "claude_sim_worst_format": "V_md",
+      "claude_sim_interference_variants": []
+    },
+    {
+      "cluster_id": "search_007",
+      "gpt_rates": {
+        "V_orig": 0.0,
+        "V_prose": 0.3333,
+        "V_md": 0.3667,
+        "V_xml": 0.5667,
+        "V_spec": 0.3333
+      },
+      "gpt_info_effect": 0.3333,
+      "gpt_best_format": "V_xml",
+      "gpt_worst_format": "V_spec",
+      "gpt_interference_variants": [],
+      "claude_sim_rates": {
+        "V_orig": 0.0,
+        "V_prose": 0.3333,
+        "V_md": 0.3333,
+        "V_xml": 0.3333,
+        "V_spec": 0.3333
+      },
+      "claude_sim_info_effect": 0.3333,
+      "claude_sim_best_format": "V_md",
+      "claude_sim_worst_format": "V_md",
+      "claude_sim_interference_variants": []
+    },
+    {
+      "cluster_id": "search_008",
+      "gpt_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "gpt_info_effect": 0.0,
+      "gpt_best_format": "V_md",
+      "gpt_worst_format": "V_md",
+      "gpt_interference_variants": [],
+      "claude_sim_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "claude_sim_info_effect": 0.0,
+      "claude_sim_best_format": "V_md",
+      "claude_sim_worst_format": "V_md",
+      "claude_sim_interference_variants": []
+    },
+    {
+      "cluster_id": "update_009",
+      "gpt_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "gpt_info_effect": 0.0,
+      "gpt_best_format": "V_md",
+      "gpt_worst_format": "V_md",
+      "gpt_interference_variants": [],
+      "claude_sim_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "claude_sim_info_effect": 0.0,
+      "claude_sim_best_format": "V_md",
+      "claude_sim_worst_format": "V_md",
+      "claude_sim_interference_variants": []
+    },
+    {
+      "cluster_id": "weather_021",
+      "gpt_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "gpt_info_effect": 0.0,
+      "gpt_best_format": "V_md",
+      "gpt_worst_format": "V_md",
+      "gpt_interference_variants": [],
+      "claude_sim_rates": {
+        "V_orig": 1.0,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "claude_sim_info_effect": 0.0,
+      "claude_sim_best_format": "V_md",
+      "claude_sim_worst_format": "V_md",
+      "claude_sim_interference_variants": []
+    },
+    {
+      "cluster_id": "whois_023",
+      "gpt_rates": {
+        "V_orig": 0.1667,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 0.9333,
+        "V_spec": 0.9667
+      },
+      "gpt_info_effect": 0.8333,
+      "gpt_best_format": "V_md",
+      "gpt_worst_format": "V_xml",
+      "gpt_interference_variants": [
+        "V_xml",
+        "V_spec"
+      ],
+      "claude_sim_rates": {
+        "V_orig": 0.4444,
+        "V_prose": 1.0,
+        "V_md": 1.0,
+        "V_xml": 1.0,
+        "V_spec": 1.0
+      },
+      "claude_sim_info_effect": 0.5556,
+      "claude_sim_best_format": "V_md",
+      "claude_sim_worst_format": "V_md",
+      "claude_sim_interference_variants": []
+    }
+  ],
+  "clusters_biggest_info_effect_gpt": [
+    {
+      "cluster_id": "get_003",
+      "info_effect": 1.0
+    },
+    {
+      "cluster_id": "whois_023",
+      "info_effect": 0.8333
+    },
+    {
+      "cluster_id": "search_007",
+      "info_effect": 0.3333
+    },
+    {
+      "cluster_id": "create_006",
+      "info_effect": 0.0
+    },
+    {
+      "cluster_id": "delete_010",
+      "info_effect": 0.0
+    }
+  ],
+  "clusters_biggest_info_effect_claude_sim": [
+    {
+      "cluster_id": "get_003",
+      "info_effect": 0.8889
+    },
+    {
+      "cluster_id": "whois_023",
+      "info_effect": 0.5556
+    },
+    {
+      "cluster_id": "search_007",
+      "info_effect": 0.3333
+    },
+    {
+      "cluster_id": "atlas_020",
+      "info_effect": 0.0
+    },
+    {
+      "cluster_id": "create_006",
+      "info_effect": 0.0
+    }
+  ],
+  "interference_summary": {
+    "gpt_clusters_with_interference": [
+      {
+        "cluster_id": "get_003",
+        "variants": [
+          "V_md"
+        ]
+      },
+      {
+        "cluster_id": "whois_023",
+        "variants": [
+          "V_xml",
+          "V_spec"
+        ]
+      }
+    ],
+    "claude_sim_clusters_with_interference": []
+  }
+}

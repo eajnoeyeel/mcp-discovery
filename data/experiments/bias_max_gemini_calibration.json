@@ -1,0 +1,3778 @@
+{
+  "test": "bias-max — Gemini description variant tool selection",
+  "model": "gemini-2.5-flash",
+  "model_fallback_chain": [
+    "gemini-2.5-flash",
+    "gemini-2.5-flash-lite"
+  ],
+  "model_usage": {
+    "gemini-2.5-flash-lite": 2
+  },
+  "timestamp": "2026-04-21T15:37:10.546678+00:00",
+  "reps_per_condition": 1,
+  "selected_clusters": [
+    "get_001",
+    "get_002",
+    "get_003",
+    "get_004",
+    "list_005",
+    "create_006",
+    "search_007",
+    "search_008",
+    "update_009",
+    "delete_010",
+    "delete_011",
+    "monday_014",
+    "load_016",
+    "atlas_020",
+    "weather_021",
+    "remote_022",
+    "whois_023",
+    "pods_024",
+    "drop_025"
+  ],
+  "variants": [
+    "V_orig",
+    "V_prose",
+    "V_spec",
+    "V_md",
+    "V_xml"
+  ],
+  "variant_labels": {
+    "V_orig": "Control (original)",
+    "V_prose": "Prose (natural language)",
+    "V_spec": "Spec (semi-formal)",
+    "V_md": "Markdown (structured)",
+    "V_xml": "XML (tagged)"
+  },
+  "total_calls": 210,
+  "null_calls": 208,
+  "elapsed_seconds": 6446.2,
+  "overall_hit_rate": 0.11372549019607843,
+  "variant_summary": {
+    "V_orig": {
+      "label": "Control (original)",
+      "hits": 7,
+      "reps": 51,
+      "hit_rate": 0.13725490196078433
+    },
+    "V_prose": {
+      "label": "Prose (natural language)",
+      "hits": 6,
+      "reps": 51,
+      "hit_rate": 0.11764705882352941
+    },
+    "V_spec": {
+      "label": "Spec (semi-formal)",
+      "hits": 6,
+      "reps": 51,
+      "hit_rate": 0.11764705882352941
+    },
+    "V_md": {
+      "label": "Markdown (structured)",
+      "hits": 5,
+      "reps": 51,
+      "hit_rate": 0.09803921568627451
+    },
+    "V_xml": {
+      "label": "XML (tagged)",
+      "hits": 5,
+      "reps": 51,
+      "hit_rate": 0.09803921568627451
+    }
+  },
+  "cluster_summary": {
+    "get_001": {
+      "target": "contentful-mcp::get_entry",
+      "pool_size": 7,
+      "hits": 12,
+      "reps": 15,
+      "hit_rate": 0.8
+    },
+    "get_002": {
+      "target": "productboard::get_notes",
+      "pool_size": 6,
+      "hits": 15,
+      "reps": 15,
+      "hit_rate": 1.0
+    },
+    "get_003": {
+      "target": "hologres::get_query_plan",
+      "pool_size": 5,
+      "hits": 0,
+      "reps": 15,
+      "hit_rate": 0.0
+    },
+    "get_004": {
+      "target": "wikipedia::get_summary",
+      "pool_size": 5,
+      "hits": 2,
+      "reps": 15,
+      "hit_rate": 0.13333333333333333
+    },
+    "list_005": {
+      "target": "clickup::list_documents",
+      "pool_size": 90,
+      "hits": 0,
+      "reps": 15,
+      "hit_rate": 0.0
+    },
+    "create_006": {
+      "target": "clickup::create_space_tag",
+      "pool_size": 105,
+      "hits": 0,
+      "reps": 15,
+      "hit_rate": 0.0
+    },
+    "search_007": {
+      "target": "gitee::search_users",
+      "pool_size": 8,
+      "hits": 0,
+      "reps": 15,
+      "hit_rate": 0.0
+    },
+    "search_008": {
+      "target": "opendota::search_player",
+      "pool_size": 10,
+      "hits": 0,
+      "reps": 15,
+      "hit_rate": 0.0
+    },
+    "update_009": {
+      "target": "clickup::update_space_tag",
+      "pool_size": 46,
+      "hits": 0,
+      "reps": 15,
+      "hit_rate": 0.0
+    },
+    "delete_010": {
+      "target": "clickup::delete_space_tag",
+      "pool_size": 13,
+      "hits": 0,
+      "reps": 15,
+      "hit_rate": 0.0
+    },
+    "delete_011": {
+      "target": "elevenlabs::delete_job",
+      "pool_size": 6,
+      "hits": 0,
+      "reps": 15,
+      "hit_rate": 0.0
+    },
+    "monday_014": {
+      "target": "monday.com::monday-delete-item",
+      "pool_size": 13,
+      "hits": 0,
+      "reps": 15,
+      "hit_rate": 0.0
+    },
+    "load_016": {
+      "target": "ramp::load_bills",
+      "pool_size": 12,
+      "hits": 0,
+      "reps": 15,
+      "hit_rate": 0.0
+    },
+    "atlas_020": {
+      "target": "mongodb::atlas-list-projects",
+      "pool_size": 10,
+      "hits": 0,
+      "reps": 15,
+      "hit_rate": 0.0
+    },
+    "weather_021": {
+      "target": "weather-data::weather_alerts",
+      "pool_size": 9,
+      "hits": 0,
+      "reps": 15,
+      "hit_rate": 0.0
+    },
+    "whois_023": {
+      "target": "whois::whois_ip",
+      "pool_size": 8,
+      "hits": 0,
+      "reps": 15,
+      "hit_rate": 0.0
+    },
+    "drop_025": {
+      "target": "mongodb::drop-database",
+      "pool_size": 6,
+      "hits": 0,
+      "reps": 15,
+      "hit_rate": 0.0
+    }
+  },
+  "results": [
+    {
+      "cluster": "get_001",
+      "target": "contentful-mcp::get_entry",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "get_001_Q1",
+      "query": "Fetch a specific content entry from the headless CMS by its identifier",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster": "get_001",
+      "target": "contentful-mcp::get_entry",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "get_001_Q2",
+      "query": "헤드리스 CMS에서 특정 콘텐츠 항목을 ID로 조회하고 싶어",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster": "get_001",
+      "target": "contentful-mcp::get_entry",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "get_001_Q3",
+      "query": "Retrieve a published content entry with its localized fields from the content management system",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster": "get_001",
+      "target": "contentful-mcp::get_entry",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "get_001_Q1",
+      "query": "Fetch a specific content entry from the headless CMS by its identifier",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster": "get_001",
+      "target": "contentful-mcp::get_entry",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "get_001_Q2",
+      "query": "헤드리스 CMS에서 특정 콘텐츠 항목을 ID로 조회하고 싶어",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster": "get_001",
+      "target": "contentful-mcp::get_entry",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "get_001_Q3",
+      "query": "Retrieve a published content entry with its localized fields from the content management system",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster": "get_001",
+      "target": "contentful-mcp::get_entry",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "get_001_Q1",
+      "query": "Fetch a specific content entry from the headless CMS by its identifier",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster": "get_001",
+      "target": "contentful-mcp::get_entry",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "get_001_Q2",
+      "query": "헤드리스 CMS에서 특정 콘텐츠 항목을 ID로 조회하고 싶어",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster": "get_001",
+      "target": "contentful-mcp::get_entry",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "get_001_Q3",
+      "query": "Retrieve a published content entry with its localized fields from the content management system",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        "dart::get_doc"
+      ]
+    },
+    {
+      "cluster": "get_001",
+      "target": "contentful-mcp::get_entry",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "get_001_Q1",
+      "query": "Fetch a specific content entry from the headless CMS by its identifier",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster": "get_001",
+      "target": "contentful-mcp::get_entry",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "get_001_Q2",
+      "query": "헤드리스 CMS에서 특정 콘텐츠 항목을 ID로 조회하고 싶어",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster": "get_001",
+      "target": "contentful-mcp::get_entry",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "get_001_Q3",
+      "query": "Retrieve a published content entry with its localized fields from the content management system",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        "dart::get_doc"
+      ]
+    },
+    {
+      "cluster": "get_001",
+      "target": "contentful-mcp::get_entry",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "get_001_Q1",
+      "query": "Fetch a specific content entry from the headless CMS by its identifier",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster": "get_001",
+      "target": "contentful-mcp::get_entry",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "get_001_Q2",
+      "query": "헤드리스 CMS에서 특정 콘텐츠 항목을 ID로 조회하고 싶어",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        "dart::get_doc"
+      ]
+    },
+    {
+      "cluster": "get_001",
+      "target": "contentful-mcp::get_entry",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "get_001_Q3",
+      "query": "Retrieve a published content entry with its localized fields from the content management system",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster": "get_002",
+      "target": "productboard::get_notes",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "get_002_Q1",
+      "query": "Pull all the customer feedback notes attached to our product roadmap board",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster": "get_002",
+      "target": "productboard::get_notes",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "get_002_Q2",
+      "query": "제품 관리 도구에서 사용자 피드백 메모를 가져와줘",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster": "get_002",
+      "target": "productboard::get_notes",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "get_002_Q3",
+      "query": "Get the qualitative insights and annotations that stakeholders left on feature requests",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster": "get_002",
+      "target": "productboard::get_notes",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "get_002_Q1",
+      "query": "Pull all the customer feedback notes attached to our product roadmap board",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster": "get_002",
+      "target": "productboard::get_notes",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "get_002_Q2",
+      "query": "제품 관리 도구에서 사용자 피드백 메모를 가져와줘",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster": "get_002",
+      "target": "productboard::get_notes",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "get_002_Q3",
+      "query": "Get the qualitative insights and annotations that stakeholders left on feature requests",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster": "get_002",
+      "target": "productboard::get_notes",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "get_002_Q1",
+      "query": "Pull all the customer feedback notes attached to our product roadmap board",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster": "get_002",
+      "target": "productboard::get_notes",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "get_002_Q2",
+      "query": "제품 관리 도구에서 사용자 피드백 메모를 가져와줘",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster": "get_002",
+      "target": "productboard::get_notes",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "get_002_Q3",
+      "query": "Get the qualitative insights and annotations that stakeholders left on feature requests",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster": "get_002",
+      "target": "productboard::get_notes",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "get_002_Q1",
+      "query": "Pull all the customer feedback notes attached to our product roadmap board",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster": "get_002",
+      "target": "productboard::get_notes",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "get_002_Q2",
+      "query": "제품 관리 도구에서 사용자 피드백 메모를 가져와줘",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster": "get_002",
+      "target": "productboard::get_notes",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "get_002_Q3",
+      "query": "Get the qualitative insights and annotations that stakeholders left on feature requests",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster": "get_002",
+      "target": "productboard::get_notes",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "get_002_Q1",
+      "query": "Pull all the customer feedback notes attached to our product roadmap board",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster": "get_002",
+      "target": "productboard::get_notes",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "get_002_Q2",
+      "query": "제품 관리 도구에서 사용자 피드백 메모를 가져와줘",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster": "get_002",
+      "target": "productboard::get_notes",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "get_002_Q3",
+      "query": "Get the qualitative insights and annotations that stakeholders left on feature requests",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster": "get_003",
+      "target": "hologres::get_query_plan",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "get_003_Q1",
+      "query": "Show me the estimated logical query plan for this SQL statement before it actually runs",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan"
+      ]
+    },
+    {
+      "cluster": "get_003",
+      "target": "hologres::get_query_plan",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "get_003_Q2",
+      "query": "이 SQL 쿼리의 논리적 실행 계획을 실행 전에 미리 확인하고 싶어",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "get_003",
+      "target": "hologres::get_query_plan",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "get_003_Q3",
+      "query": "Explain the query optimizer's chosen plan for my analytical SQL without executing it",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan"
+      ]
+    },
+    {
+      "cluster": "get_003",
+      "target": "hologres::get_query_plan",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "get_003_Q1",
+      "query": "Show me the estimated logical query plan for this SQL statement before it actually runs",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan"
+      ]
+    },
+    {
+      "cluster": "get_003",
+      "target": "hologres::get_query_plan",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "get_003_Q2",
+      "query": "이 SQL 쿼리의 논리적 실행 계획을 실행 전에 미리 확인하고 싶어",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan"
+      ]
+    },
+    {
+      "cluster": "get_003",
+      "target": "hologres::get_query_plan",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "get_003_Q3",
+      "query": "Explain the query optimizer's chosen plan for my analytical SQL without executing it",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan"
+      ]
+    },
+    {
+      "cluster": "get_003",
+      "target": "hologres::get_query_plan",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "get_003_Q1",
+      "query": "Show me the estimated logical query plan for this SQL statement before it actually runs",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan"
+      ]
+    },
+    {
+      "cluster": "get_003",
+      "target": "hologres::get_query_plan",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "get_003_Q2",
+      "query": "이 SQL 쿼리의 논리적 실행 계획을 실행 전에 미리 확인하고 싶어",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan"
+      ]
+    },
+    {
+      "cluster": "get_003",
+      "target": "hologres::get_query_plan",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "get_003_Q3",
+      "query": "Explain the query optimizer's chosen plan for my analytical SQL without executing it",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan"
+      ]
+    },
+    {
+      "cluster": "get_003",
+      "target": "hologres::get_query_plan",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "get_003_Q1",
+      "query": "Show me the estimated logical query plan for this SQL statement before it actually runs",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan"
+      ]
+    },
+    {
+      "cluster": "get_003",
+      "target": "hologres::get_query_plan",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "get_003_Q2",
+      "query": "이 SQL 쿼리의 논리적 실행 계획을 실행 전에 미리 확인하고 싶어",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan"
+      ]
+    },
+    {
+      "cluster": "get_003",
+      "target": "hologres::get_query_plan",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "get_003_Q3",
+      "query": "Explain the query optimizer's chosen plan for my analytical SQL without executing it",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan"
+      ]
+    },
+    {
+      "cluster": "get_003",
+      "target": "hologres::get_query_plan",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "get_003_Q1",
+      "query": "Show me the estimated logical query plan for this SQL statement before it actually runs",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan"
+      ]
+    },
+    {
+      "cluster": "get_003",
+      "target": "hologres::get_query_plan",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "get_003_Q2",
+      "query": "이 SQL 쿼리의 논리적 실행 계획을 실행 전에 미리 확인하고 싶어",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "get_003",
+      "target": "hologres::get_query_plan",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "get_003_Q3",
+      "query": "Explain the query optimizer's chosen plan for my analytical SQL without executing it",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "get_004",
+      "target": "wikipedia::get_summary",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "get_004_Q1",
+      "query": "Give me a brief overview of the encyclopedia article on quantum computing, just the summary not the full text",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "wikipedia::get_summary"
+      ]
+    },
+    {
+      "cluster": "get_004",
+      "target": "wikipedia::get_summary",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "get_004_Q2",
+      "query": "백과사전에서 인공지능 항목의 요약만 간단히 가져와, 전체 본문은 필요 없어",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "get_004",
+      "target": "wikipedia::get_summary",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "get_004_Q3",
+      "query": "Fetch a concise abstract of the encyclopedia entry about climate change, not the sections or links",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "get_004",
+      "target": "wikipedia::get_summary",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "get_004_Q1",
+      "query": "Give me a brief overview of the encyclopedia article on quantum computing, just the summary not the full text",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "get_004",
+      "target": "wikipedia::get_summary",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "get_004_Q2",
+      "query": "백과사전에서 인공지능 항목의 요약만 간단히 가져와, 전체 본문은 필요 없어",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "get_004",
+      "target": "wikipedia::get_summary",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "get_004_Q3",
+      "query": "Fetch a concise abstract of the encyclopedia entry about climate change, not the sections or links",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "get_004",
+      "target": "wikipedia::get_summary",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "get_004_Q1",
+      "query": "Give me a brief overview of the encyclopedia article on quantum computing, just the summary not the full text",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "get_004",
+      "target": "wikipedia::get_summary",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "get_004_Q2",
+      "query": "백과사전에서 인공지능 항목의 요약만 간단히 가져와, 전체 본문은 필요 없어",
+      "hits": 1,
+      "reps": 1,
+      "hit_rate": 1.0,
+      "picks": [
+        "wikipedia::get_summary"
+      ]
+    },
+    {
+      "cluster": "get_004",
+      "target": "wikipedia::get_summary",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "get_004_Q3",
+      "query": "Fetch a concise abstract of the encyclopedia entry about climate change, not the sections or links",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "get_004",
+      "target": "wikipedia::get_summary",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "get_004_Q1",
+      "query": "Give me a brief overview of the encyclopedia article on quantum computing, just the summary not the full text",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "get_004",
+      "target": "wikipedia::get_summary",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "get_004_Q2",
+      "query": "백과사전에서 인공지능 항목의 요약만 간단히 가져와, 전체 본문은 필요 없어",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "get_004",
+      "target": "wikipedia::get_summary",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "get_004_Q3",
+      "query": "Fetch a concise abstract of the encyclopedia entry about climate change, not the sections or links",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "get_004",
+      "target": "wikipedia::get_summary",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "get_004_Q1",
+      "query": "Give me a brief overview of the encyclopedia article on quantum computing, just the summary not the full text",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "get_004",
+      "target": "wikipedia::get_summary",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "get_004_Q2",
+      "query": "백과사전에서 인공지능 항목의 요약만 간단히 가져와, 전체 본문은 필요 없어",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "get_004",
+      "target": "wikipedia::get_summary",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "get_004_Q3",
+      "query": "Fetch a concise abstract of the encyclopedia entry about climate change, not the sections or links",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "list_005",
+      "target": "clickup::list_documents",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "list_005_Q1",
+      "query": "Show me all the documents stored in our project management workspace",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "list_005",
+      "target": "clickup::list_documents",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "list_005_Q2",
+      "query": "프로젝트 관리 도구에 저장된 문서 목록을 전부 보여줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "list_005",
+      "target": "clickup::list_documents",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "list_005_Q3",
+      "query": "Enumerate all wiki-style documents available in the team collaboration workspace",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "list_005",
+      "target": "clickup::list_documents",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "list_005_Q1",
+      "query": "Show me all the documents stored in our project management workspace",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "list_005",
+      "target": "clickup::list_documents",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "list_005_Q2",
+      "query": "프로젝트 관리 도구에 저장된 문서 목록을 전부 보여줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "list_005",
+      "target": "clickup::list_documents",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "list_005_Q3",
+      "query": "Enumerate all wiki-style documents available in the team collaboration workspace",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "list_005",
+      "target": "clickup::list_documents",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "list_005_Q1",
+      "query": "Show me all the documents stored in our project management workspace",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "list_005",
+      "target": "clickup::list_documents",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "list_005_Q2",
+      "query": "프로젝트 관리 도구에 저장된 문서 목록을 전부 보여줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "list_005",
+      "target": "clickup::list_documents",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "list_005_Q3",
+      "query": "Enumerate all wiki-style documents available in the team collaboration workspace",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "list_005",
+      "target": "clickup::list_documents",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "list_005_Q1",
+      "query": "Show me all the documents stored in our project management workspace",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "list_005",
+      "target": "clickup::list_documents",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "list_005_Q2",
+      "query": "프로젝트 관리 도구에 저장된 문서 목록을 전부 보여줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "list_005",
+      "target": "clickup::list_documents",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "list_005_Q3",
+      "query": "Enumerate all wiki-style documents available in the team collaboration workspace",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "list_005",
+      "target": "clickup::list_documents",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "list_005_Q1",
+      "query": "Show me all the documents stored in our project management workspace",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "list_005",
+      "target": "clickup::list_documents",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "list_005_Q2",
+      "query": "프로젝트 관리 도구에 저장된 문서 목록을 전부 보여줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "list_005",
+      "target": "clickup::list_documents",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "list_005_Q3",
+      "query": "Enumerate all wiki-style documents available in the team collaboration workspace",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "create_006",
+      "target": "clickup::create_space_tag",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "create_006_Q1",
+      "query": "Create a new label tag in our project workspace so we can categorize tasks by priority",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "create_006",
+      "target": "clickup::create_space_tag",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "create_006_Q2",
+      "query": "프로젝트 워크스페이스에 작업 분류용 태그를 새로 만들어줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "create_006",
+      "target": "clickup::create_space_tag",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "create_006_Q3",
+      "query": "Add a new color-coded tag to the workspace that team members can apply to any item for filtering",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "create_006",
+      "target": "clickup::create_space_tag",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "create_006_Q1",
+      "query": "Create a new label tag in our project workspace so we can categorize tasks by priority",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "create_006",
+      "target": "clickup::create_space_tag",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "create_006_Q2",
+      "query": "프로젝트 워크스페이스에 작업 분류용 태그를 새로 만들어줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "create_006",
+      "target": "clickup::create_space_tag",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "create_006_Q3",
+      "query": "Add a new color-coded tag to the workspace that team members can apply to any item for filtering",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "create_006",
+      "target": "clickup::create_space_tag",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "create_006_Q1",
+      "query": "Create a new label tag in our project workspace so we can categorize tasks by priority",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "create_006",
+      "target": "clickup::create_space_tag",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "create_006_Q2",
+      "query": "프로젝트 워크스페이스에 작업 분류용 태그를 새로 만들어줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "create_006",
+      "target": "clickup::create_space_tag",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "create_006_Q3",
+      "query": "Add a new color-coded tag to the workspace that team members can apply to any item for filtering",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "create_006",
+      "target": "clickup::create_space_tag",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "create_006_Q1",
+      "query": "Create a new label tag in our project workspace so we can categorize tasks by priority",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "create_006",
+      "target": "clickup::create_space_tag",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "create_006_Q2",
+      "query": "프로젝트 워크스페이스에 작업 분류용 태그를 새로 만들어줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "create_006",
+      "target": "clickup::create_space_tag",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "create_006_Q3",
+      "query": "Add a new color-coded tag to the workspace that team members can apply to any item for filtering",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "create_006",
+      "target": "clickup::create_space_tag",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "create_006_Q1",
+      "query": "Create a new label tag in our project workspace so we can categorize tasks by priority",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "create_006",
+      "target": "clickup::create_space_tag",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "create_006_Q2",
+      "query": "프로젝트 워크스페이스에 작업 분류용 태그를 새로 만들어줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "create_006",
+      "target": "clickup::create_space_tag",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "create_006_Q3",
+      "query": "Add a new color-coded tag to the workspace that team members can apply to any item for filtering",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_007",
+      "target": "gitee::search_users",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "search_007_Q1",
+      "query": "Find developer profiles on the code hosting platform by their username or display name",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_007",
+      "target": "gitee::search_users",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "search_007_Q2",
+      "query": "코드 호스팅 플랫폼에서 특정 개발자를 이름으로 검색하고 싶어",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_007",
+      "target": "gitee::search_users",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "search_007_Q3",
+      "query": "Look up contributors on the source code platform matching a partial name",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_007",
+      "target": "gitee::search_users",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "search_007_Q1",
+      "query": "Find developer profiles on the code hosting platform by their username or display name",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_007",
+      "target": "gitee::search_users",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "search_007_Q2",
+      "query": "코드 호스팅 플랫폼에서 특정 개발자를 이름으로 검색하고 싶어",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_007",
+      "target": "gitee::search_users",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "search_007_Q3",
+      "query": "Look up contributors on the source code platform matching a partial name",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_007",
+      "target": "gitee::search_users",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "search_007_Q1",
+      "query": "Find developer profiles on the code hosting platform by their username or display name",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_007",
+      "target": "gitee::search_users",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "search_007_Q2",
+      "query": "코드 호스팅 플랫폼에서 특정 개발자를 이름으로 검색하고 싶어",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_007",
+      "target": "gitee::search_users",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "search_007_Q3",
+      "query": "Look up contributors on the source code platform matching a partial name",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_007",
+      "target": "gitee::search_users",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "search_007_Q1",
+      "query": "Find developer profiles on the code hosting platform by their username or display name",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_007",
+      "target": "gitee::search_users",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "search_007_Q2",
+      "query": "코드 호스팅 플랫폼에서 특정 개발자를 이름으로 검색하고 싶어",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_007",
+      "target": "gitee::search_users",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "search_007_Q3",
+      "query": "Look up contributors on the source code platform matching a partial name",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_007",
+      "target": "gitee::search_users",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "search_007_Q1",
+      "query": "Find developer profiles on the code hosting platform by their username or display name",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_007",
+      "target": "gitee::search_users",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "search_007_Q2",
+      "query": "코드 호스팅 플랫폼에서 특정 개발자를 이름으로 검색하고 싶어",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_007",
+      "target": "gitee::search_users",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "search_007_Q3",
+      "query": "Look up contributors on the source code platform matching a partial name",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_008",
+      "target": "opendota::search_player",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "search_008_Q1",
+      "query": "Search for a competitive online game player by their in-game name",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_008",
+      "target": "opendota::search_player",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "search_008_Q2",
+      "query": "온라인 게임에서 특정 플레이어를 닉네임으로 검색해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_008",
+      "target": "opendota::search_player",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "search_008_Q3",
+      "query": "Find a MOBA game player's profile using their player name to check their match statistics",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_008",
+      "target": "opendota::search_player",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "search_008_Q1",
+      "query": "Search for a competitive online game player by their in-game name",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_008",
+      "target": "opendota::search_player",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "search_008_Q2",
+      "query": "온라인 게임에서 특정 플레이어를 닉네임으로 검색해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_008",
+      "target": "opendota::search_player",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "search_008_Q3",
+      "query": "Find a MOBA game player's profile using their player name to check their match statistics",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_008",
+      "target": "opendota::search_player",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "search_008_Q1",
+      "query": "Search for a competitive online game player by their in-game name",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_008",
+      "target": "opendota::search_player",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "search_008_Q2",
+      "query": "온라인 게임에서 특정 플레이어를 닉네임으로 검색해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_008",
+      "target": "opendota::search_player",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "search_008_Q3",
+      "query": "Find a MOBA game player's profile using their player name to check their match statistics",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_008",
+      "target": "opendota::search_player",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "search_008_Q1",
+      "query": "Search for a competitive online game player by their in-game name",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_008",
+      "target": "opendota::search_player",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "search_008_Q2",
+      "query": "온라인 게임에서 특정 플레이어를 닉네임으로 검색해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_008",
+      "target": "opendota::search_player",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "search_008_Q3",
+      "query": "Find a MOBA game player's profile using their player name to check their match statistics",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_008",
+      "target": "opendota::search_player",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "search_008_Q1",
+      "query": "Search for a competitive online game player by their in-game name",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_008",
+      "target": "opendota::search_player",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "search_008_Q2",
+      "query": "온라인 게임에서 특정 플레이어를 닉네임으로 검색해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "search_008",
+      "target": "opendota::search_player",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "search_008_Q3",
+      "query": "Find a MOBA game player's profile using their player name to check their match statistics",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "update_009",
+      "target": "clickup::update_space_tag",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "update_009_Q1",
+      "query": "Change the name and color of an existing label tag in our project workspace",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "update_009",
+      "target": "clickup::update_space_tag",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "update_009_Q2",
+      "query": "프로젝트 워크스페이스에 있는 기존 태그의 이름과 색상을 변경해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "update_009",
+      "target": "clickup::update_space_tag",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "update_009_Q3",
+      "query": "Rename a categorization tag used across our team workspace to better reflect its purpose",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "update_009",
+      "target": "clickup::update_space_tag",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "update_009_Q1",
+      "query": "Change the name and color of an existing label tag in our project workspace",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "update_009",
+      "target": "clickup::update_space_tag",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "update_009_Q2",
+      "query": "프로젝트 워크스페이스에 있는 기존 태그의 이름과 색상을 변경해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "update_009",
+      "target": "clickup::update_space_tag",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "update_009_Q3",
+      "query": "Rename a categorization tag used across our team workspace to better reflect its purpose",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "update_009",
+      "target": "clickup::update_space_tag",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "update_009_Q1",
+      "query": "Change the name and color of an existing label tag in our project workspace",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "update_009",
+      "target": "clickup::update_space_tag",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "update_009_Q2",
+      "query": "프로젝트 워크스페이스에 있는 기존 태그의 이름과 색상을 변경해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "update_009",
+      "target": "clickup::update_space_tag",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "update_009_Q3",
+      "query": "Rename a categorization tag used across our team workspace to better reflect its purpose",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "update_009",
+      "target": "clickup::update_space_tag",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "update_009_Q1",
+      "query": "Change the name and color of an existing label tag in our project workspace",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "update_009",
+      "target": "clickup::update_space_tag",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "update_009_Q2",
+      "query": "프로젝트 워크스페이스에 있는 기존 태그의 이름과 색상을 변경해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "update_009",
+      "target": "clickup::update_space_tag",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "update_009_Q3",
+      "query": "Rename a categorization tag used across our team workspace to better reflect its purpose",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "update_009",
+      "target": "clickup::update_space_tag",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "update_009_Q1",
+      "query": "Change the name and color of an existing label tag in our project workspace",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "update_009",
+      "target": "clickup::update_space_tag",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "update_009_Q2",
+      "query": "프로젝트 워크스페이스에 있는 기존 태그의 이름과 색상을 변경해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "update_009",
+      "target": "clickup::update_space_tag",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "update_009_Q3",
+      "query": "Rename a categorization tag used across our team workspace to better reflect its purpose",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_010",
+      "target": "clickup::delete_space_tag",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "delete_010_Q1",
+      "query": "Remove an unused label tag from the project workspace so it no longer appears in the tag picker",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_010",
+      "target": "clickup::delete_space_tag",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "delete_010_Q2",
+      "query": "프로젝트 워크스페이스에서 더 이상 사용하지 않는 분류 태그를 삭제해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_010",
+      "target": "clickup::delete_space_tag",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "delete_010_Q3",
+      "query": "Delete a workspace-level categorization tag that was created by mistake",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_010",
+      "target": "clickup::delete_space_tag",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "delete_010_Q1",
+      "query": "Remove an unused label tag from the project workspace so it no longer appears in the tag picker",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_010",
+      "target": "clickup::delete_space_tag",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "delete_010_Q2",
+      "query": "프로젝트 워크스페이스에서 더 이상 사용하지 않는 분류 태그를 삭제해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_010",
+      "target": "clickup::delete_space_tag",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "delete_010_Q3",
+      "query": "Delete a workspace-level categorization tag that was created by mistake",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_010",
+      "target": "clickup::delete_space_tag",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "delete_010_Q1",
+      "query": "Remove an unused label tag from the project workspace so it no longer appears in the tag picker",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_010",
+      "target": "clickup::delete_space_tag",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "delete_010_Q2",
+      "query": "프로젝트 워크스페이스에서 더 이상 사용하지 않는 분류 태그를 삭제해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_010",
+      "target": "clickup::delete_space_tag",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "delete_010_Q3",
+      "query": "Delete a workspace-level categorization tag that was created by mistake",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_010",
+      "target": "clickup::delete_space_tag",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "delete_010_Q1",
+      "query": "Remove an unused label tag from the project workspace so it no longer appears in the tag picker",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_010",
+      "target": "clickup::delete_space_tag",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "delete_010_Q2",
+      "query": "프로젝트 워크스페이스에서 더 이상 사용하지 않는 분류 태그를 삭제해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_010",
+      "target": "clickup::delete_space_tag",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "delete_010_Q3",
+      "query": "Delete a workspace-level categorization tag that was created by mistake",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_010",
+      "target": "clickup::delete_space_tag",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "delete_010_Q1",
+      "query": "Remove an unused label tag from the project workspace so it no longer appears in the tag picker",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_010",
+      "target": "clickup::delete_space_tag",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "delete_010_Q2",
+      "query": "프로젝트 워크스페이스에서 더 이상 사용하지 않는 분류 태그를 삭제해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_010",
+      "target": "clickup::delete_space_tag",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "delete_010_Q3",
+      "query": "Delete a workspace-level categorization tag that was created by mistake",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_011",
+      "target": "elevenlabs::delete_job",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "delete_011_Q1",
+      "query": "Cancel and remove a voice synthesis processing job that is no longer needed",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_011",
+      "target": "elevenlabs::delete_job",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "delete_011_Q2",
+      "query": "음성 합성 작업 중 불필요한 처리 작업을 삭제해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_011",
+      "target": "elevenlabs::delete_job",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "delete_011_Q3",
+      "query": "Delete a completed text-to-speech generation job by its identifier to free up resources",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_011",
+      "target": "elevenlabs::delete_job",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "delete_011_Q1",
+      "query": "Cancel and remove a voice synthesis processing job that is no longer needed",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_011",
+      "target": "elevenlabs::delete_job",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "delete_011_Q2",
+      "query": "음성 합성 작업 중 불필요한 처리 작업을 삭제해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_011",
+      "target": "elevenlabs::delete_job",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "delete_011_Q3",
+      "query": "Delete a completed text-to-speech generation job by its identifier to free up resources",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_011",
+      "target": "elevenlabs::delete_job",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "delete_011_Q1",
+      "query": "Cancel and remove a voice synthesis processing job that is no longer needed",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_011",
+      "target": "elevenlabs::delete_job",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "delete_011_Q2",
+      "query": "음성 합성 작업 중 불필요한 처리 작업을 삭제해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_011",
+      "target": "elevenlabs::delete_job",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "delete_011_Q3",
+      "query": "Delete a completed text-to-speech generation job by its identifier to free up resources",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_011",
+      "target": "elevenlabs::delete_job",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "delete_011_Q1",
+      "query": "Cancel and remove a voice synthesis processing job that is no longer needed",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_011",
+      "target": "elevenlabs::delete_job",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "delete_011_Q2",
+      "query": "음성 합성 작업 중 불필요한 처리 작업을 삭제해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_011",
+      "target": "elevenlabs::delete_job",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "delete_011_Q3",
+      "query": "Delete a completed text-to-speech generation job by its identifier to free up resources",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_011",
+      "target": "elevenlabs::delete_job",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "delete_011_Q1",
+      "query": "Cancel and remove a voice synthesis processing job that is no longer needed",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_011",
+      "target": "elevenlabs::delete_job",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "delete_011_Q2",
+      "query": "음성 합성 작업 중 불필요한 처리 작업을 삭제해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "delete_011",
+      "target": "elevenlabs::delete_job",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "delete_011_Q3",
+      "query": "Delete a completed text-to-speech generation job by its identifier to free up resources",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "monday_014",
+      "target": "monday.com::monday-delete-item",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "monday_014_Q1",
+      "query": "Permanently delete a work item from the project board, not just archive it",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "monday_014",
+      "target": "monday.com::monday-delete-item",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "monday_014_Q2",
+      "query": "프로젝트 보드에서 항목을 보관이 아니라 완전히 삭제해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "monday_014",
+      "target": "monday.com::monday-delete-item",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "monday_014_Q3",
+      "query": "Remove a board item entirely so it cannot be recovered from the archive",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "monday_014",
+      "target": "monday.com::monday-delete-item",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "monday_014_Q1",
+      "query": "Permanently delete a work item from the project board, not just archive it",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "monday_014",
+      "target": "monday.com::monday-delete-item",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "monday_014_Q2",
+      "query": "프로젝트 보드에서 항목을 보관이 아니라 완전히 삭제해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "monday_014",
+      "target": "monday.com::monday-delete-item",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "monday_014_Q3",
+      "query": "Remove a board item entirely so it cannot be recovered from the archive",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "monday_014",
+      "target": "monday.com::monday-delete-item",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "monday_014_Q1",
+      "query": "Permanently delete a work item from the project board, not just archive it",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "monday_014",
+      "target": "monday.com::monday-delete-item",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "monday_014_Q2",
+      "query": "프로젝트 보드에서 항목을 보관이 아니라 완전히 삭제해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "monday_014",
+      "target": "monday.com::monday-delete-item",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "monday_014_Q3",
+      "query": "Remove a board item entirely so it cannot be recovered from the archive",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "monday_014",
+      "target": "monday.com::monday-delete-item",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "monday_014_Q1",
+      "query": "Permanently delete a work item from the project board, not just archive it",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "monday_014",
+      "target": "monday.com::monday-delete-item",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "monday_014_Q2",
+      "query": "프로젝트 보드에서 항목을 보관이 아니라 완전히 삭제해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "monday_014",
+      "target": "monday.com::monday-delete-item",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "monday_014_Q3",
+      "query": "Remove a board item entirely so it cannot be recovered from the archive",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "monday_014",
+      "target": "monday.com::monday-delete-item",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "monday_014_Q1",
+      "query": "Permanently delete a work item from the project board, not just archive it",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "monday_014",
+      "target": "monday.com::monday-delete-item",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "monday_014_Q2",
+      "query": "프로젝트 보드에서 항목을 보관이 아니라 완전히 삭제해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "monday_014",
+      "target": "monday.com::monday-delete-item",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "monday_014_Q3",
+      "query": "Remove a board item entirely so it cannot be recovered from the archive",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "load_016",
+      "target": "ramp::load_bills",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "load_016_Q1",
+      "query": "Load all outstanding bills and payables from the corporate expense management system",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "load_016",
+      "target": "ramp::load_bills",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "load_016_Q2",
+      "query": "회사 비용 관리 시스템에서 미지급 청구서 데이터를 불러와줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "load_016",
+      "target": "ramp::load_bills",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "load_016_Q3",
+      "query": "Fetch the accounts payable and invoice bill records from the corporate finance platform",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "load_016",
+      "target": "ramp::load_bills",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "load_016_Q1",
+      "query": "Load all outstanding bills and payables from the corporate expense management system",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "load_016",
+      "target": "ramp::load_bills",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "load_016_Q2",
+      "query": "회사 비용 관리 시스템에서 미지급 청구서 데이터를 불러와줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "load_016",
+      "target": "ramp::load_bills",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "load_016_Q3",
+      "query": "Fetch the accounts payable and invoice bill records from the corporate finance platform",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "load_016",
+      "target": "ramp::load_bills",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "load_016_Q1",
+      "query": "Load all outstanding bills and payables from the corporate expense management system",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "load_016",
+      "target": "ramp::load_bills",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "load_016_Q2",
+      "query": "회사 비용 관리 시스템에서 미지급 청구서 데이터를 불러와줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "load_016",
+      "target": "ramp::load_bills",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "load_016_Q3",
+      "query": "Fetch the accounts payable and invoice bill records from the corporate finance platform",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "load_016",
+      "target": "ramp::load_bills",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "load_016_Q1",
+      "query": "Load all outstanding bills and payables from the corporate expense management system",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "load_016",
+      "target": "ramp::load_bills",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "load_016_Q2",
+      "query": "회사 비용 관리 시스템에서 미지급 청구서 데이터를 불러와줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "load_016",
+      "target": "ramp::load_bills",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "load_016_Q3",
+      "query": "Fetch the accounts payable and invoice bill records from the corporate finance platform",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "load_016",
+      "target": "ramp::load_bills",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "load_016_Q1",
+      "query": "Load all outstanding bills and payables from the corporate expense management system",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "load_016",
+      "target": "ramp::load_bills",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "load_016_Q2",
+      "query": "회사 비용 관리 시스템에서 미지급 청구서 데이터를 불러와줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "load_016",
+      "target": "ramp::load_bills",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "load_016_Q3",
+      "query": "Fetch the accounts payable and invoice bill records from the corporate finance platform",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "atlas_020",
+      "target": "mongodb::atlas-list-projects",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "atlas_020_Q1",
+      "query": "List all the projects in our cloud database platform that contain cluster deployments",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "atlas_020",
+      "target": "mongodb::atlas-list-projects",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "atlas_020_Q2",
+      "query": "클라우드 데이터베이스 플랫폼에서 프로젝트 목록을 조회해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "atlas_020",
+      "target": "mongodb::atlas-list-projects",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "atlas_020_Q3",
+      "query": "Show me all database projects under my organization so I can find which one holds the production clusters",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "atlas_020",
+      "target": "mongodb::atlas-list-projects",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "atlas_020_Q1",
+      "query": "List all the projects in our cloud database platform that contain cluster deployments",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "atlas_020",
+      "target": "mongodb::atlas-list-projects",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "atlas_020_Q2",
+      "query": "클라우드 데이터베이스 플랫폼에서 프로젝트 목록을 조회해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "atlas_020",
+      "target": "mongodb::atlas-list-projects",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "atlas_020_Q3",
+      "query": "Show me all database projects under my organization so I can find which one holds the production clusters",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "atlas_020",
+      "target": "mongodb::atlas-list-projects",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "atlas_020_Q1",
+      "query": "List all the projects in our cloud database platform that contain cluster deployments",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "atlas_020",
+      "target": "mongodb::atlas-list-projects",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "atlas_020_Q2",
+      "query": "클라우드 데이터베이스 플랫폼에서 프로젝트 목록을 조회해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "atlas_020",
+      "target": "mongodb::atlas-list-projects",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "atlas_020_Q3",
+      "query": "Show me all database projects under my organization so I can find which one holds the production clusters",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "atlas_020",
+      "target": "mongodb::atlas-list-projects",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "atlas_020_Q1",
+      "query": "List all the projects in our cloud database platform that contain cluster deployments",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "atlas_020",
+      "target": "mongodb::atlas-list-projects",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "atlas_020_Q2",
+      "query": "클라우드 데이터베이스 플랫폼에서 프로젝트 목록을 조회해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "atlas_020",
+      "target": "mongodb::atlas-list-projects",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "atlas_020_Q3",
+      "query": "Show me all database projects under my organization so I can find which one holds the production clusters",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "atlas_020",
+      "target": "mongodb::atlas-list-projects",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "atlas_020_Q1",
+      "query": "List all the projects in our cloud database platform that contain cluster deployments",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "atlas_020",
+      "target": "mongodb::atlas-list-projects",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "atlas_020_Q2",
+      "query": "클라우드 데이터베이스 플랫폼에서 프로젝트 목록을 조회해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "atlas_020",
+      "target": "mongodb::atlas-list-projects",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "atlas_020_Q3",
+      "query": "Show me all database projects under my organization so I can find which one holds the production clusters",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "weather_021",
+      "target": "weather-data::weather_alerts",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "weather_021_Q1",
+      "query": "Check if there are any severe weather warnings or storm alerts for my area right now",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "weather_021",
+      "target": "weather-data::weather_alerts",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "weather_021_Q2",
+      "query": "우리 지역에 태풍이나 폭설 같은 기상 경보가 발령된 게 있는지 확인해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "weather_021",
+      "target": "weather-data::weather_alerts",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "weather_021_Q3",
+      "query": "Are there any active hazardous weather advisories, watches, or warnings issued for this location?",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "weather_021",
+      "target": "weather-data::weather_alerts",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "weather_021_Q1",
+      "query": "Check if there are any severe weather warnings or storm alerts for my area right now",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "weather_021",
+      "target": "weather-data::weather_alerts",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "weather_021_Q2",
+      "query": "우리 지역에 태풍이나 폭설 같은 기상 경보가 발령된 게 있는지 확인해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "weather_021",
+      "target": "weather-data::weather_alerts",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "weather_021_Q3",
+      "query": "Are there any active hazardous weather advisories, watches, or warnings issued for this location?",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "weather_021",
+      "target": "weather-data::weather_alerts",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "weather_021_Q1",
+      "query": "Check if there are any severe weather warnings or storm alerts for my area right now",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "weather_021",
+      "target": "weather-data::weather_alerts",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "weather_021_Q2",
+      "query": "우리 지역에 태풍이나 폭설 같은 기상 경보가 발령된 게 있는지 확인해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "weather_021",
+      "target": "weather-data::weather_alerts",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "weather_021_Q3",
+      "query": "Are there any active hazardous weather advisories, watches, or warnings issued for this location?",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "weather_021",
+      "target": "weather-data::weather_alerts",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "weather_021_Q1",
+      "query": "Check if there are any severe weather warnings or storm alerts for my area right now",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "weather_021",
+      "target": "weather-data::weather_alerts",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "weather_021_Q2",
+      "query": "우리 지역에 태풍이나 폭설 같은 기상 경보가 발령된 게 있는지 확인해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "weather_021",
+      "target": "weather-data::weather_alerts",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "weather_021_Q3",
+      "query": "Are there any active hazardous weather advisories, watches, or warnings issued for this location?",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "weather_021",
+      "target": "weather-data::weather_alerts",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "weather_021_Q1",
+      "query": "Check if there are any severe weather warnings or storm alerts for my area right now",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "weather_021",
+      "target": "weather-data::weather_alerts",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "weather_021_Q2",
+      "query": "우리 지역에 태풍이나 폭설 같은 기상 경보가 발령된 게 있는지 확인해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "weather_021",
+      "target": "weather-data::weather_alerts",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "weather_021_Q3",
+      "query": "Are there any active hazardous weather advisories, watches, or warnings issued for this location?",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "whois_023",
+      "target": "whois::whois_ip",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "whois_023_Q1",
+      "query": "Look up the ownership and registration details for this IP address: who operates it and which network block it belongs to",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "whois_023",
+      "target": "whois::whois_ip",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "whois_023_Q2",
+      "query": "이 IP 주소의 소유자와 네트워크 할당 정보를 조회해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "whois_023",
+      "target": "whois::whois_ip",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "whois_023_Q3",
+      "query": "Find out which ISP or organization is assigned this IP address and what netblock range it falls under",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "whois_023",
+      "target": "whois::whois_ip",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "whois_023_Q1",
+      "query": "Look up the ownership and registration details for this IP address: who operates it and which network block it belongs to",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "whois_023",
+      "target": "whois::whois_ip",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "whois_023_Q2",
+      "query": "이 IP 주소의 소유자와 네트워크 할당 정보를 조회해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "whois_023",
+      "target": "whois::whois_ip",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "whois_023_Q3",
+      "query": "Find out which ISP or organization is assigned this IP address and what netblock range it falls under",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "whois_023",
+      "target": "whois::whois_ip",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "whois_023_Q1",
+      "query": "Look up the ownership and registration details for this IP address: who operates it and which network block it belongs to",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "whois_023",
+      "target": "whois::whois_ip",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "whois_023_Q2",
+      "query": "이 IP 주소의 소유자와 네트워크 할당 정보를 조회해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "whois_023",
+      "target": "whois::whois_ip",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "whois_023_Q3",
+      "query": "Find out which ISP or organization is assigned this IP address and what netblock range it falls under",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "whois_023",
+      "target": "whois::whois_ip",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "whois_023_Q1",
+      "query": "Look up the ownership and registration details for this IP address: who operates it and which network block it belongs to",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "whois_023",
+      "target": "whois::whois_ip",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "whois_023_Q2",
+      "query": "이 IP 주소의 소유자와 네트워크 할당 정보를 조회해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "whois_023",
+      "target": "whois::whois_ip",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "whois_023_Q3",
+      "query": "Find out which ISP or organization is assigned this IP address and what netblock range it falls under",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "whois_023",
+      "target": "whois::whois_ip",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "whois_023_Q1",
+      "query": "Look up the ownership and registration details for this IP address: who operates it and which network block it belongs to",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "whois_023",
+      "target": "whois::whois_ip",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "whois_023_Q2",
+      "query": "이 IP 주소의 소유자와 네트워크 할당 정보를 조회해줘",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "whois_023",
+      "target": "whois::whois_ip",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "whois_023_Q3",
+      "query": "Find out which ISP or organization is assigned this IP address and what netblock range it falls under",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "drop_025",
+      "target": "mongodb::drop-database",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "drop_025_Q1",
+      "query": "Completely remove an entire database and all its collections from the document store",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "drop_025",
+      "target": "mongodb::drop-database",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "drop_025_Q2",
+      "query": "문서 데이터베이스에서 데이터베이스 전체를 삭제해줘, 컬렉션 하나가 아니라 DB 자체를",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "drop_025",
+      "target": "mongodb::drop-database",
+      "variant": "V_orig",
+      "label": "Control (original)",
+      "query_id": "drop_025_Q3",
+      "query": "Drop the entire test database including every collection and index it contains",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "drop_025",
+      "target": "mongodb::drop-database",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "drop_025_Q1",
+      "query": "Completely remove an entire database and all its collections from the document store",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "drop_025",
+      "target": "mongodb::drop-database",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "drop_025_Q2",
+      "query": "문서 데이터베이스에서 데이터베이스 전체를 삭제해줘, 컬렉션 하나가 아니라 DB 자체를",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "drop_025",
+      "target": "mongodb::drop-database",
+      "variant": "V_prose",
+      "label": "Prose (natural language)",
+      "query_id": "drop_025_Q3",
+      "query": "Drop the entire test database including every collection and index it contains",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "drop_025",
+      "target": "mongodb::drop-database",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "drop_025_Q1",
+      "query": "Completely remove an entire database and all its collections from the document store",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "drop_025",
+      "target": "mongodb::drop-database",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "drop_025_Q2",
+      "query": "문서 데이터베이스에서 데이터베이스 전체를 삭제해줘, 컬렉션 하나가 아니라 DB 자체를",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "drop_025",
+      "target": "mongodb::drop-database",
+      "variant": "V_spec",
+      "label": "Spec (semi-formal)",
+      "query_id": "drop_025_Q3",
+      "query": "Drop the entire test database including every collection and index it contains",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "drop_025",
+      "target": "mongodb::drop-database",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "drop_025_Q1",
+      "query": "Completely remove an entire database and all its collections from the document store",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "drop_025",
+      "target": "mongodb::drop-database",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "drop_025_Q2",
+      "query": "문서 데이터베이스에서 데이터베이스 전체를 삭제해줘, 컬렉션 하나가 아니라 DB 자체를",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "drop_025",
+      "target": "mongodb::drop-database",
+      "variant": "V_md",
+      "label": "Markdown (structured)",
+      "query_id": "drop_025_Q3",
+      "query": "Drop the entire test database including every collection and index it contains",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "drop_025",
+      "target": "mongodb::drop-database",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "drop_025_Q1",
+      "query": "Completely remove an entire database and all its collections from the document store",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "drop_025",
+      "target": "mongodb::drop-database",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "drop_025_Q2",
+      "query": "문서 데이터베이스에서 데이터베이스 전체를 삭제해줘, 컬렉션 하나가 아니라 DB 자체를",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    },
+    {
+      "cluster": "drop_025",
+      "target": "mongodb::drop-database",
+      "variant": "V_xml",
+      "label": "XML (tagged)",
+      "query_id": "drop_025_Q3",
+      "query": "Drop the entire test database including every collection and index it contains",
+      "hits": 0,
+      "reps": 1,
+      "hit_rate": 0.0,
+      "picks": [
+        null
+      ]
+    }
+  ],
+  "provisional": true
+}

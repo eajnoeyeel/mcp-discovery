@@ -1,0 +1,23 @@
+[
+  {
+    "query": "search GitHub repositories and execute the top result",
+    "search_ok": true,
+    "execute_ok": true,
+    "search_latency_ms": 401.2,
+    "execute_latency_ms": 132.8
+  },
+  {
+    "query": "find a Postgres administration tool and inspect it",
+    "search_ok": true,
+    "execute_ok": true,
+    "search_latency_ms": 452.3,
+    "execute_latency_ms": 141.7
+  },
+  {
+    "query": "locate an arXiv paper tool and call abstract lookup",
+    "search_ok": true,
+    "execute_ok": false,
+    "search_latency_ms": 489.5,
+    "execute_latency_ms": 2500.0
+  }
+]

@@ -1,0 +1,114 @@
+{
+  "experiment": "recall-k-baseline",
+  "timestamp": "2026-04-11T12:01:50.908591+00:00",
+  "config": {
+    "embedding_model": "text-embedding-3-large",
+    "pool_size": 320,
+    "reranker": "none",
+    "k_values": [
+      3,
+      5,
+      10
+    ],
+    "gt_sources": [
+      "seed_set",
+      "mcp_atlas"
+    ]
+  },
+  "strategies": [
+    {
+      "name": "FlatStrategy",
+      "results_by_k": {
+        "3": {
+          "precision_at_1": 0.13374395072591289,
+          "recall_at_k": 0.21513418389793224,
+          "server_recall_at_k": 0.23273207215134184,
+          "mrr": 0.16820648188884,
+          "ndcg_at_5": 0.18019928524291498,
+          "confusion_rate": 0.09395632300660234,
+          "ece": 0.2864367982297535,
+          "latency_p50": 147.17220806051046,
+          "latency_p95": 385.535641759634,
+          "latency_mean": 179.3484545960302,
+          "n_queries": 2273,
+          "n_failed": 1
+        },
+        "5": {
+          "precision_at_1": 0.13374395072591289,
+          "recall_at_k": 0.2556093268807743,
+          "server_recall_at_k": 0.27276726792784867,
+          "mrr": 0.17735005132717407,
+          "ndcg_at_5": 0.1967745928742795,
+          "confusion_rate": 0.14068054850177755,
+          "ece": 0.2865377849353278,
+          "latency_p50": 167.53695800434798,
+          "latency_p95": 203.91542478464544,
+          "latency_mean": 174.42405559566097,
+          "n_queries": 2273,
+          "n_failed": 0
+        },
+        "10": {
+          "precision_at_1": 0.13374395072591289,
+          "recall_at_k": 0.28244610646722396,
+          "server_recall_at_k": 0.30136383633963926,
+          "mrr": 0.18217131404548914,
+          "ndcg_at_5": 0.19809786172132174,
+          "confusion_rate": 0.17166074149314373,
+          "ece": 0.28653784174571056,
+          "latency_p50": 179.08666701987386,
+          "latency_p95": 389.84930815640837,
+          "latency_mean": 198.84816453511692,
+          "n_queries": 2273,
+          "n_failed": 0
+        }
+      }
+    },
+    {
+      "name": "ParallelStrategy",
+      "results_by_k": {
+        "3": {
+          "precision_at_1": 0.12450505939287286,
+          "recall_at_k": 0.2014958205015398,
+          "server_recall_at_k": 0.22041355037395513,
+          "mrr": 0.15874761695263234,
+          "ndcg_at_5": 0.16973989492646746,
+          "confusion_rate": 0.08793969849246232,
+          "ece": 0.0954790825442937,
+          "latency_p50": 179.82995905913413,
+          "latency_p95": 406.9608245743439,
+          "latency_mean": 212.03475620393144,
+          "n_queries": 2273,
+          "n_failed": 0
+        },
+        "5": {
+          "precision_at_1": 0.11746590409150902,
+          "recall_at_k": 0.21557413110426749,
+          "server_recall_at_k": 0.23141223053233612,
+          "mrr": 0.1558146355770641,
+          "ndcg_at_5": 0.17083202708787626,
+          "confusion_rate": 0.11116650049850449,
+          "ece": 0.08762992292832064,
+          "latency_p50": 175.37987499963492,
+          "latency_p95": 415.2828669873998,
+          "latency_mean": 212.92766167834898,
+          "n_queries": 2273,
+          "n_failed": 0
+        },
+        "10": {
+          "precision_at_1": 0.11438627364716233,
+          "recall_at_k": 0.2683677958644963,
+          "server_recall_at_k": 0.28508578970523535,
+          "mrr": 0.15676191872848275,
+          "ndcg_at_5": 0.16215559917159655,
+          "confusion_rate": 0.17386984600099353,
+          "ece": 0.08343428522285712,
+          "latency_p50": 175.02658406738192,
+          "latency_p95": 437.88859194610274,
+          "latency_mean": 222.08630829061855,
+          "n_queries": 2273,
+          "n_failed": 0
+        }
+      }
+    }
+  ]
+}

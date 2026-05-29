@@ -1,0 +1,19 @@
+[
+  {
+    "provider_key": "apify",
+    "display_name": "Apify",
+    "authorize_url": "${APIFY_OAUTH_AUTHORIZE_URL}",
+    "token_url": "${APIFY_OAUTH_TOKEN_URL}",
+    "client_id": "${APIFY_OAUTH_CLIENT_ID}",
+    "redirect_uri": "${APIFY_OAUTH_REDIRECT_URI}",
+    "default_scopes": [],
+    "scope_aliases": {},
+    "supports_refresh_token": true,
+    "pkce_required": true,
+    "enabled": true,
+    "metadata": {
+      "server_url": "https://mcp.apify.com",
+      "notes": "Fill the OAuth endpoints from the provider's integration registration."
+    }
+  }
+]

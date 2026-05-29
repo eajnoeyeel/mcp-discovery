@@ -1,0 +1,424 @@
+{
+  "results": [
+    {
+      "experiment": "E0",
+      "timestamp": "2026-03-31T16:03:52.230812+00:00",
+      "config": {
+        "pool_size": 5,
+        "top_k": 10,
+        "embedding_model": "text-embedding-3-large",
+        "reranker": "rerank-v3.5",
+        "gt_sources": [
+          "seed_set",
+          "mcp_atlas"
+        ]
+      },
+      "strategies": [
+        {
+          "name": "FlatStrategy",
+          "metrics": {
+            "precision_at_1": 0.6363636363636364,
+            "recall_at_k": 0.9090909090909091,
+            "server_recall_at_k": 0.9090909090909091,
+            "mrr": 0.7689393939393939,
+            "ndcg_at_5": 0.8054012480119419,
+            "confusion_rate": 0.75,
+            "ece": 0.27647164280303027,
+            "latency_p50": 535.6060830235947,
+            "latency_p95": 1531.5673650038661,
+            "latency_p99": 3677.8992767533045,
+            "latency_mean": 746.4865233209407
+          },
+          "n_queries": 66,
+          "n_failed": 0
+        },
+        {
+          "name": "SequentialStrategy",
+          "metrics": {
+            "precision_at_1": 0.5909090909090909,
+            "recall_at_k": 0.6515151515151515,
+            "server_recall_at_k": 0.6515151515151515,
+            "mrr": 0.6161616161616161,
+            "ndcg_at_5": 0.6251796895021654,
+            "confusion_rate": 0.14814814814814814,
+            "ece": 0.2222881572878788,
+            "latency_p50": 460.28152099461295,
+            "latency_p95": 1542.7068962453632,
+            "latency_p99": 1608.8086688469043,
+            "latency_mean": 597.3982393470853
+          },
+          "n_queries": 66,
+          "n_failed": 0
+        },
+        {
+          "name": "ParallelStrategy",
+          "metrics": {
+            "precision_at_1": 0.6363636363636364,
+            "recall_at_k": 0.9090909090909091,
+            "server_recall_at_k": 0.9090909090909091,
+            "mrr": 0.7638888888888888,
+            "ndcg_at_5": 0.8014336797218977,
+            "confusion_rate": 0.75,
+            "ece": 0.27647336407575757,
+            "latency_p50": 407.422645992483,
+            "latency_p95": 614.1799477481982,
+            "latency_p99": 1589.1954330145363,
+            "latency_mean": 466.86688574404934
+          },
+          "n_queries": 66,
+          "n_failed": 0
+        }
+      ]
+    },
+    {
+      "experiment": "E0",
+      "timestamp": "2026-03-31T16:05:32.849078+00:00",
+      "config": {
+        "pool_size": 20,
+        "top_k": 10,
+        "embedding_model": "text-embedding-3-large",
+        "reranker": "rerank-v3.5",
+        "gt_sources": [
+          "seed_set",
+          "mcp_atlas"
+        ]
+      },
+      "strategies": [
+        {
+          "name": "FlatStrategy",
+          "metrics": {
+            "precision_at_1": 0.6363636363636364,
+            "recall_at_k": 0.9090909090909091,
+            "server_recall_at_k": 0.9090909090909091,
+            "mrr": 0.7689393939393939,
+            "ndcg_at_5": 0.8054012480119419,
+            "confusion_rate": 0.75,
+            "ece": 0.2764807784090909,
+            "latency_p50": 402.15522900689393,
+            "latency_p95": 716.5662602346856,
+            "latency_p99": 4911.770414703641,
+            "latency_mean": 562.1309816845248
+          },
+          "n_queries": 66,
+          "n_failed": 0
+        },
+        {
+          "name": "SequentialStrategy",
+          "metrics": {
+            "precision_at_1": 0.5909090909090909,
+            "recall_at_k": 0.6515151515151515,
+            "server_recall_at_k": 0.6515151515151515,
+            "mrr": 0.6161616161616161,
+            "ndcg_at_5": 0.6251796895021654,
+            "confusion_rate": 0.14814814814814814,
+            "ece": 0.2222882798939394,
+            "latency_p50": 462.3938544973498,
+            "latency_p95": 724.3359167478047,
+            "latency_p99": 1218.1717146944713,
+            "latency_mean": 506.2406717572065
+          },
+          "n_queries": 66,
+          "n_failed": 0
+        },
+        {
+          "name": "ParallelStrategy",
+          "metrics": {
+            "precision_at_1": 0.6363636363636364,
+            "recall_at_k": 0.9090909090909091,
+            "server_recall_at_k": 0.9090909090909091,
+            "mrr": 0.7638888888888888,
+            "ndcg_at_5": 0.8014336797218977,
+            "confusion_rate": 0.75,
+            "ece": 0.2764750684090909,
+            "latency_p50": 403.455916501116,
+            "latency_p95": 577.3269900091691,
+            "latency_p99": 658.6493147988217,
+            "latency_mean": 419.3735095305425
+          },
+          "n_queries": 66,
+          "n_failed": 0
+        }
+      ]
+    },
+    {
+      "experiment": "E0",
+      "timestamp": "2026-03-31T16:07:12.621263+00:00",
+      "config": {
+        "pool_size": 50,
+        "top_k": 10,
+        "embedding_model": "text-embedding-3-large",
+        "reranker": "rerank-v3.5",
+        "gt_sources": [
+          "seed_set",
+          "mcp_atlas"
+        ]
+      },
+      "strategies": [
+        {
+          "name": "FlatStrategy",
+          "metrics": {
+            "precision_at_1": 0.5753424657534246,
+            "recall_at_k": 0.863013698630137,
+            "server_recall_at_k": 0.863013698630137,
+            "mrr": 0.7123287671232876,
+            "ndcg_at_5": 0.7513564169041709,
+            "confusion_rate": 0.6774193548387096,
+            "ece": 0.2493192177671233,
+            "latency_p50": 400.9637919953093,
+            "latency_p95": 646.2595249991863,
+            "latency_p99": 725.1567637652624,
+            "latency_mean": 428.8657694386816
+          },
+          "n_queries": 73,
+          "n_failed": 0
+        },
+        {
+          "name": "SequentialStrategy",
+          "metrics": {
+            "precision_at_1": 0.5753424657534246,
+            "recall_at_k": 0.6301369863013698,
+            "server_recall_at_k": 0.6301369863013698,
+            "mrr": 0.5981735159817352,
+            "ndcg_at_5": 0.6063268425636016,
+            "confusion_rate": 0.12903225806451613,
+            "ece": 0.2171352790273972,
+            "latency_p50": 440.08462500642054,
+            "latency_p95": 728.1329249904948,
+            "latency_p99": 855.8100147754886,
+            "latency_mean": 480.7471615363595
+          },
+          "n_queries": 73,
+          "n_failed": 0
+        },
+        {
+          "name": "ParallelStrategy",
+          "metrics": {
+            "precision_at_1": 0.5753424657534246,
+            "recall_at_k": 0.863013698630137,
+            "server_recall_at_k": 0.863013698630137,
+            "mrr": 0.708904109589041,
+            "ndcg_at_5": 0.748718936558742,
+            "confusion_rate": 0.6774193548387096,
+            "ece": 0.2493112971917808,
+            "latency_p50": 409.28991700639017,
+            "latency_p95": 536.8450498091981,
+            "latency_p99": 648.8651632133407,
+            "latency_mean": 422.44797548094175
+          },
+          "n_queries": 73,
+          "n_failed": 0
+        }
+      ]
+    },
+    {
+      "experiment": "E0",
+      "timestamp": "2026-03-31T16:09:58.695763+00:00",
+      "config": {
+        "pool_size": 100,
+        "top_k": 10,
+        "embedding_model": "text-embedding-3-large",
+        "reranker": "rerank-v3.5",
+        "gt_sources": [
+          "seed_set",
+          "mcp_atlas"
+        ]
+      },
+      "strategies": [
+        {
+          "name": "FlatStrategy",
+          "metrics": {
+            "precision_at_1": 0.3739130434782609,
+            "recall_at_k": 0.6434782608695652,
+            "server_recall_at_k": 0.7043478260869566,
+            "mrr": 0.5043478260869565,
+            "ndcg_at_5": 0.5405070953888613,
+            "confusion_rate": 0.4305555555555556,
+            "ece": 0.1904305129478261,
+            "latency_p50": 419.1995410074014,
+            "latency_p95": 564.5713587029602,
+            "latency_p99": 889.755295489449,
+            "latency_mean": 442.3766181665047
+          },
+          "n_queries": 115,
+          "n_failed": 0
+        },
+        {
+          "name": "SequentialStrategy",
+          "metrics": {
+            "precision_at_1": 0.3652173913043478,
+            "recall_at_k": 0.40869565217391307,
+            "server_recall_at_k": 0.4260869565217391,
+            "mrr": 0.3818840579710145,
+            "ndcg_at_5": 0.3886307483931853,
+            "confusion_rate": 0.0684931506849315,
+            "ece": 0.11099922382608694,
+            "latency_p50": 522.0471250067931,
+            "latency_p95": 619.5261160988592,
+            "latency_p99": 715.7069213601062,
+            "latency_mean": 514.6799832772282
+          },
+          "n_queries": 115,
+          "n_failed": 0
+        },
+        {
+          "name": "ParallelStrategy",
+          "metrics": {
+            "precision_at_1": 0.40869565217391307,
+            "recall_at_k": 0.6521739130434783,
+            "server_recall_at_k": 0.7130434782608696,
+            "mrr": 0.5239130434782608,
+            "ndcg_at_5": 0.5571564403807685,
+            "confusion_rate": 0.4117647058823529,
+            "ece": 0.20776984300869566,
+            "latency_p50": 403.86300001409836,
+            "latency_p95": 551.3962794881081,
+            "latency_p99": 753.618351118057,
+            "latency_mean": 463.60506554913667
+          },
+          "n_queries": 115,
+          "n_failed": 0
+        }
+      ]
+    },
+    {
+      "experiment": "E0",
+      "timestamp": "2026-03-31T16:13:58.528417+00:00",
+      "config": {
+        "pool_size": 200,
+        "top_k": 10,
+        "embedding_model": "text-embedding-3-large",
+        "reranker": "rerank-v3.5",
+        "gt_sources": [
+          "seed_set",
+          "mcp_atlas"
+        ]
+      },
+      "strategies": [
+        {
+          "name": "FlatStrategy",
+          "metrics": {
+            "precision_at_1": 0.38764044943820225,
+            "recall_at_k": 0.6853932584269663,
+            "server_recall_at_k": 0.7471910112359551,
+            "mrr": 0.507071517745675,
+            "ndcg_at_5": 0.5407326163767406,
+            "confusion_rate": 0.48623853211009177,
+            "ece": 0.09583296262359552,
+            "latency_p50": 399.0591044857865,
+            "latency_p95": 541.7195124551655,
+            "latency_p99": 707.2775406806601,
+            "latency_mean": 419.4144730960095
+          },
+          "n_queries": 178,
+          "n_failed": 0
+        },
+        {
+          "name": "SequentialStrategy",
+          "metrics": {
+            "precision_at_1": 0.3539325842696629,
+            "recall_at_k": 0.42696629213483145,
+            "server_recall_at_k": 0.4438202247191011,
+            "mrr": 0.3832932049224184,
+            "ndcg_at_5": 0.39154988771145166,
+            "confusion_rate": 0.11304347826086956,
+            "ece": 0.10207921256741574,
+            "latency_p50": 458.875229494879,
+            "latency_p95": 657.0677312600311,
+            "latency_p99": 842.5218067501555,
+            "latency_mean": 482.54010211162955
+          },
+          "n_queries": 178,
+          "n_failed": 0
+        },
+        {
+          "name": "ParallelStrategy",
+          "metrics": {
+            "precision_at_1": 0.4101123595505618,
+            "recall_at_k": 0.6910112359550562,
+            "server_recall_at_k": 0.7528089887640449,
+            "mrr": 0.520996076333155,
+            "ndcg_at_5": 0.5511377000496048,
+            "confusion_rate": 0.47619047619047616,
+            "ece": 0.1185172017808989,
+            "latency_p50": 404.5481664943509,
+            "latency_p95": 592.0149249563111,
+            "latency_p99": 794.2864937620463,
+            "latency_mean": 430.5952614728555
+          },
+          "n_queries": 178,
+          "n_failed": 0
+        }
+      ]
+    },
+    {
+      "experiment": "E0",
+      "timestamp": "2026-03-31T16:18:14.399048+00:00",
+      "config": {
+        "pool_size": 292,
+        "top_k": 10,
+        "embedding_model": "text-embedding-3-large",
+        "reranker": "rerank-v3.5",
+        "gt_sources": [
+          "seed_set",
+          "mcp_atlas"
+        ]
+      },
+      "strategies": [
+        {
+          "name": "FlatStrategy",
+          "metrics": {
+            "precision_at_1": 0.36082474226804123,
+            "recall_at_k": 0.6494845360824743,
+            "server_recall_at_k": 0.7216494845360825,
+            "mrr": 0.4737563410243823,
+            "ndcg_at_5": 0.5074989066371253,
+            "confusion_rate": 0.45161290322580644,
+            "ece": 0.10248919876288659,
+            "latency_p50": 394.4446249952307,
+            "latency_p95": 536.0851857607485,
+            "latency_p99": 718.9609237259699,
+            "latency_mean": 415.3644983349464
+          },
+          "n_queries": 194,
+          "n_failed": 0
+        },
+        {
+          "name": "SequentialStrategy",
+          "metrics": {
+            "precision_at_1": 0.3247422680412371,
+            "recall_at_k": 0.4072164948453608,
+            "server_recall_at_k": 0.422680412371134,
+            "mrr": 0.3559769268532155,
+            "ndcg_at_5": 0.3662743975710577,
+            "confusion_rate": 0.12213740458015267,
+            "ece": 0.09986627679381443,
+            "latency_p50": 431.3905205053743,
+            "latency_p95": 532.4065038628759,
+            "latency_p99": 707.8147340656141,
+            "latency_mean": 456.91554271195986
+          },
+          "n_queries": 194,
+          "n_failed": 0
+        },
+        {
+          "name": "ParallelStrategy",
+          "metrics": {
+            "precision_at_1": 0.37628865979381443,
+            "recall_at_k": 0.6494845360824743,
+            "server_recall_at_k": 0.7164948453608248,
+            "mrr": 0.48206512845688104,
+            "ndcg_at_5": 0.5124744328563794,
+            "confusion_rate": 0.4380165289256198,
+            "ece": 0.11602186330412373,
+            "latency_p50": 403.3950829907553,
+            "latency_p95": 562.6724812580504,
+            "latency_p99": 730.5892671900788,
+            "latency_mean": 432.10974436123695
+          },
+          "n_queries": 194,
+          "n_failed": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "experiment": "E4v2b",
+  "created_at": "2026-04-07",
+  "variant_ids": ["V0", "V1", "V2", "V3", "V4", "V5", "V6"],
+  "variant_names": {
+    "V0": "Control (original)",
+    "V1": "Tool-DE (generic enrichment)",
+    "V2": "Differentiation-first",
+    "V3": "Use-case anchored",
+    "V4": "I/O explicit",
+    "V5": "Boundary explicit",
+    "V6": "Overclaiming (negative control)"
+  },
+  "clusters": {
+    "git_vcs": {
+      "target": "git::git_log",
+      "baseline_tsr": 1.0,
+      "baseline_desc_words": 4,
+      "variants": {
+        "V0": "Shows the commit logs",
+        "V1": "Retrieves and displays the commit logs for a specified repository, useful for tracking changes and understanding project history.",
+        "V2": "Shows the commit history of a local repository. Unlike git_status (working tree state), git_diff (file-level changes), or git_show (single commit contents), git_log provides the chronological sequence of past commits with author, date, and message.",
+        "V3": "Retrieves Git commit history. Use when you need to review who changed what and when, trace the evolution of a file across commits, or find the commit that introduced a specific change.",
+        "V4": "Returns a list of commit entries (hash, author, date, message) for a Git repository. Accepts optional path filter, author filter, date range, and count limit.",
+        "V5": "Shows the commit logs. Does not show file-level diffs (use git_diff), working tree state (use git_status), or single commit details (use git_show). Only outputs the commit log sequence.",
+        "V6": "Comprehensive Git analysis tool that shows commit history, tracks all changes, analyzes code evolution, reviews diffs, and helps understand repository patterns and working tree state. Essential for any Git-related task."
+      }
+    },
+    "database_records": {
+      "target": "airtable::search_records",
+      "baseline_tsr": 0.77,
+      "baseline_desc_words": 6,
+      "variants": {
+        "V0": "Search for records containing specific text",
+        "V1": "Searches for records in a specified table that contain a specific text, useful for retrieving relevant data based on defined criteria.",
+        "V2": "Searches for records in an Airtable base by text match. Unlike list_tables (table metadata), list_records (full table dump), or mongodb::find (MongoDB-specific query), search_records does targeted text search within Airtable fields.",
+        "V3": "Searches Airtable records by text match. Use when you need to find specific entries in an Airtable base by keyword, filter records by content, or look up data matching a search term.",
+        "V4": "Accepts base_id, table_name, and search_text. Returns matching record objects with field values. Searches across all text fields in the specified table.",
+        "V5": "Search for records containing specific text in Airtable. Does not list all records (use list_records), describe table structure (use list_tables), or query MongoDB (use mongodb::find). Airtable-only text search.",
+        "V6": "Universal data search and retrieval tool. Finds records across any database, queries structured data from multiple sources, handles complex search patterns, filters, and aggregations. Works with any data format."
+      }
+    },
+    "file_operations": {
+      "target": "filesystem::list_directory",
+      "baseline_tsr": 0.98,
+      "baseline_desc_words": 8,
+      "variants": {
+        "V0": "List directory contents with [FILE] or [DIR] prefixes",
+        "V1": "Lists the contents of a specified directory, using [FILE] or [DIR] prefixes to categorize items. Use when needing to view directory structure. Key parameter: path.",
+        "V2": "Lists files and subdirectories in a given path. Unlike read_file (reads content), read_multiple_files (batch content read), or desktop-commander::list_directory (detailed listing with sizes), filesystem::list_directory gives a simple categorized listing with [FILE]/[DIR] prefixes.",
+        "V3": "Lists directory contents. Use when you need to see what files exist in a folder, explore a project structure, or check if a specific file is present before reading it.",
+        "V4": "Accepts a path parameter. Returns an array of entries, each prefixed with [FILE] or [DIR] to indicate type. Does not recurse into subdirectories.",
+        "V5": "List directory contents with [FILE] or [DIR] prefixes. Does not read file contents (use read_file), handle multiple files at once (use read_multiple_files), or provide file sizes (use desktop-commander::list_directory). Simple listing only.",
+        "V6": "Comprehensive file system exploration tool that lists directories, reads files, discovers content, searches file systems, and helps navigate any file structure. Ideal for all file browsing and reading needs."
+      }
+    }
+  }
+}

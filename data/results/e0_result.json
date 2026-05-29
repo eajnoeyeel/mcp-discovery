@@ -1,0 +1,35 @@
+{
+  "experiment": "E0",
+  "timestamp": "2026-04-10T11:13:59.270571+00:00",
+  "config": {
+    "pool_size": 292,
+    "top_k": 10,
+    "max_queries": 50,
+    "embedding_model": "text-embedding-3-large",
+    "reranker": "rerank-multilingual-v3.0",
+    "gt_sources": [
+      "seed_set",
+      "mcp_atlas"
+    ]
+  },
+  "strategies": [
+    {
+      "name": "ParallelStrategy",
+      "metrics": {
+        "precision_at_1": 0.16,
+        "recall_at_k": 0.4,
+        "server_recall_at_k": 0.44,
+        "mrr": 0.22604761904761905,
+        "ndcg_at_5": 0.2410777836272619,
+        "confusion_rate": 0.2857142857142857,
+        "ece": 0.14382790033098003,
+        "latency_p50": 6006.041354034096,
+        "latency_p95": 6094.10587742459,
+        "latency_p99": 8472.946882478418,
+        "latency_mean": 5894.719058300834
+      },
+      "n_queries": 50,
+      "n_failed": 0
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+anyio==4.12.1
+    # via httpx
+certifi==2026.2.25
+    # via
+    #   httpcore
+    #   httpx
+colorama==0.4.6 ; sys_platform == 'win32'
+    # via loguru
+h11==0.16.0
+    # via httpcore
+httpcore==1.0.9
+    # via httpx
+httpx==0.28.1
+idna==3.11
+    # via
+    #   anyio
+    #   httpx
+loguru==0.7.3
+typing-extensions==4.15.0 ; python_full_version < '3.13'
+    # via anyio
+win32-setctime==1.2.0 ; sys_platform == 'win32'
+    # via loguru

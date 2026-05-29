@@ -1,0 +1,815 @@
+{
+  "experiment": "E4",
+  "timestamp": "2026-04-06T18:09:22.911758+00:00",
+  "config": {
+    "strategy": "parallel",
+    "top_k": 10,
+    "embedding_model": "text-embedding-3-large",
+    "reranker": "rerank-v3.5",
+    "cohere_rpm": 95,
+    "pool_size": 320,
+    "n_enriched_tools": 94,
+    "n_gt_queries": 2273,
+    "n_unique_tools_in_gt": 94,
+    "n_enriched_in_gt": 94,
+    "gt_source": "mcp_atlas.jsonl"
+  },
+  "results": {
+    "version_a": {
+      "precision_at_1": 0.2776066871975363,
+      "recall_at_k": 0.49846018477782666,
+      "server_recall_at_k": 0.5389353277606688,
+      "mrr": 0.3547666184819726,
+      "ndcg_at_5": 0.3712638555558634,
+      "confusion_rate": 0.30572472594397077,
+      "ece": 0.046006388501099865,
+      "latency_p50": 631.2831660034135,
+      "latency_p95": 1023.3786832075566,
+      "latency_mean": 678.2852871140881,
+      "n_queries": 2273,
+      "n_failed": 0
+    },
+    "version_b": {
+      "precision_at_1": 0.2872855257369116,
+      "recall_at_k": 0.46942366915970085,
+      "server_recall_at_k": 0.5310162780466344,
+      "mrr": 0.34618729879398596,
+      "ndcg_at_5": 0.3613042333537333,
+      "confusion_rate": 0.25555555555555554,
+      "ece": 0.053903473119225685,
+      "latency_p50": 631.1978750163689,
+      "latency_p95": 819.7951085865498,
+      "latency_mean": 658.2195920784382,
+      "n_queries": 2273,
+      "n_failed": 0
+    },
+    "delta_p1": 0.00967883853937529,
+    "lift_pct": 3.4865293185420025
+  },
+  "statistics": {
+    "test": "wilcoxon_signed_rank",
+    "statistic": 356.0,
+    "p_value": 0.8334014846824346,
+    "mean_delta": 0.01602939832336923,
+    "ci_95_lower": -0.027253441590835672,
+    "ci_95_upper": 0.061919069206630574,
+    "n_tools": 94,
+    "improved": 18,
+    "degraded": 20,
+    "same": 56
+  },
+  "per_tool": [
+    {
+      "tool_id": "national-parks::getVisitorCenters",
+      "p1_before": 0.0,
+      "p1_after": 1.0,
+      "delta": 1.0,
+      "n_queries": 5,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "national-parks::getCampgrounds",
+      "p1_before": 0.0,
+      "p1_after": 0.8,
+      "delta": 0.8,
+      "n_queries": 5,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "osm-mcp-server::find_ev_charging_stations",
+      "p1_before": 0.3333333333333333,
+      "p1_after": 1.0,
+      "delta": 0.6666666666666667,
+      "n_queries": 6,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "context7::resolve-library-id",
+      "p1_before": 0.5,
+      "p1_after": 1.0,
+      "delta": 0.5,
+      "n_queries": 2,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "whois::whois_domain",
+      "p1_before": 0.2,
+      "p1_after": 0.65,
+      "delta": 0.45,
+      "n_queries": 20,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "slack::conversations_history",
+      "p1_before": 0.3888888888888889,
+      "p1_after": 0.8333333333333334,
+      "delta": 0.4444444444444445,
+      "n_queries": 18,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "filesystem::list_directory",
+      "p1_before": 0.15853658536585366,
+      "p1_after": 0.4634146341463415,
+      "delta": 0.30487804878048785,
+      "n_queries": 82,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "twelvedata::GetSymbolSearch",
+      "p1_before": 0.125,
+      "p1_after": 0.375,
+      "delta": 0.25,
+      "n_queries": 8,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "weather-data::weather_history",
+      "p1_before": 0.5,
+      "p1_after": 0.75,
+      "delta": 0.25,
+      "n_queries": 8,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "airtable::search_records",
+      "p1_before": 0.31958762886597936,
+      "p1_after": 0.5463917525773195,
+      "delta": 0.22680412371134018,
+      "n_queries": 97,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "airtable::list_tables",
+      "p1_before": 0.7096774193548387,
+      "p1_after": 0.8548387096774194,
+      "delta": 0.14516129032258063,
+      "n_queries": 62,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "arxiv::search_papers",
+      "p1_before": 0.25,
+      "p1_after": 0.3611111111111111,
+      "delta": 0.1111111111111111,
+      "n_queries": 36,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "ddg-search::fetch_content",
+      "p1_before": 0.0,
+      "p1_after": 0.1111111111111111,
+      "delta": 0.1111111111111111,
+      "n_queries": 9,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "osm-mcp-server::find_nearby_places",
+      "p1_before": 0.0,
+      "p1_after": 0.1111111111111111,
+      "delta": 0.1111111111111111,
+      "n_queries": 9,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "wikipedia::get_article",
+      "p1_before": 0.47368421052631576,
+      "p1_after": 0.5526315789473685,
+      "delta": 0.07894736842105271,
+      "n_queries": 38,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "met-museum::get-museum-object",
+      "p1_before": 0.7142857142857143,
+      "p1_after": 0.7619047619047619,
+      "delta": 0.04761904761904756,
+      "n_queries": 42,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "clinicaltrialsgov-mcp-server::clinicaltrials_list_studies",
+      "p1_before": 0.25,
+      "p1_after": 0.2916666666666667,
+      "delta": 0.041666666666666685,
+      "n_queries": 24,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "lara-translate::list_languages",
+      "p1_before": 0.9259259259259259,
+      "p1_after": 0.9629629629629629,
+      "delta": 0.03703703703703698,
+      "n_queries": 27,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "airtable::list_bases",
+      "p1_before": 1.0,
+      "p1_after": 1.0,
+      "delta": 0.0,
+      "n_queries": 62,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "alchemy::fetchTokenPriceHistoryBySymbol",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 60,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "brave-search::brave_web_search",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 64,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "calculator::calculate",
+      "p1_before": 0.047619047619047616,
+      "p1_after": 0.047619047619047616,
+      "delta": 0.0,
+      "n_queries": 42,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "cli-mcp-server::run_command",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 95,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "clinicaltrialsgov-mcp-server::clinicaltrials_analyze_trends",
+      "p1_before": 1.0,
+      "p1_after": 1.0,
+      "delta": 0.0,
+      "n_queries": 2,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "clinicaltrialsgov-mcp-server::clinicaltrials_get_study",
+      "p1_before": 1.0,
+      "p1_after": 1.0,
+      "delta": 0.0,
+      "n_queries": 1,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "context7::query-docs",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 2,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "ddg-search::search",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 69,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "desktop-commander::read_file",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 23,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "desktop-commander::search_files",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 1,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "e2b-server::run_code",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 27,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "exa::web_search_exa",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 82,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "fetch::fetch_markdown",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 29,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "filesystem::read_multiple_files",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 2,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "git::git_diff_unstaged",
+      "p1_before": 1.0,
+      "p1_after": 1.0,
+      "delta": 0.0,
+      "n_queries": 1,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "git::git_status",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 2,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "github::get_commit",
+      "p1_before": 0.5,
+      "p1_after": 0.5,
+      "delta": 0.0,
+      "n_queries": 2,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "github::get_issue",
+      "p1_before": 1.0,
+      "p1_after": 1.0,
+      "delta": 0.0,
+      "n_queries": 1,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "github::get_pull_request",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 1,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "github::list_commits",
+      "p1_before": 1.0,
+      "p1_after": 1.0,
+      "delta": 0.0,
+      "n_queries": 7,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "github::list_pull_requests",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 2,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "github::search_issues",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 4,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "google-maps::GOOGLE_MAPS_DISTANCE_MATRIX_API",
+      "p1_before": 0.16666666666666666,
+      "p1_after": 0.16666666666666666,
+      "delta": 0.0,
+      "n_queries": 12,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "google-maps::GOOGLE_MAPS_GEOCODING_API",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 8,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "google-maps::GOOGLE_MAPS_GET_DIRECTION",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 2,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "google-maps::GOOGLE_MAPS_TEXT_SEARCH",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 19,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "mcp-code-executor::execute_code",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 53,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "mcp-code-executor::read_code_file",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 3,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "mcp-server-code-runner::run-code",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 28,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "memory::open_nodes",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 1,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "memory::search_nodes",
+      "p1_before": 0.13333333333333333,
+      "p1_after": 0.13333333333333333,
+      "delta": 0.0,
+      "n_queries": 15,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "met-museum::list-departments",
+      "p1_before": 1.0,
+      "p1_after": 1.0,
+      "delta": 0.0,
+      "n_queries": 10,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "mongodb::aggregate",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 22,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "mongodb::count",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 6,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "mongodb::find",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 44,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "mongodb::list-collections",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 59,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "mongodb::list-databases",
+      "p1_before": 1.0,
+      "p1_after": 1.0,
+      "delta": 0.0,
+      "n_queries": 58,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "notion::notion-get-users",
+      "p1_before": 0.5,
+      "p1_after": 0.5,
+      "delta": 0.0,
+      "n_queries": 2,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "open-library::get_author_info",
+      "p1_before": 1.0,
+      "p1_after": 1.0,
+      "delta": 0.0,
+      "n_queries": 12,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "open-library::get_author_photo",
+      "p1_before": 1.0,
+      "p1_after": 1.0,
+      "delta": 0.0,
+      "n_queries": 2,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "open-library::get_book_by_id",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 1,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "osm-mcp-server::get_route_directions",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 12,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "osm-mcp-server::reverse_geocode",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 4,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "oxylabs::oxylabs_scraper",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 85,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "pubmed::search_articles",
+      "p1_before": 0.07142857142857142,
+      "p1_after": 0.07142857142857142,
+      "delta": 0.0,
+      "n_queries": 14,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "slack::channels_list",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 26,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "twelvedata::GetCryptocurrencies",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 2,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "twelvedata::GetTimeSeries",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 44,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "twelvedata::GetTimeSeriesMacd",
+      "p1_before": 0.5,
+      "p1_after": 0.5,
+      "delta": 0.0,
+      "n_queries": 2,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "weather-data::weather_astronomy",
+      "p1_before": 0.6071428571428571,
+      "p1_after": 0.6071428571428571,
+      "delta": 0.0,
+      "n_queries": 28,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "weather-data::weather_search",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 3,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "weather::find_weather_stations",
+      "p1_before": 1.0,
+      "p1_after": 1.0,
+      "delta": 0.0,
+      "n_queries": 5,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "wikipedia::extract_key_facts",
+      "p1_before": 0.5,
+      "p1_after": 0.5,
+      "delta": 0.0,
+      "n_queries": 2,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "wikipedia::get_summary",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 1,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "wikipedia::search_wikipedia",
+      "p1_before": 0.0,
+      "p1_after": 0.0,
+      "delta": 0.0,
+      "n_queries": 39,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "notion::notion-search",
+      "p1_before": 0.06578947368421052,
+      "p1_after": 0.05263157894736842,
+      "delta": -0.013157894736842105,
+      "n_queries": 76,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "national-parks::findParks",
+      "p1_before": 0.5909090909090909,
+      "p1_after": 0.5681818181818182,
+      "delta": -0.022727272727272707,
+      "n_queries": 44,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "osm-mcp-server::geocode_address",
+      "p1_before": 0.030303030303030304,
+      "p1_after": 0.0,
+      "delta": -0.030303030303030304,
+      "n_queries": 33,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "lara-translate::translate",
+      "p1_before": 0.275,
+      "p1_after": 0.225,
+      "delta": -0.05000000000000002,
+      "n_queries": 40,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "filesystem::read_file",
+      "p1_before": 0.05660377358490566,
+      "p1_after": 0.0,
+      "delta": -0.05660377358490566,
+      "n_queries": 53,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "airtable::list_records",
+      "p1_before": 0.7857142857142857,
+      "p1_after": 0.7142857142857143,
+      "delta": -0.0714285714285714,
+      "n_queries": 42,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "desktop-commander::list_directory",
+      "p1_before": 0.10344827586206896,
+      "p1_after": 0.0,
+      "delta": -0.10344827586206896,
+      "n_queries": 29,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "memory::read_graph",
+      "p1_before": 0.1111111111111111,
+      "p1_after": 0.0,
+      "delta": -0.1111111111111111,
+      "n_queries": 9,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "google-workspace::list_events",
+      "p1_before": 0.2727272727272727,
+      "p1_after": 0.13636363636363635,
+      "delta": -0.13636363636363635,
+      "n_queries": 22,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "twelvedata::GetTimeSeriesRsi",
+      "p1_before": 0.8571428571428571,
+      "p1_after": 0.7142857142857143,
+      "delta": -0.1428571428571428,
+      "n_queries": 7,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "open-library::get_book_by_title",
+      "p1_before": 0.4838709677419355,
+      "p1_after": 0.3225806451612903,
+      "delta": -0.16129032258064518,
+      "n_queries": 31,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "git::git_show",
+      "p1_before": 0.8,
+      "p1_after": 0.6,
+      "delta": -0.20000000000000007,
+      "n_queries": 10,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "git::git_log",
+      "p1_before": 0.9166666666666666,
+      "p1_after": 0.7083333333333334,
+      "delta": -0.20833333333333326,
+      "n_queries": 24,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "met-museum::search-museum-objects",
+      "p1_before": 0.6111111111111112,
+      "p1_after": 0.3611111111111111,
+      "delta": -0.25000000000000006,
+      "n_queries": 36,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "open-library::get_authors_by_name",
+      "p1_before": 0.5909090909090909,
+      "p1_after": 0.3181818181818182,
+      "delta": -0.27272727272727276,
+      "n_queries": 22,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "mongodb::collection-schema",
+      "p1_before": 0.6792452830188679,
+      "p1_after": 0.32075471698113206,
+      "delta": -0.3584905660377358,
+      "n_queries": 53,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "github::search_repositories",
+      "p1_before": 0.9047619047619048,
+      "p1_after": 0.5238095238095238,
+      "delta": -0.38095238095238093,
+      "n_queries": 21,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "github::search_users",
+      "p1_before": 1.0,
+      "p1_after": 0.5,
+      "delta": -0.5,
+      "n_queries": 2,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "national-parks::getParkDetails",
+      "p1_before": 0.9285714285714286,
+      "p1_after": 0.42857142857142855,
+      "delta": -0.5,
+      "n_queries": 14,
+      "is_enriched": true
+    },
+    {
+      "tool_id": "osm-mcp-server::analyze_neighborhood",
+      "p1_before": 1.0,
+      "p1_after": 0.5,
+      "delta": -0.5,
+      "n_queries": 2,
+      "is_enriched": true
+    }
+  ]
+}

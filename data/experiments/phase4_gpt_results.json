@@ -1,0 +1,5136 @@
+{
+  "model": "gpt-4o-mini",
+  "reps_per_condition": 10,
+  "total_trials": 2550,
+  "run_date": "2026-04-14T13:48:33.104828+00:00",
+  "elapsed_seconds": 3124.4,
+  "results": [
+    {
+      "cluster_id": "atlas_020",
+      "query_id": "atlas_020_Q1",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects"
+      ]
+    },
+    {
+      "cluster_id": "atlas_020",
+      "query_id": "atlas_020_Q1",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects"
+      ]
+    },
+    {
+      "cluster_id": "atlas_020",
+      "query_id": "atlas_020_Q1",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects"
+      ]
+    },
+    {
+      "cluster_id": "atlas_020",
+      "query_id": "atlas_020_Q1",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects"
+      ]
+    },
+    {
+      "cluster_id": "atlas_020",
+      "query_id": "atlas_020_Q1",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects"
+      ]
+    },
+    {
+      "cluster_id": "atlas_020",
+      "query_id": "atlas_020_Q2",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects"
+      ]
+    },
+    {
+      "cluster_id": "atlas_020",
+      "query_id": "atlas_020_Q2",
+      "variant": "V_prose",
+      "hits": 9,
+      "trials": 10,
+      "hit_rate": 0.9,
+      "picks": [
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-orgs",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects"
+      ]
+    },
+    {
+      "cluster_id": "atlas_020",
+      "query_id": "atlas_020_Q2",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects"
+      ]
+    },
+    {
+      "cluster_id": "atlas_020",
+      "query_id": "atlas_020_Q2",
+      "variant": "V_xml",
+      "hits": 9,
+      "trials": 10,
+      "hit_rate": 0.9,
+      "picks": [
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-orgs",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects"
+      ]
+    },
+    {
+      "cluster_id": "atlas_020",
+      "query_id": "atlas_020_Q2",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects"
+      ]
+    },
+    {
+      "cluster_id": "atlas_020",
+      "query_id": "atlas_020_Q3",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects"
+      ]
+    },
+    {
+      "cluster_id": "atlas_020",
+      "query_id": "atlas_020_Q3",
+      "variant": "V_prose",
+      "hits": 4,
+      "trials": 10,
+      "hit_rate": 0.4,
+      "picks": [
+        "mongodb::atlas-list-orgs",
+        "mongodb::atlas-list-orgs",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-orgs",
+        "mongodb::atlas-list-orgs",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-orgs",
+        "mongodb::atlas-list-orgs"
+      ]
+    },
+    {
+      "cluster_id": "atlas_020",
+      "query_id": "atlas_020_Q3",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects"
+      ]
+    },
+    {
+      "cluster_id": "atlas_020",
+      "query_id": "atlas_020_Q3",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects"
+      ]
+    },
+    {
+      "cluster_id": "atlas_020",
+      "query_id": "atlas_020_Q3",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects",
+        "mongodb::atlas-list-projects"
+      ]
+    },
+    {
+      "cluster_id": "create_006",
+      "query_id": "create_006_Q1",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "create_006",
+      "query_id": "create_006_Q1",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "create_006",
+      "query_id": "create_006_Q1",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "create_006",
+      "query_id": "create_006_Q1",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "create_006",
+      "query_id": "create_006_Q1",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "create_006",
+      "query_id": "create_006_Q2",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "create_006",
+      "query_id": "create_006_Q2",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "create_006",
+      "query_id": "create_006_Q2",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "create_006",
+      "query_id": "create_006_Q2",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "create_006",
+      "query_id": "create_006_Q2",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "create_006",
+      "query_id": "create_006_Q3",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "create_006",
+      "query_id": "create_006_Q3",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "create_006",
+      "query_id": "create_006_Q3",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "create_006",
+      "query_id": "create_006_Q3",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "create_006",
+      "query_id": "create_006_Q3",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag",
+        "clickup::create_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "delete_010",
+      "query_id": "delete_010_Q1",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "delete_010",
+      "query_id": "delete_010_Q1",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "delete_010",
+      "query_id": "delete_010_Q1",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "delete_010",
+      "query_id": "delete_010_Q1",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "delete_010",
+      "query_id": "delete_010_Q1",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "delete_010",
+      "query_id": "delete_010_Q2",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "delete_010",
+      "query_id": "delete_010_Q2",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "delete_010",
+      "query_id": "delete_010_Q2",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "delete_010",
+      "query_id": "delete_010_Q2",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "delete_010",
+      "query_id": "delete_010_Q2",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "delete_010",
+      "query_id": "delete_010_Q3",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "delete_010",
+      "query_id": "delete_010_Q3",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "delete_010",
+      "query_id": "delete_010_Q3",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "delete_010",
+      "query_id": "delete_010_Q3",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "delete_010",
+      "query_id": "delete_010_Q3",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag",
+        "clickup::delete_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "delete_011",
+      "query_id": "delete_011_Q1",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job"
+      ]
+    },
+    {
+      "cluster_id": "delete_011",
+      "query_id": "delete_011_Q1",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job"
+      ]
+    },
+    {
+      "cluster_id": "delete_011",
+      "query_id": "delete_011_Q1",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job"
+      ]
+    },
+    {
+      "cluster_id": "delete_011",
+      "query_id": "delete_011_Q1",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job"
+      ]
+    },
+    {
+      "cluster_id": "delete_011",
+      "query_id": "delete_011_Q1",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job"
+      ]
+    },
+    {
+      "cluster_id": "delete_011",
+      "query_id": "delete_011_Q2",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job"
+      ]
+    },
+    {
+      "cluster_id": "delete_011",
+      "query_id": "delete_011_Q2",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job"
+      ]
+    },
+    {
+      "cluster_id": "delete_011",
+      "query_id": "delete_011_Q2",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job"
+      ]
+    },
+    {
+      "cluster_id": "delete_011",
+      "query_id": "delete_011_Q2",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job"
+      ]
+    },
+    {
+      "cluster_id": "delete_011",
+      "query_id": "delete_011_Q2",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job"
+      ]
+    },
+    {
+      "cluster_id": "delete_011",
+      "query_id": "delete_011_Q3",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job"
+      ]
+    },
+    {
+      "cluster_id": "delete_011",
+      "query_id": "delete_011_Q3",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job"
+      ]
+    },
+    {
+      "cluster_id": "delete_011",
+      "query_id": "delete_011_Q3",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job"
+      ]
+    },
+    {
+      "cluster_id": "delete_011",
+      "query_id": "delete_011_Q3",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job"
+      ]
+    },
+    {
+      "cluster_id": "delete_011",
+      "query_id": "delete_011_Q3",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job",
+        "elevenlabs::delete_job"
+      ]
+    },
+    {
+      "cluster_id": "drop_025",
+      "query_id": "drop_025_Q1",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database"
+      ]
+    },
+    {
+      "cluster_id": "drop_025",
+      "query_id": "drop_025_Q1",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database"
+      ]
+    },
+    {
+      "cluster_id": "drop_025",
+      "query_id": "drop_025_Q1",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database"
+      ]
+    },
+    {
+      "cluster_id": "drop_025",
+      "query_id": "drop_025_Q1",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database"
+      ]
+    },
+    {
+      "cluster_id": "drop_025",
+      "query_id": "drop_025_Q1",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database"
+      ]
+    },
+    {
+      "cluster_id": "drop_025",
+      "query_id": "drop_025_Q2",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database"
+      ]
+    },
+    {
+      "cluster_id": "drop_025",
+      "query_id": "drop_025_Q2",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database"
+      ]
+    },
+    {
+      "cluster_id": "drop_025",
+      "query_id": "drop_025_Q2",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database"
+      ]
+    },
+    {
+      "cluster_id": "drop_025",
+      "query_id": "drop_025_Q2",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database"
+      ]
+    },
+    {
+      "cluster_id": "drop_025",
+      "query_id": "drop_025_Q2",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database"
+      ]
+    },
+    {
+      "cluster_id": "drop_025",
+      "query_id": "drop_025_Q3",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database"
+      ]
+    },
+    {
+      "cluster_id": "drop_025",
+      "query_id": "drop_025_Q3",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database"
+      ]
+    },
+    {
+      "cluster_id": "drop_025",
+      "query_id": "drop_025_Q3",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database"
+      ]
+    },
+    {
+      "cluster_id": "drop_025",
+      "query_id": "drop_025_Q3",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database"
+      ]
+    },
+    {
+      "cluster_id": "drop_025",
+      "query_id": "drop_025_Q3",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database",
+        "mongodb::drop-database"
+      ]
+    },
+    {
+      "cluster_id": "get_001",
+      "query_id": "get_001_Q1",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster_id": "get_001",
+      "query_id": "get_001_Q1",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster_id": "get_001",
+      "query_id": "get_001_Q1",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster_id": "get_001",
+      "query_id": "get_001_Q1",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster_id": "get_001",
+      "query_id": "get_001_Q1",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster_id": "get_001",
+      "query_id": "get_001_Q2",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster_id": "get_001",
+      "query_id": "get_001_Q2",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster_id": "get_001",
+      "query_id": "get_001_Q2",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster_id": "get_001",
+      "query_id": "get_001_Q2",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster_id": "get_001",
+      "query_id": "get_001_Q2",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster_id": "get_001",
+      "query_id": "get_001_Q3",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster_id": "get_001",
+      "query_id": "get_001_Q3",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster_id": "get_001",
+      "query_id": "get_001_Q3",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster_id": "get_001",
+      "query_id": "get_001_Q3",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster_id": "get_001",
+      "query_id": "get_001_Q3",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry",
+        "contentful-mcp::get_entry"
+      ]
+    },
+    {
+      "cluster_id": "get_002",
+      "query_id": "get_002_Q1",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster_id": "get_002",
+      "query_id": "get_002_Q1",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster_id": "get_002",
+      "query_id": "get_002_Q1",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster_id": "get_002",
+      "query_id": "get_002_Q1",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster_id": "get_002",
+      "query_id": "get_002_Q1",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster_id": "get_002",
+      "query_id": "get_002_Q2",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster_id": "get_002",
+      "query_id": "get_002_Q2",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster_id": "get_002",
+      "query_id": "get_002_Q2",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster_id": "get_002",
+      "query_id": "get_002_Q2",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster_id": "get_002",
+      "query_id": "get_002_Q2",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster_id": "get_002",
+      "query_id": "get_002_Q3",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster_id": "get_002",
+      "query_id": "get_002_Q3",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster_id": "get_002",
+      "query_id": "get_002_Q3",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster_id": "get_002",
+      "query_id": "get_002_Q3",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster_id": "get_002",
+      "query_id": "get_002_Q3",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes",
+        "productboard::get_notes"
+      ]
+    },
+    {
+      "cluster_id": "get_003",
+      "query_id": "get_003_Q1",
+      "variant": "V_orig",
+      "hits": 0,
+      "trials": 10,
+      "hit_rate": 0.0,
+      "picks": [
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan"
+      ]
+    },
+    {
+      "cluster_id": "get_003",
+      "query_id": "get_003_Q1",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan"
+      ]
+    },
+    {
+      "cluster_id": "get_003",
+      "query_id": "get_003_Q1",
+      "variant": "V_md",
+      "hits": 9,
+      "trials": 10,
+      "hit_rate": 0.9,
+      "picks": [
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan"
+      ]
+    },
+    {
+      "cluster_id": "get_003",
+      "query_id": "get_003_Q1",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan"
+      ]
+    },
+    {
+      "cluster_id": "get_003",
+      "query_id": "get_003_Q1",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan"
+      ]
+    },
+    {
+      "cluster_id": "get_003",
+      "query_id": "get_003_Q2",
+      "variant": "V_orig",
+      "hits": 0,
+      "trials": 10,
+      "hit_rate": 0.0,
+      "picks": [
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan"
+      ]
+    },
+    {
+      "cluster_id": "get_003",
+      "query_id": "get_003_Q2",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan"
+      ]
+    },
+    {
+      "cluster_id": "get_003",
+      "query_id": "get_003_Q2",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan"
+      ]
+    },
+    {
+      "cluster_id": "get_003",
+      "query_id": "get_003_Q2",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan"
+      ]
+    },
+    {
+      "cluster_id": "get_003",
+      "query_id": "get_003_Q2",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan"
+      ]
+    },
+    {
+      "cluster_id": "get_003",
+      "query_id": "get_003_Q3",
+      "variant": "V_orig",
+      "hits": 0,
+      "trials": 10,
+      "hit_rate": 0.0,
+      "picks": [
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+        "alibaba_cloud_analyticdb_for_mysql::get_query_plan"
+      ]
+    },
+    {
+      "cluster_id": "get_003",
+      "query_id": "get_003_Q3",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan"
+      ]
+    },
+    {
+      "cluster_id": "get_003",
+      "query_id": "get_003_Q3",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan"
+      ]
+    },
+    {
+      "cluster_id": "get_003",
+      "query_id": "get_003_Q3",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan"
+      ]
+    },
+    {
+      "cluster_id": "get_003",
+      "query_id": "get_003_Q3",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan",
+        "hologres::get_query_plan"
+      ]
+    },
+    {
+      "cluster_id": "get_004",
+      "query_id": "get_004_Q1",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary"
+      ]
+    },
+    {
+      "cluster_id": "get_004",
+      "query_id": "get_004_Q1",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary"
+      ]
+    },
+    {
+      "cluster_id": "get_004",
+      "query_id": "get_004_Q1",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary"
+      ]
+    },
+    {
+      "cluster_id": "get_004",
+      "query_id": "get_004_Q1",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary"
+      ]
+    },
+    {
+      "cluster_id": "get_004",
+      "query_id": "get_004_Q1",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary"
+      ]
+    },
+    {
+      "cluster_id": "get_004",
+      "query_id": "get_004_Q2",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary"
+      ]
+    },
+    {
+      "cluster_id": "get_004",
+      "query_id": "get_004_Q2",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary"
+      ]
+    },
+    {
+      "cluster_id": "get_004",
+      "query_id": "get_004_Q2",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary"
+      ]
+    },
+    {
+      "cluster_id": "get_004",
+      "query_id": "get_004_Q2",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary"
+      ]
+    },
+    {
+      "cluster_id": "get_004",
+      "query_id": "get_004_Q2",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary"
+      ]
+    },
+    {
+      "cluster_id": "get_004",
+      "query_id": "get_004_Q3",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary"
+      ]
+    },
+    {
+      "cluster_id": "get_004",
+      "query_id": "get_004_Q3",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary"
+      ]
+    },
+    {
+      "cluster_id": "get_004",
+      "query_id": "get_004_Q3",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary"
+      ]
+    },
+    {
+      "cluster_id": "get_004",
+      "query_id": "get_004_Q3",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary"
+      ]
+    },
+    {
+      "cluster_id": "get_004",
+      "query_id": "get_004_Q3",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary",
+        "wikipedia::get_summary"
+      ]
+    },
+    {
+      "cluster_id": "list_005",
+      "query_id": "list_005_Q1",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents"
+      ]
+    },
+    {
+      "cluster_id": "list_005",
+      "query_id": "list_005_Q1",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents"
+      ]
+    },
+    {
+      "cluster_id": "list_005",
+      "query_id": "list_005_Q1",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents"
+      ]
+    },
+    {
+      "cluster_id": "list_005",
+      "query_id": "list_005_Q1",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents"
+      ]
+    },
+    {
+      "cluster_id": "list_005",
+      "query_id": "list_005_Q1",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents"
+      ]
+    },
+    {
+      "cluster_id": "list_005",
+      "query_id": "list_005_Q2",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents"
+      ]
+    },
+    {
+      "cluster_id": "list_005",
+      "query_id": "list_005_Q2",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents"
+      ]
+    },
+    {
+      "cluster_id": "list_005",
+      "query_id": "list_005_Q2",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents"
+      ]
+    },
+    {
+      "cluster_id": "list_005",
+      "query_id": "list_005_Q2",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents"
+      ]
+    },
+    {
+      "cluster_id": "list_005",
+      "query_id": "list_005_Q2",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents"
+      ]
+    },
+    {
+      "cluster_id": "list_005",
+      "query_id": "list_005_Q3",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents"
+      ]
+    },
+    {
+      "cluster_id": "list_005",
+      "query_id": "list_005_Q3",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents"
+      ]
+    },
+    {
+      "cluster_id": "list_005",
+      "query_id": "list_005_Q3",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents"
+      ]
+    },
+    {
+      "cluster_id": "list_005",
+      "query_id": "list_005_Q3",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents"
+      ]
+    },
+    {
+      "cluster_id": "list_005",
+      "query_id": "list_005_Q3",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents",
+        "clickup::list_documents"
+      ]
+    },
+    {
+      "cluster_id": "load_016",
+      "query_id": "load_016_Q1",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills"
+      ]
+    },
+    {
+      "cluster_id": "load_016",
+      "query_id": "load_016_Q1",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills"
+      ]
+    },
+    {
+      "cluster_id": "load_016",
+      "query_id": "load_016_Q1",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills"
+      ]
+    },
+    {
+      "cluster_id": "load_016",
+      "query_id": "load_016_Q1",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills"
+      ]
+    },
+    {
+      "cluster_id": "load_016",
+      "query_id": "load_016_Q1",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills"
+      ]
+    },
+    {
+      "cluster_id": "load_016",
+      "query_id": "load_016_Q2",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills"
+      ]
+    },
+    {
+      "cluster_id": "load_016",
+      "query_id": "load_016_Q2",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills"
+      ]
+    },
+    {
+      "cluster_id": "load_016",
+      "query_id": "load_016_Q2",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills"
+      ]
+    },
+    {
+      "cluster_id": "load_016",
+      "query_id": "load_016_Q2",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills"
+      ]
+    },
+    {
+      "cluster_id": "load_016",
+      "query_id": "load_016_Q2",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills"
+      ]
+    },
+    {
+      "cluster_id": "load_016",
+      "query_id": "load_016_Q3",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills"
+      ]
+    },
+    {
+      "cluster_id": "load_016",
+      "query_id": "load_016_Q3",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills"
+      ]
+    },
+    {
+      "cluster_id": "load_016",
+      "query_id": "load_016_Q3",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills"
+      ]
+    },
+    {
+      "cluster_id": "load_016",
+      "query_id": "load_016_Q3",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills"
+      ]
+    },
+    {
+      "cluster_id": "load_016",
+      "query_id": "load_016_Q3",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills",
+        "ramp::load_bills"
+      ]
+    },
+    {
+      "cluster_id": "monday_014",
+      "query_id": "monday_014_Q1",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item"
+      ]
+    },
+    {
+      "cluster_id": "monday_014",
+      "query_id": "monday_014_Q1",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item"
+      ]
+    },
+    {
+      "cluster_id": "monday_014",
+      "query_id": "monday_014_Q1",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item"
+      ]
+    },
+    {
+      "cluster_id": "monday_014",
+      "query_id": "monday_014_Q1",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item"
+      ]
+    },
+    {
+      "cluster_id": "monday_014",
+      "query_id": "monday_014_Q1",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item"
+      ]
+    },
+    {
+      "cluster_id": "monday_014",
+      "query_id": "monday_014_Q2",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item"
+      ]
+    },
+    {
+      "cluster_id": "monday_014",
+      "query_id": "monday_014_Q2",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item"
+      ]
+    },
+    {
+      "cluster_id": "monday_014",
+      "query_id": "monday_014_Q2",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item"
+      ]
+    },
+    {
+      "cluster_id": "monday_014",
+      "query_id": "monday_014_Q2",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item"
+      ]
+    },
+    {
+      "cluster_id": "monday_014",
+      "query_id": "monday_014_Q2",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item"
+      ]
+    },
+    {
+      "cluster_id": "monday_014",
+      "query_id": "monday_014_Q3",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item"
+      ]
+    },
+    {
+      "cluster_id": "monday_014",
+      "query_id": "monday_014_Q3",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item"
+      ]
+    },
+    {
+      "cluster_id": "monday_014",
+      "query_id": "monday_014_Q3",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item"
+      ]
+    },
+    {
+      "cluster_id": "monday_014",
+      "query_id": "monday_014_Q3",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item"
+      ]
+    },
+    {
+      "cluster_id": "monday_014",
+      "query_id": "monday_014_Q3",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item",
+        "monday.com::monday-delete-item"
+      ]
+    },
+    {
+      "cluster_id": "search_007",
+      "query_id": "search_007_Q1",
+      "variant": "V_orig",
+      "hits": 0,
+      "trials": 10,
+      "hit_rate": 0.0,
+      "picks": [
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users"
+      ]
+    },
+    {
+      "cluster_id": "search_007",
+      "query_id": "search_007_Q1",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users"
+      ]
+    },
+    {
+      "cluster_id": "search_007",
+      "query_id": "search_007_Q1",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users"
+      ]
+    },
+    {
+      "cluster_id": "search_007",
+      "query_id": "search_007_Q1",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users"
+      ]
+    },
+    {
+      "cluster_id": "search_007",
+      "query_id": "search_007_Q1",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users"
+      ]
+    },
+    {
+      "cluster_id": "search_007",
+      "query_id": "search_007_Q2",
+      "variant": "V_orig",
+      "hits": 0,
+      "trials": 10,
+      "hit_rate": 0.0,
+      "picks": [
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users"
+      ]
+    },
+    {
+      "cluster_id": "search_007",
+      "query_id": "search_007_Q2",
+      "variant": "V_prose",
+      "hits": 0,
+      "trials": 10,
+      "hit_rate": 0.0,
+      "picks": [
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users"
+      ]
+    },
+    {
+      "cluster_id": "search_007",
+      "query_id": "search_007_Q2",
+      "variant": "V_md",
+      "hits": 0,
+      "trials": 10,
+      "hit_rate": 0.0,
+      "picks": [
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users"
+      ]
+    },
+    {
+      "cluster_id": "search_007",
+      "query_id": "search_007_Q2",
+      "variant": "V_xml",
+      "hits": 0,
+      "trials": 10,
+      "hit_rate": 0.0,
+      "picks": [
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users"
+      ]
+    },
+    {
+      "cluster_id": "search_007",
+      "query_id": "search_007_Q2",
+      "variant": "V_spec",
+      "hits": 0,
+      "trials": 10,
+      "hit_rate": 0.0,
+      "picks": [
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users"
+      ]
+    },
+    {
+      "cluster_id": "search_007",
+      "query_id": "search_007_Q3",
+      "variant": "V_orig",
+      "hits": 0,
+      "trials": 10,
+      "hit_rate": 0.0,
+      "picks": [
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users"
+      ]
+    },
+    {
+      "cluster_id": "search_007",
+      "query_id": "search_007_Q3",
+      "variant": "V_prose",
+      "hits": 0,
+      "trials": 10,
+      "hit_rate": 0.0,
+      "picks": [
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users"
+      ]
+    },
+    {
+      "cluster_id": "search_007",
+      "query_id": "search_007_Q3",
+      "variant": "V_md",
+      "hits": 1,
+      "trials": 10,
+      "hit_rate": 0.1,
+      "picks": [
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "gitee::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users"
+      ]
+    },
+    {
+      "cluster_id": "search_007",
+      "query_id": "search_007_Q3",
+      "variant": "V_xml",
+      "hits": 7,
+      "trials": 10,
+      "hit_rate": 0.7,
+      "picks": [
+        "gitee::search_users",
+        "github::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "github::search_users",
+        "github::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users",
+        "gitee::search_users"
+      ]
+    },
+    {
+      "cluster_id": "search_007",
+      "query_id": "search_007_Q3",
+      "variant": "V_spec",
+      "hits": 0,
+      "trials": 10,
+      "hit_rate": 0.0,
+      "picks": [
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users",
+        "github::search_users"
+      ]
+    },
+    {
+      "cluster_id": "search_008",
+      "query_id": "search_008_Q1",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player"
+      ]
+    },
+    {
+      "cluster_id": "search_008",
+      "query_id": "search_008_Q1",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player"
+      ]
+    },
+    {
+      "cluster_id": "search_008",
+      "query_id": "search_008_Q1",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player"
+      ]
+    },
+    {
+      "cluster_id": "search_008",
+      "query_id": "search_008_Q1",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player"
+      ]
+    },
+    {
+      "cluster_id": "search_008",
+      "query_id": "search_008_Q1",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player"
+      ]
+    },
+    {
+      "cluster_id": "search_008",
+      "query_id": "search_008_Q2",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player"
+      ]
+    },
+    {
+      "cluster_id": "search_008",
+      "query_id": "search_008_Q2",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player"
+      ]
+    },
+    {
+      "cluster_id": "search_008",
+      "query_id": "search_008_Q2",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player"
+      ]
+    },
+    {
+      "cluster_id": "search_008",
+      "query_id": "search_008_Q2",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player"
+      ]
+    },
+    {
+      "cluster_id": "search_008",
+      "query_id": "search_008_Q2",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player"
+      ]
+    },
+    {
+      "cluster_id": "search_008",
+      "query_id": "search_008_Q3",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player"
+      ]
+    },
+    {
+      "cluster_id": "search_008",
+      "query_id": "search_008_Q3",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player"
+      ]
+    },
+    {
+      "cluster_id": "search_008",
+      "query_id": "search_008_Q3",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player"
+      ]
+    },
+    {
+      "cluster_id": "search_008",
+      "query_id": "search_008_Q3",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player"
+      ]
+    },
+    {
+      "cluster_id": "search_008",
+      "query_id": "search_008_Q3",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player",
+        "opendota::search_player"
+      ]
+    },
+    {
+      "cluster_id": "update_009",
+      "query_id": "update_009_Q1",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "update_009",
+      "query_id": "update_009_Q1",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "update_009",
+      "query_id": "update_009_Q1",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "update_009",
+      "query_id": "update_009_Q1",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "update_009",
+      "query_id": "update_009_Q1",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "update_009",
+      "query_id": "update_009_Q2",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "update_009",
+      "query_id": "update_009_Q2",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "update_009",
+      "query_id": "update_009_Q2",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "update_009",
+      "query_id": "update_009_Q2",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "update_009",
+      "query_id": "update_009_Q2",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "update_009",
+      "query_id": "update_009_Q3",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "update_009",
+      "query_id": "update_009_Q3",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "update_009",
+      "query_id": "update_009_Q3",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "update_009",
+      "query_id": "update_009_Q3",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "update_009",
+      "query_id": "update_009_Q3",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag",
+        "clickup::update_space_tag"
+      ]
+    },
+    {
+      "cluster_id": "weather_021",
+      "query_id": "weather_021_Q1",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts"
+      ]
+    },
+    {
+      "cluster_id": "weather_021",
+      "query_id": "weather_021_Q1",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts"
+      ]
+    },
+    {
+      "cluster_id": "weather_021",
+      "query_id": "weather_021_Q1",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts"
+      ]
+    },
+    {
+      "cluster_id": "weather_021",
+      "query_id": "weather_021_Q1",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts"
+      ]
+    },
+    {
+      "cluster_id": "weather_021",
+      "query_id": "weather_021_Q1",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts"
+      ]
+    },
+    {
+      "cluster_id": "weather_021",
+      "query_id": "weather_021_Q2",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts"
+      ]
+    },
+    {
+      "cluster_id": "weather_021",
+      "query_id": "weather_021_Q2",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts"
+      ]
+    },
+    {
+      "cluster_id": "weather_021",
+      "query_id": "weather_021_Q2",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts"
+      ]
+    },
+    {
+      "cluster_id": "weather_021",
+      "query_id": "weather_021_Q2",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts"
+      ]
+    },
+    {
+      "cluster_id": "weather_021",
+      "query_id": "weather_021_Q2",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts"
+      ]
+    },
+    {
+      "cluster_id": "weather_021",
+      "query_id": "weather_021_Q3",
+      "variant": "V_orig",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts"
+      ]
+    },
+    {
+      "cluster_id": "weather_021",
+      "query_id": "weather_021_Q3",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts"
+      ]
+    },
+    {
+      "cluster_id": "weather_021",
+      "query_id": "weather_021_Q3",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts"
+      ]
+    },
+    {
+      "cluster_id": "weather_021",
+      "query_id": "weather_021_Q3",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts"
+      ]
+    },
+    {
+      "cluster_id": "weather_021",
+      "query_id": "weather_021_Q3",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts",
+        "weather-data::weather_alerts"
+      ]
+    },
+    {
+      "cluster_id": "whois_023",
+      "query_id": "whois_023_Q1",
+      "variant": "V_orig",
+      "hits": 2,
+      "trials": 10,
+      "hit_rate": 0.2,
+      "picks": [
+        "whois::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois_mcp::whois_ip"
+      ]
+    },
+    {
+      "cluster_id": "whois_023",
+      "query_id": "whois_023_Q1",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip"
+      ]
+    },
+    {
+      "cluster_id": "whois_023",
+      "query_id": "whois_023_Q1",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip"
+      ]
+    },
+    {
+      "cluster_id": "whois_023",
+      "query_id": "whois_023_Q1",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip"
+      ]
+    },
+    {
+      "cluster_id": "whois_023",
+      "query_id": "whois_023_Q1",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip"
+      ]
+    },
+    {
+      "cluster_id": "whois_023",
+      "query_id": "whois_023_Q2",
+      "variant": "V_orig",
+      "hits": 3,
+      "trials": 10,
+      "hit_rate": 0.3,
+      "picks": [
+        "whois_mcp::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip"
+      ]
+    },
+    {
+      "cluster_id": "whois_023",
+      "query_id": "whois_023_Q2",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip"
+      ]
+    },
+    {
+      "cluster_id": "whois_023",
+      "query_id": "whois_023_Q2",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip"
+      ]
+    },
+    {
+      "cluster_id": "whois_023",
+      "query_id": "whois_023_Q2",
+      "variant": "V_xml",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip"
+      ]
+    },
+    {
+      "cluster_id": "whois_023",
+      "query_id": "whois_023_Q2",
+      "variant": "V_spec",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip"
+      ]
+    },
+    {
+      "cluster_id": "whois_023",
+      "query_id": "whois_023_Q3",
+      "variant": "V_orig",
+      "hits": 0,
+      "trials": 10,
+      "hit_rate": 0.0,
+      "picks": [
+        "whois_mcp::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois_mcp::whois_ip"
+      ]
+    },
+    {
+      "cluster_id": "whois_023",
+      "query_id": "whois_023_Q3",
+      "variant": "V_prose",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip"
+      ]
+    },
+    {
+      "cluster_id": "whois_023",
+      "query_id": "whois_023_Q3",
+      "variant": "V_md",
+      "hits": 10,
+      "trials": 10,
+      "hit_rate": 1.0,
+      "picks": [
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip"
+      ]
+    },
+    {
+      "cluster_id": "whois_023",
+      "query_id": "whois_023_Q3",
+      "variant": "V_xml",
+      "hits": 8,
+      "trials": 10,
+      "hit_rate": 0.8,
+      "picks": [
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip"
+      ]
+    },
+    {
+      "cluster_id": "whois_023",
+      "query_id": "whois_023_Q3",
+      "variant": "V_spec",
+      "hits": 9,
+      "trials": 10,
+      "hit_rate": 0.9,
+      "picks": [
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois_mcp::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip",
+        "whois::whois_ip"
+      ]
+    }
+  ],
+  "summary_by_variant": {
+    "V_orig": {
+      "total_hits": 425,
+      "total_trials": 510,
+      "avg_hit_rate": 0.8333
+    },
+    "V_prose": {
+      "total_hits": 483,
+      "total_trials": 510,
+      "avg_hit_rate": 0.9471
+    },
+    "V_md": {
+      "total_hits": 490,
+      "total_trials": 510,
+      "avg_hit_rate": 0.9608
+    },
+    "V_xml": {
+      "total_hits": 494,
+      "total_trials": 510,
+      "avg_hit_rate": 0.9686
+    },
+    "V_spec": {
+      "total_hits": 489,
+      "total_trials": 510,
+      "avg_hit_rate": 0.9588
+    }
+  }
+}

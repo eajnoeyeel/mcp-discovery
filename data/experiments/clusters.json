@@ -1,0 +1,4176 @@
+{
+  "discovery_date": "2026-04-14",
+  "total_tools_scanned": 2898,
+  "algorithm": {
+    "verb_prefix_grouping": true,
+    "description_similarity": "jaccard",
+    "primary_threshold": 0.3,
+    "relaxed_threshold": 0.2,
+    "min_cluster_size_primary": 5,
+    "min_cluster_size_relaxed": 4,
+    "name_distinguishability_filter": ">50% tools contain server_id in name",
+    "pilot_model": "gpt-4o-mini",
+    "pilot_reps": 2,
+    "pilot_exclusion": ">80% hit rate with V_orig"
+  },
+  "candidate_clusters": [
+    {
+      "cluster_id": "get_001",
+      "verb_prefix": "get",
+      "size": 7,
+      "tools": [
+        {
+          "tool_id": "dart::get_task",
+          "name": "get_task",
+          "desc": "Retrieve an existing task by its ID"
+        },
+        {
+          "tool_id": "dart::get_doc",
+          "name": "get_doc",
+          "desc": "Retrieve an existing doc by its ID"
+        },
+        {
+          "tool_id": "grafana::get_investigation",
+          "name": "get_investigation",
+          "desc": "Retrieve an existing Sift investigation by its UUID"
+        },
+        {
+          "tool_id": "grafana::get_analysis",
+          "name": "get_analysis",
+          "desc": "Retrieve a specific analysis from a Sift investigation"
+        },
+        {
+          "tool_id": "verodat::get-queries",
+          "name": "get-queries",
+          "desc": "Retrieve existing AI queries"
+        },
+        {
+          "tool_id": "xero::get-payroll-timesheet",
+          "name": "get-payroll-timesheet",
+          "desc": "Retrieve an existing Payroll Timesheet"
+        },
+        {
+          "tool_id": "contentful-mcp::get_entry",
+          "name": "get_entry",
+          "desc": "Retrieve existing entries"
+        }
+      ],
+      "target_tool_id": "contentful-mcp::get_entry",
+      "target_tool_name": "get_entry",
+      "target_desc": "Retrieve existing entries"
+    },
+    {
+      "cluster_id": "get_002",
+      "verb_prefix": "get",
+      "size": 6,
+      "tools": [
+        {
+          "tool_id": "productboard::get_companies",
+          "name": "get_companies",
+          "desc": "Retrieves a list of companies from Productboard."
+        },
+        {
+          "tool_id": "productboard::get_components",
+          "name": "get_components",
+          "desc": "Retrieves a list of components from Productboard."
+        },
+        {
+          "tool_id": "productboard::get_features",
+          "name": "get_features",
+          "desc": "Retrieves a list of features from Productboard."
+        },
+        {
+          "tool_id": "productboard::get_feature_statuses",
+          "name": "get_feature_statuses",
+          "desc": "Retrieves the statuses of features from Productboard."
+        },
+        {
+          "tool_id": "productboard::get_notes",
+          "name": "get_notes",
+          "desc": "Retrieves notes from Productboard."
+        },
+        {
+          "tool_id": "productboard::get_products",
+          "name": "get_products",
+          "desc": "Retrieves a list of products from Productboard."
+        }
+      ],
+      "target_tool_id": "productboard::get_notes",
+      "target_tool_name": "get_notes",
+      "target_desc": "Retrieves notes from Productboard."
+    },
+    {
+      "cluster_id": "get_003",
+      "verb_prefix": "get",
+      "size": 5,
+      "tools": [
+        {
+          "tool_id": "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+          "name": "get_query_plan",
+          "desc": "Get the query plan for a SQL query"
+        },
+        {
+          "tool_id": "alibaba_cloud_analyticdb_for_mysql::get_execution_plan",
+          "name": "get_execution_plan",
+          "desc": "Get the actual execution plan with runtime statistics for a SQL query"
+        },
+        {
+          "tool_id": "hologres::get_query_plan",
+          "name": "get_query_plan",
+          "desc": "Get query plan"
+        },
+        {
+          "tool_id": "hologres::get_execution_plan",
+          "name": "get_execution_plan",
+          "desc": "Get execution plan"
+        },
+        {
+          "tool_id": "terminal-control::get_command_history",
+          "name": "get_command_history",
+          "desc": "Get recent command execution history."
+        }
+      ],
+      "target_tool_id": "hologres::get_query_plan",
+      "target_tool_name": "get_query_plan",
+      "target_desc": "Get query plan"
+    },
+    {
+      "cluster_id": "get_004",
+      "verb_prefix": "get",
+      "size": 5,
+      "tools": [
+        {
+          "tool_id": "wikipedia::get_article",
+          "name": "get_article",
+          "desc": "Get the full content of a Wikipedia article."
+        },
+        {
+          "tool_id": "wikipedia::get_summary",
+          "name": "get_summary",
+          "desc": "Get a summary of a Wikipedia article."
+        },
+        {
+          "tool_id": "wikipedia::get_related_topics",
+          "name": "get_related_topics",
+          "desc": "Get topics related to a Wikipedia article based on links and categories."
+        },
+        {
+          "tool_id": "wikipedia::get_sections",
+          "name": "get_sections",
+          "desc": "Get the sections of a Wikipedia article."
+        },
+        {
+          "tool_id": "wikipedia::get_links",
+          "name": "get_links",
+          "desc": "Get the links contained within a Wikipedia article."
+        }
+      ],
+      "target_tool_id": "wikipedia::get_summary",
+      "target_tool_name": "get_summary",
+      "target_desc": "Get a summary of a Wikipedia article."
+    },
+    {
+      "cluster_id": "list_005",
+      "verb_prefix": "list",
+      "size": 90,
+      "tools": [
+        {
+          "tool_id": "aiven::list_services",
+          "name": "list_services",
+          "desc": "List all services in a specific Aiven project."
+        },
+        {
+          "tool_id": "bitrise::list_apps",
+          "name": "list_apps",
+          "desc": "List all the apps available for the authenticated account"
+        },
+        {
+          "tool_id": "bitrise::list_branches",
+          "name": "list_branches",
+          "desc": "List the branches with existing builds of an app's repository"
+        },
+        {
+          "tool_id": "bitrise::list_builds",
+          "name": "list_builds",
+          "desc": "List all the builds of a specified Bitrise app or all accessible builds"
+        },
+        {
+          "tool_id": "bitrise::list_build_workflows",
+          "name": "list_build_workflows",
+          "desc": "List the workflows of an app"
+        },
+        {
+          "tool_id": "bitrise::list_outgoing_webhooks",
+          "name": "list_outgoing_webhooks",
+          "desc": "List the outgoing webhooks of an app"
+        },
+        {
+          "tool_id": "bitrise::list_pipelines",
+          "name": "list_pipelines",
+          "desc": "List all pipelines and standalone builds of an app"
+        },
+        {
+          "tool_id": "bitrise::list_group_roles",
+          "name": "list_group_roles",
+          "desc": "List group roles for an app"
+        },
+        {
+          "tool_id": "bitrise::list_workspaces",
+          "name": "list_workspaces",
+          "desc": "List the workspaces the user has access to"
+        },
+        {
+          "tool_id": "bitrise::list_connected_apps",
+          "name": "list_connected_apps",
+          "desc": "List Release Management connected apps available for the authenticated account within a workspace"
+        },
+        {
+          "tool_id": "bitrise::list_installable_artifacts",
+          "name": "list_installable_artifacts",
+          "desc": "List Release Management installable artifacts of a connected app"
+        },
+        {
+          "tool_id": "elasticsearch::list_indices",
+          "name": "list_indices",
+          "desc": "List all available Elasticsearch indices"
+        },
+        {
+          "tool_id": "esignatures::list_templates",
+          "name": "list_templates",
+          "desc": "List all your templates"
+        },
+        {
+          "tool_id": "gitee::list_user_repos",
+          "name": "list_user_repos",
+          "desc": "List user authorized repositories"
+        },
+        {
+          "tool_id": "gitee::list_releases",
+          "name": "list_releases",
+          "desc": "List repository releases"
+        },
+        {
+          "tool_id": "gitee::list_repo_pulls",
+          "name": "list_repo_pulls",
+          "desc": "List pull requests in a repository"
+        },
+        {
+          "tool_id": "gitee::list_pull_comments",
+          "name": "list_pull_comments",
+          "desc": "List all comments for a pull request"
+        },
+        {
+          "tool_id": "gitee::list_repo_issues",
+          "name": "list_repo_issues",
+          "desc": "List repository issues"
+        },
+        {
+          "tool_id": "gitee::list_issue_comments",
+          "name": "list_issue_comments",
+          "desc": "List comments on an issue"
+        },
+        {
+          "tool_id": "gitee::list_user_notifications",
+          "name": "list_user_notifications",
+          "desc": "List user notifications"
+        },
+        {
+          "tool_id": "gotohuman::list-forms",
+          "name": "list-forms",
+          "desc": "List all available review forms."
+        },
+        {
+          "tool_id": "grafana::list_datasources",
+          "name": "list_datasources",
+          "desc": "List datasources"
+        },
+        {
+          "tool_id": "grafana::list_prometheus_metric_metadata",
+          "name": "list_prometheus_metric_metadata",
+          "desc": "List metric metadata"
+        },
+        {
+          "tool_id": "grafana::list_prometheus_metric_names",
+          "name": "list_prometheus_metric_names",
+          "desc": "List available metric names"
+        },
+        {
+          "tool_id": "grafana::list_prometheus_label_names",
+          "name": "list_prometheus_label_names",
+          "desc": "List label names matching a selector"
+        },
+        {
+          "tool_id": "grafana::list_incidents",
+          "name": "list_incidents",
+          "desc": "List incidents in Grafana Incident"
+        },
+        {
+          "tool_id": "grafana::list_loki_label_names",
+          "name": "list_loki_label_names",
+          "desc": "List all available label names in logs"
+        },
+        {
+          "tool_id": "grafana::list_oncall_schedules",
+          "name": "list_oncall_schedules",
+          "desc": "List schedules from Grafana OnCall"
+        },
+        {
+          "tool_id": "grafana::list_oncall_teams",
+          "name": "list_oncall_teams",
+          "desc": "List teams from Grafana OnCall"
+        },
+        {
+          "tool_id": "grafana::list_oncall_users",
+          "name": "list_oncall_users",
+          "desc": "List users from Grafana OnCall"
+        },
+        {
+          "tool_id": "heroku::list_apps",
+          "name": "list_apps",
+          "desc": "List all Heroku apps. You can filter apps by personal, collaborator, team, or space."
+        },
+        {
+          "tool_id": "heroku::list_teams",
+          "name": "list_teams",
+          "desc": "List teams you belong to."
+        },
+        {
+          "tool_id": "heroku::list_private_spaces",
+          "name": "list_private_spaces",
+          "desc": "List available spaces."
+        },
+        {
+          "tool_id": "meilisearch::list-indexes",
+          "name": "list-indexes",
+          "desc": "List all available indexes"
+        },
+        {
+          "tool_id": "raygun::list_error_groups",
+          "name": "list_error_groups",
+          "desc": "List error groups for an application"
+        },
+        {
+          "tool_id": "raygun::list_deployments",
+          "name": "list_deployments",
+          "desc": "List deployments for an application"
+        },
+        {
+          "tool_id": "raygun::list_customers",
+          "name": "list_customers",
+          "desc": "List customers for an application"
+        },
+        {
+          "tool_id": "raygun::list_sessions",
+          "name": "list_sessions",
+          "desc": "List user sessions for an application"
+        },
+        {
+          "tool_id": "raygun::list_pages",
+          "name": "list_pages",
+          "desc": "List monitored pages for an application"
+        },
+        {
+          "tool_id": "raygun::list_source_maps",
+          "name": "list_source_maps",
+          "desc": "List source maps for an application"
+        },
+        {
+          "tool_id": "singlestore::list_of_regions",
+          "name": "list_of_regions",
+          "desc": "Retrieve a list of all regions that support workspaces for the user"
+        },
+        {
+          "tool_id": "singlestore::list_virtual_workspaces",
+          "name": "list_virtual_workspaces",
+          "desc": "List all starter workspaces accessible to the user"
+        },
+        {
+          "tool_id": "singlestore::list_notebook_samples",
+          "name": "list_notebook_samples",
+          "desc": "List all notebook samples available in SingleStore Spaces"
+        },
+        {
+          "tool_id": "singlestore::list_personal_files",
+          "name": "list_personal_files",
+          "desc": "List all files in the user's personal space"
+        },
+        {
+          "tool_id": "xero::list-accounts",
+          "name": "list-accounts",
+          "desc": "Retrieve a list of accounts"
+        },
+        {
+          "tool_id": "xero::list-contacts",
+          "name": "list-contacts",
+          "desc": "Retrieve a list of contacts from Xero"
+        },
+        {
+          "tool_id": "xero::list-credit-notes",
+          "name": "list-credit-notes",
+          "desc": "Retrieve a list of credit notes"
+        },
+        {
+          "tool_id": "xero::list-invoices",
+          "name": "list-invoices",
+          "desc": "Retrieve a list of invoices"
+        },
+        {
+          "tool_id": "xero::list-items",
+          "name": "list-items",
+          "desc": "Retrieve a list of items"
+        },
+        {
+          "tool_id": "xero::list-organisation-details",
+          "name": "list-organisation-details",
+          "desc": "Retrieve details about an organisation"
+        },
+        {
+          "tool_id": "xero::list-quotes",
+          "name": "list-quotes",
+          "desc": "Retrieve a list of quotes"
+        },
+        {
+          "tool_id": "xero::list-tax-rates",
+          "name": "list-tax-rates",
+          "desc": "Retrieve a list of tax rates"
+        },
+        {
+          "tool_id": "xero::list-payments",
+          "name": "list-payments",
+          "desc": "Retrieve a list of payments"
+        },
+        {
+          "tool_id": "xero::list-payroll-employees",
+          "name": "list-payroll-employees",
+          "desc": "Retrieve a list of Payroll Employees"
+        },
+        {
+          "tool_id": "xero::list-payroll-employee-leave",
+          "name": "list-payroll-employee-leave",
+          "desc": "Retrieve a Payroll Employee's leave records"
+        },
+        {
+          "tool_id": "xero::list-payroll-employee-leave-balances",
+          "name": "list-payroll-employee-leave-balances",
+          "desc": "Retrieve a Payroll Employee's leave balances"
+        },
+        {
+          "tool_id": "xero::list-payroll-employee-leave-types",
+          "name": "list-payroll-employee-leave-types",
+          "desc": "Retrieve a list of Payroll leave types"
+        },
+        {
+          "tool_id": "xero::list-payroll-leave-periods",
+          "name": "list-payroll-leave-periods",
+          "desc": "Retrieve a list of a Payroll Employee's leave periods"
+        },
+        {
+          "tool_id": "xero::list-contact-groups",
+          "name": "list-contact-groups",
+          "desc": "Retrieve a list of contact groups"
+        },
+        {
+          "tool_id": "clickup::list_documents",
+          "name": "list_documents",
+          "desc": "List documents"
+        },
+        {
+          "tool_id": "clickup::list_document_pages",
+          "name": "list_document_pages",
+          "desc": "List document pages"
+        },
+        {
+          "tool_id": "contentful-mcp::list_spaces",
+          "name": "list_spaces",
+          "desc": "List available spaces"
+        },
+        {
+          "tool_id": "contentful-mcp::list_environments",
+          "name": "list_environments",
+          "desc": "List environments in a space"
+        },
+        {
+          "tool_id": "contentful-mcp::list_content_types",
+          "name": "list_content_types",
+          "desc": "List available content types"
+        },
+        {
+          "tool_id": "elevenlabs::list_voices",
+          "name": "list_voices",
+          "desc": "List all available voices"
+        },
+        {
+          "tool_id": "github_actions::list_workflows",
+          "name": "list_workflows",
+          "desc": "List workflows in a GitHub repository"
+        },
+        {
+          "tool_id": "github_actions::list_workflow_runs",
+          "name": "list_workflow_runs",
+          "desc": "List all workflow runs for a repository or a specific workflow"
+        },
+        {
+          "tool_id": "lightdash::list_spaces",
+          "name": "list_spaces",
+          "desc": "List all spaces in a project"
+        },
+        {
+          "tool_id": "lightdash::list_charts",
+          "name": "list_charts",
+          "desc": "List all charts in a project"
+        },
+        {
+          "tool_id": "lightdash::list_dashboards",
+          "name": "list_dashboards",
+          "desc": "List all dashboards in a project"
+        },
+        {
+          "tool_id": "prometheus::list_metrics",
+          "name": "list_metrics",
+          "desc": "List all available metrics in Prometheus"
+        },
+        {
+          "tool_id": "servicenow::list_incidents",
+          "name": "list_incidents",
+          "desc": "List incidents from ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::list_catalog_items",
+          "name": "list_catalog_items",
+          "desc": "List service catalog items from ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::list_catalog_categories",
+          "name": "list_catalog_categories",
+          "desc": "List service catalog categories from ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::list_catalogs",
+          "name": "list_catalogs",
+          "desc": "List service catalogs from ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::list_change_requests",
+          "name": "list_change_requests",
+          "desc": "List change requests with filtering options"
+        },
+        {
+          "tool_id": "servicenow::list_workflows",
+          "name": "list_workflows",
+          "desc": "List workflows from ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::list_script_includes",
+          "name": "list_script_includes",
+          "desc": "List script includes from ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::list_changesets",
+          "name": "list_changesets",
+          "desc": "List changesets from ServiceNow with filtering options"
+        },
+        {
+          "tool_id": "servicenow::list_knowledge_bases",
+          "name": "list_knowledge_bases",
+          "desc": "List knowledge bases with filtering options"
+        },
+        {
+          "tool_id": "servicenow::list_articles",
+          "name": "list_articles",
+          "desc": "List knowledge articles with filtering options"
+        },
+        {
+          "tool_id": "servicenow::list_users",
+          "name": "list_users",
+          "desc": "List users with filtering options"
+        },
+        {
+          "tool_id": "servicenow::list_groups",
+          "name": "list_groups",
+          "desc": "List groups with filtering options"
+        },
+        {
+          "tool_id": "telegram::list_chats",
+          "name": "list_chats",
+          "desc": "List chats with metadata and filtering."
+        },
+        {
+          "tool_id": "telegram::list_contacts",
+          "name": "list_contacts",
+          "desc": "List all contacts."
+        },
+        {
+          "tool_id": "xero-mcp-server::list_contacts",
+          "name": "list_contacts",
+          "desc": "Retrieves all contacts in a Xero organisation"
+        },
+        {
+          "tool_id": "xero-mcp-server::list_organisations",
+          "name": "list_organisations",
+          "desc": "Retrieves Xero organisation details"
+        },
+        {
+          "tool_id": "github::list_issues",
+          "name": "list_issues",
+          "desc": "List and filter repository issues"
+        },
+        {
+          "tool_id": "github::list_pull_requests",
+          "name": "list_pull_requests",
+          "desc": "List and filter repository pull requests"
+        },
+        {
+          "tool_id": "arxiv::list_papers",
+          "name": "list_papers",
+          "desc": "List all existing papers available as resources"
+        }
+      ],
+      "target_tool_id": "clickup::list_documents",
+      "target_tool_name": "list_documents",
+      "target_desc": "List documents"
+    },
+    {
+      "cluster_id": "create_006",
+      "verb_prefix": "create",
+      "size": 105,
+      "tools": [
+        {
+          "tool_id": "bitrise::create_workspace_group",
+          "name": "create_workspace_group",
+          "desc": "Create a group in a workspace"
+        },
+        {
+          "tool_id": "dart::create_doc",
+          "name": "create_doc",
+          "desc": "Create a new doc with title, text content, and folder"
+        },
+        {
+          "tool_id": "esignatures::create_template",
+          "name": "create_template",
+          "desc": "Create a new contract template"
+        },
+        {
+          "tool_id": "fibery::create_entity",
+          "name": "create_entity",
+          "desc": "Creates new entities in your Fibery workspace with specified field values."
+        },
+        {
+          "tool_id": "fibery::create_entities_batch",
+          "name": "create_entities_batch",
+          "desc": "Creates multiple new entities in your Fibery workspace with specified field values."
+        },
+        {
+          "tool_id": "gitee::create_user_repo",
+          "name": "create_user_repo",
+          "desc": "Create a user repository"
+        },
+        {
+          "tool_id": "gitee::create_org_repo",
+          "name": "create_org_repo",
+          "desc": "Create an organization repository"
+        },
+        {
+          "tool_id": "gitee::create_enter_repo",
+          "name": "create_enter_repo",
+          "desc": "Create an enterprise repository"
+        },
+        {
+          "tool_id": "gitee::create_release",
+          "name": "create_release",
+          "desc": "Create a release for a repository"
+        },
+        {
+          "tool_id": "gitee::create_pull",
+          "name": "create_pull",
+          "desc": "Create a pull request"
+        },
+        {
+          "tool_id": "gitee::create_issue",
+          "name": "create_issue",
+          "desc": "Create an issue"
+        },
+        {
+          "tool_id": "grafana::create_incident",
+          "name": "create_incident",
+          "desc": "Create an incident in Grafana Incident"
+        },
+        {
+          "tool_id": "hyperbrowser::create_profile",
+          "name": "create_profile",
+          "desc": "Creates a new persistent Hyperbrowser profile"
+        },
+        {
+          "tool_id": "lara_translate::create_memory",
+          "name": "create_memory",
+          "desc": "Create a new translation memory"
+        },
+        {
+          "tool_id": "meilisearch::create-index",
+          "name": "create-index",
+          "desc": "Create a new index with optional primary key"
+        },
+        {
+          "tool_id": "meilisearch::create-key",
+          "name": "create-key",
+          "desc": "Create new API key with specific permissions"
+        },
+        {
+          "tool_id": "momento::create-cache",
+          "name": "create-cache",
+          "desc": "Creates a new cache in your Momento account."
+        },
+        {
+          "tool_id": "redis_cloud_api::create_pro_subscription",
+          "name": "create_pro_subscription",
+          "desc": "Create a new Pro subscription with advanced configuration options"
+        },
+        {
+          "tool_id": "redis_cloud_api::create_essential_subscription",
+          "name": "create_essential_subscription",
+          "desc": "Create a new Essential subscription"
+        },
+        {
+          "tool_id": "singlestore::create_virtual_workspace",
+          "name": "create_virtual_workspace",
+          "desc": "Create a new starter workspace with a user"
+        },
+        {
+          "tool_id": "singlestore::create_notebook",
+          "name": "create_notebook",
+          "desc": "Create a new notebook in the user's personal space"
+        },
+        {
+          "tool_id": "singlestore::create_scheduled_job",
+          "name": "create_scheduled_job",
+          "desc": "Create a new scheduled job to run a notebook"
+        },
+        {
+          "tool_id": "unstructured::create_workflow",
+          "name": "create_workflow",
+          "desc": "Create a new workflow with source, destination id, etc."
+        },
+        {
+          "tool_id": "verodat::create-dataset",
+          "name": "create-dataset",
+          "desc": "Create a new dataset with defined schema"
+        },
+        {
+          "tool_id": "xero::create-contact",
+          "name": "create-contact",
+          "desc": "Create a new contact"
+        },
+        {
+          "tool_id": "xero::create-credit-note",
+          "name": "create-credit-note",
+          "desc": "Create a new credit note"
+        },
+        {
+          "tool_id": "xero::create-invoice",
+          "name": "create-invoice",
+          "desc": "Create a new invoice"
+        },
+        {
+          "tool_id": "xero::create-payment",
+          "name": "create-payment",
+          "desc": "Create a new payment"
+        },
+        {
+          "tool_id": "xero::create-quote",
+          "name": "create-quote",
+          "desc": "Create a new quote"
+        },
+        {
+          "tool_id": "airtable::create_record",
+          "name": "create_record",
+          "desc": "Creates a new record in a table"
+        },
+        {
+          "tool_id": "airtable::create_table",
+          "name": "create_table",
+          "desc": "Creates a new table in a base"
+        },
+        {
+          "tool_id": "airtable::create_field",
+          "name": "create_field",
+          "desc": "Creates a new field in a table"
+        },
+        {
+          "tool_id": "clickup::create_task",
+          "name": "create_task",
+          "desc": "Create a task"
+        },
+        {
+          "tool_id": "clickup::create_bulk_tasks",
+          "name": "create_bulk_tasks",
+          "desc": "Create multiple tasks"
+        },
+        {
+          "tool_id": "clickup::create_list",
+          "name": "create_list",
+          "desc": "Create list in space"
+        },
+        {
+          "tool_id": "clickup::create_folder",
+          "name": "create_folder",
+          "desc": "Create folder"
+        },
+        {
+          "tool_id": "clickup::create_list_in_folder",
+          "name": "create_list_in_folder",
+          "desc": "Create list in folder"
+        },
+        {
+          "tool_id": "clickup::create_space_tag",
+          "name": "create_space_tag",
+          "desc": "Create tag"
+        },
+        {
+          "tool_id": "clickup::create_document",
+          "name": "create_document",
+          "desc": "Create a document"
+        },
+        {
+          "tool_id": "clickup::create_document_pages",
+          "name": "create_document_pages",
+          "desc": "Create a document page"
+        },
+        {
+          "tool_id": "contentful-mcp::create_entry",
+          "name": "create_entry",
+          "desc": "Create new entries"
+        },
+        {
+          "tool_id": "contentful-mcp::create_environment",
+          "name": "create_environment",
+          "desc": "Create new environment"
+        },
+        {
+          "tool_id": "contentful-mcp::create_content_type",
+          "name": "create_content_type",
+          "desc": "Create new content type"
+        },
+        {
+          "tool_id": "davinci_resolve::create_new_project",
+          "name": "create_new_project",
+          "desc": "Creates a new project in DaVinci Resolve."
+        },
+        {
+          "tool_id": "davinci_resolve::create_new_timeline",
+          "name": "create_new_timeline",
+          "desc": "Creates a new timeline in the current project."
+        },
+        {
+          "tool_id": "davinci_resolve::create_media_bin",
+          "name": "create_media_bin",
+          "desc": "Creates a new media bin in the media pool."
+        },
+        {
+          "tool_id": "descope::create-user",
+          "name": "create-user",
+          "desc": "Creates a new user in your Descope project."
+        },
+        {
+          "tool_id": "docker::create_container",
+          "name": "create_container",
+          "desc": "Creates a new container."
+        },
+        {
+          "tool_id": "docker::create_network",
+          "name": "create_network",
+          "desc": "Creates a new Docker network."
+        },
+        {
+          "tool_id": "docker::create_volume",
+          "name": "create_volume",
+          "desc": "Creates a new Docker volume."
+        },
+        {
+          "tool_id": "gmail::create_label",
+          "name": "create_label",
+          "desc": "Creates a new Gmail label."
+        },
+        {
+          "tool_id": "golang_filesystem_server::create_directory",
+          "name": "create_directory",
+          "desc": "Create new directory or ensure it exists"
+        },
+        {
+          "tool_id": "google_calendar::create_event",
+          "name": "create_event",
+          "desc": "Create a new calendar event"
+        },
+        {
+          "tool_id": "google_sheets::create_spreadsheet",
+          "name": "create_spreadsheet",
+          "desc": "Creates a new spreadsheet."
+        },
+        {
+          "tool_id": "google_sheets::create_sheet",
+          "name": "create_sheet",
+          "desc": "Adds a new sheet (tab) to a spreadsheet."
+        },
+        {
+          "tool_id": "google_tasks::create",
+          "name": "create",
+          "desc": "Create a new task in Google Tasks"
+        },
+        {
+          "tool_id": "influxdb::create-bucket",
+          "name": "create-bucket",
+          "desc": "Create a new bucket"
+        },
+        {
+          "tool_id": "influxdb::create-org",
+          "name": "create-org",
+          "desc": "Create a new organization"
+        },
+        {
+          "tool_id": "inoyu::create_scope",
+          "name": "create_scope",
+          "desc": "Create a new Unomi scope. Required for event tracking and profile updates."
+        },
+        {
+          "tool_id": "keycloak_mcp::create-user",
+          "name": "create-user",
+          "desc": "Creates a new user in a specified realm."
+        },
+        {
+          "tool_id": "mcp_create::create-server-from-template",
+          "name": "create-server-from-template",
+          "desc": "Create MCP server from template"
+        },
+        {
+          "tool_id": "mongodb_lens::create-collection",
+          "name": "create-collection",
+          "desc": "Create new collections with custom options"
+        },
+        {
+          "tool_id": "mongodb_lens::create-database",
+          "name": "create-database",
+          "desc": "Create a new database with option to switch to it"
+        },
+        {
+          "tool_id": "mongodb_lens::create-index",
+          "name": "create-index",
+          "desc": "Create new indexes for performance optimization"
+        },
+        {
+          "tool_id": "mongodb_lens::create-user",
+          "name": "create-user",
+          "desc": "Create new database users with specific roles"
+        },
+        {
+          "tool_id": "nomad-mcp::create_variable",
+          "name": "create_variable",
+          "desc": "Creates a new variable with namespace support."
+        },
+        {
+          "tool_id": "obsidian-mcp::create-note",
+          "name": "create-note",
+          "desc": "Create a new note"
+        },
+        {
+          "tool_id": "obsidian-mcp::create-directory",
+          "name": "create-directory",
+          "desc": "Create a new directory"
+        },
+        {
+          "tool_id": "qgis::create_new_project",
+          "name": "create_new_project",
+          "desc": "Create a new project and save it"
+        },
+        {
+          "tool_id": "raindrop.io::create-bookmark",
+          "name": "create-bookmark",
+          "desc": "Creates a new bookmark."
+        },
+        {
+          "tool_id": "servicenow::create_incident",
+          "name": "create_incident",
+          "desc": "Create a new incident in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::create_catalog_category",
+          "name": "create_catalog_category",
+          "desc": "Create a new service catalog category in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::create_catalog_item_variable",
+          "name": "create_catalog_item_variable",
+          "desc": "Create a new variable (form field) for a catalog item"
+        },
+        {
+          "tool_id": "servicenow::create_change_request",
+          "name": "create_change_request",
+          "desc": "Create a new change request in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::create_workflow",
+          "name": "create_workflow",
+          "desc": "Create a new workflow in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::create_script_include",
+          "name": "create_script_include",
+          "desc": "Create a new script include in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::create_changeset",
+          "name": "create_changeset",
+          "desc": "Create a new changeset in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::create_knowledge_base",
+          "name": "create_knowledge_base",
+          "desc": "Create a new knowledge base in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::create_category",
+          "name": "create_category",
+          "desc": "Create a new category in a knowledge base"
+        },
+        {
+          "tool_id": "servicenow::create_article",
+          "name": "create_article",
+          "desc": "Create a new knowledge article in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::create_user",
+          "name": "create_user",
+          "desc": "Create a new user in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::create_group",
+          "name": "create_group",
+          "desc": "Create a new group in ServiceNow"
+        },
+        {
+          "tool_id": "snowflake::create_table",
+          "name": "create_table",
+          "desc": "Create new tables in the database."
+        },
+        {
+          "tool_id": "talk_to_figma::create_rectangle",
+          "name": "create_rectangle",
+          "desc": "Create a new rectangle with position, size, and optional name"
+        },
+        {
+          "tool_id": "talk_to_figma::create_frame",
+          "name": "create_frame",
+          "desc": "Create a new frame with position, size, and optional name"
+        },
+        {
+          "tool_id": "telegram::create_group",
+          "name": "create_group",
+          "desc": "Create a new group."
+        },
+        {
+          "tool_id": "ticktick::create_task",
+          "name": "create_task",
+          "desc": "Create a new task in a project"
+        },
+        {
+          "tool_id": "ticktick::create_project",
+          "name": "create_project",
+          "desc": "Create a new project"
+        },
+        {
+          "tool_id": "windows_cli::create_ssh_connection",
+          "name": "create_ssh_connection",
+          "desc": "Create a new SSH connection"
+        },
+        {
+          "tool_id": "filesystem::create_directory",
+          "name": "create_directory",
+          "desc": "Create new directory or ensure it exists"
+        },
+        {
+          "tool_id": "github::create_or_update_file",
+          "name": "create_or_update_file",
+          "desc": "Create or update a single file in a repository"
+        },
+        {
+          "tool_id": "github::create_repository",
+          "name": "create_repository",
+          "desc": "Create a new GitHub repository"
+        },
+        {
+          "tool_id": "github::create_issue",
+          "name": "create_issue",
+          "desc": "Create a new issue"
+        },
+        {
+          "tool_id": "github::create_pull_request",
+          "name": "create_pull_request",
+          "desc": "Create a new pull request"
+        },
+        {
+          "tool_id": "github::create_branch",
+          "name": "create_branch",
+          "desc": "Create a new branch"
+        },
+        {
+          "tool_id": "github::create_pull_request_review",
+          "name": "create_pull_request_review",
+          "desc": "Create a review on a pull request"
+        },
+        {
+          "tool_id": "gitlab::create_or_update_file",
+          "name": "create_or_update_file",
+          "desc": "Create or update a single file in a project"
+        },
+        {
+          "tool_id": "gitlab::create_repository",
+          "name": "create_repository",
+          "desc": "Create a new GitLab project"
+        },
+        {
+          "tool_id": "gitlab::create_issue",
+          "name": "create_issue",
+          "desc": "Create a new issue"
+        },
+        {
+          "tool_id": "gitlab::create_merge_request",
+          "name": "create_merge_request",
+          "desc": "Create a new merge request"
+        },
+        {
+          "tool_id": "gitlab::create_branch",
+          "name": "create_branch",
+          "desc": "Create a new branch"
+        },
+        {
+          "tool_id": "memory::create_entities",
+          "name": "create_entities",
+          "desc": "Create multiple new entities in the knowledge graph."
+        },
+        {
+          "tool_id": "memory::create_relations",
+          "name": "create_relations",
+          "desc": "Create multiple new relations between entities."
+        },
+        {
+          "tool_id": "sqlite::create_table",
+          "name": "create_table",
+          "desc": "Create new tables in the database"
+        },
+        {
+          "tool_id": "google-workspace::create_event",
+          "name": "create_event",
+          "desc": "Create a new calendar event"
+        }
+      ],
+      "target_tool_id": "clickup::create_space_tag",
+      "target_tool_name": "create_space_tag",
+      "target_desc": "Create tag"
+    },
+    {
+      "cluster_id": "search_007",
+      "verb_prefix": "search",
+      "size": 8,
+      "tools": [
+        {
+          "tool_id": "gitee::search_open_source_repositories",
+          "name": "search_open_source_repositories",
+          "desc": "Search open source repositories on Gitee"
+        },
+        {
+          "tool_id": "gitee::search_users",
+          "name": "search_users",
+          "desc": "Search for users"
+        },
+        {
+          "tool_id": "grafana::search_dashboards",
+          "name": "search_dashboards",
+          "desc": "Search for dashboards"
+        },
+        {
+          "tool_id": "hdw_linkedin::search_linkedin_users",
+          "name": "search_linkedin_users",
+          "desc": "Search for LinkedIn users with various filters."
+        },
+        {
+          "tool_id": "telegram::search_contacts",
+          "name": "search_contacts",
+          "desc": "Search contacts."
+        },
+        {
+          "tool_id": "github::search_repositories",
+          "name": "search_repositories",
+          "desc": "Search for GitHub repositories"
+        },
+        {
+          "tool_id": "github::search_code",
+          "name": "search_code",
+          "desc": "Search for code across GitHub repositories"
+        },
+        {
+          "tool_id": "github::search_users",
+          "name": "search_users",
+          "desc": "Search for GitHub users"
+        }
+      ],
+      "target_tool_id": "gitee::search_users",
+      "target_tool_name": "search_users",
+      "target_desc": "Search for users"
+    },
+    {
+      "cluster_id": "search_008",
+      "verb_prefix": "search",
+      "size": 10,
+      "tools": [
+        {
+          "tool_id": "kagi_search::search",
+          "name": "search",
+          "desc": "Performs a web search to find information based on the query provided."
+        },
+        {
+          "tool_id": "mcp_toolbox_for_databases::search-hotels-by-name",
+          "name": "search-hotels-by-name",
+          "desc": "Search for hotels based on name."
+        },
+        {
+          "tool_id": "contentful-mcp::search_entries",
+          "name": "search_entries",
+          "desc": "Search for entries using query parameters"
+        },
+        {
+          "tool_id": "datadog::search-logs",
+          "name": "search-logs",
+          "desc": "Search logs with advanced query filtering"
+        },
+        {
+          "tool_id": "devrev::search",
+          "name": "search",
+          "desc": "Search for information using the DevRev search API with the provided query and namespace."
+        },
+        {
+          "tool_id": "heurist_mesh_agent::search",
+          "name": "search",
+          "desc": "Search for webpages related to a query"
+        },
+        {
+          "tool_id": "opendota::search_player",
+          "name": "search_player",
+          "desc": "Search for players by name"
+        },
+        {
+          "tool_id": "memory::search_nodes",
+          "name": "search_nodes",
+          "desc": "Search for nodes based on a query."
+        },
+        {
+          "tool_id": "arxiv::search_papers",
+          "name": "search_papers",
+          "desc": "Search for papers on arXiv with advanced filtering"
+        },
+        {
+          "tool_id": "google-workspace::search_emails",
+          "name": "search_emails",
+          "desc": "Search emails with advanced query"
+        }
+      ],
+      "target_tool_id": "opendota::search_player",
+      "target_tool_name": "search_player",
+      "target_desc": "Search for players by name"
+    },
+    {
+      "cluster_id": "update_009",
+      "verb_prefix": "update",
+      "size": 46,
+      "tools": [
+        {
+          "tool_id": "bitrise::update_app",
+          "name": "update_app",
+          "desc": "Update an app"
+        },
+        {
+          "tool_id": "bitrise::update_outgoing_webhook",
+          "name": "update_outgoing_webhook",
+          "desc": "Update an outgoing webhook for an app"
+        },
+        {
+          "tool_id": "dart::update_task",
+          "name": "update_task",
+          "desc": "Update an existing task's properties"
+        },
+        {
+          "tool_id": "dart::update_doc",
+          "name": "update_doc",
+          "desc": "Update an existing doc's properties"
+        },
+        {
+          "tool_id": "esignatures::update_template",
+          "name": "update_template",
+          "desc": "Update an existing template"
+        },
+        {
+          "tool_id": "gitee::update_pull",
+          "name": "update_pull",
+          "desc": "Update a pull request"
+        },
+        {
+          "tool_id": "gitee::update_issue",
+          "name": "update_issue",
+          "desc": "Update an issue"
+        },
+        {
+          "tool_id": "mongodb::update-one",
+          "name": "update-one",
+          "desc": "Update a single document in a MongoDB collection"
+        },
+        {
+          "tool_id": "mongodb::update-many",
+          "name": "update-many",
+          "desc": "Update multiple documents in a MongoDB collection"
+        },
+        {
+          "tool_id": "raygun::update_deployment",
+          "name": "update_deployment",
+          "desc": "Update deployment information"
+        },
+        {
+          "tool_id": "raygun::update_source_map",
+          "name": "update_source_map",
+          "desc": "Update source map information"
+        },
+        {
+          "tool_id": "unstructured::update_source_connector",
+          "name": "update_source_connector",
+          "desc": "Update an existing source connector by params."
+        },
+        {
+          "tool_id": "unstructured::update_destination_connector",
+          "name": "update_destination_connector",
+          "desc": "Update an existing destination connector by destination id."
+        },
+        {
+          "tool_id": "unstructured::update_workflow",
+          "name": "update_workflow",
+          "desc": "Update an existing workflow by params."
+        },
+        {
+          "tool_id": "xero::update-contact",
+          "name": "update-contact",
+          "desc": "Update an existing contact"
+        },
+        {
+          "tool_id": "xero::update-invoice",
+          "name": "update-invoice",
+          "desc": "Update an existing draft invoice"
+        },
+        {
+          "tool_id": "xero::update-quote",
+          "name": "update-quote",
+          "desc": "Update an existing draft quote"
+        },
+        {
+          "tool_id": "xero::update-credit-note",
+          "name": "update-credit-note",
+          "desc": "Update an existing draft credit note"
+        },
+        {
+          "tool_id": "xero::update-payroll-timesheet-line",
+          "name": "update-payroll-timesheet-line",
+          "desc": "Update a line on an existing Payroll Timesheet"
+        },
+        {
+          "tool_id": "clickup::update_bulk_tasks",
+          "name": "update_bulk_tasks",
+          "desc": "Update multiple tasks"
+        },
+        {
+          "tool_id": "clickup::update_folder",
+          "name": "update_folder",
+          "desc": "Update folder properties"
+        },
+        {
+          "tool_id": "clickup::update_list",
+          "name": "update_list",
+          "desc": "Update list properties"
+        },
+        {
+          "tool_id": "clickup::update_space_tag",
+          "name": "update_space_tag",
+          "desc": "Update tag"
+        },
+        {
+          "tool_id": "clickup::update_document_page",
+          "name": "update_document_page",
+          "desc": "Update a document page"
+        },
+        {
+          "tool_id": "google_calendar::update_event",
+          "name": "update_event",
+          "desc": "Update an existing calendar event"
+        },
+        {
+          "tool_id": "google_tasks::update",
+          "name": "update",
+          "desc": "Update an existing task in Google Tasks"
+        },
+        {
+          "tool_id": "servicenow::update_incident",
+          "name": "update_incident",
+          "desc": "Update an existing incident in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::update_catalog_category",
+          "name": "update_catalog_category",
+          "desc": "Update an existing service catalog category in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::update_catalog_item_variable",
+          "name": "update_catalog_item_variable",
+          "desc": "Update an existing variable for a catalog item"
+        },
+        {
+          "tool_id": "servicenow::update_catalog_item",
+          "name": "update_catalog_item",
+          "desc": "Update a service catalog item"
+        },
+        {
+          "tool_id": "servicenow::update_change_request",
+          "name": "update_change_request",
+          "desc": "Update an existing change request"
+        },
+        {
+          "tool_id": "servicenow::update_workflow",
+          "name": "update_workflow",
+          "desc": "Update an existing workflow in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::update_script_include",
+          "name": "update_script_include",
+          "desc": "Update an existing script include in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::update_changeset",
+          "name": "update_changeset",
+          "desc": "Update an existing changeset"
+        },
+        {
+          "tool_id": "servicenow::update_article",
+          "name": "update_article",
+          "desc": "Update an existing knowledge article in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::update_user",
+          "name": "update_user",
+          "desc": "Update an existing user in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::update_group",
+          "name": "update_group",
+          "desc": "Update an existing group in ServiceNow"
+        },
+        {
+          "tool_id": "shopify::update-customer",
+          "name": "update-customer",
+          "desc": "Update a customer's information"
+        },
+        {
+          "tool_id": "shopify::update-order",
+          "name": "update-order",
+          "desc": "Update an existing order with new information"
+        },
+        {
+          "tool_id": "telegram::update_profile",
+          "name": "update_profile",
+          "desc": "Update your profile."
+        },
+        {
+          "tool_id": "ticktick::update_task",
+          "name": "update_task",
+          "desc": "Update an existing task"
+        },
+        {
+          "tool_id": "ticktick::update_project",
+          "name": "update_project",
+          "desc": "Update an existing project"
+        },
+        {
+          "tool_id": "windows_cli::update_ssh_connection",
+          "name": "update_ssh_connection",
+          "desc": "Update an existing SSH connection"
+        },
+        {
+          "tool_id": "github::update_issue",
+          "name": "update_issue",
+          "desc": "Update an existing issue"
+        },
+        {
+          "tool_id": "github::update_pull_request_branch",
+          "name": "update_pull_request_branch",
+          "desc": "Update a pull request branch with the latest changes from the base branch (equivalent to GitHub's 'Update branch' button)"
+        },
+        {
+          "tool_id": "google-workspace::update_event",
+          "name": "update_event",
+          "desc": "Update an existing calendar event"
+        }
+      ],
+      "target_tool_id": "clickup::update_space_tag",
+      "target_tool_name": "update_space_tag",
+      "target_desc": "Update tag"
+    },
+    {
+      "cluster_id": "delete_010",
+      "verb_prefix": "delete",
+      "size": 13,
+      "tools": [
+        {
+          "tool_id": "esignatures::delete_template",
+          "name": "delete_template",
+          "desc": "Delete a template"
+        },
+        {
+          "tool_id": "meilisearch::delete-tasks",
+          "name": "delete-tasks",
+          "desc": "Delete completed tasks"
+        },
+        {
+          "tool_id": "clickup::delete_folder",
+          "name": "delete_folder",
+          "desc": "Delete folder"
+        },
+        {
+          "tool_id": "clickup::delete_list",
+          "name": "delete_list",
+          "desc": "Delete list"
+        },
+        {
+          "tool_id": "clickup::delete_space_tag",
+          "name": "delete_space_tag",
+          "desc": "Delete tag"
+        },
+        {
+          "tool_id": "google_tasks::delete",
+          "name": "delete",
+          "desc": "Delete a task in Google Tasks"
+        },
+        {
+          "tool_id": "mcp_create::delete-server",
+          "name": "delete-server",
+          "desc": "Delete server"
+        },
+        {
+          "tool_id": "obsidian-mcp::delete-note",
+          "name": "delete-note",
+          "desc": "Delete a note"
+        },
+        {
+          "tool_id": "talk_to_figma::delete_node",
+          "name": "delete_node",
+          "desc": "Delete a node"
+        },
+        {
+          "tool_id": "telegram::delete_message",
+          "name": "delete_message",
+          "desc": "Delete a message."
+        },
+        {
+          "tool_id": "telegram::delete_contact",
+          "name": "delete_contact",
+          "desc": "Delete a contact."
+        },
+        {
+          "tool_id": "ticktick::delete_task",
+          "name": "delete_task",
+          "desc": "Delete a task from a project"
+        },
+        {
+          "tool_id": "ticktick::delete_project",
+          "name": "delete_project",
+          "desc": "Delete a project"
+        }
+      ],
+      "target_tool_id": "clickup::delete_space_tag",
+      "target_tool_name": "delete_space_tag",
+      "target_desc": "Delete tag"
+    },
+    {
+      "cluster_id": "delete_011",
+      "verb_prefix": "delete",
+      "size": 6,
+      "tools": [
+        {
+          "tool_id": "unstructured::delete_source_connector",
+          "name": "delete_source_connector",
+          "desc": "Delete a source connector by source id."
+        },
+        {
+          "tool_id": "unstructured::delete_destination_connector",
+          "name": "delete_destination_connector",
+          "desc": "Delete a destination connector by destination id."
+        },
+        {
+          "tool_id": "unstructured::delete_workflow",
+          "name": "delete_workflow",
+          "desc": "Delete a specific workflow by id."
+        },
+        {
+          "tool_id": "elevenlabs::delete_job",
+          "name": "delete_job",
+          "desc": "Delete a job by its ID"
+        },
+        {
+          "tool_id": "servicenow::delete_workflow",
+          "name": "delete_workflow",
+          "desc": "Delete a workflow from ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::delete_script_include",
+          "name": "delete_script_include",
+          "desc": "Delete a script include from ServiceNow"
+        }
+      ],
+      "target_tool_id": "elevenlabs::delete_job",
+      "target_tool_name": "delete_job",
+      "target_desc": "Delete a job by its ID"
+    },
+    {
+      "cluster_id": "monday_014",
+      "verb_prefix": "monday",
+      "size": 13,
+      "tools": [
+        {
+          "tool_id": "monday.com::monday-create-item",
+          "name": "monday-create-item",
+          "desc": "Creates a new item or sub-item in a Monday.com board"
+        },
+        {
+          "tool_id": "monday.com::monday-get-board-groups",
+          "name": "monday-get-board-groups",
+          "desc": "Retrieves all groups from a specified Monday.com board"
+        },
+        {
+          "tool_id": "monday.com::monday-create-update",
+          "name": "monday-create-update",
+          "desc": "Creates a comment/update on a Monday.com item"
+        },
+        {
+          "tool_id": "monday.com::monday-list-boards",
+          "name": "monday-list-boards",
+          "desc": "Lists all available Monday.com boards"
+        },
+        {
+          "tool_id": "monday.com::monday-list-items-in-groups",
+          "name": "monday-list-items-in-groups",
+          "desc": "Lists all items in specified groups of a Monday.com board"
+        },
+        {
+          "tool_id": "monday.com::monday-list-subitems-in-items",
+          "name": "monday-list-subitems-in-items",
+          "desc": "Lists all sub-items for given Monday.com items"
+        },
+        {
+          "tool_id": "monday.com::monday-create-board",
+          "name": "monday-create-board",
+          "desc": "Creates a new Monday.com board"
+        },
+        {
+          "tool_id": "monday.com::monday-create-board-group",
+          "name": "monday-create-board-group",
+          "desc": "Creates a new group in a Monday.com board"
+        },
+        {
+          "tool_id": "monday.com::monday-move-item-to-group",
+          "name": "monday-move-item-to-group",
+          "desc": "Moves a Monday.com item to a different group"
+        },
+        {
+          "tool_id": "monday.com::monday-delete-item",
+          "name": "monday-delete-item",
+          "desc": "Deletes a Monday.com item"
+        },
+        {
+          "tool_id": "monday.com::monday-archive-item",
+          "name": "monday-archive-item",
+          "desc": "Archives a Monday.com item"
+        },
+        {
+          "tool_id": "monday.com::monday-get-docs",
+          "name": "monday-get-docs",
+          "desc": "Lists documents in Monday.com, optionally filtered by folder"
+        },
+        {
+          "tool_id": "monday.com::monday-create-doc",
+          "name": "monday-create-doc",
+          "desc": "Creates a new document in Monday.com"
+        }
+      ],
+      "target_tool_id": "monday.com::monday-delete-item",
+      "target_tool_name": "monday-delete-item",
+      "target_desc": "Deletes a Monday.com item"
+    },
+    {
+      "cluster_id": "load_016",
+      "verb_prefix": "load",
+      "size": 12,
+      "tools": [
+        {
+          "tool_id": "ramp::load_transactions",
+          "name": "load_transactions",
+          "desc": "Loads transactions data."
+        },
+        {
+          "tool_id": "ramp::load_reimbursements",
+          "name": "load_reimbursements",
+          "desc": "Loads reimbursements data."
+        },
+        {
+          "tool_id": "ramp::load_bills",
+          "name": "load_bills",
+          "desc": "Loads bills data."
+        },
+        {
+          "tool_id": "ramp::load_locations",
+          "name": "load_locations",
+          "desc": "Loads locations data."
+        },
+        {
+          "tool_id": "ramp::load_departments",
+          "name": "load_departments",
+          "desc": "Loads departments data."
+        },
+        {
+          "tool_id": "ramp::load_bank_accounts",
+          "name": "load_bank_accounts",
+          "desc": "Loads bank accounts data."
+        },
+        {
+          "tool_id": "ramp::load_vendors",
+          "name": "load_vendors",
+          "desc": "Loads vendors data."
+        },
+        {
+          "tool_id": "ramp::load_vendor_bank_accounts",
+          "name": "load_vendor_bank_accounts",
+          "desc": "Loads vendor bank accounts data."
+        },
+        {
+          "tool_id": "ramp::load_entities",
+          "name": "load_entities",
+          "desc": "Loads entities data."
+        },
+        {
+          "tool_id": "ramp::load_spend_limits",
+          "name": "load_spend_limits",
+          "desc": "Loads spend limits data."
+        },
+        {
+          "tool_id": "ramp::load_spend_programs",
+          "name": "load_spend_programs",
+          "desc": "Loads spend programs data."
+        },
+        {
+          "tool_id": "ramp::load_users",
+          "name": "load_users",
+          "desc": "Loads users data."
+        }
+      ],
+      "target_tool_id": "ramp::load_bills",
+      "target_tool_name": "load_bills",
+      "target_desc": "Loads bills data."
+    },
+    {
+      "cluster_id": "atlas_020",
+      "verb_prefix": "atlas",
+      "size": 10,
+      "tools": [
+        {
+          "tool_id": "mongodb::atlas-list-orgs",
+          "name": "atlas-list-orgs",
+          "desc": "Lists MongoDB Atlas organizations"
+        },
+        {
+          "tool_id": "mongodb::atlas-list-projects",
+          "name": "atlas-list-projects",
+          "desc": "Lists MongoDB Atlas projects"
+        },
+        {
+          "tool_id": "mongodb::atlas-list-clusters",
+          "name": "atlas-list-clusters",
+          "desc": "Lists MongoDB Atlas clusters"
+        },
+        {
+          "tool_id": "mongodb::atlas-inspect-cluster",
+          "name": "atlas-inspect-cluster",
+          "desc": "Inspect a specific MongoDB Atlas cluster"
+        },
+        {
+          "tool_id": "mongodb::atlas-create-free-cluster",
+          "name": "atlas-create-free-cluster",
+          "desc": "Create a free MongoDB Atlas cluster"
+        },
+        {
+          "tool_id": "mongodb::atlas-connect-cluster",
+          "name": "atlas-connect-cluster",
+          "desc": "Connects to MongoDB Atlas cluster"
+        },
+        {
+          "tool_id": "mongodb::atlas-inspect-access-list",
+          "name": "atlas-inspect-access-list",
+          "desc": "Inspect IP/CIDR ranges with access to MongoDB Atlas clusters"
+        },
+        {
+          "tool_id": "mongodb::atlas-create-access-list",
+          "name": "atlas-create-access-list",
+          "desc": "Configure IP/CIDR access list for MongoDB Atlas clusters"
+        },
+        {
+          "tool_id": "mongodb::atlas-list-db-users",
+          "name": "atlas-list-db-users",
+          "desc": "List MongoDB Atlas database users"
+        },
+        {
+          "tool_id": "mongodb::atlas-create-db-user",
+          "name": "atlas-create-db-user",
+          "desc": "List MongoDB Atlas database users"
+        }
+      ],
+      "target_tool_id": "mongodb::atlas-list-projects",
+      "target_tool_name": "atlas-list-projects",
+      "target_desc": "Lists MongoDB Atlas projects"
+    },
+    {
+      "cluster_id": "weather_021",
+      "verb_prefix": "weather",
+      "size": 9,
+      "tools": [
+        {
+          "tool_id": "weather-data::weather_current",
+          "name": "weather_current",
+          "desc": "\nGet current weather for a location.\nArgs:\n    q (str): Location query (city name, lat/lon, postal code, etc).\n    aqi (str): Include air quality data ('yes' or 'no').\nReturns:\n    dict: WeatherAPI cu"
+        },
+        {
+          "tool_id": "weather-data::weather_forecast",
+          "name": "weather_forecast",
+          "desc": "\nGet weather forecast (1–14 days) for a location.\nArgs:\n    q (str): Location query (city name, lat/lon, postal code, etc).\n    days (int): Number of days (1–14).\n    aqi (str): Include air quality ('"
+        },
+        {
+          "tool_id": "weather-data::weather_history",
+          "name": "weather_history",
+          "desc": "\nGet historical weather for a location on a given date (YYYY-MM-DD).\nArgs:\n    q (str): Location query.\n    dt (str): Date in YYYY-MM-DD format.\nReturns:\n    dict: WeatherAPI history JSON.\n"
+        },
+        {
+          "tool_id": "weather-data::weather_alerts",
+          "name": "weather_alerts",
+          "desc": "\nGet weather alerts for a location.\nArgs:\n    q (str): Location query.\nReturns:\n    dict: WeatherAPI alerts JSON.\n"
+        },
+        {
+          "tool_id": "weather-data::weather_airquality",
+          "name": "weather_airquality",
+          "desc": "\nGet air quality for a location.\nArgs:\n    q (str): Location query.\nReturns:\n    dict: WeatherAPI air quality JSON.\n"
+        },
+        {
+          "tool_id": "weather-data::weather_astronomy",
+          "name": "weather_astronomy",
+          "desc": "\nGet astronomy data (sunrise, sunset, moon) for a date (YYYY-MM-DD).\nArgs:\n    q (str): Location query.\n    dt (str): Date in YYYY-MM-DD format.\nReturns:\n    dict: WeatherAPI astronomy JSON.\n"
+        },
+        {
+          "tool_id": "weather-data::weather_search",
+          "name": "weather_search",
+          "desc": "\nSearch for locations matching query.\nArgs:\n    q (str): Location query.\nReturns:\n    dict: WeatherAPI search JSON.\n"
+        },
+        {
+          "tool_id": "weather-data::weather_timezone",
+          "name": "weather_timezone",
+          "desc": "\nGet timezone info for a location.\nArgs:\n    q (str): Location query.\nReturns:\n    dict: WeatherAPI timezone JSON.\n"
+        },
+        {
+          "tool_id": "weather-data::weather_sports",
+          "name": "weather_sports",
+          "desc": "\nGet sports events (e.g., football, cricket) for a location.\nArgs:\n    q (str): Location query.\nReturns:\n    dict: WeatherAPI sports JSON.\n"
+        }
+      ],
+      "target_tool_id": "weather-data::weather_alerts",
+      "target_tool_name": "weather_alerts",
+      "target_desc": "\nGet weather alerts for a location.\nArgs:\n    q (str): Location query.\nReturns:\n    dict: WeatherAPI alerts JSON.\n"
+    },
+    {
+      "cluster_id": "remote_022",
+      "verb_prefix": "remote",
+      "size": 5,
+      "tools": [
+        {
+          "tool_id": "computer-use_-_remote_macos_use::remote_macos_mouse_move",
+          "name": "remote_macos_mouse_move",
+          "desc": "Move the mouse cursor to specified coordinates on a remote macOS machine, with automatic coordinate scaling."
+        },
+        {
+          "tool_id": "computer-use_-_remote_macos_use::remote_macos_mouse_click",
+          "name": "remote_macos_mouse_click",
+          "desc": "Perform a mouse click at specified coordinates on a remote macOS machine, with automatic coordinate scaling."
+        },
+        {
+          "tool_id": "computer-use_-_remote_macos_use::remote_macos_mouse_double_click",
+          "name": "remote_macos_mouse_double_click",
+          "desc": "Perform a mouse double-click at specified coordinates on a remote macOS machine, with automatic coordinate scaling."
+        },
+        {
+          "tool_id": "computer-use_-_remote_macos_use::remote_macos_mouse_scroll",
+          "name": "remote_macos_mouse_scroll",
+          "desc": "Perform a mouse scroll at specified coordinates on a remote macOS machine, with automatic coordinate scaling."
+        },
+        {
+          "tool_id": "computer-use_-_remote_macos_use::remote_macos_mouse_drag_n_drop",
+          "name": "remote_macos_mouse_drag_n_drop",
+          "desc": "Perform a mouse drag operation from start point and drop to end point on a remote macOS machine, with automatic coordinate scaling."
+        }
+      ],
+      "target_tool_id": "computer-use_-_remote_macos_use::remote_macos_mouse_move",
+      "target_tool_name": "remote_macos_mouse_move",
+      "target_desc": "Move the mouse cursor to specified coordinates on a remote macOS machine, with automatic coordinate scaling."
+    },
+    {
+      "cluster_id": "whois_023",
+      "verb_prefix": "whois",
+      "size": 8,
+      "tools": [
+        {
+          "tool_id": "whois_mcp::whois_domain",
+          "name": "whois_domain",
+          "desc": "Looks up WHOIS information about the specified domain."
+        },
+        {
+          "tool_id": "whois_mcp::whois_tld",
+          "name": "whois_tld",
+          "desc": "Looks up WHOIS information about the specified Top Level Domain (TLD)."
+        },
+        {
+          "tool_id": "whois_mcp::whois_ip",
+          "name": "whois_ip",
+          "desc": "Looks up WHOIS information about the specified IP address."
+        },
+        {
+          "tool_id": "whois_mcp::whois_as",
+          "name": "whois_as",
+          "desc": "Looks up WHOIS information about the specified Autonomous System Number (ASN)."
+        },
+        {
+          "tool_id": "whois::whois_domain",
+          "name": "whois_domain",
+          "desc": "Looksup whois information about the domain"
+        },
+        {
+          "tool_id": "whois::whois_tld",
+          "name": "whois_tld",
+          "desc": "Looksup whois information about the Top Level Domain (TLD)"
+        },
+        {
+          "tool_id": "whois::whois_ip",
+          "name": "whois_ip",
+          "desc": "Looksup whois information about the IP"
+        },
+        {
+          "tool_id": "whois::whois_as",
+          "name": "whois_as",
+          "desc": "Looksup whois information about the Autonomous System Number (ASN)"
+        }
+      ],
+      "target_tool_id": "whois::whois_ip",
+      "target_tool_name": "whois_ip",
+      "target_desc": "Looksup whois information about the IP"
+    },
+    {
+      "cluster_id": "pods_024",
+      "verb_prefix": "pods",
+      "size": 5,
+      "tools": [
+        {
+          "tool_id": "kubernetes_and_openshift::pods_delete",
+          "name": "pods_delete",
+          "desc": "Delete a Kubernetes Pod in the current or provided namespace with the provided name"
+        },
+        {
+          "tool_id": "kubernetes_and_openshift::pods_exec",
+          "name": "pods_exec",
+          "desc": "Execute a command in a Kubernetes Pod in the current or provided namespace with the provided name and command"
+        },
+        {
+          "tool_id": "kubernetes_and_openshift::pods_get",
+          "name": "pods_get",
+          "desc": "Get a Kubernetes Pod in the current or provided namespace with the provided name"
+        },
+        {
+          "tool_id": "kubernetes_and_openshift::pods_log",
+          "name": "pods_log",
+          "desc": "Get the logs of a Kubernetes Pod in the current or provided namespace with the provided name"
+        },
+        {
+          "tool_id": "kubernetes_and_openshift::pods_run",
+          "name": "pods_run",
+          "desc": "Run a Kubernetes Pod in the current or provided namespace with the provided container image and optional name"
+        }
+      ],
+      "target_tool_id": "kubernetes_and_openshift::pods_get",
+      "target_tool_name": "pods_get",
+      "target_desc": "Get a Kubernetes Pod in the current or provided namespace with the provided name"
+    },
+    {
+      "cluster_id": "drop_025",
+      "verb_prefix": "drop",
+      "size": 6,
+      "tools": [
+        {
+          "tool_id": "mongodb::drop-collection",
+          "name": "drop-collection",
+          "desc": "Remove a collection from a MongoDB database"
+        },
+        {
+          "tool_id": "mongodb::drop-database",
+          "name": "drop-database",
+          "desc": "Remove a MongoDB database"
+        },
+        {
+          "tool_id": "mongodb_lens::drop-collection",
+          "name": "drop-collection",
+          "desc": "Remove collections from the database (requires confirmation)"
+        },
+        {
+          "tool_id": "mongodb_lens::drop-database",
+          "name": "drop-database",
+          "desc": "Drop a database (requires confirmation)"
+        },
+        {
+          "tool_id": "mongodb_lens::drop-index",
+          "name": "drop-index",
+          "desc": "Remove indexes from collections (requires confirmation)"
+        },
+        {
+          "tool_id": "mongodb_lens::drop-user",
+          "name": "drop-user",
+          "desc": "Remove database users (requires confirmation)"
+        }
+      ],
+      "target_tool_id": "mongodb::drop-database",
+      "target_tool_name": "drop-database",
+      "target_desc": "Remove a MongoDB database"
+    }
+  ],
+  "pilot_results": [
+    {
+      "cluster_id": "get_001",
+      "target_tool_id": "contentful-mcp::get_entry",
+      "v_orig_hit_rate": 0.0,
+      "verdict": "KEEP"
+    },
+    {
+      "cluster_id": "get_002",
+      "target_tool_id": "productboard::get_notes",
+      "v_orig_hit_rate": 0.0,
+      "verdict": "KEEP"
+    },
+    {
+      "cluster_id": "get_003",
+      "target_tool_id": "hologres::get_query_plan",
+      "v_orig_hit_rate": 0.0,
+      "verdict": "KEEP"
+    },
+    {
+      "cluster_id": "get_004",
+      "target_tool_id": "wikipedia::get_summary",
+      "v_orig_hit_rate": 0.0,
+      "verdict": "KEEP"
+    },
+    {
+      "cluster_id": "list_005",
+      "target_tool_id": "clickup::list_documents",
+      "v_orig_hit_rate": 0.0,
+      "verdict": "KEEP"
+    },
+    {
+      "cluster_id": "create_006",
+      "target_tool_id": "clickup::create_space_tag",
+      "v_orig_hit_rate": 0.0,
+      "verdict": "KEEP"
+    },
+    {
+      "cluster_id": "search_007",
+      "target_tool_id": "gitee::search_users",
+      "v_orig_hit_rate": 0.0,
+      "verdict": "KEEP"
+    },
+    {
+      "cluster_id": "search_008",
+      "target_tool_id": "opendota::search_player",
+      "v_orig_hit_rate": 0.0,
+      "verdict": "KEEP"
+    },
+    {
+      "cluster_id": "update_009",
+      "target_tool_id": "clickup::update_space_tag",
+      "v_orig_hit_rate": 0.0,
+      "verdict": "KEEP"
+    },
+    {
+      "cluster_id": "delete_010",
+      "target_tool_id": "clickup::delete_space_tag",
+      "v_orig_hit_rate": 0.0,
+      "verdict": "KEEP"
+    },
+    {
+      "cluster_id": "delete_011",
+      "target_tool_id": "elevenlabs::delete_job",
+      "v_orig_hit_rate": 0.0,
+      "verdict": "KEEP"
+    },
+    {
+      "cluster_id": "monday_014",
+      "target_tool_id": "monday.com::monday-delete-item",
+      "v_orig_hit_rate": 0.0,
+      "verdict": "KEEP"
+    },
+    {
+      "cluster_id": "load_016",
+      "target_tool_id": "ramp::load_bills",
+      "v_orig_hit_rate": 0.0,
+      "verdict": "KEEP"
+    },
+    {
+      "cluster_id": "atlas_020",
+      "target_tool_id": "mongodb::atlas-list-projects",
+      "v_orig_hit_rate": 0.0,
+      "verdict": "KEEP"
+    },
+    {
+      "cluster_id": "weather_021",
+      "target_tool_id": "weather-data::weather_alerts",
+      "v_orig_hit_rate": 0.0,
+      "verdict": "KEEP"
+    },
+    {
+      "cluster_id": "remote_022",
+      "target_tool_id": "computer-use_-_remote_macos_use::remote_macos_mouse_move",
+      "v_orig_hit_rate": 1.0,
+      "verdict": "TOO_EASY"
+    },
+    {
+      "cluster_id": "whois_023",
+      "target_tool_id": "whois::whois_ip",
+      "v_orig_hit_rate": 0.0,
+      "verdict": "KEEP"
+    },
+    {
+      "cluster_id": "pods_024",
+      "target_tool_id": "kubernetes_and_openshift::pods_get",
+      "v_orig_hit_rate": 1.0,
+      "verdict": "TOO_EASY"
+    },
+    {
+      "cluster_id": "drop_025",
+      "target_tool_id": "mongodb::drop-database",
+      "v_orig_hit_rate": 0.0,
+      "verdict": "KEEP"
+    }
+  ],
+  "final_clusters": [
+    {
+      "cluster_id": "get_001",
+      "verb_prefix": "get",
+      "size": 7,
+      "tools": [
+        {
+          "tool_id": "dart::get_task",
+          "name": "get_task",
+          "desc": "Retrieve an existing task by its ID"
+        },
+        {
+          "tool_id": "dart::get_doc",
+          "name": "get_doc",
+          "desc": "Retrieve an existing doc by its ID"
+        },
+        {
+          "tool_id": "grafana::get_investigation",
+          "name": "get_investigation",
+          "desc": "Retrieve an existing Sift investigation by its UUID"
+        },
+        {
+          "tool_id": "grafana::get_analysis",
+          "name": "get_analysis",
+          "desc": "Retrieve a specific analysis from a Sift investigation"
+        },
+        {
+          "tool_id": "verodat::get-queries",
+          "name": "get-queries",
+          "desc": "Retrieve existing AI queries"
+        },
+        {
+          "tool_id": "xero::get-payroll-timesheet",
+          "name": "get-payroll-timesheet",
+          "desc": "Retrieve an existing Payroll Timesheet"
+        },
+        {
+          "tool_id": "contentful-mcp::get_entry",
+          "name": "get_entry",
+          "desc": "Retrieve existing entries"
+        }
+      ],
+      "target_tool_id": "contentful-mcp::get_entry",
+      "target_tool_name": "get_entry",
+      "target_desc": "Retrieve existing entries",
+      "pilot_v_orig_hit_rate": 0.0,
+      "reason": "7 tools all describe 'get' operations, names are generic, GPT hit rate 0% with original descriptions"
+    },
+    {
+      "cluster_id": "get_002",
+      "verb_prefix": "get",
+      "size": 6,
+      "tools": [
+        {
+          "tool_id": "productboard::get_companies",
+          "name": "get_companies",
+          "desc": "Retrieves a list of companies from Productboard."
+        },
+        {
+          "tool_id": "productboard::get_components",
+          "name": "get_components",
+          "desc": "Retrieves a list of components from Productboard."
+        },
+        {
+          "tool_id": "productboard::get_features",
+          "name": "get_features",
+          "desc": "Retrieves a list of features from Productboard."
+        },
+        {
+          "tool_id": "productboard::get_feature_statuses",
+          "name": "get_feature_statuses",
+          "desc": "Retrieves the statuses of features from Productboard."
+        },
+        {
+          "tool_id": "productboard::get_notes",
+          "name": "get_notes",
+          "desc": "Retrieves notes from Productboard."
+        },
+        {
+          "tool_id": "productboard::get_products",
+          "name": "get_products",
+          "desc": "Retrieves a list of products from Productboard."
+        }
+      ],
+      "target_tool_id": "productboard::get_notes",
+      "target_tool_name": "get_notes",
+      "target_desc": "Retrieves notes from Productboard.",
+      "pilot_v_orig_hit_rate": 0.0,
+      "reason": "6 tools all describe 'get' operations, names are generic, GPT hit rate 0% with original descriptions"
+    },
+    {
+      "cluster_id": "get_003",
+      "verb_prefix": "get",
+      "size": 5,
+      "tools": [
+        {
+          "tool_id": "alibaba_cloud_analyticdb_for_mysql::get_query_plan",
+          "name": "get_query_plan",
+          "desc": "Get the query plan for a SQL query"
+        },
+        {
+          "tool_id": "alibaba_cloud_analyticdb_for_mysql::get_execution_plan",
+          "name": "get_execution_plan",
+          "desc": "Get the actual execution plan with runtime statistics for a SQL query"
+        },
+        {
+          "tool_id": "hologres::get_query_plan",
+          "name": "get_query_plan",
+          "desc": "Get query plan"
+        },
+        {
+          "tool_id": "hologres::get_execution_plan",
+          "name": "get_execution_plan",
+          "desc": "Get execution plan"
+        },
+        {
+          "tool_id": "terminal-control::get_command_history",
+          "name": "get_command_history",
+          "desc": "Get recent command execution history."
+        }
+      ],
+      "target_tool_id": "hologres::get_query_plan",
+      "target_tool_name": "get_query_plan",
+      "target_desc": "Get query plan",
+      "pilot_v_orig_hit_rate": 0.0,
+      "reason": "5 tools all describe 'get' operations, names are generic, GPT hit rate 0% with original descriptions"
+    },
+    {
+      "cluster_id": "get_004",
+      "verb_prefix": "get",
+      "size": 5,
+      "tools": [
+        {
+          "tool_id": "wikipedia::get_article",
+          "name": "get_article",
+          "desc": "Get the full content of a Wikipedia article."
+        },
+        {
+          "tool_id": "wikipedia::get_summary",
+          "name": "get_summary",
+          "desc": "Get a summary of a Wikipedia article."
+        },
+        {
+          "tool_id": "wikipedia::get_related_topics",
+          "name": "get_related_topics",
+          "desc": "Get topics related to a Wikipedia article based on links and categories."
+        },
+        {
+          "tool_id": "wikipedia::get_sections",
+          "name": "get_sections",
+          "desc": "Get the sections of a Wikipedia article."
+        },
+        {
+          "tool_id": "wikipedia::get_links",
+          "name": "get_links",
+          "desc": "Get the links contained within a Wikipedia article."
+        }
+      ],
+      "target_tool_id": "wikipedia::get_summary",
+      "target_tool_name": "get_summary",
+      "target_desc": "Get a summary of a Wikipedia article.",
+      "pilot_v_orig_hit_rate": 0.0,
+      "reason": "5 tools all describe 'get' operations, names are generic, GPT hit rate 0% with original descriptions"
+    },
+    {
+      "cluster_id": "list_005",
+      "verb_prefix": "list",
+      "size": 90,
+      "tools": [
+        {
+          "tool_id": "aiven::list_services",
+          "name": "list_services",
+          "desc": "List all services in a specific Aiven project."
+        },
+        {
+          "tool_id": "bitrise::list_apps",
+          "name": "list_apps",
+          "desc": "List all the apps available for the authenticated account"
+        },
+        {
+          "tool_id": "bitrise::list_branches",
+          "name": "list_branches",
+          "desc": "List the branches with existing builds of an app's repository"
+        },
+        {
+          "tool_id": "bitrise::list_builds",
+          "name": "list_builds",
+          "desc": "List all the builds of a specified Bitrise app or all accessible builds"
+        },
+        {
+          "tool_id": "bitrise::list_build_workflows",
+          "name": "list_build_workflows",
+          "desc": "List the workflows of an app"
+        },
+        {
+          "tool_id": "bitrise::list_outgoing_webhooks",
+          "name": "list_outgoing_webhooks",
+          "desc": "List the outgoing webhooks of an app"
+        },
+        {
+          "tool_id": "bitrise::list_pipelines",
+          "name": "list_pipelines",
+          "desc": "List all pipelines and standalone builds of an app"
+        },
+        {
+          "tool_id": "bitrise::list_group_roles",
+          "name": "list_group_roles",
+          "desc": "List group roles for an app"
+        },
+        {
+          "tool_id": "bitrise::list_workspaces",
+          "name": "list_workspaces",
+          "desc": "List the workspaces the user has access to"
+        },
+        {
+          "tool_id": "bitrise::list_connected_apps",
+          "name": "list_connected_apps",
+          "desc": "List Release Management connected apps available for the authenticated account within a workspace"
+        },
+        {
+          "tool_id": "bitrise::list_installable_artifacts",
+          "name": "list_installable_artifacts",
+          "desc": "List Release Management installable artifacts of a connected app"
+        },
+        {
+          "tool_id": "elasticsearch::list_indices",
+          "name": "list_indices",
+          "desc": "List all available Elasticsearch indices"
+        },
+        {
+          "tool_id": "esignatures::list_templates",
+          "name": "list_templates",
+          "desc": "List all your templates"
+        },
+        {
+          "tool_id": "gitee::list_user_repos",
+          "name": "list_user_repos",
+          "desc": "List user authorized repositories"
+        },
+        {
+          "tool_id": "gitee::list_releases",
+          "name": "list_releases",
+          "desc": "List repository releases"
+        },
+        {
+          "tool_id": "gitee::list_repo_pulls",
+          "name": "list_repo_pulls",
+          "desc": "List pull requests in a repository"
+        },
+        {
+          "tool_id": "gitee::list_pull_comments",
+          "name": "list_pull_comments",
+          "desc": "List all comments for a pull request"
+        },
+        {
+          "tool_id": "gitee::list_repo_issues",
+          "name": "list_repo_issues",
+          "desc": "List repository issues"
+        },
+        {
+          "tool_id": "gitee::list_issue_comments",
+          "name": "list_issue_comments",
+          "desc": "List comments on an issue"
+        },
+        {
+          "tool_id": "gitee::list_user_notifications",
+          "name": "list_user_notifications",
+          "desc": "List user notifications"
+        },
+        {
+          "tool_id": "gotohuman::list-forms",
+          "name": "list-forms",
+          "desc": "List all available review forms."
+        },
+        {
+          "tool_id": "grafana::list_datasources",
+          "name": "list_datasources",
+          "desc": "List datasources"
+        },
+        {
+          "tool_id": "grafana::list_prometheus_metric_metadata",
+          "name": "list_prometheus_metric_metadata",
+          "desc": "List metric metadata"
+        },
+        {
+          "tool_id": "grafana::list_prometheus_metric_names",
+          "name": "list_prometheus_metric_names",
+          "desc": "List available metric names"
+        },
+        {
+          "tool_id": "grafana::list_prometheus_label_names",
+          "name": "list_prometheus_label_names",
+          "desc": "List label names matching a selector"
+        },
+        {
+          "tool_id": "grafana::list_incidents",
+          "name": "list_incidents",
+          "desc": "List incidents in Grafana Incident"
+        },
+        {
+          "tool_id": "grafana::list_loki_label_names",
+          "name": "list_loki_label_names",
+          "desc": "List all available label names in logs"
+        },
+        {
+          "tool_id": "grafana::list_oncall_schedules",
+          "name": "list_oncall_schedules",
+          "desc": "List schedules from Grafana OnCall"
+        },
+        {
+          "tool_id": "grafana::list_oncall_teams",
+          "name": "list_oncall_teams",
+          "desc": "List teams from Grafana OnCall"
+        },
+        {
+          "tool_id": "grafana::list_oncall_users",
+          "name": "list_oncall_users",
+          "desc": "List users from Grafana OnCall"
+        },
+        {
+          "tool_id": "heroku::list_apps",
+          "name": "list_apps",
+          "desc": "List all Heroku apps. You can filter apps by personal, collaborator, team, or space."
+        },
+        {
+          "tool_id": "heroku::list_teams",
+          "name": "list_teams",
+          "desc": "List teams you belong to."
+        },
+        {
+          "tool_id": "heroku::list_private_spaces",
+          "name": "list_private_spaces",
+          "desc": "List available spaces."
+        },
+        {
+          "tool_id": "meilisearch::list-indexes",
+          "name": "list-indexes",
+          "desc": "List all available indexes"
+        },
+        {
+          "tool_id": "raygun::list_error_groups",
+          "name": "list_error_groups",
+          "desc": "List error groups for an application"
+        },
+        {
+          "tool_id": "raygun::list_deployments",
+          "name": "list_deployments",
+          "desc": "List deployments for an application"
+        },
+        {
+          "tool_id": "raygun::list_customers",
+          "name": "list_customers",
+          "desc": "List customers for an application"
+        },
+        {
+          "tool_id": "raygun::list_sessions",
+          "name": "list_sessions",
+          "desc": "List user sessions for an application"
+        },
+        {
+          "tool_id": "raygun::list_pages",
+          "name": "list_pages",
+          "desc": "List monitored pages for an application"
+        },
+        {
+          "tool_id": "raygun::list_source_maps",
+          "name": "list_source_maps",
+          "desc": "List source maps for an application"
+        },
+        {
+          "tool_id": "singlestore::list_of_regions",
+          "name": "list_of_regions",
+          "desc": "Retrieve a list of all regions that support workspaces for the user"
+        },
+        {
+          "tool_id": "singlestore::list_virtual_workspaces",
+          "name": "list_virtual_workspaces",
+          "desc": "List all starter workspaces accessible to the user"
+        },
+        {
+          "tool_id": "singlestore::list_notebook_samples",
+          "name": "list_notebook_samples",
+          "desc": "List all notebook samples available in SingleStore Spaces"
+        },
+        {
+          "tool_id": "singlestore::list_personal_files",
+          "name": "list_personal_files",
+          "desc": "List all files in the user's personal space"
+        },
+        {
+          "tool_id": "xero::list-accounts",
+          "name": "list-accounts",
+          "desc": "Retrieve a list of accounts"
+        },
+        {
+          "tool_id": "xero::list-contacts",
+          "name": "list-contacts",
+          "desc": "Retrieve a list of contacts from Xero"
+        },
+        {
+          "tool_id": "xero::list-credit-notes",
+          "name": "list-credit-notes",
+          "desc": "Retrieve a list of credit notes"
+        },
+        {
+          "tool_id": "xero::list-invoices",
+          "name": "list-invoices",
+          "desc": "Retrieve a list of invoices"
+        },
+        {
+          "tool_id": "xero::list-items",
+          "name": "list-items",
+          "desc": "Retrieve a list of items"
+        },
+        {
+          "tool_id": "xero::list-organisation-details",
+          "name": "list-organisation-details",
+          "desc": "Retrieve details about an organisation"
+        },
+        {
+          "tool_id": "xero::list-quotes",
+          "name": "list-quotes",
+          "desc": "Retrieve a list of quotes"
+        },
+        {
+          "tool_id": "xero::list-tax-rates",
+          "name": "list-tax-rates",
+          "desc": "Retrieve a list of tax rates"
+        },
+        {
+          "tool_id": "xero::list-payments",
+          "name": "list-payments",
+          "desc": "Retrieve a list of payments"
+        },
+        {
+          "tool_id": "xero::list-payroll-employees",
+          "name": "list-payroll-employees",
+          "desc": "Retrieve a list of Payroll Employees"
+        },
+        {
+          "tool_id": "xero::list-payroll-employee-leave",
+          "name": "list-payroll-employee-leave",
+          "desc": "Retrieve a Payroll Employee's leave records"
+        },
+        {
+          "tool_id": "xero::list-payroll-employee-leave-balances",
+          "name": "list-payroll-employee-leave-balances",
+          "desc": "Retrieve a Payroll Employee's leave balances"
+        },
+        {
+          "tool_id": "xero::list-payroll-employee-leave-types",
+          "name": "list-payroll-employee-leave-types",
+          "desc": "Retrieve a list of Payroll leave types"
+        },
+        {
+          "tool_id": "xero::list-payroll-leave-periods",
+          "name": "list-payroll-leave-periods",
+          "desc": "Retrieve a list of a Payroll Employee's leave periods"
+        },
+        {
+          "tool_id": "xero::list-contact-groups",
+          "name": "list-contact-groups",
+          "desc": "Retrieve a list of contact groups"
+        },
+        {
+          "tool_id": "clickup::list_documents",
+          "name": "list_documents",
+          "desc": "List documents"
+        },
+        {
+          "tool_id": "clickup::list_document_pages",
+          "name": "list_document_pages",
+          "desc": "List document pages"
+        },
+        {
+          "tool_id": "contentful-mcp::list_spaces",
+          "name": "list_spaces",
+          "desc": "List available spaces"
+        },
+        {
+          "tool_id": "contentful-mcp::list_environments",
+          "name": "list_environments",
+          "desc": "List environments in a space"
+        },
+        {
+          "tool_id": "contentful-mcp::list_content_types",
+          "name": "list_content_types",
+          "desc": "List available content types"
+        },
+        {
+          "tool_id": "elevenlabs::list_voices",
+          "name": "list_voices",
+          "desc": "List all available voices"
+        },
+        {
+          "tool_id": "github_actions::list_workflows",
+          "name": "list_workflows",
+          "desc": "List workflows in a GitHub repository"
+        },
+        {
+          "tool_id": "github_actions::list_workflow_runs",
+          "name": "list_workflow_runs",
+          "desc": "List all workflow runs for a repository or a specific workflow"
+        },
+        {
+          "tool_id": "lightdash::list_spaces",
+          "name": "list_spaces",
+          "desc": "List all spaces in a project"
+        },
+        {
+          "tool_id": "lightdash::list_charts",
+          "name": "list_charts",
+          "desc": "List all charts in a project"
+        },
+        {
+          "tool_id": "lightdash::list_dashboards",
+          "name": "list_dashboards",
+          "desc": "List all dashboards in a project"
+        },
+        {
+          "tool_id": "prometheus::list_metrics",
+          "name": "list_metrics",
+          "desc": "List all available metrics in Prometheus"
+        },
+        {
+          "tool_id": "servicenow::list_incidents",
+          "name": "list_incidents",
+          "desc": "List incidents from ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::list_catalog_items",
+          "name": "list_catalog_items",
+          "desc": "List service catalog items from ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::list_catalog_categories",
+          "name": "list_catalog_categories",
+          "desc": "List service catalog categories from ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::list_catalogs",
+          "name": "list_catalogs",
+          "desc": "List service catalogs from ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::list_change_requests",
+          "name": "list_change_requests",
+          "desc": "List change requests with filtering options"
+        },
+        {
+          "tool_id": "servicenow::list_workflows",
+          "name": "list_workflows",
+          "desc": "List workflows from ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::list_script_includes",
+          "name": "list_script_includes",
+          "desc": "List script includes from ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::list_changesets",
+          "name": "list_changesets",
+          "desc": "List changesets from ServiceNow with filtering options"
+        },
+        {
+          "tool_id": "servicenow::list_knowledge_bases",
+          "name": "list_knowledge_bases",
+          "desc": "List knowledge bases with filtering options"
+        },
+        {
+          "tool_id": "servicenow::list_articles",
+          "name": "list_articles",
+          "desc": "List knowledge articles with filtering options"
+        },
+        {
+          "tool_id": "servicenow::list_users",
+          "name": "list_users",
+          "desc": "List users with filtering options"
+        },
+        {
+          "tool_id": "servicenow::list_groups",
+          "name": "list_groups",
+          "desc": "List groups with filtering options"
+        },
+        {
+          "tool_id": "telegram::list_chats",
+          "name": "list_chats",
+          "desc": "List chats with metadata and filtering."
+        },
+        {
+          "tool_id": "telegram::list_contacts",
+          "name": "list_contacts",
+          "desc": "List all contacts."
+        },
+        {
+          "tool_id": "xero-mcp-server::list_contacts",
+          "name": "list_contacts",
+          "desc": "Retrieves all contacts in a Xero organisation"
+        },
+        {
+          "tool_id": "xero-mcp-server::list_organisations",
+          "name": "list_organisations",
+          "desc": "Retrieves Xero organisation details"
+        },
+        {
+          "tool_id": "github::list_issues",
+          "name": "list_issues",
+          "desc": "List and filter repository issues"
+        },
+        {
+          "tool_id": "github::list_pull_requests",
+          "name": "list_pull_requests",
+          "desc": "List and filter repository pull requests"
+        },
+        {
+          "tool_id": "arxiv::list_papers",
+          "name": "list_papers",
+          "desc": "List all existing papers available as resources"
+        }
+      ],
+      "target_tool_id": "clickup::list_documents",
+      "target_tool_name": "list_documents",
+      "target_desc": "List documents",
+      "pilot_v_orig_hit_rate": 0.0,
+      "reason": "90 tools all describe 'list' operations, names are generic, GPT hit rate 0% with original descriptions"
+    },
+    {
+      "cluster_id": "create_006",
+      "verb_prefix": "create",
+      "size": 105,
+      "tools": [
+        {
+          "tool_id": "bitrise::create_workspace_group",
+          "name": "create_workspace_group",
+          "desc": "Create a group in a workspace"
+        },
+        {
+          "tool_id": "dart::create_doc",
+          "name": "create_doc",
+          "desc": "Create a new doc with title, text content, and folder"
+        },
+        {
+          "tool_id": "esignatures::create_template",
+          "name": "create_template",
+          "desc": "Create a new contract template"
+        },
+        {
+          "tool_id": "fibery::create_entity",
+          "name": "create_entity",
+          "desc": "Creates new entities in your Fibery workspace with specified field values."
+        },
+        {
+          "tool_id": "fibery::create_entities_batch",
+          "name": "create_entities_batch",
+          "desc": "Creates multiple new entities in your Fibery workspace with specified field values."
+        },
+        {
+          "tool_id": "gitee::create_user_repo",
+          "name": "create_user_repo",
+          "desc": "Create a user repository"
+        },
+        {
+          "tool_id": "gitee::create_org_repo",
+          "name": "create_org_repo",
+          "desc": "Create an organization repository"
+        },
+        {
+          "tool_id": "gitee::create_enter_repo",
+          "name": "create_enter_repo",
+          "desc": "Create an enterprise repository"
+        },
+        {
+          "tool_id": "gitee::create_release",
+          "name": "create_release",
+          "desc": "Create a release for a repository"
+        },
+        {
+          "tool_id": "gitee::create_pull",
+          "name": "create_pull",
+          "desc": "Create a pull request"
+        },
+        {
+          "tool_id": "gitee::create_issue",
+          "name": "create_issue",
+          "desc": "Create an issue"
+        },
+        {
+          "tool_id": "grafana::create_incident",
+          "name": "create_incident",
+          "desc": "Create an incident in Grafana Incident"
+        },
+        {
+          "tool_id": "hyperbrowser::create_profile",
+          "name": "create_profile",
+          "desc": "Creates a new persistent Hyperbrowser profile"
+        },
+        {
+          "tool_id": "lara_translate::create_memory",
+          "name": "create_memory",
+          "desc": "Create a new translation memory"
+        },
+        {
+          "tool_id": "meilisearch::create-index",
+          "name": "create-index",
+          "desc": "Create a new index with optional primary key"
+        },
+        {
+          "tool_id": "meilisearch::create-key",
+          "name": "create-key",
+          "desc": "Create new API key with specific permissions"
+        },
+        {
+          "tool_id": "momento::create-cache",
+          "name": "create-cache",
+          "desc": "Creates a new cache in your Momento account."
+        },
+        {
+          "tool_id": "redis_cloud_api::create_pro_subscription",
+          "name": "create_pro_subscription",
+          "desc": "Create a new Pro subscription with advanced configuration options"
+        },
+        {
+          "tool_id": "redis_cloud_api::create_essential_subscription",
+          "name": "create_essential_subscription",
+          "desc": "Create a new Essential subscription"
+        },
+        {
+          "tool_id": "singlestore::create_virtual_workspace",
+          "name": "create_virtual_workspace",
+          "desc": "Create a new starter workspace with a user"
+        },
+        {
+          "tool_id": "singlestore::create_notebook",
+          "name": "create_notebook",
+          "desc": "Create a new notebook in the user's personal space"
+        },
+        {
+          "tool_id": "singlestore::create_scheduled_job",
+          "name": "create_scheduled_job",
+          "desc": "Create a new scheduled job to run a notebook"
+        },
+        {
+          "tool_id": "unstructured::create_workflow",
+          "name": "create_workflow",
+          "desc": "Create a new workflow with source, destination id, etc."
+        },
+        {
+          "tool_id": "verodat::create-dataset",
+          "name": "create-dataset",
+          "desc": "Create a new dataset with defined schema"
+        },
+        {
+          "tool_id": "xero::create-contact",
+          "name": "create-contact",
+          "desc": "Create a new contact"
+        },
+        {
+          "tool_id": "xero::create-credit-note",
+          "name": "create-credit-note",
+          "desc": "Create a new credit note"
+        },
+        {
+          "tool_id": "xero::create-invoice",
+          "name": "create-invoice",
+          "desc": "Create a new invoice"
+        },
+        {
+          "tool_id": "xero::create-payment",
+          "name": "create-payment",
+          "desc": "Create a new payment"
+        },
+        {
+          "tool_id": "xero::create-quote",
+          "name": "create-quote",
+          "desc": "Create a new quote"
+        },
+        {
+          "tool_id": "airtable::create_record",
+          "name": "create_record",
+          "desc": "Creates a new record in a table"
+        },
+        {
+          "tool_id": "airtable::create_table",
+          "name": "create_table",
+          "desc": "Creates a new table in a base"
+        },
+        {
+          "tool_id": "airtable::create_field",
+          "name": "create_field",
+          "desc": "Creates a new field in a table"
+        },
+        {
+          "tool_id": "clickup::create_task",
+          "name": "create_task",
+          "desc": "Create a task"
+        },
+        {
+          "tool_id": "clickup::create_bulk_tasks",
+          "name": "create_bulk_tasks",
+          "desc": "Create multiple tasks"
+        },
+        {
+          "tool_id": "clickup::create_list",
+          "name": "create_list",
+          "desc": "Create list in space"
+        },
+        {
+          "tool_id": "clickup::create_folder",
+          "name": "create_folder",
+          "desc": "Create folder"
+        },
+        {
+          "tool_id": "clickup::create_list_in_folder",
+          "name": "create_list_in_folder",
+          "desc": "Create list in folder"
+        },
+        {
+          "tool_id": "clickup::create_space_tag",
+          "name": "create_space_tag",
+          "desc": "Create tag"
+        },
+        {
+          "tool_id": "clickup::create_document",
+          "name": "create_document",
+          "desc": "Create a document"
+        },
+        {
+          "tool_id": "clickup::create_document_pages",
+          "name": "create_document_pages",
+          "desc": "Create a document page"
+        },
+        {
+          "tool_id": "contentful-mcp::create_entry",
+          "name": "create_entry",
+          "desc": "Create new entries"
+        },
+        {
+          "tool_id": "contentful-mcp::create_environment",
+          "name": "create_environment",
+          "desc": "Create new environment"
+        },
+        {
+          "tool_id": "contentful-mcp::create_content_type",
+          "name": "create_content_type",
+          "desc": "Create new content type"
+        },
+        {
+          "tool_id": "davinci_resolve::create_new_project",
+          "name": "create_new_project",
+          "desc": "Creates a new project in DaVinci Resolve."
+        },
+        {
+          "tool_id": "davinci_resolve::create_new_timeline",
+          "name": "create_new_timeline",
+          "desc": "Creates a new timeline in the current project."
+        },
+        {
+          "tool_id": "davinci_resolve::create_media_bin",
+          "name": "create_media_bin",
+          "desc": "Creates a new media bin in the media pool."
+        },
+        {
+          "tool_id": "descope::create-user",
+          "name": "create-user",
+          "desc": "Creates a new user in your Descope project."
+        },
+        {
+          "tool_id": "docker::create_container",
+          "name": "create_container",
+          "desc": "Creates a new container."
+        },
+        {
+          "tool_id": "docker::create_network",
+          "name": "create_network",
+          "desc": "Creates a new Docker network."
+        },
+        {
+          "tool_id": "docker::create_volume",
+          "name": "create_volume",
+          "desc": "Creates a new Docker volume."
+        },
+        {
+          "tool_id": "gmail::create_label",
+          "name": "create_label",
+          "desc": "Creates a new Gmail label."
+        },
+        {
+          "tool_id": "golang_filesystem_server::create_directory",
+          "name": "create_directory",
+          "desc": "Create new directory or ensure it exists"
+        },
+        {
+          "tool_id": "google_calendar::create_event",
+          "name": "create_event",
+          "desc": "Create a new calendar event"
+        },
+        {
+          "tool_id": "google_sheets::create_spreadsheet",
+          "name": "create_spreadsheet",
+          "desc": "Creates a new spreadsheet."
+        },
+        {
+          "tool_id": "google_sheets::create_sheet",
+          "name": "create_sheet",
+          "desc": "Adds a new sheet (tab) to a spreadsheet."
+        },
+        {
+          "tool_id": "google_tasks::create",
+          "name": "create",
+          "desc": "Create a new task in Google Tasks"
+        },
+        {
+          "tool_id": "influxdb::create-bucket",
+          "name": "create-bucket",
+          "desc": "Create a new bucket"
+        },
+        {
+          "tool_id": "influxdb::create-org",
+          "name": "create-org",
+          "desc": "Create a new organization"
+        },
+        {
+          "tool_id": "inoyu::create_scope",
+          "name": "create_scope",
+          "desc": "Create a new Unomi scope. Required for event tracking and profile updates."
+        },
+        {
+          "tool_id": "keycloak_mcp::create-user",
+          "name": "create-user",
+          "desc": "Creates a new user in a specified realm."
+        },
+        {
+          "tool_id": "mcp_create::create-server-from-template",
+          "name": "create-server-from-template",
+          "desc": "Create MCP server from template"
+        },
+        {
+          "tool_id": "mongodb_lens::create-collection",
+          "name": "create-collection",
+          "desc": "Create new collections with custom options"
+        },
+        {
+          "tool_id": "mongodb_lens::create-database",
+          "name": "create-database",
+          "desc": "Create a new database with option to switch to it"
+        },
+        {
+          "tool_id": "mongodb_lens::create-index",
+          "name": "create-index",
+          "desc": "Create new indexes for performance optimization"
+        },
+        {
+          "tool_id": "mongodb_lens::create-user",
+          "name": "create-user",
+          "desc": "Create new database users with specific roles"
+        },
+        {
+          "tool_id": "nomad-mcp::create_variable",
+          "name": "create_variable",
+          "desc": "Creates a new variable with namespace support."
+        },
+        {
+          "tool_id": "obsidian-mcp::create-note",
+          "name": "create-note",
+          "desc": "Create a new note"
+        },
+        {
+          "tool_id": "obsidian-mcp::create-directory",
+          "name": "create-directory",
+          "desc": "Create a new directory"
+        },
+        {
+          "tool_id": "qgis::create_new_project",
+          "name": "create_new_project",
+          "desc": "Create a new project and save it"
+        },
+        {
+          "tool_id": "raindrop.io::create-bookmark",
+          "name": "create-bookmark",
+          "desc": "Creates a new bookmark."
+        },
+        {
+          "tool_id": "servicenow::create_incident",
+          "name": "create_incident",
+          "desc": "Create a new incident in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::create_catalog_category",
+          "name": "create_catalog_category",
+          "desc": "Create a new service catalog category in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::create_catalog_item_variable",
+          "name": "create_catalog_item_variable",
+          "desc": "Create a new variable (form field) for a catalog item"
+        },
+        {
+          "tool_id": "servicenow::create_change_request",
+          "name": "create_change_request",
+          "desc": "Create a new change request in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::create_workflow",
+          "name": "create_workflow",
+          "desc": "Create a new workflow in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::create_script_include",
+          "name": "create_script_include",
+          "desc": "Create a new script include in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::create_changeset",
+          "name": "create_changeset",
+          "desc": "Create a new changeset in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::create_knowledge_base",
+          "name": "create_knowledge_base",
+          "desc": "Create a new knowledge base in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::create_category",
+          "name": "create_category",
+          "desc": "Create a new category in a knowledge base"
+        },
+        {
+          "tool_id": "servicenow::create_article",
+          "name": "create_article",
+          "desc": "Create a new knowledge article in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::create_user",
+          "name": "create_user",
+          "desc": "Create a new user in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::create_group",
+          "name": "create_group",
+          "desc": "Create a new group in ServiceNow"
+        },
+        {
+          "tool_id": "snowflake::create_table",
+          "name": "create_table",
+          "desc": "Create new tables in the database."
+        },
+        {
+          "tool_id": "talk_to_figma::create_rectangle",
+          "name": "create_rectangle",
+          "desc": "Create a new rectangle with position, size, and optional name"
+        },
+        {
+          "tool_id": "talk_to_figma::create_frame",
+          "name": "create_frame",
+          "desc": "Create a new frame with position, size, and optional name"
+        },
+        {
+          "tool_id": "telegram::create_group",
+          "name": "create_group",
+          "desc": "Create a new group."
+        },
+        {
+          "tool_id": "ticktick::create_task",
+          "name": "create_task",
+          "desc": "Create a new task in a project"
+        },
+        {
+          "tool_id": "ticktick::create_project",
+          "name": "create_project",
+          "desc": "Create a new project"
+        },
+        {
+          "tool_id": "windows_cli::create_ssh_connection",
+          "name": "create_ssh_connection",
+          "desc": "Create a new SSH connection"
+        },
+        {
+          "tool_id": "filesystem::create_directory",
+          "name": "create_directory",
+          "desc": "Create new directory or ensure it exists"
+        },
+        {
+          "tool_id": "github::create_or_update_file",
+          "name": "create_or_update_file",
+          "desc": "Create or update a single file in a repository"
+        },
+        {
+          "tool_id": "github::create_repository",
+          "name": "create_repository",
+          "desc": "Create a new GitHub repository"
+        },
+        {
+          "tool_id": "github::create_issue",
+          "name": "create_issue",
+          "desc": "Create a new issue"
+        },
+        {
+          "tool_id": "github::create_pull_request",
+          "name": "create_pull_request",
+          "desc": "Create a new pull request"
+        },
+        {
+          "tool_id": "github::create_branch",
+          "name": "create_branch",
+          "desc": "Create a new branch"
+        },
+        {
+          "tool_id": "github::create_pull_request_review",
+          "name": "create_pull_request_review",
+          "desc": "Create a review on a pull request"
+        },
+        {
+          "tool_id": "gitlab::create_or_update_file",
+          "name": "create_or_update_file",
+          "desc": "Create or update a single file in a project"
+        },
+        {
+          "tool_id": "gitlab::create_repository",
+          "name": "create_repository",
+          "desc": "Create a new GitLab project"
+        },
+        {
+          "tool_id": "gitlab::create_issue",
+          "name": "create_issue",
+          "desc": "Create a new issue"
+        },
+        {
+          "tool_id": "gitlab::create_merge_request",
+          "name": "create_merge_request",
+          "desc": "Create a new merge request"
+        },
+        {
+          "tool_id": "gitlab::create_branch",
+          "name": "create_branch",
+          "desc": "Create a new branch"
+        },
+        {
+          "tool_id": "memory::create_entities",
+          "name": "create_entities",
+          "desc": "Create multiple new entities in the knowledge graph."
+        },
+        {
+          "tool_id": "memory::create_relations",
+          "name": "create_relations",
+          "desc": "Create multiple new relations between entities."
+        },
+        {
+          "tool_id": "sqlite::create_table",
+          "name": "create_table",
+          "desc": "Create new tables in the database"
+        },
+        {
+          "tool_id": "google-workspace::create_event",
+          "name": "create_event",
+          "desc": "Create a new calendar event"
+        }
+      ],
+      "target_tool_id": "clickup::create_space_tag",
+      "target_tool_name": "create_space_tag",
+      "target_desc": "Create tag",
+      "pilot_v_orig_hit_rate": 0.0,
+      "reason": "105 tools all describe 'create' operations, names are generic, GPT hit rate 0% with original descriptions"
+    },
+    {
+      "cluster_id": "search_007",
+      "verb_prefix": "search",
+      "size": 8,
+      "tools": [
+        {
+          "tool_id": "gitee::search_open_source_repositories",
+          "name": "search_open_source_repositories",
+          "desc": "Search open source repositories on Gitee"
+        },
+        {
+          "tool_id": "gitee::search_users",
+          "name": "search_users",
+          "desc": "Search for users"
+        },
+        {
+          "tool_id": "grafana::search_dashboards",
+          "name": "search_dashboards",
+          "desc": "Search for dashboards"
+        },
+        {
+          "tool_id": "hdw_linkedin::search_linkedin_users",
+          "name": "search_linkedin_users",
+          "desc": "Search for LinkedIn users with various filters."
+        },
+        {
+          "tool_id": "telegram::search_contacts",
+          "name": "search_contacts",
+          "desc": "Search contacts."
+        },
+        {
+          "tool_id": "github::search_repositories",
+          "name": "search_repositories",
+          "desc": "Search for GitHub repositories"
+        },
+        {
+          "tool_id": "github::search_code",
+          "name": "search_code",
+          "desc": "Search for code across GitHub repositories"
+        },
+        {
+          "tool_id": "github::search_users",
+          "name": "search_users",
+          "desc": "Search for GitHub users"
+        }
+      ],
+      "target_tool_id": "gitee::search_users",
+      "target_tool_name": "search_users",
+      "target_desc": "Search for users",
+      "pilot_v_orig_hit_rate": 0.0,
+      "reason": "8 tools all describe 'search' operations, names are generic, GPT hit rate 0% with original descriptions"
+    },
+    {
+      "cluster_id": "search_008",
+      "verb_prefix": "search",
+      "size": 10,
+      "tools": [
+        {
+          "tool_id": "kagi_search::search",
+          "name": "search",
+          "desc": "Performs a web search to find information based on the query provided."
+        },
+        {
+          "tool_id": "mcp_toolbox_for_databases::search-hotels-by-name",
+          "name": "search-hotels-by-name",
+          "desc": "Search for hotels based on name."
+        },
+        {
+          "tool_id": "contentful-mcp::search_entries",
+          "name": "search_entries",
+          "desc": "Search for entries using query parameters"
+        },
+        {
+          "tool_id": "datadog::search-logs",
+          "name": "search-logs",
+          "desc": "Search logs with advanced query filtering"
+        },
+        {
+          "tool_id": "devrev::search",
+          "name": "search",
+          "desc": "Search for information using the DevRev search API with the provided query and namespace."
+        },
+        {
+          "tool_id": "heurist_mesh_agent::search",
+          "name": "search",
+          "desc": "Search for webpages related to a query"
+        },
+        {
+          "tool_id": "opendota::search_player",
+          "name": "search_player",
+          "desc": "Search for players by name"
+        },
+        {
+          "tool_id": "memory::search_nodes",
+          "name": "search_nodes",
+          "desc": "Search for nodes based on a query."
+        },
+        {
+          "tool_id": "arxiv::search_papers",
+          "name": "search_papers",
+          "desc": "Search for papers on arXiv with advanced filtering"
+        },
+        {
+          "tool_id": "google-workspace::search_emails",
+          "name": "search_emails",
+          "desc": "Search emails with advanced query"
+        }
+      ],
+      "target_tool_id": "opendota::search_player",
+      "target_tool_name": "search_player",
+      "target_desc": "Search for players by name",
+      "pilot_v_orig_hit_rate": 0.0,
+      "reason": "10 tools all describe 'search' operations, names are generic, GPT hit rate 0% with original descriptions"
+    },
+    {
+      "cluster_id": "update_009",
+      "verb_prefix": "update",
+      "size": 46,
+      "tools": [
+        {
+          "tool_id": "bitrise::update_app",
+          "name": "update_app",
+          "desc": "Update an app"
+        },
+        {
+          "tool_id": "bitrise::update_outgoing_webhook",
+          "name": "update_outgoing_webhook",
+          "desc": "Update an outgoing webhook for an app"
+        },
+        {
+          "tool_id": "dart::update_task",
+          "name": "update_task",
+          "desc": "Update an existing task's properties"
+        },
+        {
+          "tool_id": "dart::update_doc",
+          "name": "update_doc",
+          "desc": "Update an existing doc's properties"
+        },
+        {
+          "tool_id": "esignatures::update_template",
+          "name": "update_template",
+          "desc": "Update an existing template"
+        },
+        {
+          "tool_id": "gitee::update_pull",
+          "name": "update_pull",
+          "desc": "Update a pull request"
+        },
+        {
+          "tool_id": "gitee::update_issue",
+          "name": "update_issue",
+          "desc": "Update an issue"
+        },
+        {
+          "tool_id": "mongodb::update-one",
+          "name": "update-one",
+          "desc": "Update a single document in a MongoDB collection"
+        },
+        {
+          "tool_id": "mongodb::update-many",
+          "name": "update-many",
+          "desc": "Update multiple documents in a MongoDB collection"
+        },
+        {
+          "tool_id": "raygun::update_deployment",
+          "name": "update_deployment",
+          "desc": "Update deployment information"
+        },
+        {
+          "tool_id": "raygun::update_source_map",
+          "name": "update_source_map",
+          "desc": "Update source map information"
+        },
+        {
+          "tool_id": "unstructured::update_source_connector",
+          "name": "update_source_connector",
+          "desc": "Update an existing source connector by params."
+        },
+        {
+          "tool_id": "unstructured::update_destination_connector",
+          "name": "update_destination_connector",
+          "desc": "Update an existing destination connector by destination id."
+        },
+        {
+          "tool_id": "unstructured::update_workflow",
+          "name": "update_workflow",
+          "desc": "Update an existing workflow by params."
+        },
+        {
+          "tool_id": "xero::update-contact",
+          "name": "update-contact",
+          "desc": "Update an existing contact"
+        },
+        {
+          "tool_id": "xero::update-invoice",
+          "name": "update-invoice",
+          "desc": "Update an existing draft invoice"
+        },
+        {
+          "tool_id": "xero::update-quote",
+          "name": "update-quote",
+          "desc": "Update an existing draft quote"
+        },
+        {
+          "tool_id": "xero::update-credit-note",
+          "name": "update-credit-note",
+          "desc": "Update an existing draft credit note"
+        },
+        {
+          "tool_id": "xero::update-payroll-timesheet-line",
+          "name": "update-payroll-timesheet-line",
+          "desc": "Update a line on an existing Payroll Timesheet"
+        },
+        {
+          "tool_id": "clickup::update_bulk_tasks",
+          "name": "update_bulk_tasks",
+          "desc": "Update multiple tasks"
+        },
+        {
+          "tool_id": "clickup::update_folder",
+          "name": "update_folder",
+          "desc": "Update folder properties"
+        },
+        {
+          "tool_id": "clickup::update_list",
+          "name": "update_list",
+          "desc": "Update list properties"
+        },
+        {
+          "tool_id": "clickup::update_space_tag",
+          "name": "update_space_tag",
+          "desc": "Update tag"
+        },
+        {
+          "tool_id": "clickup::update_document_page",
+          "name": "update_document_page",
+          "desc": "Update a document page"
+        },
+        {
+          "tool_id": "google_calendar::update_event",
+          "name": "update_event",
+          "desc": "Update an existing calendar event"
+        },
+        {
+          "tool_id": "google_tasks::update",
+          "name": "update",
+          "desc": "Update an existing task in Google Tasks"
+        },
+        {
+          "tool_id": "servicenow::update_incident",
+          "name": "update_incident",
+          "desc": "Update an existing incident in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::update_catalog_category",
+          "name": "update_catalog_category",
+          "desc": "Update an existing service catalog category in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::update_catalog_item_variable",
+          "name": "update_catalog_item_variable",
+          "desc": "Update an existing variable for a catalog item"
+        },
+        {
+          "tool_id": "servicenow::update_catalog_item",
+          "name": "update_catalog_item",
+          "desc": "Update a service catalog item"
+        },
+        {
+          "tool_id": "servicenow::update_change_request",
+          "name": "update_change_request",
+          "desc": "Update an existing change request"
+        },
+        {
+          "tool_id": "servicenow::update_workflow",
+          "name": "update_workflow",
+          "desc": "Update an existing workflow in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::update_script_include",
+          "name": "update_script_include",
+          "desc": "Update an existing script include in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::update_changeset",
+          "name": "update_changeset",
+          "desc": "Update an existing changeset"
+        },
+        {
+          "tool_id": "servicenow::update_article",
+          "name": "update_article",
+          "desc": "Update an existing knowledge article in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::update_user",
+          "name": "update_user",
+          "desc": "Update an existing user in ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::update_group",
+          "name": "update_group",
+          "desc": "Update an existing group in ServiceNow"
+        },
+        {
+          "tool_id": "shopify::update-customer",
+          "name": "update-customer",
+          "desc": "Update a customer's information"
+        },
+        {
+          "tool_id": "shopify::update-order",
+          "name": "update-order",
+          "desc": "Update an existing order with new information"
+        },
+        {
+          "tool_id": "telegram::update_profile",
+          "name": "update_profile",
+          "desc": "Update your profile."
+        },
+        {
+          "tool_id": "ticktick::update_task",
+          "name": "update_task",
+          "desc": "Update an existing task"
+        },
+        {
+          "tool_id": "ticktick::update_project",
+          "name": "update_project",
+          "desc": "Update an existing project"
+        },
+        {
+          "tool_id": "windows_cli::update_ssh_connection",
+          "name": "update_ssh_connection",
+          "desc": "Update an existing SSH connection"
+        },
+        {
+          "tool_id": "github::update_issue",
+          "name": "update_issue",
+          "desc": "Update an existing issue"
+        },
+        {
+          "tool_id": "github::update_pull_request_branch",
+          "name": "update_pull_request_branch",
+          "desc": "Update a pull request branch with the latest changes from the base branch (equivalent to GitHub's 'Update branch' button)"
+        },
+        {
+          "tool_id": "google-workspace::update_event",
+          "name": "update_event",
+          "desc": "Update an existing calendar event"
+        }
+      ],
+      "target_tool_id": "clickup::update_space_tag",
+      "target_tool_name": "update_space_tag",
+      "target_desc": "Update tag",
+      "pilot_v_orig_hit_rate": 0.0,
+      "reason": "46 tools all describe 'update' operations, names are generic, GPT hit rate 0% with original descriptions"
+    },
+    {
+      "cluster_id": "delete_010",
+      "verb_prefix": "delete",
+      "size": 13,
+      "tools": [
+        {
+          "tool_id": "esignatures::delete_template",
+          "name": "delete_template",
+          "desc": "Delete a template"
+        },
+        {
+          "tool_id": "meilisearch::delete-tasks",
+          "name": "delete-tasks",
+          "desc": "Delete completed tasks"
+        },
+        {
+          "tool_id": "clickup::delete_folder",
+          "name": "delete_folder",
+          "desc": "Delete folder"
+        },
+        {
+          "tool_id": "clickup::delete_list",
+          "name": "delete_list",
+          "desc": "Delete list"
+        },
+        {
+          "tool_id": "clickup::delete_space_tag",
+          "name": "delete_space_tag",
+          "desc": "Delete tag"
+        },
+        {
+          "tool_id": "google_tasks::delete",
+          "name": "delete",
+          "desc": "Delete a task in Google Tasks"
+        },
+        {
+          "tool_id": "mcp_create::delete-server",
+          "name": "delete-server",
+          "desc": "Delete server"
+        },
+        {
+          "tool_id": "obsidian-mcp::delete-note",
+          "name": "delete-note",
+          "desc": "Delete a note"
+        },
+        {
+          "tool_id": "talk_to_figma::delete_node",
+          "name": "delete_node",
+          "desc": "Delete a node"
+        },
+        {
+          "tool_id": "telegram::delete_message",
+          "name": "delete_message",
+          "desc": "Delete a message."
+        },
+        {
+          "tool_id": "telegram::delete_contact",
+          "name": "delete_contact",
+          "desc": "Delete a contact."
+        },
+        {
+          "tool_id": "ticktick::delete_task",
+          "name": "delete_task",
+          "desc": "Delete a task from a project"
+        },
+        {
+          "tool_id": "ticktick::delete_project",
+          "name": "delete_project",
+          "desc": "Delete a project"
+        }
+      ],
+      "target_tool_id": "clickup::delete_space_tag",
+      "target_tool_name": "delete_space_tag",
+      "target_desc": "Delete tag",
+      "pilot_v_orig_hit_rate": 0.0,
+      "reason": "13 tools all describe 'delete' operations, names are generic, GPT hit rate 0% with original descriptions"
+    },
+    {
+      "cluster_id": "delete_011",
+      "verb_prefix": "delete",
+      "size": 6,
+      "tools": [
+        {
+          "tool_id": "unstructured::delete_source_connector",
+          "name": "delete_source_connector",
+          "desc": "Delete a source connector by source id."
+        },
+        {
+          "tool_id": "unstructured::delete_destination_connector",
+          "name": "delete_destination_connector",
+          "desc": "Delete a destination connector by destination id."
+        },
+        {
+          "tool_id": "unstructured::delete_workflow",
+          "name": "delete_workflow",
+          "desc": "Delete a specific workflow by id."
+        },
+        {
+          "tool_id": "elevenlabs::delete_job",
+          "name": "delete_job",
+          "desc": "Delete a job by its ID"
+        },
+        {
+          "tool_id": "servicenow::delete_workflow",
+          "name": "delete_workflow",
+          "desc": "Delete a workflow from ServiceNow"
+        },
+        {
+          "tool_id": "servicenow::delete_script_include",
+          "name": "delete_script_include",
+          "desc": "Delete a script include from ServiceNow"
+        }
+      ],
+      "target_tool_id": "elevenlabs::delete_job",
+      "target_tool_name": "delete_job",
+      "target_desc": "Delete a job by its ID",
+      "pilot_v_orig_hit_rate": 0.0,
+      "reason": "6 tools all describe 'delete' operations, names are generic, GPT hit rate 0% with original descriptions"
+    },
+    {
+      "cluster_id": "monday_014",
+      "verb_prefix": "monday",
+      "size": 13,
+      "tools": [
+        {
+          "tool_id": "monday.com::monday-create-item",
+          "name": "monday-create-item",
+          "desc": "Creates a new item or sub-item in a Monday.com board"
+        },
+        {
+          "tool_id": "monday.com::monday-get-board-groups",
+          "name": "monday-get-board-groups",
+          "desc": "Retrieves all groups from a specified Monday.com board"
+        },
+        {
+          "tool_id": "monday.com::monday-create-update",
+          "name": "monday-create-update",
+          "desc": "Creates a comment/update on a Monday.com item"
+        },
+        {
+          "tool_id": "monday.com::monday-list-boards",
+          "name": "monday-list-boards",
+          "desc": "Lists all available Monday.com boards"
+        },
+        {
+          "tool_id": "monday.com::monday-list-items-in-groups",
+          "name": "monday-list-items-in-groups",
+          "desc": "Lists all items in specified groups of a Monday.com board"
+        },
+        {
+          "tool_id": "monday.com::monday-list-subitems-in-items",
+          "name": "monday-list-subitems-in-items",
+          "desc": "Lists all sub-items for given Monday.com items"
+        },
+        {
+          "tool_id": "monday.com::monday-create-board",
+          "name": "monday-create-board",
+          "desc": "Creates a new Monday.com board"
+        },
+        {
+          "tool_id": "monday.com::monday-create-board-group",
+          "name": "monday-create-board-group",
+          "desc": "Creates a new group in a Monday.com board"
+        },
+        {
+          "tool_id": "monday.com::monday-move-item-to-group",
+          "name": "monday-move-item-to-group",
+          "desc": "Moves a Monday.com item to a different group"
+        },
+        {
+          "tool_id": "monday.com::monday-delete-item",
+          "name": "monday-delete-item",
+          "desc": "Deletes a Monday.com item"
+        },
+        {
+          "tool_id": "monday.com::monday-archive-item",
+          "name": "monday-archive-item",
+          "desc": "Archives a Monday.com item"
+        },
+        {
+          "tool_id": "monday.com::monday-get-docs",
+          "name": "monday-get-docs",
+          "desc": "Lists documents in Monday.com, optionally filtered by folder"
+        },
+        {
+          "tool_id": "monday.com::monday-create-doc",
+          "name": "monday-create-doc",
+          "desc": "Creates a new document in Monday.com"
+        }
+      ],
+      "target_tool_id": "monday.com::monday-delete-item",
+      "target_tool_name": "monday-delete-item",
+      "target_desc": "Deletes a Monday.com item",
+      "pilot_v_orig_hit_rate": 0.0,
+      "reason": "13 tools all describe 'monday' operations, names are generic, GPT hit rate 0% with original descriptions"
+    },
+    {
+      "cluster_id": "load_016",
+      "verb_prefix": "load",
+      "size": 12,
+      "tools": [
+        {
+          "tool_id": "ramp::load_transactions",
+          "name": "load_transactions",
+          "desc": "Loads transactions data."
+        },
+        {
+          "tool_id": "ramp::load_reimbursements",
+          "name": "load_reimbursements",
+          "desc": "Loads reimbursements data."
+        },
+        {
+          "tool_id": "ramp::load_bills",
+          "name": "load_bills",
+          "desc": "Loads bills data."
+        },
+        {
+          "tool_id": "ramp::load_locations",
+          "name": "load_locations",
+          "desc": "Loads locations data."
+        },
+        {
+          "tool_id": "ramp::load_departments",
+          "name": "load_departments",
+          "desc": "Loads departments data."
+        },
+        {
+          "tool_id": "ramp::load_bank_accounts",
+          "name": "load_bank_accounts",
+          "desc": "Loads bank accounts data."
+        },
+        {
+          "tool_id": "ramp::load_vendors",
+          "name": "load_vendors",
+          "desc": "Loads vendors data."
+        },
+        {
+          "tool_id": "ramp::load_vendor_bank_accounts",
+          "name": "load_vendor_bank_accounts",
+          "desc": "Loads vendor bank accounts data."
+        },
+        {
+          "tool_id": "ramp::load_entities",
+          "name": "load_entities",
+          "desc": "Loads entities data."
+        },
+        {
+          "tool_id": "ramp::load_spend_limits",
+          "name": "load_spend_limits",
+          "desc": "Loads spend limits data."
+        },
+        {
+          "tool_id": "ramp::load_spend_programs",
+          "name": "load_spend_programs",
+          "desc": "Loads spend programs data."
+        },
+        {
+          "tool_id": "ramp::load_users",
+          "name": "load_users",
+          "desc": "Loads users data."
+        }
+      ],
+      "target_tool_id": "ramp::load_bills",
+      "target_tool_name": "load_bills",
+      "target_desc": "Loads bills data.",
+      "pilot_v_orig_hit_rate": 0.0,
+      "reason": "12 tools all describe 'load' operations, names are generic, GPT hit rate 0% with original descriptions"
+    },
+    {
+      "cluster_id": "atlas_020",
+      "verb_prefix": "atlas",
+      "size": 10,
+      "tools": [
+        {
+          "tool_id": "mongodb::atlas-list-orgs",
+          "name": "atlas-list-orgs",
+          "desc": "Lists MongoDB Atlas organizations"
+        },
+        {
+          "tool_id": "mongodb::atlas-list-projects",
+          "name": "atlas-list-projects",
+          "desc": "Lists MongoDB Atlas projects"
+        },
+        {
+          "tool_id": "mongodb::atlas-list-clusters",
+          "name": "atlas-list-clusters",
+          "desc": "Lists MongoDB Atlas clusters"
+        },
+        {
+          "tool_id": "mongodb::atlas-inspect-cluster",
+          "name": "atlas-inspect-cluster",
+          "desc": "Inspect a specific MongoDB Atlas cluster"
+        },
+        {
+          "tool_id": "mongodb::atlas-create-free-cluster",
+          "name": "atlas-create-free-cluster",
+          "desc": "Create a free MongoDB Atlas cluster"
+        },
+        {
+          "tool_id": "mongodb::atlas-connect-cluster",
+          "name": "atlas-connect-cluster",
+          "desc": "Connects to MongoDB Atlas cluster"
+        },
+        {
+          "tool_id": "mongodb::atlas-inspect-access-list",
+          "name": "atlas-inspect-access-list",
+          "desc": "Inspect IP/CIDR ranges with access to MongoDB Atlas clusters"
+        },
+        {
+          "tool_id": "mongodb::atlas-create-access-list",
+          "name": "atlas-create-access-list",
+          "desc": "Configure IP/CIDR access list for MongoDB Atlas clusters"
+        },
+        {
+          "tool_id": "mongodb::atlas-list-db-users",
+          "name": "atlas-list-db-users",
+          "desc": "List MongoDB Atlas database users"
+        },
+        {
+          "tool_id": "mongodb::atlas-create-db-user",
+          "name": "atlas-create-db-user",
+          "desc": "List MongoDB Atlas database users"
+        }
+      ],
+      "target_tool_id": "mongodb::atlas-list-projects",
+      "target_tool_name": "atlas-list-projects",
+      "target_desc": "Lists MongoDB Atlas projects",
+      "pilot_v_orig_hit_rate": 0.0,
+      "reason": "10 tools all describe 'atlas' operations, names are generic, GPT hit rate 0% with original descriptions"
+    },
+    {
+      "cluster_id": "weather_021",
+      "verb_prefix": "weather",
+      "size": 9,
+      "tools": [
+        {
+          "tool_id": "weather-data::weather_current",
+          "name": "weather_current",
+          "desc": "\nGet current weather for a location.\nArgs:\n    q (str): Location query (city name, lat/lon, postal code, etc).\n    aqi (str): Include air quality data ('yes' or 'no').\nReturns:\n    dict: WeatherAPI cu"
+        },
+        {
+          "tool_id": "weather-data::weather_forecast",
+          "name": "weather_forecast",
+          "desc": "\nGet weather forecast (1–14 days) for a location.\nArgs:\n    q (str): Location query (city name, lat/lon, postal code, etc).\n    days (int): Number of days (1–14).\n    aqi (str): Include air quality ('"
+        },
+        {
+          "tool_id": "weather-data::weather_history",
+          "name": "weather_history",
+          "desc": "\nGet historical weather for a location on a given date (YYYY-MM-DD).\nArgs:\n    q (str): Location query.\n    dt (str): Date in YYYY-MM-DD format.\nReturns:\n    dict: WeatherAPI history JSON.\n"
+        },
+        {
+          "tool_id": "weather-data::weather_alerts",
+          "name": "weather_alerts",
+          "desc": "\nGet weather alerts for a location.\nArgs:\n    q (str): Location query.\nReturns:\n    dict: WeatherAPI alerts JSON.\n"
+        },
+        {
+          "tool_id": "weather-data::weather_airquality",
+          "name": "weather_airquality",
+          "desc": "\nGet air quality for a location.\nArgs:\n    q (str): Location query.\nReturns:\n    dict: WeatherAPI air quality JSON.\n"
+        },
+        {
+          "tool_id": "weather-data::weather_astronomy",
+          "name": "weather_astronomy",
+          "desc": "\nGet astronomy data (sunrise, sunset, moon) for a date (YYYY-MM-DD).\nArgs:\n    q (str): Location query.\n    dt (str): Date in YYYY-MM-DD format.\nReturns:\n    dict: WeatherAPI astronomy JSON.\n"
+        },
+        {
+          "tool_id": "weather-data::weather_search",
+          "name": "weather_search",
+          "desc": "\nSearch for locations matching query.\nArgs:\n    q (str): Location query.\nReturns:\n    dict: WeatherAPI search JSON.\n"
+        },
+        {
+          "tool_id": "weather-data::weather_timezone",
+          "name": "weather_timezone",
+          "desc": "\nGet timezone info for a location.\nArgs:\n    q (str): Location query.\nReturns:\n    dict: WeatherAPI timezone JSON.\n"
+        },
+        {
+          "tool_id": "weather-data::weather_sports",
+          "name": "weather_sports",
+          "desc": "\nGet sports events (e.g., football, cricket) for a location.\nArgs:\n    q (str): Location query.\nReturns:\n    dict: WeatherAPI sports JSON.\n"
+        }
+      ],
+      "target_tool_id": "weather-data::weather_alerts",
+      "target_tool_name": "weather_alerts",
+      "target_desc": "\nGet weather alerts for a location.\nArgs:\n    q (str): Location query.\nReturns:\n    dict: WeatherAPI alerts JSON.\n",
+      "pilot_v_orig_hit_rate": 0.0,
+      "reason": "9 tools all describe 'weather' operations, names are generic, GPT hit rate 0% with original descriptions"
+    },
+    {
+      "cluster_id": "whois_023",
+      "verb_prefix": "whois",
+      "size": 8,
+      "tools": [
+        {
+          "tool_id": "whois_mcp::whois_domain",
+          "name": "whois_domain",
+          "desc": "Looks up WHOIS information about the specified domain."
+        },
+        {
+          "tool_id": "whois_mcp::whois_tld",
+          "name": "whois_tld",
+          "desc": "Looks up WHOIS information about the specified Top Level Domain (TLD)."
+        },
+        {
+          "tool_id": "whois_mcp::whois_ip",
+          "name": "whois_ip",
+          "desc": "Looks up WHOIS information about the specified IP address."
+        },
+        {
+          "tool_id": "whois_mcp::whois_as",
+          "name": "whois_as",
+          "desc": "Looks up WHOIS information about the specified Autonomous System Number (ASN)."
+        },
+        {
+          "tool_id": "whois::whois_domain",
+          "name": "whois_domain",
+          "desc": "Looksup whois information about the domain"
+        },
+        {
+          "tool_id": "whois::whois_tld",
+          "name": "whois_tld",
+          "desc": "Looksup whois information about the Top Level Domain (TLD)"
+        },
+        {
+          "tool_id": "whois::whois_ip",
+          "name": "whois_ip",
+          "desc": "Looksup whois information about the IP"
+        },
+        {
+          "tool_id": "whois::whois_as",
+          "name": "whois_as",
+          "desc": "Looksup whois information about the Autonomous System Number (ASN)"
+        }
+      ],
+      "target_tool_id": "whois::whois_ip",
+      "target_tool_name": "whois_ip",
+      "target_desc": "Looksup whois information about the IP",
+      "pilot_v_orig_hit_rate": 0.0,
+      "reason": "8 tools all describe 'whois' operations, names are generic, GPT hit rate 0% with original descriptions"
+    },
+    {
+      "cluster_id": "drop_025",
+      "verb_prefix": "drop",
+      "size": 6,
+      "tools": [
+        {
+          "tool_id": "mongodb::drop-collection",
+          "name": "drop-collection",
+          "desc": "Remove a collection from a MongoDB database"
+        },
+        {
+          "tool_id": "mongodb::drop-database",
+          "name": "drop-database",
+          "desc": "Remove a MongoDB database"
+        },
+        {
+          "tool_id": "mongodb_lens::drop-collection",
+          "name": "drop-collection",
+          "desc": "Remove collections from the database (requires confirmation)"
+        },
+        {
+          "tool_id": "mongodb_lens::drop-database",
+          "name": "drop-database",
+          "desc": "Drop a database (requires confirmation)"
+        },
+        {
+          "tool_id": "mongodb_lens::drop-index",
+          "name": "drop-index",
+          "desc": "Remove indexes from collections (requires confirmation)"
+        },
+        {
+          "tool_id": "mongodb_lens::drop-user",
+          "name": "drop-user",
+          "desc": "Remove database users (requires confirmation)"
+        }
+      ],
+      "target_tool_id": "mongodb::drop-database",
+      "target_tool_name": "drop-database",
+      "target_desc": "Remove a MongoDB database",
+      "pilot_v_orig_hit_rate": 0.0,
+      "reason": "6 tools all describe 'drop' operations, names are generic, GPT hit rate 0% with original descriptions"
+    }
+  ],
+  "summary": {
+    "total_candidates": 19,
+    "pilot_tested": 19,
+    "final_count": 17,
+    "target_met": true
+  }
+}

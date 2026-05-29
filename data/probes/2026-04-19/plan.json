@@ -1,0 +1,672 @@
+{
+  "schema_version": "1",
+  "plan_hash": "f9379ca5847e8d2d925c934f9f600f8ea51107b9f1c1d94c4b9f867b80ef4d32",
+  "created_at": "2026-04-19T11:43:17.302432Z",
+  "actions": [
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0544",
+      "old_tool_id": "brave-search::web_search",
+      "new_tool_id": "brave-search::brave_web_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::web_search → brave-search::brave_web_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0545",
+      "old_tool_id": "brave-search::web_search",
+      "new_tool_id": "brave-search::brave_web_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::web_search → brave-search::brave_web_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0546",
+      "old_tool_id": "brave-search::web_search",
+      "new_tool_id": "brave-search::brave_web_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::web_search → brave-search::brave_web_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0547",
+      "old_tool_id": "brave-search::web_search",
+      "new_tool_id": "brave-search::brave_web_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::web_search → brave-search::brave_web_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0548",
+      "old_tool_id": "brave-search::web_search",
+      "new_tool_id": "brave-search::brave_web_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::web_search → brave-search::brave_web_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0549",
+      "old_tool_id": "brave-search::web_search",
+      "new_tool_id": "brave-search::brave_web_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::web_search → brave-search::brave_web_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0550",
+      "old_tool_id": "brave-search::web_search",
+      "new_tool_id": "brave-search::brave_web_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::web_search → brave-search::brave_web_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0551",
+      "old_tool_id": "brave-search::web_search",
+      "new_tool_id": "brave-search::brave_web_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::web_search → brave-search::brave_web_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0552",
+      "old_tool_id": "brave-search::web_search",
+      "new_tool_id": "brave-search::brave_web_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::web_search → brave-search::brave_web_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0553",
+      "old_tool_id": "brave-search::web_search",
+      "new_tool_id": "brave-search::brave_web_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::web_search → brave-search::brave_web_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0554",
+      "old_tool_id": "brave-search::local_search",
+      "new_tool_id": "brave-search::brave_local_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::local_search → brave-search::brave_local_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0555",
+      "old_tool_id": "brave-search::local_search",
+      "new_tool_id": "brave-search::brave_local_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::local_search → brave-search::brave_local_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0556",
+      "old_tool_id": "brave-search::local_search",
+      "new_tool_id": "brave-search::brave_local_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::local_search → brave-search::brave_local_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0557",
+      "old_tool_id": "brave-search::local_search",
+      "new_tool_id": "brave-search::brave_local_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::local_search → brave-search::brave_local_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0558",
+      "old_tool_id": "brave-search::local_search",
+      "new_tool_id": "brave-search::brave_local_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::local_search → brave-search::brave_local_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0559",
+      "old_tool_id": "brave-search::local_search",
+      "new_tool_id": "brave-search::brave_local_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::local_search → brave-search::brave_local_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0560",
+      "old_tool_id": "brave-search::local_search",
+      "new_tool_id": "brave-search::brave_local_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::local_search → brave-search::brave_local_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0561",
+      "old_tool_id": "brave-search::local_search",
+      "new_tool_id": "brave-search::brave_local_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::local_search → brave-search::brave_local_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0562",
+      "old_tool_id": "brave-search::local_search",
+      "new_tool_id": "brave-search::brave_local_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::local_search → brave-search::brave_local_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0563",
+      "old_tool_id": "brave-search::local_search",
+      "new_tool_id": "brave-search::brave_local_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::local_search → brave-search::brave_local_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0564",
+      "old_tool_id": "brave-search::news_search",
+      "new_tool_id": "brave-search::brave_news_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::news_search → brave-search::brave_news_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0565",
+      "old_tool_id": "brave-search::news_search",
+      "new_tool_id": "brave-search::brave_news_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::news_search → brave-search::brave_news_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0566",
+      "old_tool_id": "brave-search::news_search",
+      "new_tool_id": "brave-search::brave_news_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::news_search → brave-search::brave_news_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0567",
+      "old_tool_id": "brave-search::news_search",
+      "new_tool_id": "brave-search::brave_news_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::news_search → brave-search::brave_news_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0568",
+      "old_tool_id": "brave-search::news_search",
+      "new_tool_id": "brave-search::brave_news_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::news_search → brave-search::brave_news_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0569",
+      "old_tool_id": "brave-search::news_search",
+      "new_tool_id": "brave-search::brave_news_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::news_search → brave-search::brave_news_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0570",
+      "old_tool_id": "brave-search::news_search",
+      "new_tool_id": "brave-search::brave_news_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::news_search → brave-search::brave_news_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0571",
+      "old_tool_id": "brave-search::news_search",
+      "new_tool_id": "brave-search::brave_news_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::news_search → brave-search::brave_news_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0572",
+      "old_tool_id": "brave-search::image_search",
+      "new_tool_id": "brave-search::brave_image_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::image_search → brave-search::brave_image_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0573",
+      "old_tool_id": "brave-search::image_search",
+      "new_tool_id": "brave-search::brave_image_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::image_search → brave-search::brave_image_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0574",
+      "old_tool_id": "brave-search::image_search",
+      "new_tool_id": "brave-search::brave_image_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::image_search → brave-search::brave_image_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0575",
+      "old_tool_id": "brave-search::image_search",
+      "new_tool_id": "brave-search::brave_image_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::image_search → brave-search::brave_image_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0576",
+      "old_tool_id": "brave-search::image_search",
+      "new_tool_id": "brave-search::brave_image_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::image_search → brave-search::brave_image_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0577",
+      "old_tool_id": "brave-search::image_search",
+      "new_tool_id": "brave-search::brave_image_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::image_search → brave-search::brave_image_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0578",
+      "old_tool_id": "brave-search::image_search",
+      "new_tool_id": "brave-search::brave_image_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::image_search → brave-search::brave_image_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0579",
+      "old_tool_id": "brave-search::image_search",
+      "new_tool_id": "brave-search::brave_image_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::image_search → brave-search::brave_image_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0580",
+      "old_tool_id": "brave-search::video_search",
+      "new_tool_id": "brave-search::brave_video_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::video_search → brave-search::brave_video_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0581",
+      "old_tool_id": "brave-search::video_search",
+      "new_tool_id": "brave-search::brave_video_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::video_search → brave-search::brave_video_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0582",
+      "old_tool_id": "brave-search::video_search",
+      "new_tool_id": "brave-search::brave_video_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::video_search → brave-search::brave_video_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0583",
+      "old_tool_id": "brave-search::video_search",
+      "new_tool_id": "brave-search::brave_video_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::video_search → brave-search::brave_video_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0584",
+      "old_tool_id": "brave-search::video_search",
+      "new_tool_id": "brave-search::brave_video_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::video_search → brave-search::brave_video_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0585",
+      "old_tool_id": "brave-search::video_search",
+      "new_tool_id": "brave-search::brave_video_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::video_search → brave-search::brave_video_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0586",
+      "old_tool_id": "brave-search::video_search",
+      "new_tool_id": "brave-search::brave_video_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::video_search → brave-search::brave_video_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0587",
+      "old_tool_id": "brave-search::video_search",
+      "new_tool_id": "brave-search::brave_video_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::video_search → brave-search::brave_video_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0588",
+      "old_tool_id": "brave-search::video_search",
+      "new_tool_id": "brave-search::brave_video_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::video_search → brave-search::brave_video_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0589",
+      "old_tool_id": "brave-search::video_search",
+      "new_tool_id": "brave-search::brave_video_search",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::video_search → brave-search::brave_video_search",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0590",
+      "old_tool_id": "brave-search::summarize_page",
+      "new_tool_id": "brave-search::brave_summarizer",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::summarize_page → brave-search::brave_summarizer",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0591",
+      "old_tool_id": "brave-search::summarize_page",
+      "new_tool_id": "brave-search::brave_summarizer",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::summarize_page → brave-search::brave_summarizer",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0592",
+      "old_tool_id": "brave-search::summarize_page",
+      "new_tool_id": "brave-search::brave_summarizer",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::summarize_page → brave-search::brave_summarizer",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0593",
+      "old_tool_id": "brave-search::summarize_page",
+      "new_tool_id": "brave-search::brave_summarizer",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::summarize_page → brave-search::brave_summarizer",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0594",
+      "old_tool_id": "brave-search::summarize_page",
+      "new_tool_id": "brave-search::brave_summarizer",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::summarize_page → brave-search::brave_summarizer",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0595",
+      "old_tool_id": "brave-search::summarize_page",
+      "new_tool_id": "brave-search::brave_summarizer",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::summarize_page → brave-search::brave_summarizer",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0596",
+      "old_tool_id": "brave-search::summarize_page",
+      "new_tool_id": "brave-search::brave_summarizer",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::summarize_page → brave-search::brave_summarizer",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0597",
+      "old_tool_id": "brave-search::summarize_page",
+      "new_tool_id": "brave-search::brave_summarizer",
+      "confidence": null,
+      "notes": "manual_remap: brave-search::summarize_page → brave-search::brave_summarizer",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0746",
+      "old_tool_id": "arxiv::get_paper",
+      "new_tool_id": "arxiv::read_paper",
+      "confidence": null,
+      "notes": "manual_remap: arxiv::get_paper → arxiv::read_paper",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0747",
+      "old_tool_id": "arxiv::get_paper",
+      "new_tool_id": "arxiv::read_paper",
+      "confidence": null,
+      "notes": "manual_remap: arxiv::get_paper → arxiv::read_paper",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0748",
+      "old_tool_id": "arxiv::get_paper",
+      "new_tool_id": "arxiv::read_paper",
+      "confidence": null,
+      "notes": "manual_remap: arxiv::get_paper → arxiv::read_paper",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0749",
+      "old_tool_id": "arxiv::get_paper",
+      "new_tool_id": "arxiv::read_paper",
+      "confidence": null,
+      "notes": "manual_remap: arxiv::get_paper → arxiv::read_paper",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0750",
+      "old_tool_id": "arxiv::get_paper",
+      "new_tool_id": "arxiv::read_paper",
+      "confidence": null,
+      "notes": "manual_remap: arxiv::get_paper → arxiv::read_paper",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0751",
+      "old_tool_id": "arxiv::get_paper",
+      "new_tool_id": "arxiv::read_paper",
+      "confidence": null,
+      "notes": "manual_remap: arxiv::get_paper → arxiv::read_paper",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0752",
+      "old_tool_id": "arxiv::get_paper",
+      "new_tool_id": "arxiv::read_paper",
+      "confidence": null,
+      "notes": "manual_remap: arxiv::get_paper → arxiv::read_paper",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0753",
+      "old_tool_id": "arxiv::get_paper",
+      "new_tool_id": "arxiv::read_paper",
+      "confidence": null,
+      "notes": "manual_remap: arxiv::get_paper → arxiv::read_paper",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0754",
+      "old_tool_id": "arxiv::get_paper",
+      "new_tool_id": "arxiv::read_paper",
+      "confidence": null,
+      "notes": "manual_remap: arxiv::get_paper → arxiv::read_paper",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0773",
+      "old_tool_id": "arxiv::get_abstract",
+      "new_tool_id": "arxiv::read_paper",
+      "confidence": null,
+      "notes": "manual_remap: arxiv::get_abstract → arxiv::read_paper",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0774",
+      "old_tool_id": "arxiv::get_abstract",
+      "new_tool_id": "arxiv::read_paper",
+      "confidence": null,
+      "notes": "manual_remap: arxiv::get_abstract → arxiv::read_paper",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0775",
+      "old_tool_id": "arxiv::get_abstract",
+      "new_tool_id": "arxiv::read_paper",
+      "confidence": null,
+      "notes": "manual_remap: arxiv::get_abstract → arxiv::read_paper",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0776",
+      "old_tool_id": "arxiv::get_abstract",
+      "new_tool_id": "arxiv::read_paper",
+      "confidence": null,
+      "notes": "manual_remap: arxiv::get_abstract → arxiv::read_paper",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0777",
+      "old_tool_id": "arxiv::get_abstract",
+      "new_tool_id": "arxiv::read_paper",
+      "confidence": null,
+      "notes": "manual_remap: arxiv::get_abstract → arxiv::read_paper",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0778",
+      "old_tool_id": "arxiv::get_abstract",
+      "new_tool_id": "arxiv::read_paper",
+      "confidence": null,
+      "notes": "manual_remap: arxiv::get_abstract → arxiv::read_paper",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0779",
+      "old_tool_id": "arxiv::get_abstract",
+      "new_tool_id": "arxiv::read_paper",
+      "confidence": null,
+      "notes": "manual_remap: arxiv::get_abstract → arxiv::read_paper",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0780",
+      "old_tool_id": "arxiv::get_abstract",
+      "new_tool_id": "arxiv::read_paper",
+      "confidence": null,
+      "notes": "manual_remap: arxiv::get_abstract → arxiv::read_paper",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0781",
+      "old_tool_id": "arxiv::get_abstract",
+      "new_tool_id": "arxiv::read_paper",
+      "confidence": null,
+      "notes": "manual_remap: arxiv::get_abstract → arxiv::read_paper",
+      "probe_sha": null
+    },
+    {
+      "rule": "R2",
+      "query_id": "gt-synth-0782",
+      "old_tool_id": "arxiv::get_abstract",
+      "new_tool_id": "arxiv::read_paper",
+      "confidence": null,
+      "notes": "manual_remap: arxiv::get_abstract → arxiv::read_paper",
+      "probe_sha": null
+    }
+  ],
+  "review_queue": [],
+  "probe_results": {
+    "postgres": "9327518d58ba496c8de52d6c5d28aaaf0854bdc238b5e6eeaf600d4007d2f9c0",
+    "yahoo-finance": "fec565f4c16dcb79358076883aaa7e88ad466d25df349912898f7aa62b4c0430",
+    "brave-search": "8ad6606e24acc15e0adb0e647af341eed99b8e798e012e2e2692f74a2eb4140f",
+    "arxiv": "1f3987ecad9d8be8be5276fd008b1956fff98cd126201fc2e1a4083147e915ce",
+    "github": "b6194c38a8bc7e5acc5e741739652e347adbc01a60d29013736c69c82270e50c"
+  }
+}

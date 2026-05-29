@@ -1,0 +1,15 @@
+service_name: mlp-gateway
+runtime: aws-apprunner
+image_identifier: __SET_IN_CI__
+container_port: 8000
+health_check_path: /gateway/health
+required_env:
+  - GATEWAY_INTERNAL_AUTH_SECRET
+  - GATEWAY_BASE_URL
+  - SUPABASE_URL
+  - SUPABASE_SERVICE_KEY
+  - AWS_REGION
+scaling:
+  cpu: 1024
+  memory: 2048
+  max_concurrency: 50

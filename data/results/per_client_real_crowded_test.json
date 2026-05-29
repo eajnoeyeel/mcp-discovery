@@ -1,0 +1,65 @@
+[
+  {
+    "cluster": "web_search",
+    "target": "tavily_search",
+    "orig": 0.0,
+    "enriched": 1.0,
+    "delta": 1.0,
+    "picks_orig": [
+      "kagi_search",
+      "kagi_search",
+      "kagi_search",
+      "kagi_search",
+      "exa_web_search"
+    ],
+    "picks_enriched": [
+      "tavily_search",
+      "tavily_search",
+      "tavily_search",
+      "tavily_search",
+      "tavily_search"
+    ]
+  },
+  {
+    "cluster": "file_search",
+    "target": "filesystem_search_files",
+    "orig": 0.8,
+    "enriched": 1.0,
+    "delta": 0.19999999999999996,
+    "picks_orig": [
+      "filesystem_search_files",
+      "filesystem_search_files",
+      "golang_fs_search_files",
+      "filesystem_search_files",
+      "filesystem_search_files"
+    ],
+    "picks_enriched": [
+      "filesystem_search_files",
+      "filesystem_search_files",
+      "filesystem_search_files",
+      "filesystem_search_files",
+      "filesystem_search_files"
+    ]
+  },
+  {
+    "cluster": "messaging",
+    "target": "slack_post_message",
+    "orig": 1.0,
+    "enriched": 1.0,
+    "delta": 0.0,
+    "picks_orig": [
+      "slack_post_message",
+      "slack_post_message",
+      "slack_post_message",
+      "slack_post_message",
+      "slack_post_message"
+    ],
+    "picks_enriched": [
+      "slack_post_message",
+      "slack_post_message",
+      "slack_post_message",
+      "slack_post_message",
+      "slack_post_message"
+    ]
+  }
+]

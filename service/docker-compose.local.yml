@@ -1,0 +1,4 @@
+services:
+  backend:
+    environment:
+      MLP_EVENT_MODE: local_direct

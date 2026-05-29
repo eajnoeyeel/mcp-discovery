@@ -1,0 +1,552 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  MCP Discovery MLP Service — Semantic search engine for MCP tools.
+  Each Lambda builds via Makefile: handler + selective src/ modules + per-function deps.
+
+# =============================================================================
+# Parameters — all secrets use NoEcho to prevent console/CLI exposure
+# =============================================================================
+Parameters:
+  QdrantUrl:
+    Type: String
+    Default: "http://localhost:6333"
+    Description: Qdrant Cloud cluster URL
+
+  QdrantApiKey:
+    Type: String
+    NoEcho: true
+    Description: Qdrant Cloud API key
+
+  OpenAIApiKey:
+    Type: String
+    NoEcho: true
+    Description: OpenAI API key for text-embedding-3-small
+
+  SupabaseUrl:
+    Type: String
+    Description: Supabase project URL (e.g., https://xxx.supabase.co)
+
+  SupabaseServiceKey:
+    Type: String
+    NoEcho: true
+    Description: Supabase service role key (server-side only)
+
+  MlpApiKey:
+    Type: String
+    NoEcho: true
+    MinLength: 16
+    Description: >
+      Static API key for Denial-of-Wallet protection.
+      All HTTP requests must include x-api-key header with this value.
+
+  MlpPublicApiBaseUrl:
+    Type: String
+    Default: "http://127.0.0.1:3000"
+    Description: Public local API base URL for provider OAuth callbacks.
+
+  AllowedOrigin:
+    Type: String
+    Default: "*"
+    Description: >
+      CORS allowed origin. Set to your frontend domain in prod.
+      Default '*' for dev.
+
+  StageName:
+    Type: String
+    Default: prod
+    AllowedValues: [dev, staging, prod]
+    Description: API Gateway deployment stage
+
+# =============================================================================
+# Globals — shared defaults for all Lambda functions
+# =============================================================================
+Globals:
+  Function:
+    Runtime: python3.12
+    MemorySize: 512
+    Timeout: 15
+    Architectures:
+      - arm64  # Graviton2 — ~34% cheaper, faster cold starts
+    Tracing: Active  # X-Ray distributed tracing
+    Environment:
+      Variables:
+        # Makefile copies src/ modules to /var/task/ root — direct imports work.
+        # No PYTHONPATH manipulation needed.
+        QDRANT_URL: !Ref QdrantUrl
+        QDRANT_API_KEY: !Ref QdrantApiKey
+        OPENAI_API_KEY: !Ref OpenAIApiKey
+        SUPABASE_URL: !Ref SupabaseUrl
+        SUPABASE_SERVICE_KEY: !Ref SupabaseServiceKey
+        MLP_EVENT_MODE: local_direct
+
+# =============================================================================
+# Resources
+# =============================================================================
+Resources:
+
+  # ---------------------------------------------------------------------------
+  # API Gateway — HTTP API (lighter, cheaper than REST API)
+  # ---------------------------------------------------------------------------
+  HttpApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      StageName: !Ref StageName
+      Description: MCP Discovery MLP HTTP API
+      CorsConfiguration:
+        AllowOrigins:
+          - !Ref AllowedOrigin
+        AllowMethods:
+          - GET
+          - POST
+          - OPTIONS
+        AllowHeaders:
+          - Content-Type
+          - Authorization
+          - x-api-key
+      # -----------------------------------------------------------------------
+      # Auth — Lambda authorizer for API key validation (I2: Denial-of-Wallet)
+      # HttpApi does NOT support native Usage Plans / API Keys.
+      # A lightweight Lambda authorizer checks the x-api-key header instead.
+      # CORS preflight (OPTIONS) is handled by API Gateway before the
+      # authorizer runs, so no Auth:NONE override is needed for OPTIONS.
+      # -----------------------------------------------------------------------
+      Auth:
+        DefaultAuthorizer: ApiKeyAuthorizer
+        Authorizers:
+          ApiKeyAuthorizer:
+            AuthorizerPayloadFormatVersion: "2.0"
+            EnableSimpleResponses: true
+            FunctionArn: !GetAtt ApiKeyAuthorizerFunction.Arn
+            EnableFunctionDefaultPermissions: true
+            Identity:
+              Headers:
+                - x-api-key
+              ReauthorizeEvery: 300  # Cache authorizer result for 5 minutes
+      # Throttling protects downstream services (Qdrant/OpenAI) from burst
+      DefaultRouteSettings:
+        ThrottlingBurstLimit: 50
+        ThrottlingRateLimit: 100
+
+  # ---------------------------------------------------------------------------
+  # ApiKeyAuthorizerFunction — validates x-api-key header (I2: Denial-of-Wallet)
+  # Tiny footprint: 128 MB, 3s timeout, no external deps. Result cached 300s.
+  # ---------------------------------------------------------------------------
+  ApiKeyAuthorizerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "mcp-discovery-authorizer-${StageName}"
+      Handler: handler.lambda_handler
+      CodeUri: ../
+      MemorySize: 128  # Minimal — just string comparison
+      Timeout: 3
+      Environment:
+        Variables:
+          MLP_API_KEY: !Ref MlpApiKey
+    Metadata:
+      BuildMethod: makefile
+
+  # ---------------------------------------------------------------------------
+  # SearchFunction — POST /api/search
+  # Embedding search -> operability merge -> confidence branching
+  # ---------------------------------------------------------------------------
+  SearchFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "mcp-discovery-search-${StageName}"
+      Handler: handler.lambda_handler
+      CodeUri: ../
+      Description: Semantic tool search (embedding + operability + confidence branching)
+      Events:
+        SearchApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/search
+            Method: POST
+    Metadata:
+      BuildMethod: makefile
+
+  CatalogFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "mcp-discovery-catalog-${StageName}"
+      Handler: handler.lambda_handler
+      CodeUri: ../
+      Description: Public catalog read APIs for landing, registry, and tool detail pages
+      Events:
+        PlatformStatsApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/platform/stats
+            Method: GET
+        ServersListApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/servers
+            Method: GET
+        ServerDetailApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/servers/{server_id}
+            Method: GET
+        ServerToolsApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/servers/{server_id}/tools
+            Method: GET
+        ToolDetailApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/tools/{tool_id}
+            Method: GET
+    Metadata:
+      BuildMethod: makefile
+
+  DashboardFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "mcp-discovery-dashboard-${StageName}"
+      Handler: handler.lambda_handler
+      CodeUri: ../
+      Description: Provider-scoped dashboard read APIs
+      Events:
+        ProviderDashboardApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/providers/dashboard
+            Method: GET
+        ProviderToolDetailApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/providers/tools/{tool_id}
+            Method: GET
+    Metadata:
+      BuildMethod: makefile
+
+  # ---------------------------------------------------------------------------
+  # RegisterFunction — POST /api/servers
+  # Accepts server registration, writes to Supabase, emits EventBridge event
+  # ---------------------------------------------------------------------------
+  RegisterFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "mcp-discovery-register-${StageName}"
+      Handler: handler.lambda_handler
+      CodeUri: ../
+      Description: Register a new MCP server and its tools
+      Policies:
+        # Allow emitting events to trigger async indexing
+        - EventBridgePutEventsPolicy:
+            EventBusName: default
+        - Statement:
+            - Effect: Allow
+              Action:
+                - secretsmanager:CreateSecret
+                - secretsmanager:PutSecretValue
+                - secretsmanager:GetSecretValue
+              Resource: !Sub "arn:${AWS::Partition}:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:mlp/*"
+      Environment:
+        Variables:
+          MLP_PUBLIC_API_BASE_URL: !Ref MlpPublicApiBaseUrl
+      Events:
+        RegisterApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/servers
+            Method: POST
+        RegisterDiscoveryApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/providers/servers/discovery
+            Method: POST
+        OauthProviderBootstrapDiscoverApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/oauth/providers/bootstrap/discover
+            Method: POST
+        OauthProviderBootstrapDcrApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/oauth/providers/bootstrap/dcr
+            Method: POST
+        OauthProviderBootstrapManualApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/oauth/providers/bootstrap/manual
+            Method: POST
+        OauthProviderBootstrapEnableApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/oauth/providers/{provider_key}/enable
+            Method: POST
+    Metadata:
+      BuildMethod: makefile
+
+  # ---------------------------------------------------------------------------
+  # IndexFunction — triggered by EventBridge (server.registered)
+  # Embeds tool descriptions and upserts to Qdrant. Longer timeout for batch work.
+  # ---------------------------------------------------------------------------
+  IndexFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "mcp-discovery-index-${StageName}"
+      Handler: handler.lambda_handler
+      CodeUri: ../
+      Timeout: 60  # Embedding batch + Qdrant upsert can take time
+      Description: Async indexing — embed tool descriptions and upsert to Qdrant
+      DeadLetterQueue:
+        Type: SQS
+        TargetArn: !GetAtt IndexDLQ.Arn
+      Events:
+        ServerRegistered:
+          Type: EventBridgeRule
+          Properties:
+            Pattern:
+              source:
+                - "mcp-discovery"
+              detail-type:
+                - "server.registered"
+    Metadata:
+      BuildMethod: makefile
+
+  # ---------------------------------------------------------------------------
+  # ExecuteFunction — POST /api/execute
+  # Thin proxy: forwards tool execution to the provider's MCP server.
+  # Longer timeout (30s) because downstream MCP execution is unpredictable.
+  # ---------------------------------------------------------------------------
+  ExecuteFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "mcp-discovery-execute-${StageName}"
+      Handler: handler.lambda_handler
+      CodeUri: ../
+      Timeout: 30  # Downstream MCP execution latency is variable
+      Description: Proxy tool execution to provider MCP servers
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - secretsmanager:GetSecretValue
+              Resource: !Sub "arn:${AWS::Partition}:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:mlp/*"
+      Events:
+        ExecuteApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/execute
+            Method: POST
+    Metadata:
+      BuildMethod: makefile
+
+  # ---------------------------------------------------------------------------
+  # BridgeFunction — POST /mcp, GET /mcp
+  # MCP protocol endpoint: LLM clients connect here as a standard MCP server.
+  # Exposes find_best_tool and execute_tool via MCP protocol.
+  # ---------------------------------------------------------------------------
+  BridgeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "mcp-discovery-bridge-${StageName}"
+      Handler: handler.lambda_handler
+      CodeUri: ../
+      Description: Bridge MCP Server — LLM clients connect via MCP protocol
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - secretsmanager:GetSecretValue
+              Resource: !Sub "arn:${AWS::Partition}:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:mlp/*"
+      Events:
+        BridgePost:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /mcp
+            Method: POST
+        BridgeGet:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /mcp
+            Method: GET
+    Metadata:
+      BuildMethod: makefile
+
+  # ---------------------------------------------------------------------------
+  # OAuthStartFunction / OAuthCallbackFunction — delegated provider OAuth
+  # ---------------------------------------------------------------------------
+  OAuthStartFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "mcp-discovery-oauth-start-${StageName}"
+      Handler: handler.lambda_handler
+      CodeUri: ../
+      Description: Start delegated provider OAuth authorization
+      Events:
+        OAuthStartApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/oauth/providers/{provider}/start
+            Method: POST
+    Metadata:
+      BuildMethod: makefile
+
+  OAuthCallbackFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "mcp-discovery-oauth-callback-${StageName}"
+      Handler: handler.lambda_handler
+      CodeUri: ../
+      Description: Complete delegated provider OAuth authorization
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - secretsmanager:GetSecretValue
+              Resource: !Sub "arn:${AWS::Partition}:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:mlp/*"
+      Events:
+        OAuthCallbackApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /api/oauth/providers/{provider}/callback
+            Method: GET
+            Auth:
+              Authorizer: NONE
+    Metadata:
+      BuildMethod: makefile
+
+  # ---------------------------------------------------------------------------
+  # IndexDLQ — Dead Letter Queue for failed indexing events
+  # 14-day retention (max) so we can inspect and retry failures
+  # ---------------------------------------------------------------------------
+  IndexDLQ:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub "mcp-discovery-index-dlq-${StageName}"
+      MessageRetentionPeriod: 1209600  # 14 days (maximum)
+
+  # ---------------------------------------------------------------------------
+  # IndexDLQConsumerFunction — retries failed indexing events from DLQ
+  # Reads SQS messages containing original EventBridge payloads, fetches tools
+  # in 'failed' status, and retries embedding + Qdrant upsert.
+  # Circuit breaker: skips messages after 3 receive attempts.
+  # ---------------------------------------------------------------------------
+  IndexDLQConsumerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub "mcp-discovery-index-dlq-consumer-${StageName}"
+      Handler: handler.lambda_handler
+      CodeUri: ../
+      Timeout: 60
+      MemorySize: 256
+      Description: DLQ consumer — retry failed tool indexing
+      Events:
+        IndexDLQEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt IndexDLQ.Arn
+            BatchSize: 1
+            FunctionResponseTypes:
+              - ReportBatchItemFailures
+    Metadata:
+      BuildMethod: makefile
+
+  # ---------------------------------------------------------------------------
+  # WarmingRule — keeps SearchFunction warm to avoid cold starts
+  # Fires every 5 minutes. Handler must detect and short-circuit warming events.
+  # ---------------------------------------------------------------------------
+  WarmingRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Description: Keep SearchFunction warm (5-min interval)
+      ScheduleExpression: "rate(5 minutes)"
+      State: ENABLED
+      Targets:
+        - Arn: !GetAtt SearchFunction.Arn
+          Id: SearchFunctionWarming
+          Input: '{"source": "warming"}'
+
+  # Permission for EventBridge to invoke SearchFunction (warming)
+  WarmingPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref SearchFunction
+      Action: lambda:InvokeFunction
+      Principal: events.amazonaws.com
+      SourceArn: !GetAtt WarmingRule.Arn
+
+  # ---------------------------------------------------------------------------
+  # CloudWatch Alarms — operational observability
+  # ---------------------------------------------------------------------------
+
+  # SearchLatencyAlarm: fires when p95 latency exceeds 2 seconds
+  SearchLatencyAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub "mcp-discovery-search-p95-latency-${StageName}"
+      AlarmDescription: >
+        Search function p95 latency exceeds 2000ms.
+        Check Qdrant/OpenAI connectivity and cold start frequency.
+      Namespace: AWS/Lambda
+      MetricName: Duration
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref SearchFunction
+      ExtendedStatistic: p95
+      Period: 300  # 5 minutes
+      EvaluationPeriods: 2
+      Threshold: 2000  # 2 seconds in ms
+      ComparisonOperator: GreaterThanThreshold
+      TreatMissingData: notBreaching
+
+  # SearchErrorAlarm: fires when error count exceeds 5 in a 5-minute window
+  SearchErrorAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub "mcp-discovery-search-errors-${StageName}"
+      AlarmDescription: >
+        Search function errors exceeded threshold.
+        Check logs for Qdrant/OpenAI API failures.
+      Namespace: AWS/Lambda
+      MetricName: Errors
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref SearchFunction
+      Statistic: Sum
+      Period: 300  # 5 minutes
+      EvaluationPeriods: 1
+      Threshold: 5
+      ComparisonOperator: GreaterThanThreshold
+      TreatMissingData: notBreaching
+
+# =============================================================================
+# Outputs — values needed by CI/CD, frontend config, and MCP client setup
+# =============================================================================
+Outputs:
+  ApiUrl:
+    Description: Base URL for all API endpoints
+    Value: !Sub "https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com/${StageName}"
+
+  SearchFunctionArn:
+    Description: ARN of the Search Lambda (for monitoring and IAM references)
+    Value: !GetAtt SearchFunction.Arn
+
+  BridgeMcpEndpoint:
+    Description: MCP protocol endpoint — point LLM clients here
+    Value: !Sub "https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com/${StageName}/mcp"

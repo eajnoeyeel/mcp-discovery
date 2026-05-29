@@ -1,0 +1,6 @@
+{
+  "requestContext": {"http": {"method": "POST"}, "requestId": "test-3"},
+  "headers": {"content-type": "application/json", "x-api-key": "test-key"},
+  "body": "{\"jsonrpc\": \"2.0\", \"method\": \"tools/list\", \"id\": 1}",
+  "isBase64Encoded": false
+}

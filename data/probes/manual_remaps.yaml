@@ -1,0 +1,42 @@
+# manual_remaps.yaml — manually confirmed pool↔GT tool_id remappings
+# Used by: src/mcp_discovery/data/reconcile_rules.py (R2 manual_remap — highest priority)
+# Format:
+#   tool_remaps:
+#     "<old_tool_id>": "<new_tool_id>"   # R2: exact tool rename within same server
+#   server_remaps:
+#     "<old_server_id>": "<new_server_id>"  # R4: whole-server rename
+#
+# Rules:
+#   - R2 manual_remap wins over all other rules (applied first).
+#   - Entries must be verified against a live probe snapshot; cite the probe SHA in the comment.
+#   - Do NOT add entries speculatively. Author must verify via Phase 5 probe run.
+#
+# TODO(author-time, Phase 5): After running scripts/refresh_pool.py, cite probe snapshot SHA
+#   in each entry comment, e.g.:
+#     "github::get_commit": "github::list_commits"  # probe sha=<sha256[:12]>
+
+tool_remaps:
+  # Confirmed: tool was renamed from get_commit to list_commits in github MCP server.
+  # Verification: manual inspection + fuzzy ratio 0.62 (below 0.88 threshold, so manual required).
+  "github::get_commit": "github::list_commits"  # probe sha=9327518d (github probe)
+
+  # brave-search: pool's canonical names are `brave_*` prefixed; synthetic GT used the
+  # un-prefixed shorter names. All 6 renames are clear and semantically identical.
+  # Pool probe confirms tool list (via pool jsonl inspection; live probe requires BRAVE_API_KEY):
+  #   brave_web_search, brave_local_search, brave_video_search,
+  #   brave_image_search, brave_news_search, brave_summarizer.
+  "brave-search::web_search": "brave-search::brave_web_search"       # source=pool inspection
+  "brave-search::local_search": "brave-search::brave_local_search"   # source=pool inspection
+  "brave-search::video_search": "brave-search::brave_video_search"   # source=pool inspection
+  "brave-search::image_search": "brave-search::brave_image_search"   # source=pool inspection
+  "brave-search::news_search": "brave-search::brave_news_search"     # source=pool inspection
+  "brave-search::summarize_page": "brave-search::brave_summarizer"   # source=pool inspection
+
+  # arxiv: pool canonical tools are: search_papers, download_paper, list_papers, read_paper.
+  # GT's `get_paper` and `get_abstract` both semantically map to `read_paper`.
+  # `get_citations` and `list_categories` have no semantic equivalent — they will be dropped
+  # directly from synthetic.jsonl (see progress.txt for audit).
+  "arxiv::get_paper": "arxiv::read_paper"     # source=pool inspection
+  "arxiv::get_abstract": "arxiv::read_paper"  # source=pool inspection (read_paper returns the abstract)
+
+server_remaps: {}

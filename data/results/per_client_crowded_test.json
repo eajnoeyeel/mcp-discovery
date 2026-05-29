@@ -1,0 +1,65 @@
+[
+  {
+    "scenario": "crowded_search",
+    "target": "search_records",
+    "generic_rate": 0.0,
+    "enriched_rate": 0.0,
+    "delta": 0.0,
+    "picks_generic": [
+      "search_entries",
+      "search_entries",
+      "search_entries",
+      "search_entries",
+      "search_entries"
+    ],
+    "picks_enriched": [
+      "search_entries",
+      "search_entries",
+      "search_entries",
+      "search_entries",
+      "search_entries"
+    ]
+  },
+  {
+    "scenario": "crowded_send",
+    "target": "send_notification",
+    "generic_rate": 0.0,
+    "enriched_rate": 1.0,
+    "delta": 1.0,
+    "picks_generic": [
+      "post_update",
+      "post_update",
+      "post_update",
+      "post_update",
+      "post_update"
+    ],
+    "picks_enriched": [
+      "send_notification",
+      "send_notification",
+      "send_notification",
+      "send_notification",
+      "send_notification"
+    ]
+  },
+  {
+    "scenario": "crowded_create",
+    "target": "create_item",
+    "generic_rate": 0.0,
+    "enriched_rate": 1.0,
+    "delta": 1.0,
+    "picks_generic": [
+      "create_task",
+      "create_task",
+      "create_task",
+      "create_task",
+      "create_task"
+    ],
+    "picks_enriched": [
+      "create_item",
+      "create_item",
+      "create_item",
+      "create_item",
+      "create_item"
+    ]
+  }
+]

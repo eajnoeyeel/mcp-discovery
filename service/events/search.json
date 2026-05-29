@@ -1,0 +1,6 @@
+{
+  "requestContext": {"http": {"method": "POST"}, "requestId": "test-1"},
+  "headers": {"content-type": "application/json", "x-api-key": "test-key"},
+  "body": "{\"query\": \"search GitHub repositories\", \"top_k\": 3}",
+  "isBase64Encoded": false
+}

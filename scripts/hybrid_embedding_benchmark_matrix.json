@@ -1,0 +1,162 @@
+{
+  "experiment": {
+    "id": "hybrid-embedding-benchmark-v1",
+    "description": "Staged hybrid embedding benchmark matrix with a frozen Keyword+LLM control, deterministic per-arm collection naming, and Stage1/Stage2A/Stage2B promotion rules.",
+    "collection_prefix": "mcp_tools_hybrid"
+  },
+  "data_sources": {
+    "input_path": "data/raw/mcp_zero_servers.jsonl",
+    "enriched_path": "data/enriched/tool_profiles.jsonl",
+    "target": "local"
+  },
+  "k_values": [
+    3,
+    5,
+    10
+  ],
+  "control_arm_id": "control_openai_large_splade_keyword_llm",
+  "control_baseline": {
+    "recall_at_3": 0.466,
+    "precision_at_1": 0.319,
+    "confusion_rate": 0.216
+  },
+  "stage_rules": {
+    "control_parity_tolerance_pp": 2.0,
+    "stage1_primary_metric": "recall_at_3",
+    "stage1_tie_breakers": [
+      "precision_at_1",
+      "mrr",
+      "latency_p50"
+    ],
+    "stage2_max_promoted_arms": 2,
+    "stage2_ambiguity_recall_gap_pp": 1.0,
+    "stage2_material_precision_loss_pp": 2.0,
+    "stage2_max_measured_arms": 4
+  },
+  "stage1_dense_arms": [
+    {
+      "arm_id": "control_openai_large_splade_keyword_llm",
+      "label": "Control: OpenAI 3-large + SPLADE + Keyword+LLM",
+      "stage": "stage1",
+      "rationale": "Frozen parity-gate control arm from the shipped Keyword+LLM hybrid baseline.",
+      "dense": {
+        "provider": "openai",
+        "model": "text-embedding-3-large",
+        "dimension": 3072
+      },
+      "sparse": {
+        "provider": "splade",
+        "model": "prithivida/Splade_PP_en_v1"
+      },
+      "sparse_text_policy": "keyword_llm"
+    },
+    {
+      "arm_id": "voyage_4_large_splade_keyword_llm",
+      "label": "Voyage 4-large + SPLADE + Keyword+LLM",
+      "stage": "stage1",
+      "rationale": "Higher-quality low-cost dense challenger under the fixed SPLADE + Keyword+LLM control stack.",
+      "dense": {
+        "provider": "voyage",
+        "model": "voyage-4-large",
+        "dimension": 1024,
+        "env_api_key": "VOYAGE_API_KEY",
+        "query_input_type": "query",
+        "document_input_type": "document",
+        "extra": {
+          "requests_per_minute": 2.8,
+          "tokens_per_minute": 8000,
+          "max_tokens_per_request": 8000
+        }
+      },
+      "sparse": {
+        "provider": "splade",
+        "model": "prithivida/Splade_PP_en_v1"
+      },
+      "sparse_text_policy": "keyword_llm"
+    },
+    {
+      "arm_id": "voyage_4_lite_splade_keyword_llm",
+      "label": "Voyage 4-lite + SPLADE + Keyword+LLM",
+      "stage": "stage1",
+      "enabled": false,
+      "rationale": "Lower-latency dense challenger under the same sparse-side control.",
+      "dense": {
+        "provider": "voyage",
+        "model": "voyage-4-lite",
+        "dimension": 1024,
+        "env_api_key": "VOYAGE_API_KEY",
+        "query_input_type": "query",
+        "document_input_type": "document",
+        "extra": {
+          "requests_per_minute": 2.8,
+          "tokens_per_minute": 8000,
+          "max_tokens_per_request": 8000
+        }
+      },
+      "sparse": {
+        "provider": "splade",
+        "model": "prithivida/Splade_PP_en_v1"
+      },
+      "sparse_text_policy": "keyword_llm"
+    },
+    {
+      "arm_id": "bge_m3_dense_splade_keyword_llm",
+      "label": "BGE-M3 dense + SPLADE + Keyword+LLM",
+      "stage": "stage1",
+      "rationale": "Open dense challenger that stays on the fixed SPLADE sparse control path.",
+      "dense": {
+        "provider": "bge_m3",
+        "model": "BAAI/bge-m3",
+        "dimension": 1024,
+        "extra": {
+          "use_fp16": true
+        }
+      },
+      "sparse": {
+        "provider": "splade",
+        "model": "prithivida/Splade_PP_en_v1"
+      },
+      "sparse_text_policy": "keyword_llm"
+    }
+  ],
+  "stage2a_sparse_candidates": [
+    {
+      "candidate_id": "splade_control",
+      "label": "SPLADE control encoder",
+      "rationale": "Preserves the current production-relevant sparse encoder as the Stage 2A control.",
+      "spec": {
+        "provider": "splade",
+        "model": "prithivida/Splade_PP_en_v1"
+      }
+    },
+    {
+      "candidate_id": "bge_m3_sparse",
+      "label": "BGE-M3 sparse encoder",
+      "rationale": "Tests whether the BGE-M3 lexical output improves hybrid quality under the same Keyword+LLM sparse corpus.",
+      "spec": {
+        "provider": "bge_m3",
+        "model": "BAAI/bge-m3",
+        "extra": {
+          "use_fp16": true
+        }
+      }
+    }
+  ],
+  "stage2b_sparse_text_policies": [
+    {
+      "policy": "keyword_llm",
+      "label": "Keyword+LLM control corpus",
+      "rationale": "Keeps the current best-known sparse text treatment as the Stage 2B anchor."
+    },
+    {
+      "policy": "rule_only",
+      "label": "Rule-only corpus",
+      "rationale": "Uses the existing tool_name + description + parameter_names enrichment rule without LLM text."
+    },
+    {
+      "policy": "raw_original",
+      "label": "Raw description degradation check",
+      "rationale": "Measures the degradation when sparse text falls back to the original tool text only."
+    }
+  ]
+}

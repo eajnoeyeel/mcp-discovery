@@ -1,0 +1,6 @@
+{
+  "requestContext": {"http": {"method": "POST"}, "requestId": "test-2"},
+  "headers": {"content-type": "application/json", "x-api-key": "test-key"},
+  "body": "{\"server_id\": \"test-server\", \"name\": \"Test Server\", \"description\": \"A test MCP server\", \"url\": \"https://test.example.com\", \"tools\": [{\"tool_name\": \"test_tool\", \"description\": \"A test tool\"}]}",
+  "isBase64Encoded": false
+}

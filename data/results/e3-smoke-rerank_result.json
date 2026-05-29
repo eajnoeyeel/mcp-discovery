@@ -1,0 +1,34 @@
+{
+  "experiment": "E3-smoke-rerank",
+  "timestamp": "2026-04-10T17:14:03.401488+00:00",
+  "config": {
+    "pool_size": 292,
+    "top_k": 10,
+    "max_queries": 50,
+    "embedding_model": "text-embedding-3-large",
+    "reranker": "rerank-multilingual-v3.0",
+    "gt_sources": [
+      "mcp_atlas"
+    ]
+  },
+  "strategies": [
+    {
+      "name": "ParallelStrategy",
+      "metrics": {
+        "precision_at_1": 0.12,
+        "recall_at_k": 0.18,
+        "server_recall_at_k": 0.24,
+        "mrr": 0.13833333333333334,
+        "ndcg_at_5": 0.14861353116146786,
+        "confusion_rate": 0.06818181818181818,
+        "ece": 0.13331848754901401,
+        "latency_p50": 6000.516000029165,
+        "latency_p95": 6086.513792030746,
+        "latency_p99": 6252.521508507197,
+        "latency_mean": 5922.000716649927
+      },
+      "n_queries": 50,
+      "n_failed": 0
+    }
+  ]
+}

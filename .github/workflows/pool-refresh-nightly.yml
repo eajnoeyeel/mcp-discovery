@@ -1,0 +1,157 @@
+name: Pool Refresh Nightly (ADR-0018)
+
+'on':
+  workflow_dispatch:
+    inputs:
+      apply_reconcile:
+        description: "Apply reconciliation plan (default: dry-run only)"
+        required: false
+        default: false
+        type: boolean
+      force_reprobe:
+        description: "Force re-probe all servers (bypass cache)"
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  pool-refresh-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "25"
+
+      - name: Secret scan (pre-probe)
+        id: secret-scan
+        run: |
+          set +e
+          # Keyword + high-entropy scan on transports.yaml
+          grep -E '(?i)\b(token|key|auth|secret|bearer)\b.*?[A-Za-z0-9_\-]{32,}' \
+            data/probes/transports.yaml || true
+
+          # If any matches found, fail the job
+          if [ $? -eq 0 ]; then
+            echo "error=Secrets detected in transports.yaml" >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+
+      - name: Probe targeted servers (dry-run)
+        id: probe
+        env:
+          FORCE_REPROBE: ${{ inputs.force_reprobe }}
+        run: |
+          set -o pipefail
+          FORCE_FLAG=""
+          if [ "$FORCE_REPROBE" = "true" ]; then
+            FORCE_FLAG="--force"
+          fi
+
+          uv run python scripts/refresh_pool.py \
+            --servers-from data/probes/targeted_set.txt \
+            --output-plan /tmp/plan.json \
+            --dry-run $FORCE_FLAG 2>&1 | tee /tmp/probe.log
+
+          echo "status=success" >> "$GITHUB_OUTPUT"
+
+      - name: Generate reconciliation plan
+        id: reconcile
+        run: |
+          uv run python scripts/apply_gt_reconcile.py \
+            --plan /tmp/plan.json \
+            --dry-run 2>&1 | tee /tmp/reconcile.log
+
+          # Extract summary
+          ADDED=$(grep "^Added" /tmp/reconcile.log | awk '{print $2}' || echo "0")
+          DROPPED=$(grep "^Dropped" /tmp/reconcile.log | awk '{print $2}' || echo "0")
+          RENAMED=$(grep "^Renamed" /tmp/reconcile.log | awk '{print $2}' || echo "0")
+
+          echo "added=$ADDED" >> "$GITHUB_OUTPUT"
+          echo "dropped=$DROPPED" >> "$GITHUB_OUTPUT"
+          echo "renamed=$RENAMED" >> "$GITHUB_OUTPUT"
+
+      - name: Verify audit trail
+        id: audit
+        run: |
+          uv run python scripts/verify_audit_trail.py data/probes/journal.jsonl || true
+          echo "status=verified" >> "$GITHUB_OUTPUT"
+
+      - name: Apply reconciliation (if requested)
+        id: apply
+        env:
+          APPLY_RECONCILE: ${{ inputs.apply_reconcile }}
+        run: |
+          if [ "$APPLY_RECONCILE" = "true" ]; then
+            uv run python scripts/apply_gt_reconcile.py --plan /tmp/plan.json
+            uv run python scripts/build_base_pool.py
+            uv run python scripts/verify_ground_truth.py
+            echo "status=applied" >> "$GITHUB_OUTPUT"
+          else
+            echo "status=dry_run" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Validate alignment (post-reconcile)
+        if: inputs.apply_reconcile == true
+        id: validate
+        run: |
+          uv run python scripts/validate_pool_gt_alignment.py \
+            --pool-sizes 5 20 50 100 200 292 \
+            --json-out data/results/alignment_report_nightly.json
+
+      - name: Upload probe snapshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: probe-artifacts
+          path: |
+            /tmp/plan.json
+            /tmp/probe.log
+            /tmp/reconcile.log
+            data/results/alignment_report_nightly.json
+          retention-days: 7
+
+      - name: Job summary
+        if: always()
+        env:
+          PROBE_STATUS: ${{ steps.probe.outputs.status }}
+          ADDED_ROWS: ${{ steps.reconcile.outputs.added }}
+          DROPPED_ROWS: ${{ steps.reconcile.outputs.dropped }}
+          RENAMED_ROWS: ${{ steps.reconcile.outputs.renamed }}
+          AUDIT_STATUS: ${{ steps.audit.outputs.status }}
+          APPLY_STATUS: ${{ steps.apply.outputs.status }}
+        run: |
+          cat >> "$GITHUB_STEP_SUMMARY" <<'EOF'
+          ## Pool Refresh Nightly Report
+
+          **Probe Result**: ${{ env.PROBE_STATUS }}
+
+          **Reconciliation Summary**:
+          - Added: ${{ env.ADDED_ROWS }}
+          - Dropped: ${{ env.DROPPED_ROWS }}
+          - Renamed: ${{ env.RENAMED_ROWS }}
+
+          **Audit Trail**: ${{ env.AUDIT_STATUS }}
+
+          **Apply Status**: ${{ env.APPLY_STATUS }}
+
+          **Artifacts**: See attached probe-artifacts.zip for full details.
+          EOF

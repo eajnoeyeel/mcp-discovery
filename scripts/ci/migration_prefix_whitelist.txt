@@ -1,0 +1,12 @@
+# Grandfathered duplicate-prefix migration files.
+# All members of a duplicate group must be listed here for the CI gate to pass.
+020_mv_to_view.sql
+020_http_mcp_metadata_overrides.sql
+021_http_mcp_parameter_metadata.sql
+021_analytics_views_fix.sql
+026_brin_log_indexes.sql
+026_pending_execution_resume_contract.sql
+028_scoped_dashboard_view.sql
+028_user_provider_connection_policy_split.sql
+029_apify_oauth_gateway_route.sql
+029_drop_plaintext_secrets.sql

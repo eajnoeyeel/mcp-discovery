@@ -1,0 +1,73 @@
+# transports.yaml — transport specifications for targeted probe servers (ADR-0018)
+#
+# Loaded by: src/mcp_discovery/data/transport_spec.py (load_transports_yaml)
+# Used by:   scripts/refresh_pool.py → ProberRegistry (pool_prober.py)
+#
+# Format per entry:
+#   server_id:
+#     transport: "stdio" | "http" | "script"
+#     command: "npx -y <package>@<version>"    # stdio: MUST pin explicit version, never @latest
+#     url: "https://..."                         # http: base URL
+#     env: {}                                    # optional: env var names (values from runtime env)
+#
+# INVARIANTS (enforced by transport_spec.py loader):
+#   - stdio commands MUST use explicit version pins. "@latest" is REJECTED.
+#   - env var values resolved from environment at runtime; never hardcode secrets here.
+#   - Unknown transport types → ScriptProber (TRANSPORT_UNSUPPORTED result).
+#
+# All 5 npm packages confirmed via `npm view` on 2026-04-19.
+
+servers:
+  # --- postgres --------------------------------------------------------------
+  # 58 GT rows reference this server; fully missing from current pool.
+  postgres:
+    transport: stdio
+    command: "npx -y @modelcontextprotocol/server-postgres@0.6.2"
+    env: {}
+    notes: >
+      Official @modelcontextprotocol postgres server.
+      Does NOT require DATABASE_URL for tools/list (protocol-only probe).
+
+  # --- yahoo-finance ---------------------------------------------------------
+  # 56 GT rows reference this server; fully missing from current pool.
+  yahoo-finance:
+    transport: stdio
+    command: "npx -y @fre4x/yahoo-finance@1.0.55"
+    env: {}
+    notes: >
+      Community package by fritzprix (published 2026-04-18). No API key required
+      for tools/list. Synthetic GT tool names may not match live names; reconciler
+      will fuzzy-match or drop per R3/R5.
+
+  # --- brave-search ----------------------------------------------------------
+  # 54 GT rows; server is in pool but 3 tools (web_search, video_search, local_search)
+  # have drifted names.
+  brave-search:
+    transport: stdio
+    command: "npx -y @modelcontextprotocol/server-brave-search@0.6.2"
+    env:
+      BRAVE_API_KEY: BRAVE_API_KEY
+    notes: >
+      Does NOT require BRAVE_API_KEY for tools/list (protocol-only probe).
+      API key only needed for tools/call, which this harness never invokes.
+
+  # --- arxiv -----------------------------------------------------------------
+  # 37 GT rows; server is in pool but 2 tools (get_abstract, get_citations)
+  # have drifted names.
+  arxiv:
+    transport: stdio
+    command: "npx -y @fre4x/arxiv@1.0.55"
+    env: {}
+    notes: >
+      Community package by fritzprix. Protocol-only probe; no creds.
+
+  # --- github ----------------------------------------------------------------
+  # 2 GT rows; get_commit → list_commits (seeded in data/probes/manual_remaps.yaml as R2).
+  github:
+    transport: stdio
+    command: "npx -y @modelcontextprotocol/server-github@2025.4.8"
+    env:
+      GITHUB_PERSONAL_ACCESS_TOKEN: GITHUB_PERSONAL_ACCESS_TOKEN
+    notes: >
+      tools/list does not require PAT; PAT only needed for tools/call.
+      Manual remap already registered: github::get_commit → github::list_commits.

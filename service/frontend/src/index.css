@@ -1,0 +1,82 @@
+/* Framer-inspired design system — see service/frontend/DESIGN.md for rules. */
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Framer palette — pure-black canvas, Framer Blue accent */
+    --background: 0 0% 0%;               /* Void Black #000 */
+    --foreground: 0 0% 100%;             /* Pure White #fff */
+
+    --card: 0 0% 3.5%;                   /* Near Black #090909 */
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 3.5%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 204 100% 50%;             /* Framer Blue #0099ff */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 10%;               /* Dark surface */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 65%;        /* Muted Silver #a6a6a6 */
+
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 15%;                  /* subtle dark rule */
+    --input: 0 0% 15%;
+    --ring: 204 100% 50%;                /* Framer Blue focus */
+
+    --radius: 0.625rem;                  /* 10px — Framer card range */
+
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 0%;
+
+    --sidebar-background: 0 0% 3.5%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 204 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 204 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Inter', 'Inter Variable', -apple-system, system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    /* OpenType features per DESIGN.md — Inter custom glyph stacks */
+    font-feature-settings: "rlig" 1, "calt" 1, "cv01", "cv05", "cv09", "cv11", "ss03", "ss07";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Display headings default to Satoshi (GT Walsheim stand-in) w/ tight negative tracking */
+  h1, h2, h3, .font-display {
+    font-family: 'Satoshi', 'Inter', system-ui, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+  }
+}

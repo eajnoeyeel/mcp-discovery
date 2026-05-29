@@ -1,0 +1,10 @@
+{
+  "Parameters": {
+    "QDRANT_URL": "${QDRANT_URL}",
+    "QDRANT_API_KEY": "${QDRANT_API_KEY}",
+    "OPENAI_API_KEY": "${OPENAI_API_KEY}",
+    "SUPABASE_URL": "${SUPABASE_URL}",
+    "SUPABASE_SERVICE_KEY": "${SUPABASE_SERVICE_KEY}",
+    "MLP_API_KEY": "${MLP_API_KEY}"
+  }
+}

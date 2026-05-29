@@ -1,0 +1,34 @@
+{
+  "experiment": "E1-smoke-sequential-no-rerank",
+  "timestamp": "2026-04-10T23:51:46.231894+00:00",
+  "config": {
+    "pool_size": 292,
+    "top_k": 10,
+    "max_queries": 50,
+    "embedding_model": "text-embedding-3-large",
+    "reranker": "none",
+    "gt_sources": [
+      "mcp_atlas"
+    ]
+  },
+  "strategies": [
+    {
+      "name": "SequentialStrategy",
+      "metrics": {
+        "precision_at_1": 0.1,
+        "recall_at_k": 0.14,
+        "server_recall_at_k": 0.18,
+        "mrr": 0.12,
+        "ndcg_at_5": 0.1252371901428583,
+        "confusion_rate": 0.044444444444444446,
+        "ece": 0.24493398989999998,
+        "latency_p50": 177.9648750089109,
+        "latency_p95": 234.50987657997754,
+        "latency_p99": 1466.3614023465184,
+        "latency_mean": 232.90898504201323
+      },
+      "n_queries": 50,
+      "n_failed": 0
+    }
+  ]
+}

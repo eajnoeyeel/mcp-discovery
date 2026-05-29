@@ -1,0 +1,3799 @@
+{
+  "experiment": "E4v2",
+  "created_at": "2026-04-07",
+  "clusters": [
+    {
+      "name": "file_operations",
+      "tools": [
+        {
+          "tool_id": "filesystem::list_directory",
+          "original_description": "List directory contents with [FILE] or [DIR] prefixes",
+          "enriched_description": "Lists the contents of a specified directory, using [FILE] or [DIR] prefixes to categorize items. Use when needing to view directory structure. Key parameter: path."
+        },
+        {
+          "tool_id": "filesystem::read_file",
+          "original_description": "Read complete contents of a file",
+          "enriched_description": "Reads the complete contents of a specified file, useful for accessing file data in various applications. Key parameter: path."
+        },
+        {
+          "tool_id": "filesystem::read_multiple_files",
+          "original_description": "Read multiple files simultaneously",
+          "enriched_description": "Reads multiple files simultaneously from specified paths, useful for processing large datasets or gathering information from various sources efficiently."
+        },
+        {
+          "tool_id": "desktop-commander::list_directory",
+          "original_description": "\n                        Get a detailed listing of all files and directories in a specified path.\n                        \n                        Use this instead of 'execute_command' with ls/dir commands.\n                        Results distinguish between files and directories with [FILE] and [DIR] prefixes.\n                        Only works within allowed directories.\n                        \n                        IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths.\n                        This command can be referenced as \"DC: ...\" or \"use Desktop Commander to ...\" in your instructions.",
+          "enriched_description": "Lists all files and directories in a specified path, distinguishing between them. Use absolute paths for reliable results within allowed directories."
+        },
+        {
+          "tool_id": "desktop-commander::read_file",
+          "original_description": "\n                        Read the contents of a file from the file system or a URL with optional offset and length parameters.\n                        \n                        Prefer this over 'execute_command' with cat/type for viewing files.\n                        \n                        Supports partial file reading with:\n                        - 'offset' (start line, default: 0)\n                        - 'length' (max lines to read, default: configurable via 'fileReadLineLimit' setting, initially 1000)\n                        \n                        When reading from the file system, only works within allowed directories.\n                        Can fetch content from URLs when isUrl parameter is set to true\n                        (URLs are always read in full regardless of offset/length).\n                        \n                        Handles text files normally and image files are returned as viewable images.\n                        Recognized image types: PNG, JPEG, GIF, WebP.\n                        \n                        IMPORTANT: Always use absolute paths (starting with '/' or drive letter like 'C:\\') for reliability. Relative paths may fail as they depend on the current working directory. Tilde paths (~/...) might not work in all contexts. Unless the user explicitly asks for relative paths, use absolute paths.\n                        This command can be referenced as \"DC: ...\" or \"use Desktop Commander to ...\" in your instructions.",
+          "enriched_description": "Reads file contents from the file system or a URL, supporting optional offset and length for partial reading. Use when accessing text or image files."
+        }
+      ],
+      "target": "filesystem::list_directory",
+      "rationale": "E4 showed +0.305 uplift for list_directory but it cannibalized desktop-commander tools. Rich cluster for selection controllability.",
+      "queries": [
+        {
+          "query_id": "gt-atlas-005-s03",
+          "query": "Show me the directory tree for my local project at /data/repos/storyteller.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-005-s04",
+          "query": "Read the code from my React component files to find the one with the fewest lines.",
+          "correct_tool_id": "filesystem::read_multiple_files",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-019-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-019-s01",
+          "query": "List the contents of the /data/repos directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-023-s00",
+          "query": "List the contents of the /data directory on the server.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-023-s01",
+          "query": "List the contents of the /data/repos directory on the server.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-023-s02",
+          "query": "List the contents of the directory for the MCP server calculator.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-024-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-024-s01",
+          "query": "List the contents of the /data/repos directory.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-029-s02",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-029-s03",
+          "query": "List the contents of the /data/repos directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-037-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-037-s01",
+          "query": "Read the Top Movies.csv file from my data folder.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-041-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-041-s01",
+          "query": "Read the food and beverage consumption data from the file located at /data/food and beverage consumption.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-049-s00",
+          "query": "List the files in the /data directory on my computer.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-049-s01",
+          "query": "List the files in the /data/repos directory.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-062-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-062-s01",
+          "query": "Read the file containing food and beverage consumption data.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-064-s02",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-064-s03",
+          "query": "Read the contents of the Top Movies.csv file.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-073-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-073-s01",
+          "query": "List the contents of the /data/repos directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-080-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-080-s01",
+          "query": "Read the file located at /data/Barber Shop.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-080-s03",
+          "query": "Read the file containing food and beverage consumption data.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-081-s01",
+          "query": "List the contents of the /data directory on the filesystem server.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-081-s02",
+          "query": "List the contents of the /data/repos directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-082-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-082-s01",
+          "query": "List the contents of the /data/repos directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-083-s00",
+          "query": "List the contents of my data directory.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-083-s01",
+          "query": "Read the file located at /data/Top Movies.csv.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-090-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-090-s01",
+          "query": "Read the Crime_records.csv file from the data directory.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-091-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-091-s01",
+          "query": "Read the fantasy sports data from the file located at /data/fantasy sports.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-107-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-107-s01",
+          "query": "List the contents of the /data/repos directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-110-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-110-s01",
+          "query": "Read my Coinbase trade history from the file located at /data/CoinbaseTradeHistory.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-111-s00",
+          "query": "List the contents of the /data directory on my computer.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-111-s01",
+          "query": "Read the Crime_records.csv file on my computer.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-112-s01",
+          "query": "List the files in the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-112-s02",
+          "query": "List the files in my local directory at /data/repos.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-112-s03",
+          "query": "Check the directory tree of my project files in the /data/repos/storyteller path.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-112-s04",
+          "query": "Check the local files for the following React components: aspect-ratio.tsx, button.tsx, card.tsx, and skeleton.tsx.",
+          "correct_tool_id": "filesystem::read_multiple_files",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-119-s00",
+          "query": "List the contents of my data directory.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-119-s01",
+          "query": "Read the Crime_records.csv file from my cloud database.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-127-s01",
+          "query": "List the contents of the /data directory on the desktop-commander server.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-127-s02",
+          "query": "Read the crime records from the file located at /data/Crime_records.csv.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-131-s01",
+          "query": "List the contents of the /data directory on my local PC.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-131-s02",
+          "query": "Read the file located at /data/CoinbaseTradeHistory.csv to check my trade history.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-132-s03",
+          "query": "Read the contents of the file located at /data/food and beverage consumption.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-137-s01",
+          "query": "List the contents of the /data directory on the filesystem server.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-137-s02",
+          "query": "Read the fantasy sports data from the file to find the lowest salary among players whose contracts expired in the same month and year as Gabe Maldoff's paper on web scraping ethics.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-139-s03",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-139-s04",
+          "query": "Read the file located at /data/fantasy sports.csv to check the local data.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-142-s00",
+          "query": "List the files in the /data directory on my local PC.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-142-s01",
+          "query": "Read the Crime_records.csv file on my local PC.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-144-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-144-s01",
+          "query": "Read the contents of the fantasy sports file located at /data/fantasy sports.csv.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-151-s00",
+          "query": "List the contents of the /data directory on my computer.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-151-s01",
+          "query": "List the contents of the /data/repos directory on my computer.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-154-s01",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-154-s02",
+          "query": "List the contents of the /data/repos directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-158-s01",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-158-s02",
+          "query": "Read the food and beverage consumption CSV file located at /data/food and beverage consumption.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-159-s00",
+          "query": "List the contents of the /data directory on the server.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-159-s01",
+          "query": "Read my Coinbase trade history from the file located at /data/CoinbaseTradeHistory.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-160-s01",
+          "query": "List the files in the /data directory on my computer.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-160-s02",
+          "query": "Read the file located at /data/Top Movies.csv to find the genre and IMDb score of the movie recommended by my friend Eldson in June 2025.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-163-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-163-s01",
+          "query": "Read the crime records from the file located at /data/Crime_records.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-167-s00",
+          "query": "List the contents of the /data directory on the filesystem server.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-167-s01",
+          "query": "Read the food and beverage consumption data from the CSV file.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-177-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-177-s01",
+          "query": "Read the Coinbase trade history file located at /data/CoinbaseTradeHistory.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-178-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-178-s01",
+          "query": "List the contents of the /data/repos directory.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-183-s02",
+          "query": "List the contents of the /data/ directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-183-s03",
+          "query": "Read the crime records file to check for service requests related to the arson case in May 2017.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-198-s00",
+          "query": "List the contents of the /data directory on the filesystem server.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-198-s01",
+          "query": "Read the file containing the weekly financials for the pet shop from 2023.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-208-s00",
+          "query": "List the contents of the /data directory on my local files.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-208-s01",
+          "query": "Read the Crime_records.csv file from my local files.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-208-s03",
+          "query": "Read the file located at /data/Covid 19 impacts on hospitals.csv.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-210-s01",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-210-s02",
+          "query": "Read the file located at /data/Top Movies.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-212-s00",
+          "query": "List the contents of the /data directory on my local PC.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-212-s01",
+          "query": "List the contents of the /data/repos directory on the server.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-212-s02",
+          "query": "List the contents of the directory for the storyteller repository located at /data/repos/storyteller.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-212-s03",
+          "query": "Read the first 10 lines of the package.json file in the storyteller repository on my local PC.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-218-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-218-s01",
+          "query": "Read the contents of the Crime_records.csv file in my local files.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-219-s00",
+          "query": "Read the file located at /data/Top Movies.csv.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-225-s02",
+          "query": "List the files in the storyteller project directory.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-225-s03",
+          "query": "Read the README.md file in the storyteller project.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-228-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-228-s01",
+          "query": "Read the crime records from the file located at /data/Crime_records.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-229-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-229-s01",
+          "query": "Read the file containing food and beverage consumption data.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-233-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-233-s01",
+          "query": "Read the file located at /data/Top Movies.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-236-s02",
+          "query": "List the contents of the /data directory on the server.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-236-s03",
+          "query": "Read the Top Movies.csv file from the server filesystem.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-237-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-237-s01",
+          "query": "Read the Top Movies.csv file to find the crime movie with an 8.9 IMDb rating.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-241-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-241-s01",
+          "query": "Read my Coinbase trade history from the file located at /data/CoinbaseTradeHistory.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-247-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-247-s01",
+          "query": "Read the file located at /data/Top Movies.csv.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-249-s00",
+          "query": "List the files in the /data directory on my PC.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-249-s01",
+          "query": "Read the Barber Shop data from the file located at /data/Barber Shop.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-257-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-257-s01",
+          "query": "Read the file located at /data/Top Movies.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-260-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-260-s01",
+          "query": "List the contents of the /data/repos directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-262-s00",
+          "query": "List the contents of the /data directory on the desktop-commander server.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-262-s01",
+          "query": "Read the fantasy sports data from the file located at /data/fantasy sports.csv.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-279-s04",
+          "query": "List the contents of the /data directory on the filesystem server.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-279-s05",
+          "query": "Read the Crime_records.csv file to find the age and gender of the suspect from the reported crime in the year when the average expense for each employee in the car business was 4259.72.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-281-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-281-s01",
+          "query": "List the contents of the /data/repos directory.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-286-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-286-s01",
+          "query": "Read the contents of the fantasy sports data file located at /data/fantasy sports.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-292-s01",
+          "query": "List the contents of the /data directory on my computer.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-292-s02",
+          "query": "Read the file located at /data/Covid 19 impacts on hospitals.csv.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-293-s00",
+          "query": "List the contents of the /data directory on the filesystem server.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-293-s01",
+          "query": "Read the weekly financials for pet care in 2023 from the file located at /data/Pet Care 2023 Weekly Financials.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-297-s00",
+          "query": "List the files in my /data directory.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-297-s01",
+          "query": "Read the Top Movies.csv file from my local files.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-306-s00",
+          "query": "List the files in the /data directory on my PC.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-306-s01",
+          "query": "Read the file located at /data/Top Movies.csv on my local PC.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-313-s02",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-313-s03",
+          "query": "Read the contents of the Top Movies.csv file in my local movie data.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-316-s02",
+          "query": "List the files in the /data directory on my computer.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-316-s03",
+          "query": "Read the Top Movies.csv file from my computer to find the IMDb rating for the movie Nosdle.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-318-s00",
+          "query": "List the files in the /data directory on my computer.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-318-s01",
+          "query": "Read the file located at /data/Pet Care 2023 Weekly Financials.csv.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-336-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-336-s01",
+          "query": "Read the file located at /data/Top Movies.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-340-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-353-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-353-s01",
+          "query": "Read the fantasy sports data from the file located at /data/fantasy sports.csv.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-365-s00",
+          "query": "List the contents of the /data directory on the server.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-365-s01",
+          "query": "Read the weekly financials data for pet care from the file \"Pet Care 2023 Weekly Financials.csv\".",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-366-s00",
+          "query": "List the contents of the /data directory on the server.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-366-s01",
+          "query": "Read my CoinbaseTradeHistory.csv file located in the /data directory.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-368-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-368-s01",
+          "query": "List the contents of the /data/repos directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-368-s02",
+          "query": "List the contents of the snake-game repository directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-368-s03",
+          "query": "Read the README.md file from my local snake game repository.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-371-s02",
+          "query": "List the contents of the /data directory on the server.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-371-s03",
+          "query": "Read the contents of the Top Movies.csv file from the server.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-378-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-378-s01",
+          "query": "Read the Pet Care 2023 Weekly Financials CSV file.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-380-s01",
+          "query": "List the contents of the /data directory on my computer.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-380-s02",
+          "query": "List the contents of the /data/repos directory on my computer.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-384-s00",
+          "query": "Show me the directory tree of my files in the /data path.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-388-s00",
+          "query": "List the files in the /data directory.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-388-s01",
+          "query": "Read the Top Movies.csv file from my data.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-390-s03",
+          "query": "List the contents of my data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-390-s04",
+          "query": "Read my Top Movies list from the CSV file.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-429-s02",
+          "query": "List the contents of the /data directory on the filesystem server.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-429-s03",
+          "query": "Read the Crime_records.csv file to analyze high-severity incidents.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-434-s04",
+          "query": "List the contents of the /data directory on the filesystem server.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-434-s05",
+          "query": "Read the file located at /data/Covid 19 impacts on hospitals.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-437-s00",
+          "query": "List the contents of the /data directory on the filesystem server.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-437-s01",
+          "query": "Read the crime records from the file to find the date of the cryptocurrency hack.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-437-s03",
+          "query": "Read my Coinbase trade history from the file to investigate the crime date and cryptocurrency prices.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-450-s00",
+          "query": "List the contents of the /data directory on the desktop-commander server.",
+          "correct_tool_id": "desktop-commander::list_directory",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-450-s01",
+          "query": "Read the Pet Care 2023 Weekly Financials file.",
+          "correct_tool_id": "desktop-commander::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-455-s02",
+          "query": "List the contents of the /data directory on the filesystem server.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-455-s03",
+          "query": "Read the Pet Care 2023 Weekly Financials CSV file.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-458-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-458-s01",
+          "query": "Read the Pet Care 2023 Weekly Financials CSV file.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-458-s02",
+          "query": "Read the food and beverage consumption data from the CSV file.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-461-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-461-s01",
+          "query": "Read the file located at /data/Top Movies.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-466-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-466-s01",
+          "query": "Read the file located at /data/Top Movies.csv to get my local movie data.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-475-s01",
+          "query": "List the contents of the /data directory on the server.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-475-s02",
+          "query": "Read my Coinbase trade history from the file located at /data/CoinbaseTradeHistory.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-482-s00",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-482-s01",
+          "query": "Read the CoinbaseTradeHistory.csv file from my local data.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-485-s00",
+          "query": "List the contents of the /data directory on my computer.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-485-s01",
+          "query": "Read the file located at /data/CoinbaseTradeHistory.csv.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-499-s02",
+          "query": "List the contents of the /data directory.",
+          "correct_tool_id": "filesystem::list_directory",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-499-s03",
+          "query": "Read the file containing the weekly financials for my pet care business from 2023.",
+          "correct_tool_id": "filesystem::read_file",
+          "label": "C"
+        }
+      ],
+      "stats": {
+        "total_queries": 189,
+        "t_queries": 82,
+        "c_queries": 107
+      }
+    },
+    {
+      "name": "git_vcs",
+      "tools": [
+        {
+          "tool_id": "git::git_log",
+          "original_description": "Shows the commit logs",
+          "enriched_description": "Retrieves and displays the commit logs for a specified repository, useful for tracking changes and understanding project history."
+        },
+        {
+          "tool_id": "git::git_status",
+          "original_description": "Shows the working tree status",
+          "enriched_description": "Displays the current status of the working tree, useful for tracking changes in files and understanding the state of the repository."
+        },
+        {
+          "tool_id": "git::git_diff_unstaged",
+          "original_description": "Shows changes in the working directory that are not yet staged",
+          "enriched_description": "Displays unstaged changes in the working directory, useful for reviewing modifications before staging them for commit."
+        },
+        {
+          "tool_id": "git::git_show",
+          "original_description": "Shows the contents of a commit",
+          "enriched_description": "Displays the contents of a specific commit, useful for reviewing changes and understanding project history."
+        },
+        {
+          "tool_id": "github::list_commits",
+          "original_description": "Gets commits of a branch in a repository",
+          "enriched_description": "Retrieves commits from a specified branch in a repository, useful for tracking changes and contributions. Key parameters include owner, repo, and sha."
+        },
+        {
+          "tool_id": "github::search_repositories",
+          "original_description": "Search for GitHub repositories",
+          "enriched_description": "Searches GitHub repositories based on a specified query, useful for finding relevant projects; supports pagination with parameters for page and perPage."
+        }
+      ],
+      "target": "git::git_log",
+      "rationale": "Tools have genuinely different functions (history vs status vs diff vs show) with similar short descriptions. Best cluster for proving that description enrichment helps reranker distinguish.",
+      "queries": [
+        {
+          "query_id": "gt-atlas-001-s00",
+          "query": "Search for the AssaultCube repository on GitHub.",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-019-s02",
+          "query": "Show me the log of the last commit in my snake-game project located in /data/repos/snake-game.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-019-s03",
+          "query": "Show me the changes made in the last commit for my snake-game project.",
+          "correct_tool_id": "git::git_show",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-023-s03",
+          "query": "Show me the last 20 commits in the repository for the MCP server calculator.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-023-s04",
+          "query": "Show me the first version of the main README from the mcp-server-calculator repository at revision dc13dcfbdf88e7b2c2f42dc29f62c0b6d2b6e20e.",
+          "correct_tool_id": "git::git_show",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-024-s02",
+          "query": "Show me the commit history for the storyteller project in the repository at /data/repos/storyteller to find the merge commit message and date after I updated the readme file.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-029-s04",
+          "query": "Show me the commit details from the snake game repository that occurred on the same day the World Taekwondo Championships began in 2023, the year Oppenheimer was released.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-029-s05",
+          "query": "Show the commit details for revision 62d4708a93a5cfe80ac04eb01c2246f67eefb052 in the snake-game repository.",
+          "correct_tool_id": "git::git_show",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-031-s02",
+          "query": "Show me the commit history for the repository at /data/repos/metmuseum-mcp, retrieving up to 1000 commits.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-031-s04",
+          "query": "Show me the details of the 30th commit in the metmuseum-mcp repository.",
+          "correct_tool_id": "git::git_show",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-048-s01",
+          "query": "Search for repositories named \"g4hunter\" on GitHub.",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-048-s02",
+          "query": "List the commits for the G4Hunter repository owned by LacroixLaurent.",
+          "correct_tool_id": "github::list_commits",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-049-s02",
+          "query": "What files were changed in the second to last commit of the API repository located at /data/repos/metmuseum-mcp?",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-049-s03",
+          "query": "Show me the files that were changed in the second to last commit of my museum API repository.",
+          "correct_tool_id": "git::git_show",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-065-s02",
+          "query": "Search for repositories related to \"metmuseum-mcp\" on GitHub.",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-065-s03",
+          "query": "List all commits for the metmuseum-mcp repository owned by mikechao.",
+          "correct_tool_id": "github::list_commits",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-073-s02",
+          "query": "Show the commit log for the storyteller project located at /data/repos/storyteller.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-073-s03",
+          "query": "Show the details of the commit with revision ba84519b05c8bdec705348c0e53d23ce32c7e19a in the storyteller project repository located at /data/repos/storyteller.",
+          "correct_tool_id": "git::git_show",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-073-s04",
+          "query": "Show me the unstaged changes in the storyteller project repository located at /data/repos/storyteller.",
+          "correct_tool_id": "git::git_diff_unstaged",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-078-s04",
+          "query": "Find online repositories using JavaScript that were created on 2022-09-10.",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-081-s03",
+          "query": "Show me the commit history for the Met Museum repository.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-081-s04",
+          "query": "Show the details of the commit with the hash de9f5b62fb8acf90131b3b6ea58632ee979109c8 in the repository located at /data/repos/metmuseum-mcp.",
+          "correct_tool_id": "git::git_show",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-082-s02",
+          "query": "Show me the commit history for my repository at /data/repos/balldontlie-mcp.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-102-s00",
+          "query": "Search for repositories related to TensorFlow on GitHub.",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-107-s02",
+          "query": "Show me the commit history for the slackr project to find the last version release in 2024.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-107-s03",
+          "query": "Show me the details of the commit with the hash 266f49303621cf01979ed65a02e1f92c1da09460 in the slackr project repository.",
+          "correct_tool_id": "git::git_show",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-121-s02",
+          "query": "Search for repositories owned by the user smuyyh on GitHub.",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-147-s00",
+          "query": "Search for repositories with the name A2A on GitHub.",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-147-s01",
+          "query": "List the commits in the A2A repository owned by a2aproject.",
+          "correct_tool_id": "github::list_commits",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-151-s02",
+          "query": "Show me the commit history for the sports repo located at /data/repos/balldontlie-mcp.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-154-s03",
+          "query": "Show me the commit history for my basketball data repo and identify the oldest update from April 2025, including the author and description.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-155-s02",
+          "query": "Check the status of my storyteller repository to see if there are any unstaged files.",
+          "correct_tool_id": "git::git_status",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-156-s00",
+          "query": "Search for Python repositories related to talking directly with a model from the terminal.",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-170-s02",
+          "query": "What is the commit history for my local snake game repository?",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-178-s02",
+          "query": "Show me the commit history for the funding file in my snake-game repository located at /data/repos/snake-game.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-189-s02",
+          "query": "Check the status of my local Slack repository to see if there are any unstaged files.",
+          "correct_tool_id": "git::git_status",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-212-s05",
+          "query": "Show me the commit history for the storyteller repository located at /data/repos/storyteller, with a maximum of 200 entries.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-218-s02",
+          "query": "Search for repositories owned by The Onion on GitHub.",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-225-s01",
+          "query": "Show me the git log for the storyteller project.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-238-s02",
+          "query": "Show me the last 1000 commits in the repository located at /data/repos/slackr.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-238-s04",
+          "query": "Show the details of the commit with revision 7d8c2855d7bcc4738c67c1ad128afc2ea468289b in the /data/repos/slackr repository.",
+          "correct_tool_id": "git::git_show",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-239-s00",
+          "query": "Search for GitHub repositories related to \"mastodon\".",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-256-s00",
+          "query": "Search for repositories that mention \"seqwish\".",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-259-s02",
+          "query": "Find C++ projects on GitHub by user vivaldi that contain 'GN' in their name.",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-260-s02",
+          "query": "Show me the commit history for the repository located at /data/repos/snake-game, including all commits from June 2022 to July 15, 2023.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-275-s02",
+          "query": "Find public code repositories from 2024 that focus on simulating seizure-like brain signals using EEG and MNE.",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-281-s02",
+          "query": "Check the commit history for the repository located at /data/repos/storyteller.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-289-s04",
+          "query": "Search for GitHub repositories that contain statistics on Babe Ruth.",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-304-s00",
+          "query": "Search for the freecodecamp repository on GitHub.",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-360-s03",
+          "query": "Find the public repository called babel-plugin-react-persist by the user DAB0mB on GitHub.",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-367-s04",
+          "query": "Show me the commit history for the repo at /data/repos/slackr, including up to 10,000 commits.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-367-s06",
+          "query": "Show me the details of the 16th commit in the slackr repo.",
+          "correct_tool_id": "git::git_show",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-368-s04",
+          "query": "List the commits for the snake-game repository owned by Atamyrat2005.",
+          "correct_tool_id": "github::list_commits",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-368-s05",
+          "query": "Show me the commit history for the snake game repository and include up to 100 commits.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-376-s02",
+          "query": "Search for the repository \"balldontlie-mcp\" on GitHub.",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-376-s03",
+          "query": "List all commits for the repository 'balldontlie-mcp' owned by 'mikechao'.",
+          "correct_tool_id": "github::list_commits",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-380-s03",
+          "query": "Show me the commit history for the sports repository located at /data/repos/balldontlie-mcp.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-384-s01",
+          "query": "What is the date of the initial commit in the snake game repository located at /data/repos/snake-game?",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-394-s00",
+          "query": "Search for repositories related to pandas on GitHub.",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-416-s00",
+          "query": "Search for repositories related to BZFlag on GitHub.",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-419-s03",
+          "query": "Show me the team chat history updates from my local repo in the month and year when India launched its space mission to study the sun, with the earliest timestamp.",
+          "correct_tool_id": "git::git_log",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-467-s02",
+          "query": "Search for the repository named \"balldontlie-mcp\" on GitHub.",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-467-s03",
+          "query": "List all commits for the balldontlie-mcp repository owned by mikechao.",
+          "correct_tool_id": "github::list_commits",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-488-s02",
+          "query": "Search for the GitHub repository named \"metmuseum-mcp\".",
+          "correct_tool_id": "github::search_repositories",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-490-s01",
+          "query": "List the commits for the Ethereum Mist repository on GitHub.",
+          "correct_tool_id": "github::list_commits",
+          "label": "C"
+        }
+      ],
+      "stats": {
+        "total_queries": 65,
+        "t_queries": 24,
+        "c_queries": 41
+      }
+    },
+    {
+      "name": "database_records",
+      "tools": [
+        {
+          "tool_id": "airtable::search_records",
+          "original_description": "Search for records containing specific text",
+          "enriched_description": "Searches for records in a specified table that contain a specific text, useful for retrieving relevant data based on defined criteria."
+        },
+        {
+          "tool_id": "airtable::list_tables",
+          "original_description": "Lists all tables in a specific base",
+          "enriched_description": "Lists all tables within a specified base, useful for retrieving table information based on the baseId and detailLevel parameters."
+        },
+        {
+          "tool_id": "airtable::list_records",
+          "original_description": "Lists records from a specified Airtable table",
+          "enriched_description": "Lists records from a specified Airtable table based on given parameters, useful for retrieving specific data sets efficiently."
+        },
+        {
+          "tool_id": "mongodb::find",
+          "original_description": "Run a find query against a MongoDB collection",
+          "enriched_description": "Executes a find query on a MongoDB collection to retrieve documents based on specified criteria. Use it for data retrieval tasks."
+        },
+        {
+          "tool_id": "mongodb::collection-schema",
+          "original_description": "Describe the schema for a collection",
+          "enriched_description": "Describes the schema for a MongoDB collection, useful for understanding data structure and organization within the database."
+        },
+        {
+          "tool_id": "mongodb::list-collections",
+          "original_description": "List all collections for a given database",
+          "enriched_description": "Lists all collections within a specified database, useful for retrieving database structure information and managing data organization."
+        }
+      ],
+      "target": "airtable::search_records",
+      "rationale": "Large cluster (300+ queries), enrichment degraded mongodb tools. Good test of whether targeted enrichment on one tool steers selection.",
+      "queries": [
+        {
+          "query_id": "gt-atlas-003-s02",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-003-s03",
+          "query": "Search for records in the Sales Expenses table for February 2018.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-004-s02",
+          "query": "List the tables in my Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-004-s03",
+          "query": "List all records from the Digital Analytics table in my Airtable base.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-004-s04",
+          "query": "Search for records in the Digital Analytics table for January 2018.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-014-s02",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-014-s03",
+          "query": "List the records from the Sales Expenses table in the Airtable base for the car dealership.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-014-s04",
+          "query": "Search for sales and expenses records from January 2023 in the Sales Expenses table.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-025-s02",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-025-s03",
+          "query": "Retrieve the schema for the \"Delivery Logistics\" collection in the \"video_game_store\" database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-025-s04",
+          "query": "What was the distance I covered on my delivery on July 15, 2018?",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-028-s02",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-028-s03",
+          "query": "Search for car sales records from July 2023 in the Sales Expenses table.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-034-s02",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-034-s03",
+          "query": "Get the schema for the Purchase History collection in the video game store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-034-s04",
+          "query": "What was the price and category of the video game sold on April 28, 2015?",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-038-s02",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-038-s03",
+          "query": "List all records from the \"Inventory Levels Turnover\" table in the Airtable base for the year when \"Falling Awake\" by Alice Oswald was first published.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-038-s04",
+          "query": "Search for car sales records in the Inventory Levels Turnover table for April 2016.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-038-s05",
+          "query": "Search for car sales records in the Inventory Levels Turnover table for May 2016.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-038-s06",
+          "query": "Search for car sales records in the Inventory Levels Turnover table for June 2016.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-039-s01",
+          "query": "List all tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-039-s02",
+          "query": "List the hiring records from the table for the last quarter of 2023.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-039-s03",
+          "query": "Search for records in the hiring data for the last quarter of 2023.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-040-s01",
+          "query": "List the tables in my Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-040-s02",
+          "query": "List the top 5 employee performance records from the Employee Performance table in my Airtable base for the first quarter of 2020.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-040-s03",
+          "query": "Search for employee performance records from the first quarter of 2020.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-042-s02",
+          "query": "List the collections in the video game store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-042-s03",
+          "query": "Show me the schema of the \"Purchase History\" collection in the \"video_game_store\" database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-042-s04",
+          "query": "Find the purchase details from the video game store for the transaction on June 14, 2018.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-046-s01",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-046-s02",
+          "query": "List the records from the Turnover Retention table in the Airtable base to find the department with the most new hires in the first quarter of 2023.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-046-s03",
+          "query": "Search for new hires in the Turnover Retention table for the first quarter of 2023.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-051-s01",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-051-s02",
+          "query": "Find the genre and reference number of the game titled \"Game Title 142\" with the highest and lowest existing stock in the inventory.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-053-s01",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-053-s02",
+          "query": "List the records from the Sales Expenses table in the Airtable base with ID appIF9byLfQwdHqE2, showing a maximum of 10 entries.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-053-s03",
+          "query": "Search for records in the Sales Expenses table for the date January 2020.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-053-s04",
+          "query": "Search for records in the Sales Expenses table for the date February 2020.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-053-s05",
+          "query": "Search for records in the Sales Expenses table for the date March 2020.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-053-s06",
+          "query": "Search for records in the Sales Expenses table for the date April 2020.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-053-s07",
+          "query": "Search for records in the Sales Expenses table for the date May 2020.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-053-s08",
+          "query": "Search for records in the Sales Expenses table for the date June 2020 in the Airtable database.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-053-s09",
+          "query": "Search for records in the Sales Expenses table for the date July 2020.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-053-s10",
+          "query": "Search for records in the Sales Expenses table for the date August 2020.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-053-s11",
+          "query": "Search for records in the Sales Expenses table for the date September 2020.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-053-s12",
+          "query": "Search for records in the Sales Expenses table for the date October 2020.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-053-s13",
+          "query": "Search for records in the Sales Expenses table for the date November 2020.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-053-s14",
+          "query": "Search for records in the Sales Expenses table for the date December 2020 in the Airtable database.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-054-s04",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-054-s05",
+          "query": "List the employee performance records for the sales department's efficiency score in the first quarter two years after the release of the game recommended by Lucas.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-054-s06",
+          "query": "Search for the efficiency score in service for the sales department in the first quarter of 2016.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-055-s02",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-055-s03",
+          "query": "List the top 10 records from the Supplier Performance table in the Airtable database.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-055-s04",
+          "query": "Search for supplier performance records in the cloud database for the first quarter of 2015.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-059-s02",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-059-s03",
+          "query": "List the top 5 employee performance records from our car dealership database.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-059-s04",
+          "query": "Search for employee performance records in the dealership database for the year and quarter 2023-Q4.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-060-s04",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-060-s05",
+          "query": "Find the best-selling vehicle from January 2020 in the Sales Expenses table.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-066-s02",
+          "query": "List the tables in the Airtable database with base ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-066-s03",
+          "query": "List the top 5 supplier performance records from the Supplier Performance table in our car dealership database.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-066-s04",
+          "query": "Search for the top scoring supplier in our car dealership database for the second quarter of 2016.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-070-s02",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-070-s03",
+          "query": "Show me the schema for the \"Delivery Logistics\" collection in the \"video_game_store\" database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-078-s01",
+          "query": "List the collections in the video_game_store database on my MongoDB server.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-078-s02",
+          "query": "Get the schema of the \"Digital Analytics\" collection in the \"video_game_store\" database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-078-s03",
+          "query": "Find the website page with the lowest views and its creation date in the video game store's digital analytics.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-079-s04",
+          "query": "List the collections in the video game store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-079-s05",
+          "query": "Get the schema for the \"Delivery Logistics\" collection in the \"video_game_store\" database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-094-s03",
+          "query": "List the collections in the video_game_store database on my MongoDB server.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-094-s04",
+          "query": "Get the schema for the Social Media collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-094-s05",
+          "query": "Find the TikTok post from December 11, 2023, in my video game store's social media data.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-096-s02",
+          "query": "List all tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-096-s03",
+          "query": "List the sales and expenses records from the Sales Expenses table in Airtable.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-096-s04",
+          "query": "Search for sales and expenses records from February 2021.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-097-s02",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-097-s03",
+          "query": "List the sales records from the Sales Expenses table in Airtable.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-097-s04",
+          "query": "Search for sales records in the Sales Expenses table for January 2022.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-097-s05",
+          "query": "Search for sales records in February 2022.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-097-s06",
+          "query": "Search for sales records in March 2022.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-097-s07",
+          "query": "Search for sales records in April 2022.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-097-s08",
+          "query": "Search for sales records in May 2022.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-097-s09",
+          "query": "Search for sales records in June 2022.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-097-s10",
+          "query": "Search for sales records in July 2022.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-097-s11",
+          "query": "Search for sales records in August 2022.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-097-s12",
+          "query": "Search for sales records in September 2022.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-097-s13",
+          "query": "Search for sales records in the Sales Expenses table for October 2022.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-097-s14",
+          "query": "Search for sales records in November 2022.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-097-s15",
+          "query": "Search for sales records in December 2022.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-098-s02",
+          "query": "List the collections in the video game store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-098-s03",
+          "query": "Show me the schema of the Purchase History collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-098-s04",
+          "query": "Show me the schema of the Customers collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-103-s02",
+          "query": "List all tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-103-s03",
+          "query": "Search for sales records of the fusion model in September 2022.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-113-s02",
+          "query": "List the collections in the video game store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-113-s03",
+          "query": "Show me the schema for the \"Purchase History\" collection in the \"video_game_store\" database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-113-s04",
+          "query": "What was the cost and category of the video game sold on October 19, 2021?",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-114-s02",
+          "query": "List the tables in my Airtable base for the vehicle sales dataset.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-114-s03",
+          "query": "List records from the Digital Analytics table in my Airtable base for the year and month when King Michael I of Romania passed away.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-114-s04",
+          "query": "Search for records in the Digital Analytics table for December 2017.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-116-s06",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-116-s07",
+          "query": "Search for customer feedback records in the Airtable database for interactions that occurred on February 2, 2021.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-119-s03",
+          "query": "List the collections in my video_game_store database on MongoDB.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-119-s04",
+          "query": "Find the Twitter post from September 10, 2021, in my video game store's social media database.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-120-s01",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-120-s02",
+          "query": "Show me the schema for the \"Social Media\" collection in the \"video_game_store\" database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-123-s02",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-123-s03",
+          "query": "Show me the schema for the Delivery Logistics collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-123-s04",
+          "query": "Show me the schema for the Customers collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-123-s05",
+          "query": "Find the order identifier for orders placed on October 11, 2022, in the video game store database.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-123-s06",
+          "query": "Find the game title sold on October 11, 2022, from the video game store.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-125-s02",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-125-s03",
+          "query": "Search for showroom visits in January 2022.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-133-s02",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-133-s03",
+          "query": "Show me the schema for the \"Purchase History\" collection in the \"video_game_store\" database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-133-s04",
+          "query": "What was the cost and category of the video game sold on May 17, 2015?",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-138-s03",
+          "query": "List the collections in the video game store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-138-s04",
+          "query": "Find the number of completed deliveries for orders placed in December 2022 in the video game store database.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-141-s01",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-141-s02",
+          "query": "Show me the schema for the Inventory collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-146-s02",
+          "query": "List the tables in the car dealership company database.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-146-s03",
+          "query": "List the records from the Sales Expenses table in the car dealership database.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-146-s04",
+          "query": "Search for sales and expenses records from October 2018 in the car dealership database.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-161-s04",
+          "query": "List the collections in the video_game_store database on MongoDB.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-161-s05",
+          "query": "What is the schema of the Customers collection in the video_game_store database?",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-161-s06",
+          "query": "What were the customer records for January 4, 2023, in the video game store database?",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-162-s02",
+          "query": "List the collections in the video game store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-162-s03",
+          "query": "Check the schema of the Customers collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-162-s04",
+          "query": "Find the game title sold on December 11, 2021, in the video game store database.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-165-s03",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-165-s04",
+          "query": "What is the schema of the Social Media collection in the video_game_store database?",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-165-s05",
+          "query": "Find the most liked video game post in the Social Media collection of the video_game_store database, dated before December 13, 2023.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-166-s02",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-166-s03",
+          "query": "Find the records of the two brothers who bought games on the day Tom Smothers died in the video game store database.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-166-s04",
+          "query": "Find the purchases made on December 26, 2023, in the Customers collection of the video_game_store database.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-173-s03",
+          "query": "List the collections in my video game store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-173-s04",
+          "query": "Show me the schema of the Inventory collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-175-s02",
+          "query": "List the collections in the video game store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-175-s03",
+          "query": "What is the schema of the Purchase History collection in the video_game_store database?",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-175-s04",
+          "query": "Find the cost and category of the video game sold on January 15, 2018, in the video game store's purchase history.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-179-s04",
+          "query": "List the tables in my Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-179-s05",
+          "query": "List the records from the Foot Traffic table in my Airtable base to find the maximum number of showroom visitors in a day for the month when Harper Lee passed away.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-179-s06",
+          "query": "Search for the maximum number of showroom visitors in February 2016 from my Foot Traffic dataset.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-185-s01",
+          "query": "List the tables in my Airtable base for tracking employee records in my auto sales business.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-185-s02",
+          "query": "List the turnover records from the \"Turnover Retention\" table in my Airtable base for the first quarter of the year when Lithuania celebrated its centennial.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-185-s04",
+          "query": "Search for records in the \"Turnover Retention\" table for the first quarter of 2018.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-188-s02",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-188-s03",
+          "query": "Retrieve the schema for the Purchase History collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-190-s01",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-190-s02",
+          "query": "Search for sales records in June 2022 from the Sales Expenses table in the Airtable base.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-196-s02",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-196-s03",
+          "query": "Search for showroom visits in the Foot Traffic table for the year Obama finished his presidency.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-198-s04",
+          "query": "List the collections in the video_game_store database on MongoDB.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-198-s05",
+          "query": "Show me the schema for the \"Social Media\" collection in the \"video_game_store\" database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-206-s02",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-206-s03",
+          "query": "Find up to 6 Twitter posts from the Social Media collection in the video_game_store database made in the year Kobe Bryant passed away.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-213-s02",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-213-s03",
+          "query": "Find the last 10 records in the Customers collection of the video_game_store database.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-213-s04",
+          "query": "Find the purchase details for my friend on August 8, 2022, in the video game store database.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-219-s02",
+          "query": "List the collections in the video game store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-219-s03",
+          "query": "Retrieve the schema for the Customers collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-222-s02",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-222-s03",
+          "query": "Search for employee records in the Turnover Retention table for the first quarter of 2017.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-223-s02",
+          "query": "List all tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-223-s03",
+          "query": "Search for records in the \"Turnover Retention\" table for the third quarter of 2018.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-226-s02",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-226-s03",
+          "query": "Search for foot traffic records in September 2023.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-231-s02",
+          "query": "List the collections in the video_game_store database on the MongoDB server.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-231-s03",
+          "query": "Show me the schema for the \"Social Media\" collection in the \"video_game_store\" database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-234-s02",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-234-s03",
+          "query": "Retrieve the schema for the Customers collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-242-s03",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-242-s04",
+          "query": "Retrieve the schema for the Customers collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-242-s05",
+          "query": "Retrieve the game title, price, and payment method for purchases made on January 20, 2017, from the video game store database.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-244-s02",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-244-s03",
+          "query": "List the sales and expenses records from the Sales Expenses table in the Airtable base for the car dealership.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-244-s04",
+          "query": "Search for sales and expenses records from April 2021 in the Sales Expenses table.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-245-s02",
+          "query": "List the tables in the Airtable base for the car dealership company.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-245-s03",
+          "query": "Search for employee performance records in the database for the first quarter of 2017.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-246-s02",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-246-s03",
+          "query": "What was the turnover rate for mustang vehicles at the car dealership in June 2020?",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-258-s02",
+          "query": "List the tables in the Airtable base for the car dealership sales report.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-258-s03",
+          "query": "List the sales and expenses records from the Sales Expenses table in Airtable.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-258-s04",
+          "query": "Search for sales and expenses records from September 2019 in the Sales Expenses table.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-266-s02",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-266-s03",
+          "query": "Show me the schema for the \"Purchase History\" collection in the \"video_game_store\" database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-266-s04",
+          "query": "Show me the schema for the Customers collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-267-s02",
+          "query": "List the collections in the video game store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-267-s03",
+          "query": "Show me the schema for the Purchase History collection in the video game store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-267-s04",
+          "query": "Find the purchase details for the video game sold on May 8, 2023, in the video game store database.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-268-s01",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-268-s02",
+          "query": "Check the schema of the \"Digital Analytics\" collection in the \"video_game_store\" database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-278-s01",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-278-s02",
+          "query": "Find records in the Sales Expenses table where the Best Selling Category is Sedan.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-279-s01",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-279-s02",
+          "query": "List the records from the Sales Expenses table in the Airtable base to find the average expense for each employee in the car business.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-279-s03",
+          "query": "Search for records in the Sales Expenses table where the Average Expense per Employee is 4259.72.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-280-s01",
+          "query": "List the tables in my Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-280-s02",
+          "query": "Search for records in the \"Inventory Levels Turnover\" table where the turnover rate is 0.17.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-294-s02",
+          "query": "List the tables in my Airtable base for car sales expenses.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-294-s03",
+          "query": "Search for sales expenses records where the best selling category is electric.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-295-s01",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-295-s02",
+          "query": "Show me the schema for the Purchase History collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-305-s02",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-305-s03",
+          "query": "List the records from the Sales Expenses table in the Airtable database for the first month of the year during the 21st FIFA World Cup.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-305-s04",
+          "query": "Search for records in the Sales Expenses table for January 2018.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-309-s04",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-309-s05",
+          "query": "Search for records in the Digital Analytics table for the date December 2021.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-314-s01",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-314-s02",
+          "query": "List the records from the Turnover Retention table in the Airtable base.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-314-s03",
+          "query": "Search for records in the Turnover Retention table for new employees who joined in the first quarter of 2023.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-315-s01",
+          "query": "List the collections in the video game store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-315-s02",
+          "query": "Show me the schema for the Digital Analytics collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-322-s02",
+          "query": "List all tables in my car dealership database.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-322-s03",
+          "query": "Search for employee performance records in the car dealership database for the third quarter of 2017.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-328-s02",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-328-s03",
+          "query": "Show me the schema for the Customers collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-328-s04",
+          "query": "Show me the schema for the Purchase History collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-328-s06",
+          "query": "Find all action video game purchases made in 2023 by customers who are active members and were at least 5 years old at the end of the year when the first first-person shooter game was developed.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-335-s02",
+          "query": "List the collections in the video game store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-335-s03",
+          "query": "Access the schema for the Customers collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-337-s02",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-337-s03",
+          "query": "Find the purchase details for the video game sold on May 2, 2019, including its price and any price reduction applied.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-342-s03",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-342-s04",
+          "query": "List the records from the Inventory Levels Turnover table in the Airtable base.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-342-s05",
+          "query": "Find the car model with the lowest turnover rate for April 2015 in the dealership database.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-343-s01",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-343-s02",
+          "query": "Show me the schema for the \"Delivery Logistics\" collection in the \"video_game_store\" database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-343-s03",
+          "query": "Find the first delivery order in the Delivery Logistics collection of my video game store database.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-350-s02",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-350-s03",
+          "query": "List the records from the Employee Performance table in our Airtable database.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-350-s04",
+          "query": "Search for records in the Employee Performance table for the second quarter of 2015.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-355-s01",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-355-s02",
+          "query": "List the top 10 records from the Employee Performance table in our Airtable database.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-355-s03",
+          "query": "Search for employee performance records from the second quarter of 2017 in the Employee Performance table.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-362-s02",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-362-s03",
+          "query": "List the turnover records for the HR department from the first and third quarter of the year 2023.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-362-s04",
+          "query": "Search for turnover records in the HR department for the first quarter of 2022.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-362-s05",
+          "query": "Search for turnover records in the Turnover Retention table for the third quarter of 2022.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-363-s01",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-363-s02",
+          "query": "Retrieve the schema for the Customers collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-364-s01",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-364-s02",
+          "query": "Find the digital analytics records from the video game store database for the year 1969, focusing on the transaction with a 7% discount applied on January 9, and include up to 10,000 entries.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-364-s03",
+          "query": "Find all records in the Purchase History collection of the video_game_store database where the transaction ID ends with 1969 and the transaction date is January 9.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-373-s04",
+          "query": "List all collections in the video game store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-373-s05",
+          "query": "Find all game titles purchased by customers in the video game store on November 24, 2017.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-381-s02",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-381-s03",
+          "query": "List the sales expenses records for the month and year when Mario Cuomo passed away.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-381-s04",
+          "query": "Search for sales records in January 2015.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-383-s01",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-383-s02",
+          "query": "Check the schema of the Customers collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-383-s03",
+          "query": "Find all customers in the video game store database who have a Customer ID.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-383-s04",
+          "query": "Find the purchase date for the customer with ID CUST00010 in the video game store database.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-383-s06",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-383-s07",
+          "query": "List the turnover records for the sales department from the first quarter of the year when the customer with ID number ten made their purchase.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-383-s08",
+          "query": "Search the \"Turnover Retention\" table in the Airtable database for records with the date in the first quarter of 2020.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-385-s00",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-385-s01",
+          "query": "Get the schema for the \"Social Media\" collection in the \"video_game_store\" database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-385-s02",
+          "query": "Find the Instagram video post with 340 likes in the Social Media collection of the video_game_store database.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-386-s02",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-386-s03",
+          "query": "Show me the schema for the Customers collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-386-s04",
+          "query": "Find the returned purchase made by a customer on the day Tina Turner died in the video game store database.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-386-s05",
+          "query": "Find a customer's purchase from May 24, 2023, in the video game store database.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-387-s04",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-387-s05",
+          "query": "List the records from the Employee Performance table in the Airtable database to find the innovation year that scored 2.49.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-387-s06",
+          "query": "Search for records in the Employee Performance table where the Score is 2.49.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-389-s01",
+          "query": "List the collections in the video game store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-389-s02",
+          "query": "Find the customer who purchased a game for $137.53 and check if they subscribed to the newsletter in the video game store database.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-392-s02",
+          "query": "List the tables in my Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-392-s03",
+          "query": "List the top two records from the Sales Expenses table in the Airtable base.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-392-s04",
+          "query": "Search for records in the Sales Expenses table where the date is February 2022.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-392-s05",
+          "query": "Search for records in the Sales Expenses table where the date is August 2022.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-397-s01",
+          "query": "List the tables in my Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-397-s02",
+          "query": "List the records from the Digital Analytics table in my Airtable base for July 2020.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-397-s03",
+          "query": "Search for records in the Digital Analytics table for July 2020.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-402-s01",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-402-s02",
+          "query": "Show me the schema for the Delivery Logistics collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-402-s03",
+          "query": "Find the first five deliveries in the Delivery Logistics collection of the video game store, sorted by Order ID.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-403-s02",
+          "query": "List all tables in my Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-403-s03",
+          "query": "Search for client feedback records in my dealership's cloud database from July 28, 2017.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-408-s02",
+          "query": "List all tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-408-s03",
+          "query": "List the records from the Supplier Performance table in the Airtable base.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-408-s04",
+          "query": "Search for records in the Supplier Performance table for the highest innovation customer score in the second quarter of 2023.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-409-s01",
+          "query": "List the tables in my Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-409-s02",
+          "query": "List the records from the service center visits table for January 2015.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-409-s03",
+          "query": "Search for service center visit records in January 2015 from my dealership data.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-411-s02",
+          "query": "List the collections in the video game store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-411-s03",
+          "query": "Show me the schema for the Purchase History collection in the video game store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-411-s04",
+          "query": "Find the cost and category of the video game sold on February 24, 2021, in the video game store database.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-414-s01",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-414-s02",
+          "query": "Search for customer feedback records for vehicles with the model \"Mustang.\"",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-417-s02",
+          "query": "List the collections in the video game store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-417-s03",
+          "query": "Get the schema for the Purchase History collection in the video game store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-417-s04",
+          "query": "What was the cost and category of the video game sold on March 16, 2021?",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-422-s02",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-422-s03",
+          "query": "Show me the schema for the Customers collection in the video game store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-422-s04",
+          "query": "Find customers who made a purchase on April 3, 2018, in the video game store database.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-424-s01",
+          "query": "List the tables in my Airtable base for employee performance data.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-424-s02",
+          "query": "List the top 10 records from the Employee Performance table in the Airtable base for our dealership.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-424-s03",
+          "query": "Search for employee performance records for the fourth quarter of 2023.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-426-s01",
+          "query": "List the tables in my Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-426-s02",
+          "query": "List the records from the \"Inventory Levels Turnover\" table in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-426-s03",
+          "query": "List records from the Digital Analytics table in the airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-439-s02",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-439-s03",
+          "query": "Show me the schema for the Customers collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-439-s04",
+          "query": "Find the title and genre of the video game purchased on September 27, 2019, in the video game store database.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-440-s04",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-440-s05",
+          "query": "Search for records in the Sales Expenses table for the date May 2015.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-447-s03",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-447-s04",
+          "query": "Show me the schema for the Customers collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-450-s03",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-450-s04",
+          "query": "List the records from the Customer Feedback table in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-450-s05",
+          "query": "Search for customer feedback records with an interaction date of January 16, 2023.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-451-s02",
+          "query": "List the tables in my Airtable database for car sales.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-451-s03",
+          "query": "List the records from the sales expenses table in my Airtable database.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-453-s03",
+          "query": "List the tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-453-s04",
+          "query": "List the sales expenses records from the Airtable database.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-453-s05",
+          "query": "Search for records in the Sales Expenses table for January 2016.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-453-s06",
+          "query": "Search for records in the Sales Expenses table for February 2016.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-453-s07",
+          "query": "Search for records in the Sales Expenses table for March 2016.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-453-s08",
+          "query": "Search for records in the Sales Expenses table for April 2016.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-453-s09",
+          "query": "Search for records in the Sales Expenses table for May 2016.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-453-s10",
+          "query": "Search for sales records in June 2016 in the Sales Expenses table.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-453-s11",
+          "query": "Search for records in the Sales Expenses table for July 2016.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-453-s12",
+          "query": "Search for records in the Sales Expenses table for August 2016.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-453-s13",
+          "query": "Search for records in the Sales Expenses table for September 2016.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-453-s14",
+          "query": "Search for records in the Sales Expenses table for the date October 2016.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-453-s15",
+          "query": "Search for sales records from November 2016 in the Sales Expenses table of the Airtable database.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-453-s16",
+          "query": "Search for sales records in December 2016 in the Sales Expenses table of the Airtable database.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-454-s01",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-454-s02",
+          "query": "Show me the schema for the \"Purchase History\" collection in the \"video_game_store\" database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-454-s04",
+          "query": "Find all Christmas purchase records in the video game store database and show their transaction dates and amounts, sorted by date.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-463-s02",
+          "query": "List the collections in the video_game_store database on the MongoDB server.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-463-s03",
+          "query": "Show me the schema of the \"Digital Analytics\" collection in the \"video_game_store\" database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-463-s04",
+          "query": "What was the highest page views recorded on April 10, 2023, in the Digital Analytics collection of the video_game_store database?",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-474-s01",
+          "query": "List all tables in the Airtable base with ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-474-s02",
+          "query": "List the records from the table for the base ID appIF9byLfQwdHqE2.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-474-s03",
+          "query": "What was the score for zogarth in the third quarter of 2022?",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-476-s02",
+          "query": "List the tables in my cloud dealership database.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-476-s03",
+          "query": "List the records from the Turnover Retention table in my cloud dealership database.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-476-s04",
+          "query": "Search for turnover records in the \"Turnover Retention\" table for the first quarter of 2023.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-479-s02",
+          "query": "List all tables in my Airtable base for the auto retailer analysis.",
+          "correct_tool_id": "airtable::list_tables",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-479-s03",
+          "query": "List the employee performance records from the specified base in Airtable.",
+          "correct_tool_id": "airtable::list_records",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-479-s04",
+          "query": "Search for employee performance records from the first quarter of 2020 in my Airtable database.",
+          "correct_tool_id": "airtable::search_records",
+          "label": "T"
+        },
+        {
+          "query_id": "gt-atlas-480-s03",
+          "query": "List the collections in the video game store database on the MongoDB server.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-480-s04",
+          "query": "Show me the schema for the \"Purchase History\" collection in the \"video_game_store\" database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-483-s01",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-483-s02",
+          "query": "Show me the schema for the \"Purchase History\" collection in the \"video_game_store\" database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-483-s03",
+          "query": "Find the sale details for the game with a transaction ID ending in 0002 in the video game store database.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-484-s01",
+          "query": "List the collections in the video game store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-484-s02",
+          "query": "Show me the schema for the Customers collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-486-s01",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-486-s02",
+          "query": "Find the game genre with the highest current stock in the inventory for December 2023, along with the inventory date.",
+          "correct_tool_id": "mongodb::find",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-491-s03",
+          "query": "List the collections in the video_game_store database.",
+          "correct_tool_id": "mongodb::list-collections",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-491-s04",
+          "query": "Retrieve the schema for the \"Purchase History\" collection in the \"video_game_store\" database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        },
+        {
+          "query_id": "gt-atlas-491-s05",
+          "query": "Retrieve the schema for the Customers collection in the video_game_store database.",
+          "correct_tool_id": "mongodb::collection-schema",
+          "label": "C"
+        }
+      ],
+      "stats": {
+        "total_queries": 357,
+        "t_queries": 97,
+        "c_queries": 260
+      }
+    }
+  ]
+}

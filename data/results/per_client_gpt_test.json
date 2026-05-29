@@ -1,0 +1,301 @@
+{
+  "test": "per-client description effect",
+  "model": "gpt-4o-mini",
+  "reps": 3,
+  "results": [
+    {
+      "cluster": "git_vcs",
+      "target": "git_log",
+      "variant": "V0",
+      "label": "Control (original)",
+      "hits": 3,
+      "reps": 3,
+      "hit_rate": 1.0,
+      "picks": [
+        "git_log",
+        "git_log",
+        "git_log"
+      ]
+    },
+    {
+      "cluster": "git_vcs",
+      "target": "git_log",
+      "variant": "V1",
+      "label": "Tool-DE (generic enrichment)",
+      "hits": 3,
+      "reps": 3,
+      "hit_rate": 1.0,
+      "picks": [
+        "git_log",
+        "git_log",
+        "git_log"
+      ]
+    },
+    {
+      "cluster": "git_vcs",
+      "target": "git_log",
+      "variant": "V2",
+      "label": "Differentiation-first",
+      "hits": 3,
+      "reps": 3,
+      "hit_rate": 1.0,
+      "picks": [
+        "git_log",
+        "git_log",
+        "git_log"
+      ]
+    },
+    {
+      "cluster": "git_vcs",
+      "target": "git_log",
+      "variant": "V3",
+      "label": "Use-case anchored",
+      "hits": 3,
+      "reps": 3,
+      "hit_rate": 1.0,
+      "picks": [
+        "git_log",
+        "git_log",
+        "git_log"
+      ]
+    },
+    {
+      "cluster": "git_vcs",
+      "target": "git_log",
+      "variant": "V4",
+      "label": "I/O explicit",
+      "hits": 3,
+      "reps": 3,
+      "hit_rate": 1.0,
+      "picks": [
+        "git_log",
+        "git_log",
+        "git_log"
+      ]
+    },
+    {
+      "cluster": "git_vcs",
+      "target": "git_log",
+      "variant": "V5",
+      "label": "Boundary explicit",
+      "hits": 3,
+      "reps": 3,
+      "hit_rate": 1.0,
+      "picks": [
+        "git_log",
+        "git_log",
+        "git_log"
+      ]
+    },
+    {
+      "cluster": "git_vcs",
+      "target": "git_log",
+      "variant": "V6",
+      "label": "Overclaiming (negative control)",
+      "hits": 3,
+      "reps": 3,
+      "hit_rate": 1.0,
+      "picks": [
+        "git_log",
+        "git_log",
+        "git_log"
+      ]
+    },
+    {
+      "cluster": "database_records",
+      "target": "search_records",
+      "variant": "V0",
+      "label": "Control (original)",
+      "hits": 2,
+      "reps": 3,
+      "hit_rate": 0.6666666666666666,
+      "picks": [
+        "search_records",
+        "airtable_list_records",
+        "search_records"
+      ]
+    },
+    {
+      "cluster": "database_records",
+      "target": "search_records",
+      "variant": "V1",
+      "label": "Tool-DE (generic enrichment)",
+      "hits": 3,
+      "reps": 3,
+      "hit_rate": 1.0,
+      "picks": [
+        "search_records",
+        "search_records",
+        "search_records"
+      ]
+    },
+    {
+      "cluster": "database_records",
+      "target": "search_records",
+      "variant": "V2",
+      "label": "Differentiation-first",
+      "hits": 0,
+      "reps": 3,
+      "hit_rate": 0.0,
+      "picks": [
+        "airtable_list_records",
+        "airtable_list_records",
+        "airtable_list_records"
+      ]
+    },
+    {
+      "cluster": "database_records",
+      "target": "search_records",
+      "variant": "V3",
+      "label": "Use-case anchored",
+      "hits": 0,
+      "reps": 3,
+      "hit_rate": 0.0,
+      "picks": [
+        "airtable_list_records",
+        "airtable_list_records",
+        "airtable_list_records"
+      ]
+    },
+    {
+      "cluster": "database_records",
+      "target": "search_records",
+      "variant": "V4",
+      "label": "I/O explicit",
+      "hits": 0,
+      "reps": 3,
+      "hit_rate": 0.0,
+      "picks": [
+        "airtable_list_records",
+        "airtable_list_records",
+        "airtable_list_records"
+      ]
+    },
+    {
+      "cluster": "database_records",
+      "target": "search_records",
+      "variant": "V5",
+      "label": "Boundary explicit",
+      "hits": 0,
+      "reps": 3,
+      "hit_rate": 0.0,
+      "picks": [
+        "airtable_list_records",
+        "airtable_list_records",
+        "airtable_list_records"
+      ]
+    },
+    {
+      "cluster": "database_records",
+      "target": "search_records",
+      "variant": "V6",
+      "label": "Overclaiming (negative control)",
+      "hits": 0,
+      "reps": 3,
+      "hit_rate": 0.0,
+      "picks": [
+        "airtable_list_records",
+        "airtable_list_records",
+        "airtable_list_records"
+      ]
+    },
+    {
+      "cluster": "file_operations",
+      "target": "list_directory",
+      "variant": "V0",
+      "label": "Control (original)",
+      "hits": 3,
+      "reps": 3,
+      "hit_rate": 1.0,
+      "picks": [
+        "list_directory",
+        "list_directory",
+        "list_directory"
+      ]
+    },
+    {
+      "cluster": "file_operations",
+      "target": "list_directory",
+      "variant": "V1",
+      "label": "Tool-DE (generic enrichment)",
+      "hits": 3,
+      "reps": 3,
+      "hit_rate": 1.0,
+      "picks": [
+        "list_directory",
+        "list_directory",
+        "list_directory"
+      ]
+    },
+    {
+      "cluster": "file_operations",
+      "target": "list_directory",
+      "variant": "V2",
+      "label": "Differentiation-first",
+      "hits": 3,
+      "reps": 3,
+      "hit_rate": 1.0,
+      "picks": [
+        "list_directory",
+        "list_directory",
+        "list_directory"
+      ]
+    },
+    {
+      "cluster": "file_operations",
+      "target": "list_directory",
+      "variant": "V3",
+      "label": "Use-case anchored",
+      "hits": 3,
+      "reps": 3,
+      "hit_rate": 1.0,
+      "picks": [
+        "list_directory",
+        "list_directory",
+        "list_directory"
+      ]
+    },
+    {
+      "cluster": "file_operations",
+      "target": "list_directory",
+      "variant": "V4",
+      "label": "I/O explicit",
+      "hits": 3,
+      "reps": 3,
+      "hit_rate": 1.0,
+      "picks": [
+        "list_directory",
+        "list_directory",
+        "list_directory"
+      ]
+    },
+    {
+      "cluster": "file_operations",
+      "target": "list_directory",
+      "variant": "V5",
+      "label": "Boundary explicit",
+      "hits": 3,
+      "reps": 3,
+      "hit_rate": 1.0,
+      "picks": [
+        "list_directory",
+        "list_directory",
+        "list_directory"
+      ]
+    },
+    {
+      "cluster": "file_operations",
+      "target": "list_directory",
+      "variant": "V6",
+      "label": "Overclaiming (negative control)",
+      "hits": 3,
+      "reps": 3,
+      "hit_rate": 1.0,
+      "picks": [
+        "list_directory",
+        "list_directory",
+        "list_directory"
+      ]
+    }
+  ]
+}
