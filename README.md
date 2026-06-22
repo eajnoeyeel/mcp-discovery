@@ -12,6 +12,26 @@ This project is built around three assumptions:
 - Tool selection should be narrowed by a discovery layer with retrieval, fusion, and optional reranking before the LLM reasons over the final choices.
 - Search relevance is not enough by itself; the control plane also needs operability signals that indicate whether a candidate can actually be executed.
 
+## Background & Related Work
+
+The "put every tool in the prompt" approach does not scale, and this limitation is documented across the tool-use and long-context literature. The MCP Discovery Platform is a direct response to what recent work calls **prompt bloat**.
+
+**Prompt bloat in tool selection.** As an agent gains access to more MCP servers and tools, naively concatenating every tool schema into the prompt inflates token cost and degrades selection quality. Gan and Sun formalize this as *prompt bloat* and show that retrieving only the relevant tool descriptions before the LLM reasons — instead of injecting the full catalog — cuts prompt tokens by more than 50% and **more than triples** tool-selection accuracy (43.13% vs. 13.62%) on their MCP stress test ([RAG-MCP, arXiv:2505.03275](https://arxiv.org/abs/2505.03275)). MCP-Zero reaches the same conclusion from the agent side: injecting thousands of tool schemas into the prompt is "costly and error-prone," motivating on-demand, retrieval-based toolchain construction over full enumeration ([MCP-Zero, arXiv:2506.01056](https://arxiv.org/abs/2506.01056)). This project uses the MCP-Zero server/tool pool as one of its evaluation datasets.
+
+**Why bloated prompts hurt even when they fit.** Long context is not free even when it stays within the model's window. Liu et al. show that performance is highest when relevant information sits at the start or end of the input and **degrades substantially when it is buried in the middle of a long context**, with accuracy dropping as the context grows longer — even for models explicitly designed for long contexts ([Lost in the Middle, arXiv:2307.03172](https://arxiv.org/abs/2307.03172)). A registry of many overlapping tool descriptions is exactly the kind of long, homogeneous context this failure mode penalizes, so simply having a large enough context window does not make full-catalog prompting safe.
+
+**Retrieval over large tool catalogs is the established remedy.** Routing tool selection through a retriever rather than the prompt is a recurring pattern in tool-learning research. Gorilla connects an LLM to a large, changing set of APIs through a document retriever and shows that retrieval substantially reduces the hallucinated and outdated API calls produced when models are prompted with every option directly ([Gorilla, arXiv:2305.15334](https://arxiv.org/abs/2305.15334)). ToolLLM scales this to 16,000+ real-world APIs and pairs the model with a neural API retriever so candidates are recommended per request instead of hand-selected or fully enumerated in context ([ToolLLM, arXiv:2307.16789](https://arxiv.org/abs/2307.16789)).
+
+**Where this project fits.** These results motivate the design assumptions stated above: the LLM should receive only the candidates relevant to the current request, surfaced by a dedicated discovery layer (retrieval → fusion → optional reranking → operability validation), not the entire tool registry. The platform extends this retrieval-first line of work with hybrid dense+sparse retrieval and an operability signal that filters for tools that can actually be executed, not merely tools that look relevant in a vector search.
+
+### References
+
+- Gan, T., & Sun, Q. (2025). *RAG-MCP: Mitigating Prompt Bloat in LLM Tool Selection via Retrieval-Augmented Generation.* [arXiv:2505.03275](https://arxiv.org/abs/2505.03275)
+- Fei, X., Zheng, X., & Feng, H. (2025). *MCP-Zero: Proactive Toolchain Construction for LLM Agents from Scratch.* [arXiv:2506.01056](https://arxiv.org/abs/2506.01056)
+- Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., & Liang, P. (2024). *Lost in the Middle: How Language Models Use Long Contexts.* Transactions of the Association for Computational Linguistics (TACL). [arXiv:2307.03172](https://arxiv.org/abs/2307.03172)
+- Patil, S. G., Zhang, T., Wang, X., & Gonzalez, J. E. (2023). *Gorilla: Large Language Model Connected with Massive APIs.* NeurIPS 2024. [arXiv:2305.15334](https://arxiv.org/abs/2305.15334)
+- Qin, Y., et al. (2023). *ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs.* [arXiv:2307.16789](https://arxiv.org/abs/2307.16789)
+
 ## Solution
 
 MCP Discovery Platform accepts a natural-language query, searches MCP server/tool metadata, and returns ranked candidates that can be used by an execution gateway, dashboard, or evaluation pipeline.
